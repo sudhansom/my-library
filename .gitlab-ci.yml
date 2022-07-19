@@ -1,0 +1,36 @@
+stages:
+  - build
+  - tag
+  - publish
+
+ng-build:
+  stage: build
+  image: node:16-slim
+  script:
+    - npm install
+    - npm run build:ngx:prod
+  artifacts:
+    name: "$CI_COMMIT_REF_NAME"
+    paths:
+      - dist/
+  tags:
+    - x86_64
+    - docker
+
+ng-publish:
+  stage: publish
+  image: node:16-slim
+  script:
+    - cd dist/ng-components
+    - npm config set -- "//${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken" "${CI_JOB_TOKEN}"
+    - npm config set @sitemule:registry https://${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/
+    - npm publish
+  artifacts:
+    name: "$CI_COMMIT_REF_NAME"
+    paths:
+      - dist/
+  only:
+    - tags
+  tags:
+    - x86_64
+    - docker

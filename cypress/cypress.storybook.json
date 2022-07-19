@@ -1,0 +1,8 @@
+{
+  "baseUrl": "http://localhost:6006",
+  "defaultCommandTimeout": 20000,
+  "viewportWidth": 1000,
+  "viewportHeight": 568,
+  "integrationFolder": "projects",
+  "testFiles": "**/*.spec.ts"
+}
