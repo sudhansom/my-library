@@ -1,6 +1,6 @@
 stages:
   - build
-  - tag
+  - test
   - publish
 
 ng-build:
@@ -13,6 +13,16 @@ ng-build:
     name: "$CI_COMMIT_REF_NAME"
     paths:
       - dist/
+  tags:
+    - x86_64
+    - docker
+
+ng-test:
+  stage: test
+  image: node:16-slim
+  script:
+    - npm install
+    - npm run test:ci
   tags:
     - x86_64
     - docker
