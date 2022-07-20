@@ -1,4 +1,0 @@
-Design questions:
-	Product-> filter on mobile
-	Product-> how should the list look like if its categories and not products
-	Wrapper paa siden

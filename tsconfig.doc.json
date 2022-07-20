@@ -1,7 +1,0 @@
-
-{
-    "include": ["src/**/*.ts","projects/**/*.ts"],
-  "exclude": [
-    "**/*.stories.*"
-  ]
-}

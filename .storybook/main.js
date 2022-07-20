@@ -1,10 +1,16 @@
 module.exports = {
-  stories: [
+  "stories": [
     "../projects/**/*.stories.mdx",
-    "../projects/**/*.stories.@(js|jsx|ts|tsx)",
+    "../projects/**/*.stories.@(js|jsx|ts|tsx)"
   ],
-  addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
-  core: {
-    builder: "webpack5",
-  },
-};
+  "addons": [
+    "@storybook/addon-links",
+    "@storybook/addon-essentials",
+    "@storybook/addon-interactions"
+  ],
+  "framework": "@storybook/angular",
+  "core": {
+    "builder": "@storybook/builder-webpack5",
+    "disableTelemetry": true
+  }
+}
