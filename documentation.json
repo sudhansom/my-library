@@ -31,7 +31,7 @@
     "components": [
         {
             "name": "NgComponentsComponent",
-            "id": "component-NgComponentsComponent-6e63ab0ec8959484463eea3e2d0f5348e3531f226186cd42b3472429223d6508b50d5d4c8b9ab84374705eb49de4b8397abc7bbd3d6f1b52e23128244eb0bafe",
+            "id": "component-NgComponentsComponent-838b2beba7d70950e50f9a0ec13419639db9269f884113aa7d9f948ffadba7fcd7cc6b827a79871b8588e25e2bcbf0a1503069555ca62f117823d4d3a6f0089e",
             "file": "projects/ng-components/src/lib/ng-components.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -39,7 +39,9 @@
             "outputs": [],
             "providers": [],
             "selector": "lib-ng-components",
-            "styleUrls": [],
+            "styleUrls": [
+                "./ng-components.component.scss"
+            ],
             "styles": [],
             "template": "<p>\n  ng-components works!\n</p>\n",
             "templateUrl": [],
@@ -47,18 +49,7 @@
             "inputsClass": [],
             "outputsClass": [],
             "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 17,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
+            "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -66,9 +57,14 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'lib-ng-components',\n  template: `\n    <p>\n      ng-components works!\n    </p>\n  `,\n  styles: [\n  ]\n})\nexport class NgComponentsComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'lib-ng-components',\n  template: `\n    <p>\n      ng-components works!\n    </p>\n  `,\n  styleUrls: [\n    \"./ng-components.component.scss\"\n  ]\n})\nexport class NgComponentsComponent {\n\n  constructor() { }\n\n}\n",
             "assetsDirs": [],
-            "styleUrlsData": "",
+            "styleUrlsData": [
+                {
+                    "data": "@use 'variables';\n\n:host {\n  color: red;\n\n  @media (min-width: map-get(variables.$breakpoints, \"phone\")) {\n    color: var(--text-color);\n  }\n}\n",
+                    "styleUrl": "./ng-components.component.scss"
+                }
+            ],
             "stylesData": "",
             "constructorObj": {
                 "name": "constructor",
@@ -76,11 +72,8 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 13
-            },
-            "implements": [
-                "OnInit"
-            ]
+                "line": 14
+            }
         }
     ],
     "modules": [
@@ -234,7 +227,7 @@
                 "linktype": "component",
                 "name": "NgComponentsComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {

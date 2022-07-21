@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
       ng-components works!
     </p>
   `,
-  styles: [
+  styleUrls: [
+    "./ng-components.component.scss"
   ]
 })
 export class NgComponentsComponent {
