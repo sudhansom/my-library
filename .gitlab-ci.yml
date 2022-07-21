@@ -1,18 +1,8 @@
 stages:
-  - lint
   - build
+  - lint
   - test
   - publish
-
-ng-lint:
-  stage: lint
-  image: node:16-slim
-  script:
-    - npm install
-    - npm run lint
-  tags:
-    - x86_64
-    - docker
 
 ng-build:
   stage: build
@@ -24,6 +14,16 @@ ng-build:
     name: "$CI_COMMIT_REF_NAME"
     paths:
       - dist/
+  tags:
+    - x86_64
+    - docker
+
+ng-lint:
+  stage: lint
+  image: node:16-slim
+  script:
+    - npm install
+    - npm run lint
   tags:
     - x86_64
     - docker
