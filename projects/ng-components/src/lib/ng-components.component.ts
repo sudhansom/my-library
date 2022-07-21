@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'lib-ng-components',
@@ -10,11 +10,8 @@ import { Component, OnInit } from '@angular/core';
   styles: [
   ]
 })
-export class NgComponentsComponent implements OnInit {
+export class NgComponentsComponent {
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

@@ -10,7 +10,8 @@
     "test:ci": "echo 'not implemented'",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
     "storybook": "npm run docs:json && start-storybook -p 6006",
-    "build-storybook": "npm run docs:json && build-storybook"
+    "build-storybook": "npm run docs:json && build-storybook",
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {
@@ -28,6 +29,11 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.0.6",
+    "@angular-eslint/builder": "14.0.2",
+    "@angular-eslint/eslint-plugin": "14.0.2",
+    "@angular-eslint/eslint-plugin-template": "14.0.2",
+    "@angular-eslint/schematics": "14.0.2",
+    "@angular-eslint/template-parser": "14.0.2",
     "@angular/cli": "~14.0.6",
     "@angular/compiler-cli": "^14.0.0",
     "@babel/core": "^7.18.9",
@@ -41,7 +47,10 @@
     "@storybook/manager-webpack5": "^6.5.9",
     "@storybook/testing-library": "^0.0.13",
     "@types/jasmine": "~4.0.0",
+    "@typescript-eslint/eslint-plugin": "5.29.0",
+    "@typescript-eslint/parser": "5.29.0",
     "babel-loader": "^8.2.5",
+    "eslint": "^8.18.0",
     "jasmine-core": "~4.1.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",

@@ -1,7 +1,18 @@
 stages:
+  - lint
   - build
   - test
   - publish
+
+ng-lint:
+  stage: lint
+  image: node:16-slim
+  script:
+    - npm install
+    - npm run lint
+  tags:
+    - x86_64
+    - docker
 
 ng-build:
   stage: build
