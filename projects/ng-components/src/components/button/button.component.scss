@@ -1,0 +1,108 @@
+:host {
+  border-radius: 5px;
+  border: none;
+  font-size: 1em;
+  line-height: 20px;
+  font-family: inherit;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &.loading {
+    opacity: 0.5;
+    position: relative;
+    cursor: default;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background:url("data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==") no-repeat 50% 50%;
+    }
+  }
+
+  &.uppercase {
+    text-transform: uppercase;
+  }
+
+  &.full-width {
+    width: 100%;
+    display: block;
+  }
+
+  &.not-stroked {
+    &.size-sm {
+      padding: 5px 16px;
+    }
+    &.size-md {
+      padding: 10px 20px;
+    }
+    &.size-lg {
+      padding: 15px 25px;
+    }
+
+    &.success {
+      background-color: var(--success-color);
+      color: white;
+    }
+
+    &.primary {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    &.accend {
+      background-color: var(--accend-color);
+      color: white;
+    }
+
+    &.danger {
+      background-color: var(--danger-color);
+      color: white;
+    }
+  }
+
+  &.stroked {
+    background-color: transparent;
+
+    &.size-sm {
+      padding: 4px 16px;
+    }
+    &.size-md {
+      padding: 9px 20px;
+    }
+    &.size-lg {
+      padding: 14px 25px;
+    }
+
+    &.success {
+      border: 1px solid var(--success-color);
+      color: var(--success-color);
+    }
+
+    &.primary {
+      border: 1px solid var(--primary-color);
+      color: var(--primary-color);
+    }
+
+    &.accend {
+      border: 1px solid var(--accend-color);
+      color: var(--accend-color);
+    }
+
+    &.danger {
+      border: 1px solid var(--danger-color);
+      color: var(--danger-color);
+    }
+  }
+}

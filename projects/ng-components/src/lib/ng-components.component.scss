@@ -1,9 +1,0 @@
-@use 'variables';
-
-:host {
-  color: red;
-
-  @media (min-width: map-get(variables.$breakpoints, "phone")) {
-    color: var(--text-color);
-  }
-}
