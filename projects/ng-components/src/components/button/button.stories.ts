@@ -1,5 +1,6 @@
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { ButtonComponent } from './button.component';
+import { ButtonModule } from './button.module';
 
 export default {
   title: 'Sitemule-Ui/Button',
@@ -8,7 +9,7 @@ export default {
   },
   decorators: [
     moduleMetadata({
-      imports: [],
+      imports: [ButtonModule],
     }),
   ],
 } as Meta;
