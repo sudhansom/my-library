@@ -123,7 +123,52 @@
             "templateData": "<ng-content></ng-content>\n"
         }
     ],
-    "modules": [],
+    "modules": [
+        {
+            "name": "ButtonModule",
+            "id": "module-ButtonModule-d70f2a550612c81e59f7ebb83915f7baaa0f633707d0bc74e14c60eb511aa29eadb4cc4c8218e26dbcfac21e2feea85e833621123f4350eb96fd3b63f1ec147c",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/ng-components/src/components/button/button.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { ButtonComponent } from './button.component';\n\n@NgModule({\n  declarations: [ButtonComponent],\n  imports: [],\n  exports: [ButtonComponent],\n  providers: [],\n})\nexport class ButtonModule {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
     "miscellaneous": {
         "variables": [
             {
