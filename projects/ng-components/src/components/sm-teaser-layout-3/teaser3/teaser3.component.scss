@@ -1,11 +1,22 @@
 :host {
   .teaser {
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
     &__image-container {
       background-image: var(--background-image);
       img{
         max-width: 100%;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
       }
 
+    }
+    &__text-container {
+      padding-bottom: 37px;
+      .header {
+        margin: 0;
+      }
     }
   }
 }
