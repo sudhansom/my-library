@@ -1,0 +1,14 @@
+:host {
+  .container {
+    max-width: 1015px;
+    margin: auto;
+    padding: 100px 50px;
+    background-color: #f6fafa;
+    text-align: center;
+    .teaser-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+  }
+}

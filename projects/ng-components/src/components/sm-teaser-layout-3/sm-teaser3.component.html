@@ -1,0 +1,8 @@
+<div class="container" *ngIf="teaserStack">
+  <h2 *ngIf="teaserStack.title" class="teaser-stack-title">
+    {{ teaserStack.title }}
+  </h2>
+  <div class="teaser-container">
+    <sm-teaser-3 *ngFor="let teaser of teaserStack.teasers" [teaser]="teaser"></sm-teaser-3>
+  </div>
+</div>

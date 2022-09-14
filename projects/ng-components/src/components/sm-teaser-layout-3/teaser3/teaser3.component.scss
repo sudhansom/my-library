@@ -1,0 +1,11 @@
+:host {
+  .teaser {
+    &__image-container {
+      background-image: var(--background-image);
+      img{
+        max-width: 100%;
+      }
+
+    }
+  }
+}
