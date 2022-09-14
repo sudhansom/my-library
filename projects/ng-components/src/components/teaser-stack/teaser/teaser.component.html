@@ -1,0 +1,29 @@
+<ng-container [ngSwitch]="layout">
+  <sm-teaser-layout-1
+    [teaserHeight]="teaserHeight"
+    [imageUrl]="imageUrl"
+    [header]="header"
+    [description]="description"
+    [border]="border"
+    [borderColor]="borderColor"
+    [textColor]="textColor"
+    [backgroundColor]="backgroundColor"
+    [backgroundImageSize]="backgroundImageSize"
+    [backgroundImagePosition]="backgroundImagePosition"
+    *ngSwitchCase="'layout-1'">
+  </sm-teaser-layout-1>
+  <sm-teaser-layout-2
+    [teaserHeight]="teaserHeight"
+    [imageUrl]="imageUrl"
+    [header]="header"
+    [description]="description"
+    [border]="border"
+    [borderColor]="borderColor"
+    [textColor]="textColor"
+    [backgroundColor]="backgroundColor"
+    [backgroundImageSize]="backgroundImageSize"
+    [backgroundImagePosition]="backgroundImagePosition"
+    *ngSwitchCase="'layout-2'">
+  </sm-teaser-layout-2>
+  <div *ngSwitchDefault>Unknown layout: {{layout}}</div>
+</ng-container>

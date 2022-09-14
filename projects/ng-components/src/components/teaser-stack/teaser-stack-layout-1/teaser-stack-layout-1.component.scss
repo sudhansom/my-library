@@ -1,0 +1,51 @@
+@use 'variables';
+.teaser-stack-title {
+  font-size: 32px;
+  color: #123456;
+  padding: 24px 0 0;
+}
+.teaser-stack {
+  margin: 20px auto;
+  padding: 10px;
+  font-family: var(--font-family);
+}
+
+.no-float {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+}
+
+.float sm-teaser {
+  display: block;
+  margin-bottom: 10px;
+}
+
+h2 {
+  text-align: center;
+  color: var(--text-color);
+  font-family: var(--font-family);
+  font-size: 40px;
+  line-height: 43px;
+  margin: 20px auto;
+}
+
+@media (min-width: map-get(variables.$breakpoints, "phone")) {
+  .no-float {
+    grid-template-columns: repeat(var(--column-count), 1fr);
+  }
+  .float ngx-masonry {
+    margin-right: -10px;
+  }
+  .float sm-teaser {
+    width: calc(100% / var(--column-count) - 10px);
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: map-get(variables.$breakpoints, "phone")) and (max-width: map-get(variables.$breakpoints, "tablet")) {
+  .teaser-stack {
+    --column-count: 2 !important; // Force 2 items per row in tablets
+  }
+}
