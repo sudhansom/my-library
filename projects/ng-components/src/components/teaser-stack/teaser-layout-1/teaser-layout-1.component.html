@@ -1,0 +1,19 @@
+<section
+  class="teaser"
+  [class.border]="border"
+  [style.--border-color]="borderColor ? borderColor : '#DBDBDB'"
+  [style.--image-height]="teaserHeightForTemplate"
+  [style.--background-color]="backgroundColor"
+  [style.--text-color]="textColor"
+  [style.--background-image-size]="backgroundImageSize"
+>
+  <div class="teaser__image-container">
+    <img src="{{ imageUrl }}" width="100%" alt="{{ header }}" />
+  </div>
+  <div class="teaser__text-container">
+    <h3 class="text text--h3">{{ header }}</h3>
+    <p class="text text--p">
+      {{ description }}
+    </p>
+  </div>
+</section>

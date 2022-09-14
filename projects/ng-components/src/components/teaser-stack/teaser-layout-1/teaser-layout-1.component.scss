@@ -1,0 +1,47 @@
+:host {
+  .teaser {
+    border-radius: 5px;
+    overflow: hidden;
+    height: 100%;
+    background-color: var(--background-color);
+    &.border {
+      border: 1px solid var(--border-color);
+    }
+    &__image-container {
+      overflow: hidden;
+      img {
+        object-fit: var(--background-image-size);
+        height: var(--image-height);
+        transform: scale(1);
+        transition-duration: 0.5s;
+        cursor: pointer;
+        display: block;
+      }
+      &:hover img {
+        transform: scale(1.08);
+      }
+    }
+    &__text-container {
+      margin: 15px 20px 28px;
+    }
+  }
+  .text {
+    color: var(--text-color);
+    text-align: center;
+    &--h3 {
+      font-size: 21px;
+      line-height: 20px;
+      font-weight: var(--bold-font-weight);
+      margin: 0;
+    }
+    &--p {
+      font-size: 14px;
+      line-height: 19px;
+      margin: 5px 0 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+}

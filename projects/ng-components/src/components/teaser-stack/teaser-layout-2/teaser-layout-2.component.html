@@ -1,0 +1,24 @@
+<div
+  class="teaser"
+  *ngIf="teaserHeight"
+  [style.--background-image]="'url(' + imageUrl + ')'"
+  [style.--teaser-height]="teaserHeight + 'px'"
+  [style.--background-color]="backgroundColor"
+  [style.--background-image-position]="backgroundImagePosition"
+  [style.--background-image-size]="backgroundImageSize"
+>
+  <div class="teaser__titles">
+    <h3>{{ header }}</h3>
+    <p>{{ description }}</p>
+  </div>
+</div>
+<div
+  class="teaser"
+  *ngIf="!teaserHeight"
+>
+  <img src="{{imageUrl}}">
+  <div class="teaser__titles">
+    <h3>{{ header }}</h3>
+    <p>{{ description }}</p>
+  </div>
+</div>

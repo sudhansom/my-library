@@ -1,5 +1,7 @@
 @import '~normalize.css';
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,800;1,400;1,800&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -12,7 +14,7 @@
   --text-color: #353535;
   --default-font-size: 12px;
   --bold-font-weight: 800;
-  --font-family: "Roboto";
+  --font-family: 'Open Sans', sans-serif;
   --max-content-width: 1200px;
   --content-margin: 20px;
 }
