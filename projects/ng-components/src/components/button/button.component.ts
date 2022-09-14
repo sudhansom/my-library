@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular/core';
 
 
 type ButtonSize = 'sm' | 'md' | 'lg';
@@ -7,6 +7,7 @@ type ButtonSize = 'sm' | 'md' | 'lg';
   selector: '[sitemule-button]',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ButtonComponent {
   @Input() loading = false;
