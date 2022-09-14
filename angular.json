@@ -51,11 +51,6 @@
         "build": {
           "options": {
             "tsConfig": "tsconfig.json",
-            "stylePreprocessorOptions": {
-              "includePaths": [
-                "projects"
-              ]
-            },
             "styles": ["./projects/styles.scss"],
             "scripts": []
           }
