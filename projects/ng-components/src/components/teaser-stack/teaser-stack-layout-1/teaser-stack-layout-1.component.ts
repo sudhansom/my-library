@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { ITeaserStackLayout } from '../teaser-stack.interface';
 import { ITeaser } from '../teaser/teaser.component';
 
@@ -7,6 +7,7 @@ import { ITeaser } from '../teaser/teaser.component';
   selector: 'sm-teaser-stack-layout-1',
   templateUrl: './teaser-stack-layout-1.component.html',
   styleUrls: ['./teaser-stack-layout-1.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TeaserStackLayout1Component {
   @Input() teaserHeight?: number;

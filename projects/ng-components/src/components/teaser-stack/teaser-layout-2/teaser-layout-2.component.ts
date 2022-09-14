@@ -1,10 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { IBackgroundImagePosition, IBackgroundImageSize } from '../teaser-stack.interface';
 
 @Component({
   selector: 'sm-teaser-layout-2',
   templateUrl: './teaser-layout-2.component.html',
   styleUrls: ['./teaser-layout-2.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TeaserLayout2Component {
   @Input() teaserHeight?: number;
