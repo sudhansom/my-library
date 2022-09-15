@@ -1,16 +1,19 @@
 :host {
   .teaser {
+    font-family: var(--font-family);
     border-radius: 5px;
-    box-shadow: 0 2px 7px 0  rgba(0,0,0, 0.1);
     background-color: var(--background-color);
     overflow: hidden;
-    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    height: 100%;
 
     &.border {
-      box-shadow: 0 2px 7px 0 rgba( var(--border-color), 0.1);
+      box-shadow: 0 2px 7px 0 var(--border-color);
     }
 
     &__image-container {
+      padding: 10px;
       img {
         width: 100%;
         height: var(--teaser-height);
@@ -23,12 +26,13 @@
     &__text-container {
       color: var(--text-color);
       text-align: center;
-      padding: 10px 20px 37px;
+      padding: 0 20px 20px;
 
       &__header {
         font-size: 18px;
         line-height: 22px;
         margin: 0;
+        font-weight: normal;
       }
 
       &__description {

@@ -257,12 +257,93 @@ _10_Layout1WithMixedTeaser.args = {
       };
     }) as ITeaser[],
 };
+
+const images = [
+  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/308490B.JPG&width=218&height=175"',
+  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=pp-static/images/QXX_display.png&width=218&height=175"',
+  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/623XB.jpg&width=218&height=175"',
+  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/W011100B.png&width=218&height=175"',
+  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/4214037b.jpg&width=218&height=175"',
+  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=pp-static/images/4218087Ba.jpg&width=218&height=175"',
+  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/4243525B2.JPG&width=218&height=175"',
+  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/11663B.jpg&width=218&height=175"',
+  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=pp-static/images/product/70218Ba.jpg&width=218&height=175"',
+  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=pp-static/images/85553.jpg&width=218&height=175"',
+]
 export const _11_Layout3WithResponsiveHeight = Template.bind({});
-_11_Layout3WithResponsiveHeight.storyName = 'Layout 3';
+_11_Layout3WithResponsiveHeight.storyName = 'Layout 3 with responsive height';
 _11_Layout3WithResponsiveHeight.args = {
-  columnCount: teaserstack.columnCount,
+  columnCount: 5,
   layout: 'layout-3',
-  title: teaserstack.title,
+  title: 'Layout-3 with responsive height',
+  teasers: images.map((imageUrl, index) => {
+    return {
+      imageUrl,
+      header: `Header ${index}`,
+      description: `Description ${index}`,
+      border: true,
+      borderColor: '#DBDBDB',
+      backgroundImageSize: 'contain',
+      backgroundImagePosition: 'center center',
+    };
+  }) as ITeaser[]
+};
+export const _12_Layout3WithFixedHeight = Template.bind({});
+_12_Layout3WithFixedHeight.storyName = 'Layout 3 with fix height';
+_12_Layout3WithFixedHeight.args = {
+  columnCount: 5,
+  layout: 'layout-3',
+  title: 'Layout-3 with fix height',
+  description: 'Teasers have link',
   teaserHeight: 150,
-  teasers: teaserstack.teasers as ITeaser[],
+  teasers: images.map((imageUrl, index) => {
+    return {
+      imageUrl,
+      link: `/index/${index}`,
+      header: `Header ${index}`,
+      description: `Description ${index}`,
+      border: true,
+      borderColor: '#DBDBDB',
+      backgroundImageSize: 'contain',
+      backgroundImagePosition: 'center center',
+    };
+  }) as ITeaser[]
+};
+export const _13_Layout3WithFixedHeight = Template.bind({});
+_13_Layout3WithFixedHeight.storyName = 'Layout 3 with fix height and without text';
+_13_Layout3WithFixedHeight.args = {
+  columnCount: 5,
+  layout: 'layout-3',
+  title: 'Layout-3 with fix height and without text',
+  description: 'Teasers have link',
+  teaserHeight: 150,
+  teasers: images.map((imageUrl, index) => {
+    return {
+      imageUrl,
+      link: `/index/${index}`,
+      border: true,
+      borderColor: '#DBDBDB',
+      backgroundImageSize: 'contain',
+      backgroundImagePosition: 'center center',
+    };
+  }) as ITeaser[]
+};
+
+export const _14_Layout3WithResponsiveHeight = Template.bind({});
+_14_Layout3WithResponsiveHeight.storyName = 'Layout 3 with responsive height and without text';
+_14_Layout3WithResponsiveHeight.args = {
+  columnCount: 5,
+  layout: 'layout-3',
+  title: 'Layout-3 with responsive height and without text',
+  description: 'Teasers have link',
+  teasers: images.map((imageUrl, index) => {
+    return {
+      imageUrl,
+      link: `/index/${index}`,
+      border: true,
+      borderColor: '#DBDBDB',
+      backgroundImageSize: 'contain',
+      backgroundImagePosition: 'center center',
+    };
+  }) as ITeaser[]
 };
