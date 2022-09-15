@@ -6,6 +6,7 @@ export * from './components/button/button.component';
 export * from './components/button/button.module';
 export * from "./components/teaser-stack/teaser-layout-1/teaser-layout-1.component";
 export * from "./components/teaser-stack/teaser-layout-2/teaser-layout-2.component";
+export * from "./components/teaser-stack/teaser-layout-3/teaser-layout-3.component";
 export * from "./components/teaser-stack/teaser-stack-layout-1/teaser-stack-layout-1.component";
 export * from "./components/teaser-stack/teaser-stack.component";
 export * from "./components/teaser-stack/teaser-stack.interface";

@@ -27,5 +27,19 @@
     [backgroundImagePosition]="backgroundImagePosition"
     *ngSwitchCase="'layout-2'">
   </sm-teaser-layout-2>
+  <sm-teaser-layout-3
+    [teaserHeight]="teaserHeight"
+    [imageUrl]="imageUrl"
+    [header]="header"
+    [description]="description"
+    [link]="link"
+    [border]="border"
+    [borderColor]="borderColor"
+    [textColor]="textColor"
+    [backgroundColor]="backgroundColor"
+    [backgroundImageSize]="backgroundImageSize"
+    [backgroundImagePosition]="backgroundImagePosition"
+    *ngSwitchCase="'layout-3'">
+  </sm-teaser-layout-3>
   <div *ngSwitchDefault>Unknown layout: {{layout}}</div>
 </ng-container>
