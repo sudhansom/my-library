@@ -7,5 +7,5 @@ import { ITeaser } from '../sm-teaser3.component';
   styleUrls: ['./teaser3.component.scss'],
 })
 export class TeaserComponent {
-  @Input() teaser: ITeaser;
+  @Input() teaser: ITeaser | undefined;
 }

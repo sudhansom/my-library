@@ -257,3 +257,11 @@ _10_Layout1WithMixedTeaser.args = {
       };
     }) as ITeaser[],
 };
+export const _11_Layout3WithResponsiveHeight = Template.bind({});
+_11_Layout3WithResponsiveHeight.storyName = 'Layout 3';
+_11_Layout3WithResponsiveHeight.args = {
+  columnCount: teaserstack.columnCount,
+  layout: 'layout-3',
+  title: teaserstack.title,
+  teasers: teaserstack.teasers as ITeaser[],
+};

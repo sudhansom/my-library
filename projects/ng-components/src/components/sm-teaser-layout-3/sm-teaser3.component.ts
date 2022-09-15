@@ -17,7 +17,7 @@ export interface ITeaser {
   styleUrls: ['./sm-teaser3.component.scss'],
 })
 export class TeaserStackComponent {
-  @Input() teaserStack: ITeaserStack;
+  @Input() teaserStack: ITeaserStack | undefined;
 
   constructor() {}
 }
