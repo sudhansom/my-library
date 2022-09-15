@@ -1,11 +1,21 @@
-<div class="teaser">
-  <div
-    class="teaser__image-container"
-    [style.--background-image]="'url(' + imageUrl + ')'"
-  >
+<a
+  class="teaser"
+  [class.border]="border"
+  [style.--border-color]="borderColor"
+  [style.--background-image]="'url(' + imageUrl + ')'"
+  [style.--teaser-height]="teaserHeight + 'px'"
+  [style.--text-color]="textColor"
+  [style.--background-color]="backgroundColor"
+  [style.--background-image-size]="backgroundImageSize"
+  [style.--background-image-position]="backgroundImagePosition"
+>
+  <div class="teaser__image-container">
     <img class="image" src="{{ imageUrl }}" alt="{{ header }}" />
   </div>
   <div class="teaser__text-container">
     <h3 class="teaser__text-container__header">{{ header }}</h3>
+    <p *ngIf="description" class="teaser__text-container__description">
+      {{ description }}
+    </p>
   </div>
-</div>
+</a>

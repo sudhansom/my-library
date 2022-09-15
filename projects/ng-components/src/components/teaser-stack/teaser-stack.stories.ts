@@ -263,5 +263,6 @@ _11_Layout3WithResponsiveHeight.args = {
   columnCount: teaserstack.columnCount,
   layout: 'layout-3',
   title: teaserstack.title,
+  teaserHeight: 150,
   teasers: teaserstack.teasers as ITeaser[],
 };

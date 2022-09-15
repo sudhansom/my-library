@@ -1,27 +1,44 @@
 :host {
   .teaser {
     border-radius: 5px;
-    box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+    box-shadow: 0 2px 7px 0  rgba(0,0,0, 0.1);
+    background-color: var(--background-color);
     overflow: hidden;
+    cursor: pointer;
+
+    &.border {
+      box-shadow: 0 2px 7px 0 rgba( var(--border-color), 0.1);
+    }
 
     &__image-container {
       img {
         width: 100%;
-        height: 150px;
+        height: var(--teaser-height);
         display: block;
-        object-fit: cover;
+        object-fit: var(--background-image-size);
+        object-position: var(--background-image-position);
       }
     }
+
     &__text-container {
+      color: var(--text-color);
+      text-align: center;
+      padding: 10px 20px 37px;
+
       &__header {
-        margin: 0;
-        color: var(--text-color);
-        font-family: var(--font-family);
         font-size: 18px;
         line-height: 22px;
-        text-align: center;
-        padding: 10px 0 37px;
+        margin: 0;
+      }
+
+      &__description {
+        font-size: 14px;
+        line-height: 19px;
+        margin: 5px 0 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
       }
     }
   }
