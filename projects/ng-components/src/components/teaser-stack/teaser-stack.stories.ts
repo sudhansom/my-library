@@ -231,3 +231,19 @@ _9_Layout2WithReadMoreLink.args = {
   readMoreLink: '/abc/def',
   teasers: teaserstack.teasers as ITeaser[],
 };
+
+export const _10_Layout1WithMixedTeaser = Template.bind({});
+_10_Layout1WithMixedTeaser.storyName =
+  'Layout 1 teaser stack with links';
+_10_Layout1WithMixedTeaser.args = {
+  columnCount: teaserstack.columnCount,
+  layout: teaserstack.layout as any,
+  title: teaserstack.title,
+  teasers: teaserstack.teasers
+    .map((teaser, index) => {
+      return {
+        ...teaser,
+        link: `/index/${index}`,
+      };
+    }) as ITeaser[],
+};

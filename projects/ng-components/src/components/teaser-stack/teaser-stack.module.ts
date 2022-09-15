@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { NgxMasonryModule } from 'ngx-masonry';
 import { TeaserLayout1Component } from './teaser-layout-1/teaser-layout-1.component';
@@ -16,7 +17,7 @@ import { TeaserComponent } from './teaser/teaser.component';
     TeaserLayout1Component,
     TeaserLayout2Component,
   ],
-  imports: [CommonModule, NgxMasonryModule, RouterModule],
+  imports: [CommonModule, NgxMasonryModule, RouterModule, BrowserAnimationsModule],
   exports: [TeaserStackComponent],
   providers: [],
 })

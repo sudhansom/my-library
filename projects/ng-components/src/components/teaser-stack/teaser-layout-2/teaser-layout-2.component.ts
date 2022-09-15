@@ -8,6 +8,7 @@ import { IBackgroundImagePosition, IBackgroundImageSize } from '../teaser-stack.
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TeaserLayout2Component {
+  @Input() link?: string;
   @Input() teaserHeight?: number;
   @Input() imageUrl?: string;
   @Input() header?: string;

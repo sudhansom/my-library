@@ -1,5 +1,6 @@
-<div
+<a
   class="teaser"
+  [routerLink]="link"
   *ngIf="teaserHeight"
   [style.--background-image]="'url(' + imageUrl + ')'"
   [style.--teaser-height]="teaserHeight + 'px'"
@@ -11,9 +12,10 @@
     <h3>{{ header }}</h3>
     <p>{{ description }}</p>
   </div>
-</div>
-<div
+</a>
+<a
   class="teaser"
+  [routerLink]="link"
   *ngIf="!teaserHeight"
 >
   <img src="{{imageUrl}}">
@@ -21,4 +23,4 @@
     <h3>{{ header }}</h3>
     <p>{{ description }}</p>
   </div>
-</div>
+</a>
