@@ -4,7 +4,7 @@ import { TeaserComponent } from './teaser3/teaser3.component';
 
 
 export default {
-  title: 'Sitemule-Ui/sm-teaser-layout-3',
+  title: 'Sitemule-UI/sm-teaser-layout-3',
   component: TeaserStackComponent,
 
   decorators: [
@@ -16,68 +16,67 @@ export default {
 } as Meta;
 
 const teaserstack = {
-  columnCount: 3,
-  layout: 'gggg',
+  columnCount: 4,
   title: 'A new type of teaser stack',
   teasers: [
     {
       imageUrl:
-        './images/1.png',
+        'https://www.fotoagent.dk/images/w/QfRDscE-fLRME9np7xlyhA/s/12414/138/14901.jpg?v=109559348',
       header: 'Trykluftværktøj',
     },
     {
       imageUrl:
-        './images/2.png',
+        'https://www.fotoagent.dk/images/w/QfRDscE-fLRME9np7xlyhA/s/12414/138/14751.jpg?v=109559333',
       header: 'Slibematerialer',
     },
     {
       imageUrl:
-        './images/3.png',
+        'https://www.fotoagent.dk/images/w/QfRDscE-fLRME9np7xlyhA/s/12414/138/14851.jpg?v=109559343',
       header: 'Automatik',
     },
     {
       imageUrl:
-        './images/4.png',
+        'https://www.fotoagent.dk/images/w/QfRDscE-fLRME9np7xlyhA/s/12414/138/15051.jpg?v=109559363',
       header: 'Håndværktøj',
     },
     {
       imageUrl:
-        './images/5.png',
+        'https://www.fotoagent.dk/images/w/QfRDscE-fLRME9np7xlyhA/s/12414/138/14901.jpg?v=109559348',
       header: 'Akkuværktøj',
     },
     {
       imageUrl:
-        './images/6.png',
+        'https://www.fotoagent.dk/images/w/QfRDscE-fLRME9np7xlyhA/s/12414/138/14751.jpg?v=109559333',
       header: 'El-montageværktøj',
     },
     {
       imageUrl:
-        './images/7.png',
+        'https://www.fotoagent.dk/images/w/QfRDscE-fLRME9np7xlyhA/s/12414/138/14851.jpg?v=109559343',
       header: 'Automatik',
     },
     {
       imageUrl:
-        './images/8.png',
+        'https://www.fotoagent.dk/images/w/QfRDscE-fLRME9np7xlyhA/s/12414/138/15051.jpg?v=109559363',
       header: 'Gearudvekslinger',
     },
     {
       imageUrl:
-        './images/9.png',
+        'https://www.fotoagent.dk/images/w/QfRDscE-fLRME9np7xlyhA/s/12414/138/15061.jpg?v=109559364',
       header: 'Aflastningsarme',
     },
     {
       imageUrl:
-        './images/10.png',
+        'https://www.fotoagent.dk/images/w/QfRDscE-fLRME9np7xlyhA/s/12414/138/14841.jpg?v=109559342',
       header: 'Krafttoppe og bits',
     },
     {
       imageUrl:
-        './images/11.png',
+        'https://cdn.bauhaus.dk/media/catalog/product/cache/c60540681005c49dab98fb6b7607af80/8/8/888ab756_1618_4ac5_96b4_d50b2b930854_1.jpg',
       header: 'Automatik',
     },
     {
       imageUrl:
-        './images/12.png',
+        'https://cdn.bauhaus.dk/media/catalog/product/cache/c60540681005c49dab98fb6b7607af80/8/8/888ab756_1618_4ac5_96b4_d50b2b930854_1.jpg',
       header: 'Krafttoppe',
     },
 

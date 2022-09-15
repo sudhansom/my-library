@@ -1,9 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 export interface ITeaserStack {
-  teaserHeight?: number;
   columnCount?: number;
-  layout: 'gggg' | 'hhhh';
   title?: string;
   teasers: ITeaser[];
 }

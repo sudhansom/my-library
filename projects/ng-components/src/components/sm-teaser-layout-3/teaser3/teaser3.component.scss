@@ -1,21 +1,31 @@
+@use '../../../../../variables';
+
 :host {
   .teaser {
     border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.1);
+    background-color: map-get(variables.$text-colors, 'white');
 
     &__image-container {
-      background-image: var(--background-image);
-      img{
-        max-width: 100%;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
+      img {
+        width: 100%;
+        height: 150px;
+        border-radius: 5px 5px 0 0;
+        display: block;
+        object-fit: cover;
       }
-
     }
     &__text-container {
-      padding-bottom: 37px;
-      .header {
+
+      &__header {
         margin: 0;
+        color: map-get(variables.$text-colors, 'black');
+        font-family: var(--font-family);
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        padding: 10px 0 37px;
+        border-radius: 0 0 5px 5px;
       }
     }
   }
