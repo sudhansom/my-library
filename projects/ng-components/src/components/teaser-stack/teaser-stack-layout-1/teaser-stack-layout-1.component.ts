@@ -14,6 +14,7 @@ export class TeaserStackLayout1Component {
   @Input() columnCount?: number = 3;
   @Input() rowCount?: number;
   @Input() title?: string;
+  @Input() description?: string;
   @Input() teasers: ITeaser[] = [];
   @Input() backgroundColor?: string;
   @Input() fullPageWidth? = false;

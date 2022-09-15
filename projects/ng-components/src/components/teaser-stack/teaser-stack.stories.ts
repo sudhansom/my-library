@@ -223,6 +223,7 @@ _9_Layout2WithReadMoreLink.args = {
   columnCount: teaserstack.columnCount,
   layout: 'layout-2',
   title: teaserstack.title,
+  description: 'Description test',
   fullPageWidth: true,
   rowCount: 1,
   teaserHeight: 300,

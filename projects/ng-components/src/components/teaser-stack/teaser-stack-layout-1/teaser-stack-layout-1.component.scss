@@ -12,10 +12,18 @@
   }
 }
 .teaser-stack-title {
+  text-align: center;
   font-size: 32px;
-  color: #123456;
+  color: var(--text-color);
   margin: 0;
   font-family: var(--font-family);
+  line-height: 43px;
+}
+.teaser-stack-description {
+  margin: 0;
+  text-align: center;
+  font-family: var(--font-family);
+  margin-top: 5px;
 }
 .teaser-stack {
   margin-top: 20px;
@@ -30,15 +38,6 @@
 .float sm-teaser {
   display: block;
   margin-bottom: 10px;
-}
-
-h2 {
-  text-align: center;
-  color: var(--text-color);
-  font-family: var(--font-family);
-  font-size: 40px;
-  line-height: 43px;
-  margin: 20px auto;
 }
 
 .teaser-stack-read-more-link {

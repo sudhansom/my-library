@@ -3,6 +3,9 @@
     <h2 *ngIf="title" class="teaser-stack-title">
       {{ title }}
     </h2>
+    <p *ngIf="description" class="teaser-stack-description">
+      {{ description }}
+    </p>
     <div
       class="teaser-stack"
       [ngClass]="teaserHeight ? 'no-float' : 'float'"
