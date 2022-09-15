@@ -31,13 +31,13 @@
 
 .no-float {
   display: grid;
-  gap: 20px;
+  gap: var(--content-margin);
   grid-template-columns: 1fr;
 }
 
 .float sm-teaser {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: var(--content-margin);
 }
 
 .teaser-stack-read-more-link {
@@ -58,12 +58,12 @@
     grid-template-columns: repeat(var(--column-count), 1fr);
   }
   .float ngx-masonry {
-    margin-right: -10px;
+    margin-right: -var(--content-margin);
   }
   .float sm-teaser {
-    width: calc(100% / var(--column-count) - 10px);
-    margin-right: 10px;
-    margin-bottom: 10px;
+    width: calc(100% / var(--column-count) - var(--content-margin));
+    margin-right: var(--content-margin);
+    margin-bottom: var(--content-margin);
   }
 }
 

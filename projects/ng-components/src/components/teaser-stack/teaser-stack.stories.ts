@@ -5,7 +5,7 @@ import { TeaserStackModule } from './teaser-stack.module';
 import { ITeaser } from './teaser/teaser.component';
 
 export default {
-  title: 'Sitemule-Page/Teaser-Stack-Copy',
+  title: 'Sitemule-Page/Teaser-Stack',
   component: TeaserStackComponent,
 
   decorators: [
@@ -20,6 +20,7 @@ const teaserstack = {
   columnCount: 3,
   layout: 'layout-1',
   title: 'Science articles header',
+  description: 'Description test',
   teasers: [
     {
       imageUrl:
@@ -99,6 +100,7 @@ _1_Layout1WithFixHeight.args = {
   columnCount: teaserstack.columnCount,
   layout: teaserstack.layout as any,
   title: teaserstack.title,
+  description: teaserstack.description,
   teaserHeight: 350,
   teasers: teaserstack.teasers as ITeaser[],
 };
@@ -109,6 +111,7 @@ _2_Layout1WithResponsiveHeight.args = {
   columnCount: teaserstack.columnCount,
   layout: teaserstack.layout as any,
   title: teaserstack.title,
+  description: teaserstack.description,
   teasers: teaserstack.teasers as ITeaser[],
 };
 
@@ -118,6 +121,7 @@ _3_Layout2WithFixHeight.args = {
   columnCount: teaserstack.columnCount,
   layout: 'layout-2',
   title: teaserstack.title,
+  description: teaserstack.description,
   teaserHeight: 300,
   teasers: teaserstack.teasers as ITeaser[],
 };
@@ -128,6 +132,7 @@ _4_Layout2WithResponsiveHeight.args = {
   columnCount: teaserstack.columnCount,
   layout: 'layout-2',
   title: teaserstack.title,
+  description: teaserstack.description,
   teasers: teaserstack.teasers as ITeaser[],
 };
 
@@ -137,6 +142,7 @@ _5_Layout2WithBackgroundColor.args = {
   columnCount: teaserstack.columnCount,
   layout: 'layout-2',
   title: teaserstack.title,
+  description: teaserstack.description,
   teaserHeight: 300,
   backgroundColor: '#dddddd',
   teasers: teaserstack.teasers.map(teaser => {
@@ -154,6 +160,7 @@ _6_Layout2WithResponsiveHeight.args = {
   columnCount: teaserstack.columnCount,
   layout: 'layout-2',
   title: teaserstack.title,
+  description: teaserstack.description,
   fullPageWidth: true,
   teasers: teaserstack.teasers as ITeaser[],
 };
@@ -166,6 +173,7 @@ _7_Layout1WithMixedTeaser.args = {
   columnCount: teaserstack.columnCount,
   layout: teaserstack.layout as any,
   title: teaserstack.title,
+  description: teaserstack.description,
   teasers: teaserstack.teasers
     .map((teaser, index) => {
       const override = (() => {
@@ -211,6 +219,7 @@ _8_Layout2WithRowCount.args = {
   columnCount: teaserstack.columnCount,
   layout: 'layout-2',
   title: teaserstack.title,
+  description: teaserstack.description,
   fullPageWidth: true,
   rowCount: 1,
   teaserHeight: 300,
@@ -223,7 +232,7 @@ _9_Layout2WithReadMoreLink.args = {
   columnCount: teaserstack.columnCount,
   layout: 'layout-2',
   title: teaserstack.title,
-  description: 'Description test',
+  description: teaserstack.description,
   fullPageWidth: true,
   rowCount: 1,
   teaserHeight: 300,
@@ -239,6 +248,7 @@ _10_Layout1WithMixedTeaser.args = {
   columnCount: teaserstack.columnCount,
   layout: teaserstack.layout as any,
   title: teaserstack.title,
+  description: teaserstack.description,
   teasers: teaserstack.teasers
     .map((teaser, index) => {
       return {
