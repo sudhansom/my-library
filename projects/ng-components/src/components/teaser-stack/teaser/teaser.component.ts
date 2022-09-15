@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { IBackgroundImagePosition, IBackgroundImageSize, ITeaserLayout } from '../teaser-stack.interface';
 
 export interface ITeaser {
+  link?: string;
   teaserHeight?: number;
   imageUrl?: string;
   header?: string;
@@ -22,6 +23,7 @@ export interface ITeaser {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TeaserComponent {
+  @Input() link?: string;
   @Input() teaserHeight?: number;
   @Input() imageUrl?: string;
   @Input() header?: string;

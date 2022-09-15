@@ -11,6 +11,7 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TeaserLayout1Component {
+  @Input() link?: string;
   @Input() teaserHeight?: number;
   @Input() imageUrl?: string;
   @Input() header?: string;

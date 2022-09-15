@@ -4,6 +4,9 @@
     overflow: hidden;
     height: 100%;
     background-color: var(--background-color);
+    display: block;
+    text-decoration: none;
+
     &.border {
       border: 1px solid var(--border-color);
     }
@@ -14,7 +17,6 @@
         height: var(--image-height);
         transform: scale(1);
         transition-duration: 0.5s;
-        cursor: pointer;
         display: block;
       }
       &:hover img {

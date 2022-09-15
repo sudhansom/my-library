@@ -12,10 +12,18 @@
   }
 }
 .teaser-stack-title {
+  text-align: center;
   font-size: 32px;
-  color: #123456;
+  color: var(--text-color);
   margin: 0;
   font-family: var(--font-family);
+  line-height: 43px;
+}
+.teaser-stack-description {
+  margin: 0;
+  text-align: center;
+  font-family: var(--font-family);
+  margin-top: 5px;
 }
 .teaser-stack {
   margin-top: 20px;
@@ -32,13 +40,17 @@
   margin-bottom: 10px;
 }
 
-h2 {
+.teaser-stack-read-more-link {
   text-align: center;
-  color: var(--text-color);
-  font-family: var(--font-family);
-  font-size: 40px;
-  line-height: 43px;
-  margin: 20px auto;
+  margin-top: var(--content-margin);
+  a {
+    text-decoration: none;
+    color: var(--primary-color);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 @media (min-width: map-get(variables.$breakpoints, "phone")) {

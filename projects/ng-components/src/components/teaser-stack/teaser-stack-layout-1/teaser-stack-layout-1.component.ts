@@ -12,10 +12,14 @@ import { ITeaser } from '../teaser/teaser.component';
 export class TeaserStackLayout1Component {
   @Input() teaserHeight?: number;
   @Input() columnCount?: number = 3;
+  @Input() rowCount?: number;
   @Input() title?: string;
+  @Input() description?: string;
   @Input() teasers: ITeaser[] = [];
   @Input() backgroundColor?: string;
   @Input() fullPageWidth? = false;
+  @Input() readMoreLink?: string;
+  @Input() readMoreLabel?: string;
   @Input() layout: ITeaserStackLayout = 'layout-1';
 
   get useMasonry() {
@@ -26,5 +30,14 @@ export class TeaserStackLayout1Component {
     return !this.teaserHeight || this.teasers.every(teaser => !teaser.teaserHeight);
   }
 
-  constructor() {}
+  get finalTeasers() {
+    if (this.rowCount && this.columnCount) {
+      const totalItems = this.columnCount * this.rowCount;
+      if (this.teasers.length <= totalItems) {
+        return this.teasers;
+      }
+      return this.teasers.splice(0, totalItems);
+    }
+    return this.teasers;
+  }
 }

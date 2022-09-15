@@ -9,6 +9,8 @@
   background-size: var(--background-image-size);
   position: relative;
   overflow: hidden;
+  display: block;
+  text-decoration: none;
 
   img {
     object-fit: cover;

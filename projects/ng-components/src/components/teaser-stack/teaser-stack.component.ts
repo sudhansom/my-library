@@ -10,11 +10,13 @@ import { ITeaser } from './teaser/teaser.component';
 export class TeaserStackComponent {
   @Input() teaserHeight?: number;
   @Input() columnCount?: number;
+  @Input() rowCount?: number;
   @Input() title?: string;
+  @Input() description?: string;
   @Input() teasers: ITeaser[] = [];
   @Input() backgroundColor?: string;
   @Input() fullPageWidth?: boolean;
+  @Input() readMoreLink?: string;
+  @Input() readMoreLabel?: string;
   @Input() layout: ITeaserStackLayout = 'layout-1';
-
-  constructor() {}
 }

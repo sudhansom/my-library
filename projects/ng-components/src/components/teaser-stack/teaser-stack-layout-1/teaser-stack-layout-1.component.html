@@ -3,6 +3,9 @@
     <h2 *ngIf="title" class="teaser-stack-title">
       {{ title }}
     </h2>
+    <p *ngIf="description" class="teaser-stack-description">
+      {{ description }}
+    </p>
     <div
       class="teaser-stack"
       [ngClass]="teaserHeight ? 'no-float' : 'float'"
@@ -11,13 +14,14 @@
       <ngx-masonry *ngIf="!teaserHeight; else withoutTeaserHeight">
         <sm-teaser
           ngxMasonryItem
-          *ngFor="let teaser of teasers"
+          *ngFor="let teaser of finalTeasers"
           [imageUrl]="teaser?.imageUrl"
           [header]="teaser?.header"
           [description]="teaser?.description"
           [border]="teaser?.border"
           [borderColor]="teaser?.borderColor"
           [textColor]="teaser?.textColor"
+          [link]="teaser?.link"
           [backgroundColor]="teaser?.backgroundColor"
           [backgroundImageSize]="teaser.backgroundImageSize"
           [layout]="teaser.layout || layout"
@@ -27,13 +31,14 @@
       </ngx-masonry>
       <ng-template #withoutTeaserHeight>
         <sm-teaser
-          *ngFor="let teaser of teasers"
+          *ngFor="let teaser of finalTeasers"
           [imageUrl]="teaser?.imageUrl"
           [header]="teaser?.header"
           [description]="teaser?.description"
           [border]="teaser?.border"
           [borderColor]="teaser?.borderColor"
           [textColor]="teaser?.textColor"
+          [link]="teaser?.link"
           [backgroundColor]="teaser?.backgroundColor"
           [backgroundImageSize]="teaser.backgroundImageSize"
           [layout]="teaser.layout || layout"
@@ -41,6 +46,11 @@
           [teaserHeight]="teaser.teaserHeight || teaserHeight"
         ></sm-teaser>
       </ng-template>
+    </div>
+    <div *ngIf="readMoreLink && readMoreLabel" class="teaser-stack-read-more-link">
+      <a [routerLink]="readMoreLink" >
+        {{readMoreLabel}}
+      </a>
     </div>
   </div>
 </div>

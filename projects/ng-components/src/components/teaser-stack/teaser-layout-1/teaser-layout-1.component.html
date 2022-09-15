@@ -1,5 +1,6 @@
-<section
+<a
   class="teaser"
+  [routerLink]="link"
   [class.border]="border"
   [style.--border-color]="borderColor ? borderColor : '#DBDBDB'"
   [style.--image-height]="teaserHeightForTemplate"
@@ -13,7 +14,7 @@
   <div class="teaser__text-container">
     <h3 class="text text--h3">{{ header }}</h3>
     <p class="text text--p">
-      {{ description }}
+      {{ description }} {{link}}
     </p>
   </div>
-</section>
+</a>
