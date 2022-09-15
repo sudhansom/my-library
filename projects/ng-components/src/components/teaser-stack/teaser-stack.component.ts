@@ -13,6 +13,7 @@ export class TeaserStackComponent {
   @Input() title?: string;
   @Input() teasers: ITeaser[] = [];
   @Input() backgroundColor?: string;
+  @Input() fullPageWidth?: boolean;
   @Input() layout: ITeaserStackLayout = 'layout-1';
 
   constructor() {}

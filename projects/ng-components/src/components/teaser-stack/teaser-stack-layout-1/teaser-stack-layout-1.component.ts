@@ -15,6 +15,7 @@ export class TeaserStackLayout1Component {
   @Input() title?: string;
   @Input() teasers: ITeaser[] = [];
   @Input() backgroundColor?: string;
+  @Input() fullPageWidth? = false;
   @Input() layout: ITeaserStackLayout = 'layout-1';
 
   get useMasonry() {
