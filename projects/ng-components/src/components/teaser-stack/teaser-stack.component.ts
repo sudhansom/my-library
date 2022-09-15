@@ -16,6 +16,4 @@ export class TeaserStackComponent {
   @Input() backgroundColor?: string;
   @Input() fullPageWidth?: boolean;
   @Input() layout: ITeaserStackLayout = 'layout-1';
-
-  constructor() {}
 }

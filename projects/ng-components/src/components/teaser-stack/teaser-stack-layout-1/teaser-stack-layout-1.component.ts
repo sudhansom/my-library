@@ -37,6 +37,4 @@ export class TeaserStackLayout1Component {
     }
     return this.teasers;
   }
-
-  constructor() {}
 }
