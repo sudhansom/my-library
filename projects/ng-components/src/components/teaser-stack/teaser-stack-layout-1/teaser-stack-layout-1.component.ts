@@ -12,6 +12,7 @@ import { ITeaser } from '../teaser/teaser.component';
 export class TeaserStackLayout1Component {
   @Input() teaserHeight?: number;
   @Input() columnCount?: number = 3;
+  @Input() rowCount?: number;
   @Input() title?: string;
   @Input() teasers: ITeaser[] = [];
   @Input() backgroundColor?: string;
@@ -24,6 +25,17 @@ export class TeaserStackLayout1Component {
       return false;
     }
     return !this.teaserHeight || this.teasers.every(teaser => !teaser.teaserHeight);
+  }
+
+  get finalTeasers() {
+    if (this.rowCount && this.columnCount) {
+      const totalItems = this.columnCount * this.rowCount;
+      if (this.teasers.length <= totalItems) {
+        return this.teasers;
+      }
+      return this.teasers.splice(0, totalItems);
+    }
+    return this.teasers;
   }
 
   constructor() {}

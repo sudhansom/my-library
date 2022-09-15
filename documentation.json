@@ -627,7 +627,7 @@
         },
         {
             "name": "TeaserStackComponent",
-            "id": "component-TeaserStackComponent-7577ea87f1d21f51d697bb5309e41448014f38401a84f470a53ca8ae57b8a01c560cca23e429e39130903e850699da9cd1b70561ae5f517133acef47c4c858c4",
+            "id": "component-TeaserStackComponent-2e3958a98b061a22b73cc1a6893faabe624b5943f376c79c6de35edb737a3a66d0acec75c887cec5618fd690941108de41a20b9698aabf3eea9e03870e930211",
             "file": "projects/ng-components/src/components/teaser-stack/teaser-stack.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -644,6 +644,14 @@
             "viewProviders": [],
             "inputsClass": [
                 {
+                    "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
                     "name": "columnCount",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -652,11 +660,19 @@
                     "decorators": []
                 },
                 {
+                    "name": "fullPageWidth",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
                     "name": "layout",
                     "defaultValue": "'layout-1'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 17,
                     "type": "ITeaserStackLayout",
                     "decorators": []
                 },
@@ -696,7 +712,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\nimport { ITeaserStackLayout } from './teaser-stack.interface';\nimport { ITeaser } from './teaser/teaser.component';\n\n@Component({\n  selector: 'sm-teaser-stack',\n  templateUrl: './teaser-stack.component.html',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TeaserStackComponent {\n  @Input() teaserHeight?: number;\n  @Input() columnCount?: number;\n  @Input() title?: string;\n  @Input() teasers: ITeaser[] = [];\n  @Input() layout: ITeaserStackLayout = 'layout-1';\n\n  constructor() {}\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\nimport { ITeaserStackLayout } from './teaser-stack.interface';\nimport { ITeaser } from './teaser/teaser.component';\n\n@Component({\n  selector: 'sm-teaser-stack',\n  templateUrl: './teaser-stack.component.html',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TeaserStackComponent {\n  @Input() teaserHeight?: number;\n  @Input() columnCount?: number;\n  @Input() title?: string;\n  @Input() teasers: ITeaser[] = [];\n  @Input() backgroundColor?: string;\n  @Input() fullPageWidth?: boolean;\n  @Input() layout: ITeaserStackLayout = 'layout-1';\n\n  constructor() {}\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -706,13 +722,13 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 15
+                "line": 17
             },
-            "templateData": "<!-- We don't have anything special to do in teaser-stack for layout-2, so layout-2 === layout-1 -->\n<!-- Add ngSwitch if needed in future -->\n<sm-teaser-stack-layout-1\n  [teaserHeight]=\"teaserHeight\"\n  [columnCount]=\"columnCount\"\n  [title]=\"title\"\n  [teasers]=\"teasers\"\n  [layout]=\"layout\">\n</sm-teaser-stack-layout-1>\n"
+            "templateData": "<!-- We don't have anything special to do in teaser-stack for layout-2, so layout-2 === layout-1 -->\n<!-- Add ngSwitch if needed in future -->\n<sm-teaser-stack-layout-1\n  [teaserHeight]=\"teaserHeight\"\n  [columnCount]=\"columnCount\"\n  [title]=\"title\"\n  [teasers]=\"teasers\"\n  [fullPageWidth]=\"fullPageWidth\"\n  [backgroundColor]=\"backgroundColor\"\n  [layout]=\"layout\">\n</sm-teaser-stack-layout-1>\n"
         },
         {
             "name": "TeaserStackLayout1Component",
-            "id": "component-TeaserStackLayout1Component-ac9a4598df01f0aba6ca05954e650268b37b20e792c6cbdd96103e02d6ac5290d77ba8c709cfb2aaaf7ec3954befd77c83c000083bd8ac246a37997b448a2087",
+            "id": "component-TeaserStackLayout1Component-c788558704b23dbd38d284219c60bc6551f33494614786031536292a3c87297e7fd5f8696ba98bcb7935f6bda534648dd3f366c367f8176f014e8e4cc6068dee",
             "file": "projects/ng-components/src/components/teaser-stack/teaser-stack-layout-1/teaser-stack-layout-1.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -731,6 +747,14 @@
             "viewProviders": [],
             "inputsClass": [
                 {
+                    "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
                     "name": "columnCount",
                     "defaultValue": "3",
                     "deprecated": false,
@@ -740,11 +764,20 @@
                     "decorators": []
                 },
                 {
+                    "name": "fullPageWidth",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
                     "name": "layout",
                     "defaultValue": "'layout-1'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 19,
                     "type": "ITeaserStackLayout",
                     "decorators": []
                 },
@@ -784,11 +817,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\nimport { ITeaserStackLayout } from '../teaser-stack.interface';\nimport { ITeaser } from '../teaser/teaser.component';\n\n\n@Component({\n  selector: 'sm-teaser-stack-layout-1',\n  templateUrl: './teaser-stack-layout-1.component.html',\n  styleUrls: ['./teaser-stack-layout-1.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TeaserStackLayout1Component {\n  @Input() teaserHeight?: number;\n  @Input() columnCount?: number = 3;\n  @Input() title?: string;\n  @Input() teasers: ITeaser[] = [];\n  @Input() layout: ITeaserStackLayout = 'layout-1';\n\n  get useMasonry() {\n    // Layout-1 has default height\n    if (this.layout === 'layout-1') {\n      return false;\n    }\n    return !this.teaserHeight || this.teasers.every(teaser => !teaser.teaserHeight);\n  }\n\n  constructor() {}\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\nimport { ITeaserStackLayout } from '../teaser-stack.interface';\nimport { ITeaser } from '../teaser/teaser.component';\n\n\n@Component({\n  selector: 'sm-teaser-stack-layout-1',\n  templateUrl: './teaser-stack-layout-1.component.html',\n  styleUrls: ['./teaser-stack-layout-1.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TeaserStackLayout1Component {\n  @Input() teaserHeight?: number;\n  @Input() columnCount?: number = 3;\n  @Input() title?: string;\n  @Input() teasers: ITeaser[] = [];\n  @Input() backgroundColor?: string;\n  @Input() fullPageWidth? = false;\n  @Input() layout: ITeaserStackLayout = 'layout-1';\n\n  get useMasonry() {\n    // Layout-1 has default height\n    if (this.layout === 'layout-1') {\n      return false;\n    }\n    return !this.teaserHeight || this.teasers.every(teaser => !teaser.teaserHeight);\n  }\n\n  constructor() {}\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@use 'projects/variables';\n.teaser-stack-title {\n  font-size: 32px;\n  color: #123456;\n  padding: 24px 0 0;\n}\n.teaser-stack {\n  margin: 20px auto;\n  padding: 10px;\n  font-family: var(--font-family);\n}\n\n.no-float {\n  display: grid;\n  gap: 20px;\n  grid-template-columns: 1fr;\n}\n\n.float sm-teaser {\n  display: block;\n  margin-bottom: 10px;\n}\n\nh2 {\n  text-align: center;\n  color: var(--text-color);\n  font-family: var(--font-family);\n  font-size: 40px;\n  line-height: 43px;\n  margin: 20px auto;\n}\n\n@media (min-width: map-get(variables.$breakpoints, \"phone\")) {\n  .no-float {\n    grid-template-columns: repeat(var(--column-count), 1fr);\n  }\n  .float ngx-masonry {\n    margin-right: -10px;\n  }\n  .float sm-teaser {\n    width: calc(100% / var(--column-count) - 10px);\n    margin-right: 10px;\n    margin-bottom: 10px;\n  }\n}\n\n@media (min-width: map-get(variables.$breakpoints, \"phone\")) and (max-width: map-get(variables.$breakpoints, \"tablet\")) {\n  .teaser-stack {\n    --column-count: 2 !important; // Force 2 items per row in tablets\n  }\n}\n",
+                    "data": "@use 'projects/variables';\n.teaser-stack-layout-1 {\n  background-color: var(--background-color);\n  padding: calc(var(--content-margin) * 2) var(--content-margin);\n\n  &:not(.full-page-width) {\n    .teaser-stack-layout-1-container {\n      margin-left: auto;\n      margin-right: auto;\n      max-width: var(--max-content-width);\n    }\n  }\n}\n.teaser-stack-title {\n  font-size: 32px;\n  color: #123456;\n  margin: 0;\n  font-family: var(--font-family);\n}\n.teaser-stack {\n  margin-top: 20px;\n}\n\n.no-float {\n  display: grid;\n  gap: 20px;\n  grid-template-columns: 1fr;\n}\n\n.float sm-teaser {\n  display: block;\n  margin-bottom: 10px;\n}\n\nh2 {\n  text-align: center;\n  color: var(--text-color);\n  font-family: var(--font-family);\n  font-size: 40px;\n  line-height: 43px;\n  margin: 20px auto;\n}\n\n@media (min-width: map-get(variables.$breakpoints, \"phone\")) {\n  .no-float {\n    grid-template-columns: repeat(var(--column-count), 1fr);\n  }\n  .float ngx-masonry {\n    margin-right: -10px;\n  }\n  .float sm-teaser {\n    width: calc(100% / var(--column-count) - 10px);\n    margin-right: 10px;\n    margin-bottom: 10px;\n  }\n}\n\n@media (min-width: map-get(variables.$breakpoints, \"phone\")) and (max-width: map-get(variables.$breakpoints, \"tablet\")) {\n  .teaser-stack {\n    --column-count: 2 !important; // Force 2 items per row in tablets\n  }\n}\n",
                     "styleUrl": "./teaser-stack-layout-1.component.scss"
                 }
             ],
@@ -799,7 +832,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 25
+                "line": 27
             },
             "accessors": {
                 "useMasonry": {
@@ -808,11 +841,11 @@
                         "name": "useMasonry",
                         "type": "",
                         "returnType": "",
-                        "line": 19
+                        "line": 21
                     }
                 }
             },
-            "templateData": "<h2 *ngIf=\"title\" class=\"teaser-stack-title\">\n  {{ title }}\n</h2>\n<div\n  class=\"teaser-stack\"\n  [ngClass]=\"teaserHeight ? 'no-float' : 'float'\"\n  [style.--column-count]=\"columnCount\"\n>\n  <ngx-masonry *ngIf=\"!teaserHeight; else withoutTeaserHeight\">\n    <sm-teaser\n      ngxMasonryItem\n      *ngFor=\"let teaser of teasers\"\n      [imageUrl]=\"teaser?.imageUrl\"\n      [header]=\"teaser?.header\"\n      [description]=\"teaser?.description\"\n      [border]=\"teaser?.border\"\n      [borderColor]=\"teaser?.borderColor\"\n      [textColor]=\"teaser?.textColor\"\n      [backgroundColor]=\"teaser?.backgroundColor\"\n      [backgroundImageSize]=\"teaser.backgroundImageSize\"\n      [layout]=\"teaser.layout || layout\"\n      [backgroundImagePosition]=\"teaser.backgroundImagePosition\"\n      [teaserHeight]=\"teaser.teaserHeight || teaserHeight\"\n    ></sm-teaser>\n  </ngx-masonry>\n  <ng-template #withoutTeaserHeight>\n    <sm-teaser\n      *ngFor=\"let teaser of teasers\"\n      [imageUrl]=\"teaser?.imageUrl\"\n      [header]=\"teaser?.header\"\n      [description]=\"teaser?.description\"\n      [border]=\"teaser?.border\"\n      [borderColor]=\"teaser?.borderColor\"\n      [textColor]=\"teaser?.textColor\"\n      [backgroundColor]=\"teaser?.backgroundColor\"\n      [backgroundImageSize]=\"teaser.backgroundImageSize\"\n      [layout]=\"teaser.layout || layout\"\n      [backgroundImagePosition]=\"teaser.backgroundImagePosition\"\n      [teaserHeight]=\"teaser.teaserHeight || teaserHeight\"\n    ></sm-teaser>\n  </ng-template>\n</div>\n"
+            "templateData": "<div class=\"teaser-stack-layout-1\" [style.--background-color]=\"backgroundColor\" [ngClass]=\"{'full-page-width': fullPageWidth}\">\n  <div class=\"teaser-stack-layout-1-container\">\n    <h2 *ngIf=\"title\" class=\"teaser-stack-title\">\n      {{ title }}\n    </h2>\n    <div\n      class=\"teaser-stack\"\n      [ngClass]=\"teaserHeight ? 'no-float' : 'float'\"\n      [style.--column-count]=\"columnCount\"\n    >\n      <ngx-masonry *ngIf=\"!teaserHeight; else withoutTeaserHeight\">\n        <sm-teaser\n          ngxMasonryItem\n          *ngFor=\"let teaser of teasers\"\n          [imageUrl]=\"teaser?.imageUrl\"\n          [header]=\"teaser?.header\"\n          [description]=\"teaser?.description\"\n          [border]=\"teaser?.border\"\n          [borderColor]=\"teaser?.borderColor\"\n          [textColor]=\"teaser?.textColor\"\n          [backgroundColor]=\"teaser?.backgroundColor\"\n          [backgroundImageSize]=\"teaser.backgroundImageSize\"\n          [layout]=\"teaser.layout || layout\"\n          [backgroundImagePosition]=\"teaser.backgroundImagePosition\"\n          [teaserHeight]=\"teaser.teaserHeight || teaserHeight\"\n        ></sm-teaser>\n      </ngx-masonry>\n      <ng-template #withoutTeaserHeight>\n        <sm-teaser\n          *ngFor=\"let teaser of teasers\"\n          [imageUrl]=\"teaser?.imageUrl\"\n          [header]=\"teaser?.header\"\n          [description]=\"teaser?.description\"\n          [border]=\"teaser?.border\"\n          [borderColor]=\"teaser?.borderColor\"\n          [textColor]=\"teaser?.textColor\"\n          [backgroundColor]=\"teaser?.backgroundColor\"\n          [backgroundImageSize]=\"teaser.backgroundImageSize\"\n          [layout]=\"teaser.layout || layout\"\n          [backgroundImagePosition]=\"teaser.backgroundImagePosition\"\n          [teaserHeight]=\"teaser.teaserHeight || teaserHeight\"\n        ></sm-teaser>\n      </ng-template>\n    </div>\n  </div>\n</div>\n"
         }
     ],
     "modules": [
@@ -961,6 +994,16 @@
             },
             {
                 "name": "_5_Layout2WithBackgroundColor",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/teaser-stack/teaser-stack.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "_6_Layout2WithResponsiveHeight",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "projects/ng-components/src/components/teaser-stack/teaser-stack.stories.ts",
@@ -1162,6 +1205,16 @@
                 },
                 {
                     "name": "_5_Layout2WithBackgroundColor",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/teaser-stack/teaser-stack.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "_6_Layout2WithResponsiveHeight",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "projects/ng-components/src/components/teaser-stack/teaser-stack.stories.ts",
@@ -1407,7 +1460,7 @@
                 "linktype": "component",
                 "name": "TeaserStackLayout1Component",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {
@@ -1416,7 +1469,7 @@
                 "linktype": "component",
                 "name": "TeaserStackComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {
@@ -1465,6 +1518,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "_5_Layout2WithBackgroundColor",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/teaser-stack/teaser-stack.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "_6_Layout2WithResponsiveHeight",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

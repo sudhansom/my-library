@@ -203,3 +203,16 @@ _7_Layout1WithMixedTeaser.args = {
       return teaser;
     }) as ITeaser[],
 };
+
+
+export const _8_Layout2WithResponsiveHeight = Template.bind({});
+_8_Layout2WithResponsiveHeight.storyName = 'With row count';
+_8_Layout2WithResponsiveHeight.args = {
+  columnCount: teaserstack.columnCount,
+  layout: 'layout-2',
+  title: teaserstack.title,
+  fullPageWidth: true,
+  rowCount: 1,
+  teaserHeight: 300,
+  teasers: teaserstack.teasers as ITeaser[],
+};

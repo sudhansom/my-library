@@ -11,7 +11,7 @@
       <ngx-masonry *ngIf="!teaserHeight; else withoutTeaserHeight">
         <sm-teaser
           ngxMasonryItem
-          *ngFor="let teaser of teasers"
+          *ngFor="let teaser of finalTeasers"
           [imageUrl]="teaser?.imageUrl"
           [header]="teaser?.header"
           [description]="teaser?.description"
@@ -27,7 +27,7 @@
       </ngx-masonry>
       <ng-template #withoutTeaserHeight>
         <sm-teaser
-          *ngFor="let teaser of teasers"
+          *ngFor="let teaser of finalTeasers"
           [imageUrl]="teaser?.imageUrl"
           [header]="teaser?.header"
           [description]="teaser?.description"

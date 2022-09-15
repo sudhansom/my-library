@@ -10,6 +10,7 @@ import { ITeaser } from './teaser/teaser.component';
 export class TeaserStackComponent {
   @Input() teaserHeight?: number;
   @Input() columnCount?: number;
+  @Input() rowCount?: number;
   @Input() title?: string;
   @Input() teasers: ITeaser[] = [];
   @Input() backgroundColor?: string;
