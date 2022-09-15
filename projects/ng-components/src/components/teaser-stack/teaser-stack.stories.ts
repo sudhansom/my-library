@@ -205,14 +205,28 @@ _7_Layout1WithMixedTeaser.args = {
 };
 
 
-export const _8_Layout2WithResponsiveHeight = Template.bind({});
-_8_Layout2WithResponsiveHeight.storyName = 'With row count';
-_8_Layout2WithResponsiveHeight.args = {
+export const _8_Layout2WithRowCount = Template.bind({});
+_8_Layout2WithRowCount.storyName = 'With row count';
+_8_Layout2WithRowCount.args = {
   columnCount: teaserstack.columnCount,
   layout: 'layout-2',
   title: teaserstack.title,
   fullPageWidth: true,
   rowCount: 1,
   teaserHeight: 300,
+  teasers: teaserstack.teasers as ITeaser[],
+};
+
+export const _9_Layout2WithReadMoreLink = Template.bind({});
+_9_Layout2WithReadMoreLink.storyName = 'With read-more link';
+_9_Layout2WithReadMoreLink.args = {
+  columnCount: teaserstack.columnCount,
+  layout: 'layout-2',
+  title: teaserstack.title,
+  fullPageWidth: true,
+  rowCount: 1,
+  teaserHeight: 300,
+  readMoreLabel: 'Read more',
+  readMoreLink: '/abc/def',
   teasers: teaserstack.teasers as ITeaser[],
 };

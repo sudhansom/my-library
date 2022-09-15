@@ -17,6 +17,8 @@ export class TeaserStackLayout1Component {
   @Input() teasers: ITeaser[] = [];
   @Input() backgroundColor?: string;
   @Input() fullPageWidth? = false;
+  @Input() readMoreLink?: string;
+  @Input() readMoreLabel?: string;
   @Input() layout: ITeaserStackLayout = 'layout-1';
 
   get useMasonry() {

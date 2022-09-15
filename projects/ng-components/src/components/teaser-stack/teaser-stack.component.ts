@@ -15,5 +15,7 @@ export class TeaserStackComponent {
   @Input() teasers: ITeaser[] = [];
   @Input() backgroundColor?: string;
   @Input() fullPageWidth?: boolean;
+  @Input() readMoreLink?: string;
+  @Input() readMoreLabel?: string;
   @Input() layout: ITeaserStackLayout = 'layout-1';
 }

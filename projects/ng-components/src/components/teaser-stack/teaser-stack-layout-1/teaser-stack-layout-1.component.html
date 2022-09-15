@@ -42,5 +42,10 @@
         ></sm-teaser>
       </ng-template>
     </div>
+    <div *ngIf="readMoreLink && readMoreLabel" class="teaser-stack-read-more-link">
+      <a [routerLink]="readMoreLink" >
+        {{readMoreLabel}}
+      </a>
+    </div>
   </div>
 </div>

@@ -41,6 +41,19 @@ h2 {
   margin: 20px auto;
 }
 
+.teaser-stack-read-more-link {
+  text-align: center;
+  margin-top: var(--content-margin);
+  a {
+    text-decoration: none;
+    color: var(--primary-color);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
 @media (min-width: map-get(variables.$breakpoints, "phone")) {
   .no-float {
     grid-template-columns: repeat(var(--column-count), 1fr);
