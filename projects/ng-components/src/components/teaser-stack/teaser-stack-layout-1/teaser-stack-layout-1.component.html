@@ -1,42 +1,44 @@
-<h2 *ngIf="title" class="teaser-stack-title">
-  {{ title }}
-</h2>
-<div
-  class="teaser-stack"
-  [ngClass]="teaserHeight ? 'no-float' : 'float'"
-  [style.--column-count]="columnCount"
->
-  <ngx-masonry *ngIf="!teaserHeight; else withoutTeaserHeight">
-    <sm-teaser
-      ngxMasonryItem
-      *ngFor="let teaser of teasers"
-      [imageUrl]="teaser?.imageUrl"
-      [header]="teaser?.header"
-      [description]="teaser?.description"
-      [border]="teaser?.border"
-      [borderColor]="teaser?.borderColor"
-      [textColor]="teaser?.textColor"
-      [backgroundColor]="teaser?.backgroundColor"
-      [backgroundImageSize]="teaser.backgroundImageSize"
-      [layout]="teaser.layout || layout"
-      [backgroundImagePosition]="teaser.backgroundImagePosition"
-      [teaserHeight]="teaser.teaserHeight || teaserHeight"
-    ></sm-teaser>
-  </ngx-masonry>
-  <ng-template #withoutTeaserHeight>
-    <sm-teaser
-      *ngFor="let teaser of teasers"
-      [imageUrl]="teaser?.imageUrl"
-      [header]="teaser?.header"
-      [description]="teaser?.description"
-      [border]="teaser?.border"
-      [borderColor]="teaser?.borderColor"
-      [textColor]="teaser?.textColor"
-      [backgroundColor]="teaser?.backgroundColor"
-      [backgroundImageSize]="teaser.backgroundImageSize"
-      [layout]="teaser.layout || layout"
-      [backgroundImagePosition]="teaser.backgroundImagePosition"
-      [teaserHeight]="teaser.teaserHeight || teaserHeight"
-    ></sm-teaser>
-  </ng-template>
+<div class="teaser-stack-layout-1" [style.--background-color]="backgroundColor">
+  <h2 *ngIf="title" class="teaser-stack-title">
+    {{ title }}
+  </h2>
+  <div
+    class="teaser-stack"
+    [ngClass]="teaserHeight ? 'no-float' : 'float'"
+    [style.--column-count]="columnCount"
+  >
+    <ngx-masonry *ngIf="!teaserHeight; else withoutTeaserHeight">
+      <sm-teaser
+        ngxMasonryItem
+        *ngFor="let teaser of teasers"
+        [imageUrl]="teaser?.imageUrl"
+        [header]="teaser?.header"
+        [description]="teaser?.description"
+        [border]="teaser?.border"
+        [borderColor]="teaser?.borderColor"
+        [textColor]="teaser?.textColor"
+        [backgroundColor]="teaser?.backgroundColor"
+        [backgroundImageSize]="teaser.backgroundImageSize"
+        [layout]="teaser.layout || layout"
+        [backgroundImagePosition]="teaser.backgroundImagePosition"
+        [teaserHeight]="teaser.teaserHeight || teaserHeight"
+      ></sm-teaser>
+    </ngx-masonry>
+    <ng-template #withoutTeaserHeight>
+      <sm-teaser
+        *ngFor="let teaser of teasers"
+        [imageUrl]="teaser?.imageUrl"
+        [header]="teaser?.header"
+        [description]="teaser?.description"
+        [border]="teaser?.border"
+        [borderColor]="teaser?.borderColor"
+        [textColor]="teaser?.textColor"
+        [backgroundColor]="teaser?.backgroundColor"
+        [backgroundImageSize]="teaser.backgroundImageSize"
+        [layout]="teaser.layout || layout"
+        [backgroundImagePosition]="teaser.backgroundImagePosition"
+        [teaserHeight]="teaser.teaserHeight || teaserHeight"
+      ></sm-teaser>
+    </ng-template>
+  </div>
 </div>

@@ -1,4 +1,7 @@
 @use 'projects/variables';
+.teaser-stack-layout-1 {
+  background-color: var(--background-color);
+}
 .teaser-stack-title {
   font-size: 32px;
   color: #123456;
@@ -6,7 +9,7 @@
 }
 .teaser-stack {
   margin: 20px auto;
-  padding: 10px;
+  padding: var(--content-margin);
   font-family: var(--font-family);
 }
 

@@ -14,6 +14,7 @@ export class TeaserStackLayout1Component {
   @Input() columnCount?: number = 3;
   @Input() title?: string;
   @Input() teasers: ITeaser[] = [];
+  @Input() backgroundColor?: string;
   @Input() layout: ITeaserStackLayout = 'layout-1';
 
   get useMasonry() {

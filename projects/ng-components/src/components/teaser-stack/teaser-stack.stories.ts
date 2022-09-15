@@ -138,6 +138,7 @@ _5_Layout2WithBackgroundColor.args = {
   layout: 'layout-2',
   title: teaserstack.title,
   teaserHeight: 300,
+  backgroundColor: '#dddddd',
   teasers: teaserstack.teasers.map(teaser => {
     return {
       ...teaser,
