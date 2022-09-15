@@ -138,6 +138,7 @@ _5_Layout2WithBackgroundColor.args = {
   layout: 'layout-2',
   title: teaserstack.title,
   teaserHeight: 300,
+  backgroundColor: '#dddddd',
   teasers: teaserstack.teasers.map(teaser => {
     return {
       ...teaser,
@@ -146,6 +147,17 @@ _5_Layout2WithBackgroundColor.args = {
     }
   }) as ITeaser[],
 };
+
+export const _6_Layout2WithResponsiveHeight = Template.bind({});
+_6_Layout2WithResponsiveHeight.storyName = 'Layout 2 with responsive height and full-width';
+_6_Layout2WithResponsiveHeight.args = {
+  columnCount: teaserstack.columnCount,
+  layout: 'layout-2',
+  title: teaserstack.title,
+  fullPageWidth: true,
+  teasers: teaserstack.teasers as ITeaser[],
+};
+
 
 export const _7_Layout1WithMixedTeaser = Template.bind({});
 _7_Layout1WithMixedTeaser.storyName =
