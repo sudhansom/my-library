@@ -3,12 +3,12 @@
     "interfaces": [
         {
             "name": "ITeaser",
-            "id": "interface-ITeaser-1259658bf7519784d34cfbee11e974ec3949b334e2838f26e424bd46b2bafab9b85df4f6068a911be4ab191f83893386bbf749ee4b02243fabc3ce7e656a600a",
+            "id": "interface-ITeaser-8438fcf89505b9c0876446ba36a8fa10f50f8b99fbeaa865e04df0e7fd3b1434ebd15ddfb8861e227cc87c18f65993f27fc7d8555c1e44c48129a04325aabf0d",
             "file": "projects/ng-components/src/components/teaser-stack/teaser/teaser.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\nimport { IBackgroundImagePosition, IBackgroundImageSize, ITeaserLayout } from '../teaser-stack.interface';\n\nexport interface ITeaser {\n  teaserHeight?: number;\n  imageUrl?: string;\n  header?: string;\n  description?: string;\n  border?: boolean;\n  borderColor?: string;\n  textColor?: string;\n  backgroundColor?: string;\n  backgroundImageSize?: IBackgroundImageSize;\n  backgroundImagePosition?: IBackgroundImagePosition;\n  layout?: ITeaserLayout;\n}\n\n@Component({\n  selector: 'sm-teaser',\n  templateUrl: './teaser.component.html',\n  styleUrls: ['./teaser.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TeaserComponent {\n  @Input() teaserHeight?: number;\n  @Input() imageUrl?: string;\n  @Input() header?: string;\n  @Input() description?: string;\n  @Input() border?: boolean;\n  @Input() borderColor?: string;\n  @Input() textColor?: string;\n  @Input() backgroundColor?: string;\n  @Input() backgroundImageSize?: IBackgroundImageSize;\n  @Input() backgroundImagePosition?: IBackgroundImagePosition;\n  @Input() layout: ITeaserLayout = 'layout-1';\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\nimport { IBackgroundImagePosition, IBackgroundImageSize, ITeaserLayout } from '../teaser-stack.interface';\n\nexport interface ITeaser {\n  link?: string;\n  teaserHeight?: number;\n  imageUrl?: string;\n  header?: string;\n  description?: string;\n  border?: boolean;\n  borderColor?: string;\n  textColor?: string;\n  backgroundColor?: string;\n  backgroundImageSize?: IBackgroundImageSize;\n  backgroundImagePosition?: IBackgroundImagePosition;\n  layout?: ITeaserLayout;\n}\n\n@Component({\n  selector: 'sm-teaser',\n  templateUrl: './teaser.component.html',\n  styleUrls: ['./teaser.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TeaserComponent {\n  @Input() link?: string;\n  @Input() teaserHeight?: number;\n  @Input() imageUrl?: string;\n  @Input() header?: string;\n  @Input() description?: string;\n  @Input() border?: boolean;\n  @Input() borderColor?: string;\n  @Input() textColor?: string;\n  @Input() backgroundColor?: string;\n  @Input() backgroundImageSize?: IBackgroundImageSize;\n  @Input() backgroundImagePosition?: IBackgroundImagePosition;\n  @Input() layout: ITeaserLayout = 'layout-1';\n}\n",
             "properties": [
                 {
                     "name": "backgroundColor",
@@ -17,7 +17,7 @@
                     "type": "string",
                     "optional": true,
                     "description": "",
-                    "line": 12
+                    "line": 13
                 },
                 {
                     "name": "backgroundImagePosition",
@@ -26,7 +26,7 @@
                     "type": "IBackgroundImagePosition",
                     "optional": true,
                     "description": "",
-                    "line": 14
+                    "line": 15
                 },
                 {
                     "name": "backgroundImageSize",
@@ -35,7 +35,7 @@
                     "type": "IBackgroundImageSize",
                     "optional": true,
                     "description": "",
-                    "line": 13
+                    "line": 14
                 },
                 {
                     "name": "border",
@@ -44,7 +44,7 @@
                     "type": "boolean",
                     "optional": true,
                     "description": "",
-                    "line": 9
+                    "line": 10
                 },
                 {
                     "name": "borderColor",
@@ -53,7 +53,7 @@
                     "type": "string",
                     "optional": true,
                     "description": "",
-                    "line": 10
+                    "line": 11
                 },
                 {
                     "name": "description",
@@ -62,7 +62,7 @@
                     "type": "string",
                     "optional": true,
                     "description": "",
-                    "line": 8
+                    "line": 9
                 },
                 {
                     "name": "header",
@@ -71,7 +71,7 @@
                     "type": "string",
                     "optional": true,
                     "description": "",
-                    "line": 7
+                    "line": 8
                 },
                 {
                     "name": "imageUrl",
@@ -80,7 +80,7 @@
                     "type": "string",
                     "optional": true,
                     "description": "",
-                    "line": 6
+                    "line": 7
                 },
                 {
                     "name": "layout",
@@ -89,7 +89,16 @@
                     "type": "ITeaserLayout",
                     "optional": true,
                     "description": "",
-                    "line": 15
+                    "line": 16
+                },
+                {
+                    "name": "link",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 5
                 },
                 {
                     "name": "teaserHeight",
@@ -98,7 +107,7 @@
                     "type": "number",
                     "optional": true,
                     "description": "",
-                    "line": 5
+                    "line": 6
                 },
                 {
                     "name": "textColor",
@@ -107,7 +116,7 @@
                     "type": "string",
                     "optional": true,
                     "description": "",
-                    "line": 11
+                    "line": 12
                 }
             ],
             "indexSignatures": [],
@@ -119,7 +128,263 @@
     "guards": [],
     "interceptors": [],
     "classes": [],
-    "directives": [],
+    "directives": [
+        {
+            "name": "NavigationDirective",
+            "id": "directive-NavigationDirective-bcdf062677808c5c4e4e44e8a50ad8814919ccf76fcdacd4b094047d758fea33ebc4082089b19a59de62c35eb21fbe52a821bee3c9c005bb0440e212ce8e1f55",
+            "file": "projects/ng-components/src/directives/navigation/navigation.directive.ts",
+            "type": "directive",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/core';\nimport { Router } from '@angular/router';\n\nexport const isFullPath = (url: string) : boolean => {\n  return url.startsWith('https') || url.startsWith('http');\n}\n\n@Directive({\n  selector: '[smNavigate]',\n})\nexport class NavigationDirective {\n  private _url = '';\n  @Input() set smNavigate(url: string) {\n    this._url = url;\n    this.renderer.setAttribute(this.el.nativeElement, 'href', this.url);\n  }\n\n  get url() {\n    return this._url;\n  }\n\n  private _target = '';\n  @Input() set smNavigateTarget(target: string) {\n    this._target = target === 'blank' ? '_blank' : '';\n    this.renderer.setAttribute(this.el.nativeElement, 'target', this.target);\n  }\n\n  get target() {\n    return this._target;\n  }\n\n  constructor(private el: ElementRef, private renderer: Renderer2, private router: Router) {}\n\n\n  @HostListener(\"click\", [\"$event\"])\n  public onClick(evt: Event): void\n  {\n    if(!this.url) {\n      return;\n    }\n    if (isFullPath(this.url)) {\n      return;\n    }\n\n    evt.preventDefault();\n    if (this.target === '_blank') {\n      window.open(this.url, '_blank');\n    }\n    else {\n      this.router.navigateByUrl(this.url);\n    }\n  }\n}\n",
+            "selector": "[smNavigate]",
+            "providers": [],
+            "inputsClass": [
+                {
+                    "name": "smNavigate",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "smNavigateTarget",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [
+                {
+                    "name": "click",
+                    "args": [
+                        {
+                            "name": "evt",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "argsDecorator": [
+                        "$event"
+                    ],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 36
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "_target",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 22,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "_url",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        121
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onClick",
+                    "args": [
+                        {
+                            "name": "evt",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 36,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'click', ['$event']"
+                        }
+                    ],
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "evt",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "el",
+                        "type": "ElementRef",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "renderer",
+                        "type": "Renderer2",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 30,
+                "jsdoctags": [
+                    {
+                        "name": "el",
+                        "type": "ElementRef",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "renderer",
+                        "type": "Renderer2",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "accessors": {
+                "smNavigate": {
+                    "name": "smNavigate",
+                    "setSignature": {
+                        "name": "smNavigate",
+                        "type": "void",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "args": [
+                            {
+                                "name": "url",
+                                "type": "string",
+                                "deprecated": false,
+                                "deprecationMessage": ""
+                            }
+                        ],
+                        "returnType": "void",
+                        "line": 13,
+                        "jsdoctags": [
+                            {
+                                "name": "url",
+                                "type": "string",
+                                "deprecated": false,
+                                "deprecationMessage": "",
+                                "tagName": {
+                                    "text": "param"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "url": {
+                    "name": "url",
+                    "getSignature": {
+                        "name": "url",
+                        "type": "",
+                        "returnType": "",
+                        "line": 18
+                    }
+                },
+                "smNavigateTarget": {
+                    "name": "smNavigateTarget",
+                    "setSignature": {
+                        "name": "smNavigateTarget",
+                        "type": "void",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "args": [
+                            {
+                                "name": "target",
+                                "type": "string",
+                                "deprecated": false,
+                                "deprecationMessage": ""
+                            }
+                        ],
+                        "returnType": "void",
+                        "line": 23,
+                        "jsdoctags": [
+                            {
+                                "name": "target",
+                                "type": "string",
+                                "deprecated": false,
+                                "deprecationMessage": "",
+                                "tagName": {
+                                    "text": "param"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "target": {
+                    "name": "target",
+                    "getSignature": {
+                        "name": "target",
+                        "type": "",
+                        "returnType": "",
+                        "line": 28
+                    }
+                }
+            }
+        }
+    ],
     "components": [
         {
             "name": "ButtonComponent",
@@ -239,7 +504,7 @@
         },
         {
             "name": "TeaserComponent",
-            "id": "component-TeaserComponent-1259658bf7519784d34cfbee11e974ec3949b334e2838f26e424bd46b2bafab9b85df4f6068a911be4ab191f83893386bbf749ee4b02243fabc3ce7e656a600a",
+            "id": "component-TeaserComponent-8438fcf89505b9c0876446ba36a8fa10f50f8b99fbeaa865e04df0e7fd3b1434ebd15ddfb8861e227cc87c18f65993f27fc7d8555c1e44c48129a04325aabf0d",
             "file": "projects/ng-components/src/components/teaser-stack/teaser/teaser.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -261,7 +526,7 @@
                     "name": "backgroundColor",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 32,
+                    "line": 34,
                     "type": "string",
                     "decorators": []
                 },
@@ -269,7 +534,7 @@
                     "name": "backgroundImagePosition",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 34,
+                    "line": 36,
                     "type": "IBackgroundImagePosition",
                     "decorators": []
                 },
@@ -277,7 +542,7 @@
                     "name": "backgroundImageSize",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 33,
+                    "line": 35,
                     "type": "IBackgroundImageSize",
                     "decorators": []
                 },
@@ -285,7 +550,7 @@
                     "name": "border",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 29,
+                    "line": 31,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -293,7 +558,7 @@
                     "name": "borderColor",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 30,
+                    "line": 32,
                     "type": "string",
                     "decorators": []
                 },
@@ -301,7 +566,7 @@
                     "name": "description",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 28,
+                    "line": 30,
                     "type": "string",
                     "decorators": []
                 },
@@ -309,7 +574,7 @@
                     "name": "header",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 27,
+                    "line": 29,
                     "type": "string",
                     "decorators": []
                 },
@@ -317,7 +582,7 @@
                     "name": "imageUrl",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 26,
+                    "line": 28,
                     "type": "string",
                     "decorators": []
                 },
@@ -326,15 +591,23 @@
                     "defaultValue": "'layout-1'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 35,
+                    "line": 37,
                     "type": "ITeaserLayout",
+                    "decorators": []
+                },
+                {
+                    "name": "link",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 26,
+                    "type": "string",
                     "decorators": []
                 },
                 {
                     "name": "teaserHeight",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 25,
+                    "line": 27,
                     "type": "number",
                     "decorators": []
                 },
@@ -342,7 +615,7 @@
                     "name": "textColor",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 31,
+                    "line": 33,
                     "type": "string",
                     "decorators": []
                 }
@@ -357,7 +630,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\nimport { IBackgroundImagePosition, IBackgroundImageSize, ITeaserLayout } from '../teaser-stack.interface';\n\nexport interface ITeaser {\n  teaserHeight?: number;\n  imageUrl?: string;\n  header?: string;\n  description?: string;\n  border?: boolean;\n  borderColor?: string;\n  textColor?: string;\n  backgroundColor?: string;\n  backgroundImageSize?: IBackgroundImageSize;\n  backgroundImagePosition?: IBackgroundImagePosition;\n  layout?: ITeaserLayout;\n}\n\n@Component({\n  selector: 'sm-teaser',\n  templateUrl: './teaser.component.html',\n  styleUrls: ['./teaser.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TeaserComponent {\n  @Input() teaserHeight?: number;\n  @Input() imageUrl?: string;\n  @Input() header?: string;\n  @Input() description?: string;\n  @Input() border?: boolean;\n  @Input() borderColor?: string;\n  @Input() textColor?: string;\n  @Input() backgroundColor?: string;\n  @Input() backgroundImageSize?: IBackgroundImageSize;\n  @Input() backgroundImagePosition?: IBackgroundImagePosition;\n  @Input() layout: ITeaserLayout = 'layout-1';\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\nimport { IBackgroundImagePosition, IBackgroundImageSize, ITeaserLayout } from '../teaser-stack.interface';\n\nexport interface ITeaser {\n  link?: string;\n  teaserHeight?: number;\n  imageUrl?: string;\n  header?: string;\n  description?: string;\n  border?: boolean;\n  borderColor?: string;\n  textColor?: string;\n  backgroundColor?: string;\n  backgroundImageSize?: IBackgroundImageSize;\n  backgroundImagePosition?: IBackgroundImagePosition;\n  layout?: ITeaserLayout;\n}\n\n@Component({\n  selector: 'sm-teaser',\n  templateUrl: './teaser.component.html',\n  styleUrls: ['./teaser.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TeaserComponent {\n  @Input() link?: string;\n  @Input() teaserHeight?: number;\n  @Input() imageUrl?: string;\n  @Input() header?: string;\n  @Input() description?: string;\n  @Input() border?: boolean;\n  @Input() borderColor?: string;\n  @Input() textColor?: string;\n  @Input() backgroundColor?: string;\n  @Input() backgroundImageSize?: IBackgroundImageSize;\n  @Input() backgroundImagePosition?: IBackgroundImagePosition;\n  @Input() layout: ITeaserLayout = 'layout-1';\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -366,11 +639,11 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<ng-container [ngSwitch]=\"layout\">\n  <sm-teaser-layout-1\n    [teaserHeight]=\"teaserHeight\"\n    [imageUrl]=\"imageUrl\"\n    [header]=\"header\"\n    [description]=\"description\"\n    [border]=\"border\"\n    [borderColor]=\"borderColor\"\n    [textColor]=\"textColor\"\n    [backgroundColor]=\"backgroundColor\"\n    [backgroundImageSize]=\"backgroundImageSize\"\n    [backgroundImagePosition]=\"backgroundImagePosition\"\n    *ngSwitchCase=\"'layout-1'\">\n  </sm-teaser-layout-1>\n  <sm-teaser-layout-2\n    [teaserHeight]=\"teaserHeight\"\n    [imageUrl]=\"imageUrl\"\n    [header]=\"header\"\n    [description]=\"description\"\n    [border]=\"border\"\n    [borderColor]=\"borderColor\"\n    [textColor]=\"textColor\"\n    [backgroundColor]=\"backgroundColor\"\n    [backgroundImageSize]=\"backgroundImageSize\"\n    [backgroundImagePosition]=\"backgroundImagePosition\"\n    *ngSwitchCase=\"'layout-2'\">\n  </sm-teaser-layout-2>\n  <div *ngSwitchDefault>Unknown layout: {{layout}}</div>\n</ng-container>\n"
+            "templateData": "<ng-container [ngSwitch]=\"layout\">\n  <sm-teaser-layout-1\n    [teaserHeight]=\"teaserHeight\"\n    [imageUrl]=\"imageUrl\"\n    [header]=\"header\"\n    [description]=\"description\"\n    [link]=\"link\"\n    [border]=\"border\"\n    [borderColor]=\"borderColor\"\n    [textColor]=\"textColor\"\n    [backgroundColor]=\"backgroundColor\"\n    [backgroundImageSize]=\"backgroundImageSize\"\n    [backgroundImagePosition]=\"backgroundImagePosition\"\n    *ngSwitchCase=\"'layout-1'\">\n  </sm-teaser-layout-1>\n  <sm-teaser-layout-2\n    [teaserHeight]=\"teaserHeight\"\n    [imageUrl]=\"imageUrl\"\n    [header]=\"header\"\n    [description]=\"description\"\n    [link]=\"link\"\n    [border]=\"border\"\n    [borderColor]=\"borderColor\"\n    [textColor]=\"textColor\"\n    [backgroundColor]=\"backgroundColor\"\n    [backgroundImageSize]=\"backgroundImageSize\"\n    [backgroundImagePosition]=\"backgroundImagePosition\"\n    *ngSwitchCase=\"'layout-2'\">\n  </sm-teaser-layout-2>\n  <sm-teaser-layout-3\n    [teaserHeight]=\"teaserHeight\"\n    [imageUrl]=\"imageUrl\"\n    [header]=\"header\"\n    [description]=\"description\"\n    [link]=\"link\"\n    [border]=\"border\"\n    [borderColor]=\"borderColor\"\n    [textColor]=\"textColor\"\n    [backgroundColor]=\"backgroundColor\"\n    [backgroundImageSize]=\"backgroundImageSize\"\n    [backgroundImagePosition]=\"backgroundImagePosition\"\n    *ngSwitchCase=\"'layout-3'\">\n  </sm-teaser-layout-3>\n  <div *ngSwitchDefault>Unknown layout: {{layout}}</div>\n</ng-container>\n"
         },
         {
             "name": "TeaserLayout1Component",
-            "id": "component-TeaserLayout1Component-46c70f455a8eac6492c26c6edb789015b9b633614777465ae5a2ed7efae744baaafcf5208bd6cab32c7d43f2ca00012e0e32bc44c713e006e317020ed942027f",
+            "id": "component-TeaserLayout1Component-b6638292572ef55fa056e8e8afc1910fce241fe20285158594cbfeae12a23ab29f209efc1ebf565e20664e64e67a55dd39ed98339ee7009fd7ecc82a25462beb",
             "file": "projects/ng-components/src/components/teaser-stack/teaser-layout-1/teaser-layout-1.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -392,7 +665,7 @@
                     "name": "backgroundColor",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 21,
+                    "line": 22,
                     "type": "string",
                     "decorators": []
                 },
@@ -400,7 +673,7 @@
                     "name": "backgroundImagePosition",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 23,
+                    "line": 24,
                     "type": "IBackgroundImagePosition",
                     "decorators": []
                 },
@@ -408,7 +681,7 @@
                     "name": "backgroundImageSize",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 22,
+                    "line": 23,
                     "type": "IBackgroundImageSize",
                     "decorators": []
                 },
@@ -416,7 +689,7 @@
                     "name": "border",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
+                    "line": 19,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -424,7 +697,7 @@
                     "name": "borderColor",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 20,
                     "type": "string",
                     "decorators": []
                 },
@@ -432,7 +705,7 @@
                     "name": "description",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 18,
                     "type": "string",
                     "decorators": []
                 },
@@ -440,7 +713,7 @@
                     "name": "header",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 17,
                     "type": "string",
                     "decorators": []
                 },
@@ -448,7 +721,15 @@
                     "name": "imageUrl",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 16,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "link",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
                     "type": "string",
                     "decorators": []
                 },
@@ -456,7 +737,7 @@
                     "name": "teaserHeight",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 14,
+                    "line": 15,
                     "type": "number",
                     "decorators": []
                 },
@@ -464,7 +745,7 @@
                     "name": "textColor",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 20,
+                    "line": 21,
                     "type": "string",
                     "decorators": []
                 }
@@ -479,11 +760,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\nimport {\n  IBackgroundImagePosition,\n  IBackgroundImageSize\n} from '../teaser-stack.interface';\n\n@Component({\n  selector: 'sm-teaser-layout-1',\n  templateUrl: './teaser-layout-1.component.html',\n  styleUrls: ['./teaser-layout-1.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TeaserLayout1Component {\n  @Input() teaserHeight?: number;\n  @Input() imageUrl?: string;\n  @Input() header?: string;\n  @Input() description?: string;\n  @Input() border?: boolean;\n  @Input() borderColor?: string;\n  @Input() textColor?: string;\n  @Input() backgroundColor?: string;\n  @Input() backgroundImageSize?: IBackgroundImageSize;\n  @Input() backgroundImagePosition?: IBackgroundImagePosition;\n\n  get teaserHeightForTemplate() {\n    return this.teaserHeight ? `${this.teaserHeight}px` : undefined;\n  }\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\nimport {\n  IBackgroundImagePosition,\n  IBackgroundImageSize\n} from '../teaser-stack.interface';\n\n@Component({\n  selector: 'sm-teaser-layout-1',\n  templateUrl: './teaser-layout-1.component.html',\n  styleUrls: ['./teaser-layout-1.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TeaserLayout1Component {\n  @Input() link?: string;\n  @Input() teaserHeight?: number;\n  @Input() imageUrl?: string;\n  @Input() header?: string;\n  @Input() description?: string;\n  @Input() border?: boolean;\n  @Input() borderColor?: string;\n  @Input() textColor?: string;\n  @Input() backgroundColor?: string;\n  @Input() backgroundImageSize?: IBackgroundImageSize;\n  @Input() backgroundImagePosition?: IBackgroundImagePosition;\n\n  get teaserHeightForTemplate() {\n    return this.teaserHeight ? `${this.teaserHeight}px` : undefined;\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ":host {\n  .teaser {\n    border-radius: 5px;\n    overflow: hidden;\n    height: 100%;\n    background-color: var(--background-color);\n    &.border {\n      border: 1px solid var(--border-color);\n    }\n    &__image-container {\n      overflow: hidden;\n      img {\n        object-fit: var(--background-image-size);\n        height: var(--image-height);\n        transform: scale(1);\n        transition-duration: 0.5s;\n        cursor: pointer;\n        display: block;\n      }\n      &:hover img {\n        transform: scale(1.08);\n      }\n    }\n    &__text-container {\n      margin: 15px 20px 28px;\n    }\n  }\n  .text {\n    color: var(--text-color);\n    text-align: center;\n    &--h3 {\n      font-size: 21px;\n      line-height: 20px;\n      font-weight: var(--bold-font-weight);\n      margin: 0;\n    }\n    &--p {\n      font-size: 14px;\n      line-height: 19px;\n      margin: 5px 0 0;\n      display: -webkit-box;\n      -webkit-line-clamp: 3;\n      -webkit-box-orient: vertical;\n      overflow: hidden;\n    }\n  }\n}\n",
+                    "data": ":host {\n  .teaser {\n    border-radius: 5px;\n    overflow: hidden;\n    height: 100%;\n    background-color: var(--background-color);\n    display: block;\n    text-decoration: none;\n\n    &.border {\n      border: 1px solid var(--border-color);\n    }\n    &__image-container {\n      overflow: hidden;\n      img {\n        object-fit: var(--background-image-size);\n        height: var(--image-height);\n        transform: scale(1);\n        transition-duration: 0.5s;\n        display: block;\n      }\n      &:hover img {\n        transform: scale(1.08);\n      }\n    }\n    &__text-container {\n      margin: 15px 20px 28px;\n    }\n  }\n  .text {\n    color: var(--text-color);\n    text-align: center;\n    &--h3 {\n      font-size: 21px;\n      line-height: 20px;\n      font-weight: var(--bold-font-weight);\n      margin: 0;\n    }\n    &--p {\n      font-size: 14px;\n      line-height: 19px;\n      margin: 5px 0 0;\n      display: -webkit-box;\n      -webkit-line-clamp: 3;\n      -webkit-box-orient: vertical;\n      overflow: hidden;\n    }\n  }\n}\n",
                     "styleUrl": "./teaser-layout-1.component.scss"
                 }
             ],
@@ -495,15 +776,15 @@
                         "name": "teaserHeightForTemplate",
                         "type": "",
                         "returnType": "",
-                        "line": 25
+                        "line": 26
                     }
                 }
             },
-            "templateData": "<section\n  class=\"teaser\"\n  [class.border]=\"border\"\n  [style.--border-color]=\"borderColor ? borderColor : '#DBDBDB'\"\n  [style.--image-height]=\"teaserHeightForTemplate\"\n  [style.--background-color]=\"backgroundColor\"\n  [style.--text-color]=\"textColor\"\n  [style.--background-image-size]=\"backgroundImageSize\"\n>\n  <div class=\"teaser__image-container\">\n    <img src=\"{{ imageUrl }}\" width=\"100%\" alt=\"{{ header }}\" />\n  </div>\n  <div class=\"teaser__text-container\">\n    <h3 class=\"text text--h3\">{{ header }}</h3>\n    <p class=\"text text--p\">\n      {{ description }}\n    </p>\n  </div>\n</section>\n"
+            "templateData": "<ng-container *ngIf=\"link; else withoutLink\">\n  <a\n    class=\"teaser\"\n    [smNavigate]=\"link || ''\"\n    [class.border]=\"border\"\n    [style.--border-color]=\"borderColor ? borderColor : '#DBDBDB'\"\n    [style.--image-height]=\"teaserHeightForTemplate\"\n    [style.--background-color]=\"backgroundColor\"\n    [style.--text-color]=\"textColor\"\n    [style.--background-image-size]=\"backgroundImageSize\"\n  >\n    <ng-container *ngTemplateOutlet=\"teaser\"></ng-container>\n  </a>\n</ng-container>\n\n<ng-template #withoutLink>\n  <section\n    class=\"teaser\"\n    [class.border]=\"border\"\n    [style.--border-color]=\"borderColor ? borderColor : '#DBDBDB'\"\n    [style.--image-height]=\"teaserHeightForTemplate\"\n    [style.--background-color]=\"backgroundColor\"\n    [style.--text-color]=\"textColor\"\n    [style.--background-image-size]=\"backgroundImageSize\"\n  >\n    <ng-container *ngTemplateOutlet=\"teaser\"></ng-container>\n  </section>\n</ng-template>\n<ng-template #teaser>\n  <div class=\"teaser__image-container\">\n    <img src=\"{{ imageUrl }}\" width=\"100%\" alt=\"{{ header }}\" />\n  </div>\n  <div class=\"teaser__text-container\">\n    <h3 class=\"text text--h3\">{{ header }}</h3>\n    <p class=\"text text--p\">\n      {{ description }} {{link}}\n    </p>\n  </div>\n</ng-template>\n"
         },
         {
             "name": "TeaserLayout2Component",
-            "id": "component-TeaserLayout2Component-88ee47fd2a296812aa2864e35c81b57172b66c1fd99e5bbc20bce6dec74669e39ac19002037ea940f17c03419a8ae8cd5fcf09b62cf6ce222d2063c4e3797136",
+            "id": "component-TeaserLayout2Component-c498d751d3148eb0ba1618325785f175e351c458c2de9e4d28fd535a9ed2998e53d14dbf470e4633dd31e0f47720bdb98987fc178d36f4c196d29a84847f573f",
             "file": "projects/ng-components/src/components/teaser-stack/teaser-layout-2/teaser-layout-2.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -525,7 +806,7 @@
                     "name": "backgroundColor",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
+                    "line": 19,
                     "type": "string",
                     "decorators": []
                 },
@@ -534,7 +815,7 @@
                     "defaultValue": "'center center'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 20,
+                    "line": 21,
                     "type": "IBackgroundImagePosition",
                     "decorators": []
                 },
@@ -543,7 +824,7 @@
                     "defaultValue": "'cover'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 20,
                     "type": "IBackgroundImageSize",
                     "decorators": []
                 },
@@ -551,7 +832,7 @@
                     "name": "border",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 16,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -559,7 +840,7 @@
                     "name": "borderColor",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 17,
                     "type": "string",
                     "decorators": []
                 },
@@ -567,7 +848,7 @@
                     "name": "description",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 14,
+                    "line": 15,
                     "type": "string",
                     "decorators": []
                 },
@@ -575,7 +856,7 @@
                     "name": "header",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 14,
                     "type": "string",
                     "decorators": []
                 },
@@ -583,7 +864,15 @@
                     "name": "imageUrl",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "link",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
                     "type": "string",
                     "decorators": []
                 },
@@ -591,7 +880,7 @@
                     "name": "teaserHeight",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 11,
+                    "line": 12,
                     "type": "number",
                     "decorators": []
                 },
@@ -599,7 +888,7 @@
                     "name": "textColor",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 18,
                     "type": "string",
                     "decorators": []
                 }
@@ -614,16 +903,148 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\nimport { IBackgroundImagePosition, IBackgroundImageSize } from '../teaser-stack.interface';\n\n@Component({\n  selector: 'sm-teaser-layout-2',\n  templateUrl: './teaser-layout-2.component.html',\n  styleUrls: ['./teaser-layout-2.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TeaserLayout2Component {\n  @Input() teaserHeight?: number;\n  @Input() imageUrl?: string;\n  @Input() header?: string;\n  @Input() description?: string;\n  @Input() border?: boolean;\n  @Input() borderColor?: string;\n  @Input() textColor?: string;\n  @Input() backgroundColor?: string;\n  @Input() backgroundImageSize?: IBackgroundImageSize = 'cover';\n  @Input() backgroundImagePosition?: IBackgroundImagePosition = 'center center';\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\nimport { IBackgroundImagePosition, IBackgroundImageSize } from '../teaser-stack.interface';\n\n@Component({\n  selector: 'sm-teaser-layout-2',\n  templateUrl: './teaser-layout-2.component.html',\n  styleUrls: ['./teaser-layout-2.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TeaserLayout2Component {\n  @Input() link?: string;\n  @Input() teaserHeight?: number;\n  @Input() imageUrl?: string;\n  @Input() header?: string;\n  @Input() description?: string;\n  @Input() border?: boolean;\n  @Input() borderColor?: string;\n  @Input() textColor?: string;\n  @Input() backgroundColor?: string;\n  @Input() backgroundImageSize?: IBackgroundImageSize = 'cover';\n  @Input() backgroundImagePosition?: IBackgroundImagePosition = 'center center';\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".teaser {\n  font-family: var(--font-family);\n  border-radius: 4px;\n  height: var(--teaser-height);\n  text-align: center;\n  background-image: var(--background-image);\n  background-color: var(--background-color);\n  background-position: var(--background-image-position);\n  background-size: var(--background-image-size);\n  position: relative;\n  overflow: hidden;\n\n  img {\n    object-fit: cover;\n    max-width: 100%;\n    display: block;\n  }\n\n  &__titles {\n    position: absolute;\n    bottom: 28px;\n    left: 40px;\n    right: 40px;\n\n    h3 {\n      color: #fff;\n      font-size: 24px;\n      line-height: 29px;\n      text-align: center;\n      display: -webkit-box;\n      -webkit-line-clamp: 2;\n      -webkit-box-orient: vertical;\n      overflow: hidden;\n    }\n    p {\n      color: #fff;\n      font-size: 16px;\n      line-height: 19px;\n      text-align: center;\n      margin: 0;\n      display: -webkit-box;\n      -webkit-line-clamp: 1;\n      -webkit-box-orient: vertical;\n      overflow: hidden;\n    }\n  }\n  &:hover {\n    &::before {\n      content: \"\";\n      background-image: linear-gradient(\n        180deg,\n        rgba(238, 238, 238, 0) 0%,\n        rgba(255, 255, 255, 0.89) 100%\n      );\n      position: absolute;\n      top: 0;\n      left: 0;\n      right: 0;\n      bottom: 0;\n    }\n\n    h3 {\n      color: var(--primary-color);\n    }\n    p {\n      color: var(--primary-color);\n    }\n  }\n}\n",
+                    "data": ".teaser {\n  font-family: var(--font-family);\n  border-radius: 4px;\n  height: var(--teaser-height);\n  text-align: center;\n  background-image: var(--background-image);\n  background-color: var(--background-color);\n  background-position: var(--background-image-position);\n  background-size: var(--background-image-size);\n  position: relative;\n  overflow: hidden;\n  display: block;\n  text-decoration: none;\n\n  img {\n    object-fit: cover;\n    max-width: 100%;\n    display: block;\n  }\n\n  &__titles {\n    position: absolute;\n    bottom: 28px;\n    left: 40px;\n    right: 40px;\n\n    h3 {\n      color: #fff;\n      font-size: 24px;\n      line-height: 29px;\n      text-align: center;\n      display: -webkit-box;\n      -webkit-line-clamp: 2;\n      -webkit-box-orient: vertical;\n      overflow: hidden;\n    }\n    p {\n      color: #fff;\n      font-size: 16px;\n      line-height: 19px;\n      text-align: center;\n      margin: 0;\n      display: -webkit-box;\n      -webkit-line-clamp: 1;\n      -webkit-box-orient: vertical;\n      overflow: hidden;\n    }\n  }\n  &:hover {\n    &::before {\n      content: \"\";\n      background-image: linear-gradient(\n        180deg,\n        rgba(238, 238, 238, 0) 0%,\n        rgba(255, 255, 255, 0.89) 100%\n      );\n      position: absolute;\n      top: 0;\n      left: 0;\n      right: 0;\n      bottom: 0;\n    }\n\n    h3 {\n      color: var(--primary-color);\n    }\n    p {\n      color: var(--primary-color);\n    }\n  }\n}\n",
                     "styleUrl": "./teaser-layout-2.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<div\n  class=\"teaser\"\n  *ngIf=\"teaserHeight\"\n  [style.--background-image]=\"'url(' + imageUrl + ')'\"\n  [style.--teaser-height]=\"teaserHeight + 'px'\"\n  [style.--background-color]=\"backgroundColor\"\n  [style.--background-image-position]=\"backgroundImagePosition\"\n  [style.--background-image-size]=\"backgroundImageSize\"\n>\n  <div class=\"teaser__titles\">\n    <h3>{{ header }}</h3>\n    <p>{{ description }}</p>\n  </div>\n</div>\n<div\n  class=\"teaser\"\n  *ngIf=\"!teaserHeight\"\n>\n  <img src=\"{{imageUrl}}\">\n  <div class=\"teaser__titles\">\n    <h3>{{ header }}</h3>\n    <p>{{ description }}</p>\n  </div>\n</div>\n"
+            "templateData": "<ng-container *ngIf=\"link; else withoutLink\">\n  <a\n    class=\"teaser\"\n    [smNavigate]=\"link || ''\"\n    [style.--background-image]=\"imageUrl ? 'url(' + imageUrl + ')' : ''\"\n    [style.--teaser-height]=\"teaserHeight ? teaserHeight + 'px' : ''\"\n    [style.--background-color]=\"backgroundColor\"\n    [style.--background-image-position]=\"backgroundImagePosition\"\n    [style.--background-image-size]=\"backgroundImageSize\"\n  >\n    <ng-container *ngTemplateOutlet=\"teaser\"></ng-container>\n  </a>\n</ng-container>\n\n<ng-template #withoutLink>\n  <section\n    class=\"teaser\"\n    [style.--background-image]=\"imageUrl ? 'url(' + imageUrl + ')' : ''\"\n    [style.--teaser-height]=\"teaserHeight ? teaserHeight + 'px' : ''\"\n    [style.--background-color]=\"backgroundColor\"\n    [style.--background-image-position]=\"backgroundImagePosition\"\n    [style.--background-image-size]=\"backgroundImageSize\"\n  >\n    <ng-container *ngTemplateOutlet=\"teaser\"></ng-container>\n  </section>\n</ng-template>\n<ng-template #teaser>\n  <img *ngIf=\"!teaserHeight\" src=\"{{imageUrl}}\">\n  <div class=\"teaser__titles\">\n    <h3>{{ header }}</h3>\n    <p>{{ description }}</p>\n  </div>\n</ng-template>\n"
+        },
+        {
+            "name": "TeaserLayout3Component",
+            "id": "component-TeaserLayout3Component-7834a23db10b4cfc5a40ff56e309d041fda0bdc01406a6dd1c4c008ac2e672063833816c8b1aad08fd6e3ee0902d9444f7e8f9b562d7113bfee9759dfc2a5f67",
+            "file": "projects/ng-components/src/components/teaser-stack/teaser-layout-3/teaser-layout-3.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "sm-teaser-layout-3",
+            "styleUrls": [
+                "./teaser-layout-3.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./teaser-layout-3.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "backgroundImagePosition",
+                    "defaultValue": "'center center'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "IBackgroundImagePosition",
+                    "decorators": []
+                },
+                {
+                    "name": "backgroundImageSize",
+                    "defaultValue": "'cover'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "IBackgroundImageSize",
+                    "decorators": []
+                },
+                {
+                    "name": "border",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "borderColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "description",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "header",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "imageUrl",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "link",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "teaserHeight",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "textColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\nimport { IBackgroundImagePosition, IBackgroundImageSize } from '../teaser-stack.interface';\n\n@Component({\n  selector: 'sm-teaser-layout-3',\n  templateUrl: './teaser-layout-3.component.html',\n  styleUrls: ['./teaser-layout-3.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TeaserLayout3Component {\n  @Input() link?: string;\n  @Input() teaserHeight?: number;\n  @Input() imageUrl?: string;\n  @Input() header?: string;\n  @Input() description?: string;\n  @Input() border?: boolean;\n  @Input() borderColor?: string;\n  @Input() textColor?: string;\n  @Input() backgroundColor?: string;\n  @Input() backgroundImageSize?: IBackgroundImageSize = 'cover';\n  @Input() backgroundImagePosition?: IBackgroundImagePosition = 'center center';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\n  .teaser {\n    font-family: var(--font-family);\n    border-radius: 5px;\n    background-color: var(--background-color);\n    overflow: hidden;\n    display: block;\n    text-decoration: none;\n    height: 100%;\n\n    &.border {\n      box-shadow: 0 2px 7px 0 var(--border-color);\n    }\n\n    &__image-container {\n      padding: 10px;\n      img {\n        width: 100%;\n        height: var(--teaser-height);\n        display: block;\n        object-fit: var(--background-image-size);\n        object-position: var(--background-image-position);\n      }\n    }\n\n    &__text-container {\n      color: var(--text-color);\n      text-align: center;\n      padding: 0 20px 20px;\n\n      &__header {\n        font-size: 18px;\n        line-height: 22px;\n        margin: 0;\n        font-weight: normal;\n      }\n\n      &__description {\n        font-size: 14px;\n        line-height: 19px;\n        margin: 5px 0 0;\n        display: -webkit-box;\n        -webkit-line-clamp: 2;\n        -webkit-box-orient: vertical;\n        overflow: hidden;\n      }\n    }\n  }\n}\n",
+                    "styleUrl": "./teaser-layout-3.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<ng-container *ngIf=\"link; else withoutLink\">\n  <a\n    class=\"teaser\"\n    [class.border]=\"border\"\n    [smNavigate]=\"link || ''\"\n    [style.--border-color]=\"borderColor || 'rgba(0,0,0, 0.1)'\"\n    [style.--background-image]=\"imageUrl ? 'url(' + imageUrl + ')' : ''\"\n    [style.--teaser-height]=\"teaserHeight ? teaserHeight + 'px' : ''\"\n    [style.--text-color]=\"textColor\"\n    [style.--background-color]=\"backgroundColor\"\n    [style.--background-image-size]=\"backgroundImageSize\"\n    [style.--background-image-position]=\"backgroundImagePosition\"\n  >\n    <ng-container *ngTemplateOutlet=\"teaser\"></ng-container>\n  </a>\n</ng-container>\n\n<ng-template #withoutLink>\n  <section\n    class=\"teaser\"\n    [class.border]=\"border\"\n    [style.--border-color]=\"borderColor || 'rgba(0,0,0, 0.1)'\"\n    [style.--background-image]=\"imageUrl ? 'url(' + imageUrl + ')' : ''\"\n    [style.--teaser-height]=\"teaserHeight ? teaserHeight + 'px' : ''\"\n    [style.--text-color]=\"textColor\"\n    [style.--background-color]=\"backgroundColor\"\n    [style.--background-image-size]=\"backgroundImageSize\"\n    [style.--background-image-position]=\"backgroundImagePosition\"\n  >\n    <ng-container *ngTemplateOutlet=\"teaser\"></ng-container>\n  </section>\n</ng-template>\n<ng-template #teaser>\n  <div class=\"teaser__image-container\">\n    <img class=\"image\" src=\"{{ imageUrl }}\" alt=\"{{ header }}\" />\n  </div>\n  <div class=\"teaser__text-container\" *ngIf=\"header || description\">\n    <h3 *ngIf=\"header\" class=\"teaser__text-container__header\">{{ header }}</h3>\n    <p *ngIf=\"description\" class=\"teaser__text-container__description\">\n      {{ description }}\n    </p>\n  </div>\n</ng-template>\n"
         },
         {
             "name": "TeaserStackComponent",
@@ -752,7 +1173,7 @@
         },
         {
             "name": "TeaserStackLayout1Component",
-            "id": "component-TeaserStackLayout1Component-8f97e0e0280197bc121b2f9dfc95a2e8329f7d7a44d5341cecf1d3611e4622ce46cd84f24aa8a49ceae66fab8e18a02e4295eb711ec1c78dd65ceb6bb05963f8",
+            "id": "component-TeaserStackLayout1Component-65326efe51a4fe564793e798521c5ca5be169cd1192f88b53bfa613e3cbcf76d5295d71e0f37ea58d0200d88eacef0c4d9d9324b76fd5a19efd6f6f832a1b94e",
             "file": "projects/ng-components/src/components/teaser-stack/teaser-stack-layout-1/teaser-stack-layout-1.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -774,7 +1195,7 @@
                     "name": "backgroundColor",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
+                    "line": 19,
                     "type": "string",
                     "decorators": []
                 },
@@ -788,11 +1209,19 @@
                     "decorators": []
                 },
                 {
+                    "name": "description",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
                     "name": "fullPageWidth",
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 20,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -801,7 +1230,7 @@
                     "defaultValue": "'layout-1'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 22,
+                    "line": 23,
                     "type": "ITeaserStackLayout",
                     "decorators": []
                 },
@@ -809,7 +1238,7 @@
                     "name": "readMoreLabel",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 21,
+                    "line": 22,
                     "type": "string",
                     "decorators": []
                 },
@@ -817,7 +1246,7 @@
                     "name": "readMoreLink",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 20,
+                    "line": 21,
                     "type": "string",
                     "decorators": []
                 },
@@ -842,7 +1271,7 @@
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 18,
                     "type": "ITeaser[]",
                     "decorators": []
                 },
@@ -865,11 +1294,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\nimport { ITeaserStackLayout } from '../teaser-stack.interface';\nimport { ITeaser } from '../teaser/teaser.component';\n\n\n@Component({\n  selector: 'sm-teaser-stack-layout-1',\n  templateUrl: './teaser-stack-layout-1.component.html',\n  styleUrls: ['./teaser-stack-layout-1.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TeaserStackLayout1Component {\n  @Input() teaserHeight?: number;\n  @Input() columnCount?: number = 3;\n  @Input() rowCount?: number;\n  @Input() title?: string;\n  @Input() teasers: ITeaser[] = [];\n  @Input() backgroundColor?: string;\n  @Input() fullPageWidth? = false;\n  @Input() readMoreLink?: string;\n  @Input() readMoreLabel?: string;\n  @Input() layout: ITeaserStackLayout = 'layout-1';\n\n  get useMasonry() {\n    // Layout-1 has default height\n    if (this.layout === 'layout-1') {\n      return false;\n    }\n    return !this.teaserHeight || this.teasers.every(teaser => !teaser.teaserHeight);\n  }\n\n  get finalTeasers() {\n    if (this.rowCount && this.columnCount) {\n      const totalItems = this.columnCount * this.rowCount;\n      if (this.teasers.length <= totalItems) {\n        return this.teasers;\n      }\n      return this.teasers.splice(0, totalItems);\n    }\n    return this.teasers;\n  }\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\nimport { ITeaserStackLayout } from '../teaser-stack.interface';\nimport { ITeaser } from '../teaser/teaser.component';\n\n\n@Component({\n  selector: 'sm-teaser-stack-layout-1',\n  templateUrl: './teaser-stack-layout-1.component.html',\n  styleUrls: ['./teaser-stack-layout-1.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TeaserStackLayout1Component {\n  @Input() teaserHeight?: number;\n  @Input() columnCount?: number = 3;\n  @Input() rowCount?: number;\n  @Input() title?: string;\n  @Input() description?: string;\n  @Input() teasers: ITeaser[] = [];\n  @Input() backgroundColor?: string;\n  @Input() fullPageWidth? = false;\n  @Input() readMoreLink?: string;\n  @Input() readMoreLabel?: string;\n  @Input() layout: ITeaserStackLayout = 'layout-1';\n\n  get useMasonry() {\n    // Layout-1 has default height\n    if (this.layout === 'layout-1') {\n      return false;\n    }\n    return !this.teaserHeight || this.teasers.every(teaser => !teaser.teaserHeight);\n  }\n\n  get finalTeasers() {\n    if (this.rowCount && this.columnCount) {\n      const totalItems = this.columnCount * this.rowCount;\n      if (this.teasers.length <= totalItems) {\n        return this.teasers;\n      }\n      return this.teasers.splice(0, totalItems);\n    }\n    return this.teasers;\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@use 'projects/variables';\n.teaser-stack-layout-1 {\n  background-color: var(--background-color);\n  padding: calc(var(--content-margin) * 2) var(--content-margin);\n\n  &:not(.full-page-width) {\n    .teaser-stack-layout-1-container {\n      margin-left: auto;\n      margin-right: auto;\n      max-width: var(--max-content-width);\n    }\n  }\n}\n.teaser-stack-title {\n  font-size: 32px;\n  color: #123456;\n  margin: 0;\n  font-family: var(--font-family);\n}\n.teaser-stack {\n  margin-top: 20px;\n}\n\n.no-float {\n  display: grid;\n  gap: 20px;\n  grid-template-columns: 1fr;\n}\n\n.float sm-teaser {\n  display: block;\n  margin-bottom: 10px;\n}\n\nh2 {\n  text-align: center;\n  color: var(--text-color);\n  font-family: var(--font-family);\n  font-size: 40px;\n  line-height: 43px;\n  margin: 20px auto;\n}\n\n.teaser-stack-read-more-link {\n  text-align: center;\n  margin-top: var(--content-margin);\n  a {\n    text-decoration: none;\n    color: var(--primary-color);\n\n    &:hover {\n      text-decoration: underline;\n    }\n  }\n}\n\n@media (min-width: map-get(variables.$breakpoints, \"phone\")) {\n  .no-float {\n    grid-template-columns: repeat(var(--column-count), 1fr);\n  }\n  .float ngx-masonry {\n    margin-right: -10px;\n  }\n  .float sm-teaser {\n    width: calc(100% / var(--column-count) - 10px);\n    margin-right: 10px;\n    margin-bottom: 10px;\n  }\n}\n\n@media (min-width: map-get(variables.$breakpoints, \"phone\")) and (max-width: map-get(variables.$breakpoints, \"tablet\")) {\n  .teaser-stack {\n    --column-count: 2 !important; // Force 2 items per row in tablets\n  }\n}\n",
+                    "data": "@use 'projects/variables';\n.teaser-stack-layout-1 {\n  background-color: var(--background-color);\n  padding: calc(var(--content-margin) * 2) var(--content-margin);\n\n  &:not(.full-page-width) {\n    .teaser-stack-layout-1-container {\n      margin-left: auto;\n      margin-right: auto;\n      max-width: var(--max-content-width);\n    }\n  }\n}\n.teaser-stack-title {\n  text-align: center;\n  font-size: 32px;\n  color: var(--text-color);\n  margin: 0;\n  font-family: var(--font-family);\n  line-height: 43px;\n}\n.teaser-stack-description {\n  margin: 0;\n  text-align: center;\n  font-family: var(--font-family);\n  margin-top: 5px;\n}\n.teaser-stack {\n  margin-top: 20px;\n}\n\n.no-float {\n  display: grid;\n  gap: var(--content-margin);\n  grid-template-columns: 1fr;\n}\n\n.float sm-teaser {\n  display: block;\n  margin-bottom: var(--content-margin);\n}\n\n.teaser-stack-read-more-link {\n  text-align: center;\n  margin-top: var(--content-margin);\n  a {\n    text-decoration: none;\n    color: var(--primary-color);\n\n    &:hover {\n      text-decoration: underline;\n    }\n  }\n}\n\n@media (min-width: map-get(variables.$breakpoints, \"phone\")) {\n  .no-float {\n    grid-template-columns: repeat(var(--column-count), 1fr);\n  }\n  .float ngx-masonry {\n    margin-right: -var(--content-margin);\n  }\n  .float sm-teaser {\n    width: calc(100% / var(--column-count) - var(--content-margin));\n    margin-right: var(--content-margin);\n    margin-bottom: var(--content-margin);\n  }\n}\n\n@media (min-width: map-get(variables.$breakpoints, \"phone\")) and (max-width: map-get(variables.$breakpoints, \"tablet\")) {\n  .teaser-stack {\n    --column-count: 2 !important; // Force 2 items per row in tablets\n  }\n}\n",
                     "styleUrl": "./teaser-stack-layout-1.component.scss"
                 }
             ],
@@ -881,7 +1310,7 @@
                         "name": "useMasonry",
                         "type": "",
                         "returnType": "",
-                        "line": 24
+                        "line": 25
                     }
                 },
                 "finalTeasers": {
@@ -890,11 +1319,11 @@
                         "name": "finalTeasers",
                         "type": "",
                         "returnType": "",
-                        "line": 32
+                        "line": 33
                     }
                 }
             },
-            "templateData": "<div class=\"teaser-stack-layout-1\" [style.--background-color]=\"backgroundColor\" [ngClass]=\"{'full-page-width': fullPageWidth}\">\n  <div class=\"teaser-stack-layout-1-container\">\n    <h2 *ngIf=\"title\" class=\"teaser-stack-title\">\n      {{ title }}\n    </h2>\n    <p *ngIf=\"description\" class=\"teaser-stack-description\">\n      {{ description }}\n    </p>\n    <div\n      class=\"teaser-stack\"\n      [ngClass]=\"teaserHeight ? 'no-float' : 'float'\"\n      [style.--column-count]=\"columnCount\"\n    >\n      <ngx-masonry *ngIf=\"!teaserHeight; else withoutTeaserHeight\">\n        <sm-teaser\n          ngxMasonryItem\n          *ngFor=\"let teaser of finalTeasers\"\n          [imageUrl]=\"teaser?.imageUrl\"\n          [header]=\"teaser?.header\"\n          [description]=\"teaser?.description\"\n          [border]=\"teaser?.border\"\n          [borderColor]=\"teaser?.borderColor\"\n          [textColor]=\"teaser?.textColor\"\n          [backgroundColor]=\"teaser?.backgroundColor\"\n          [backgroundImageSize]=\"teaser.backgroundImageSize\"\n          [layout]=\"teaser.layout || layout\"\n          [backgroundImagePosition]=\"teaser.backgroundImagePosition\"\n          [teaserHeight]=\"teaser.teaserHeight || teaserHeight\"\n        ></sm-teaser>\n      </ngx-masonry>\n      <ng-template #withoutTeaserHeight>\n        <sm-teaser\n          *ngFor=\"let teaser of finalTeasers\"\n          [imageUrl]=\"teaser?.imageUrl\"\n          [header]=\"teaser?.header\"\n          [description]=\"teaser?.description\"\n          [border]=\"teaser?.border\"\n          [borderColor]=\"teaser?.borderColor\"\n          [textColor]=\"teaser?.textColor\"\n          [backgroundColor]=\"teaser?.backgroundColor\"\n          [backgroundImageSize]=\"teaser.backgroundImageSize\"\n          [layout]=\"teaser.layout || layout\"\n          [backgroundImagePosition]=\"teaser.backgroundImagePosition\"\n          [teaserHeight]=\"teaser.teaserHeight || teaserHeight\"\n        ></sm-teaser>\n      </ng-template>\n    </div>\n    <div *ngIf=\"readMoreLink && readMoreLabel\" class=\"teaser-stack-read-more-link\">\n      <a [routerLink]=\"readMoreLink\" >\n        {{readMoreLabel}}\n      </a>\n    </div>\n  </div>\n</div>\n"
+            "templateData": "<div class=\"teaser-stack-layout-1\" [style.--background-color]=\"backgroundColor\" [ngClass]=\"{'full-page-width': fullPageWidth}\">\n  <div class=\"teaser-stack-layout-1-container\">\n    <h2 *ngIf=\"title\" class=\"teaser-stack-title\">\n      {{ title }}\n    </h2>\n    <p *ngIf=\"description\" class=\"teaser-stack-description\">\n      {{ description }}\n    </p>\n    <div\n      class=\"teaser-stack\"\n      [ngClass]=\"teaserHeight ? 'no-float' : 'float'\"\n      [style.--column-count]=\"columnCount\"\n    >\n      <ngx-masonry *ngIf=\"!teaserHeight; else withoutTeaserHeight\">\n        <sm-teaser\n          ngxMasonryItem\n          *ngFor=\"let teaser of finalTeasers\"\n          [imageUrl]=\"teaser?.imageUrl\"\n          [header]=\"teaser?.header\"\n          [description]=\"teaser?.description\"\n          [border]=\"teaser?.border\"\n          [borderColor]=\"teaser?.borderColor\"\n          [textColor]=\"teaser?.textColor\"\n          [link]=\"teaser?.link\"\n          [backgroundColor]=\"teaser?.backgroundColor\"\n          [backgroundImageSize]=\"teaser.backgroundImageSize\"\n          [layout]=\"teaser.layout || layout\"\n          [backgroundImagePosition]=\"teaser.backgroundImagePosition\"\n          [teaserHeight]=\"teaser.teaserHeight || teaserHeight\"\n        ></sm-teaser>\n      </ngx-masonry>\n      <ng-template #withoutTeaserHeight>\n        <sm-teaser\n          *ngFor=\"let teaser of finalTeasers\"\n          [imageUrl]=\"teaser?.imageUrl\"\n          [header]=\"teaser?.header\"\n          [description]=\"teaser?.description\"\n          [border]=\"teaser?.border\"\n          [borderColor]=\"teaser?.borderColor\"\n          [textColor]=\"teaser?.textColor\"\n          [link]=\"teaser?.link\"\n          [backgroundColor]=\"teaser?.backgroundColor\"\n          [backgroundImageSize]=\"teaser.backgroundImageSize\"\n          [layout]=\"teaser.layout || layout\"\n          [backgroundImagePosition]=\"teaser.backgroundImagePosition\"\n          [teaserHeight]=\"teaser.teaserHeight || teaserHeight\"\n        ></sm-teaser>\n      </ng-template>\n    </div>\n    <div *ngIf=\"readMoreLink && readMoreLabel\" class=\"teaser-stack-read-more-link\">\n      <a [routerLink]=\"readMoreLink\" >\n        {{readMoreLabel}}\n      </a>\n    </div>\n  </div>\n</div>\n"
         }
     ],
     "modules": [
@@ -943,14 +1372,202 @@
             ]
         },
         {
-            "name": "TeaserStackModule",
-            "id": "module-TeaserStackModule-39d5db6d75fdd3b3939cef7dbdd30547d58f3946ec788ebc8741bd5ad7adde7f92a4db044ca2d82aae98e644d8caf142ea6a7c66890cf62893a159614b9d3428",
+            "name": "NavigationModule",
+            "id": "module-NavigationModule-d3c67420471450305fb290b0c5df1fffa6563d2a8ada83e9f543631a0841887d1b8a050be84738349ed7844805f7e1ba284e2a286b218d4e406b8fbc404c22fa",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
-            "file": "projects/ng-components/src/components/teaser-stack/teaser-stack.module.ts",
+            "file": "projects/ng-components/src/directives/navigation/navigation.module.ts",
             "methods": [],
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { RouterModule } from '@angular/router';\nimport { NgxMasonryModule } from 'ngx-masonry';\nimport { TeaserLayout1Component } from './teaser-layout-1/teaser-layout-1.component';\nimport { TeaserLayout2Component } from './teaser-layout-2/teaser-layout-2.component';\nimport { TeaserStackLayout1Component } from './teaser-stack-layout-1/teaser-stack-layout-1.component';\nimport { TeaserStackComponent } from './teaser-stack.component';\nimport { TeaserComponent } from './teaser/teaser.component';\n\n@NgModule({\n  declarations: [\n    TeaserStackComponent,\n    TeaserStackLayout1Component,\n    TeaserComponent,\n    TeaserLayout1Component,\n    TeaserLayout2Component,\n  ],\n  imports: [CommonModule, NgxMasonryModule, RouterModule],\n  exports: [TeaserStackComponent],\n  providers: [],\n})\nexport class TeaserStackModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { NavigationDirective } from './navigation.directive';\n\n@NgModule({\n  declarations: [\n    NavigationDirective\n  ],\n  imports: [],\n  exports: [NavigationDirective],\n  providers: [],\n})\nexport class NavigationModule {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "NavigationDirective"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "NavigationDirective"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "TeaserLayout1Module",
+            "id": "module-TeaserLayout1Module-5096055c6f35fadc141b1f7b3603e1be2158c419e335eca6274c469b7261865f55ef0e4987c2d5d01e03023892eed6c51e7afddc83974f78bb56e56ebb805664",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/ng-components/src/components/teaser-stack/teaser-layout-1/teaser-layout-1.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { NavigationModule } from '../../../directives/navigation/navigation.module';\nimport { TeaserLayout1Component } from './teaser-layout-1.component';\n\n@NgModule({\n  declarations: [\n    TeaserLayout1Component,\n  ],\n  imports: [NavigationModule],\n  exports: [\n    TeaserLayout1Component,\n  ],\n  providers: [],\n})\nexport class TeaserLayout1Module {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "TeaserLayout1Component"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "NavigationModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "TeaserLayout1Component"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "TeaserLayout2Module",
+            "id": "module-TeaserLayout2Module-3e3004e4e132e8a1c9a3df14965ee5c02eadbfaccc3efafc4138e330809a5022aeccab8db21882dd079f400bc297ec2a0a13b6f107f0d52359622cf0ede6531e",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/ng-components/src/components/teaser-stack/teaser-layout-2/teaser-layout-2.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { NavigationModule } from '../../../directives/navigation/navigation.module';\nimport { TeaserLayout2Component } from './teaser-layout-2.component';\n\n@NgModule({\n  declarations: [\n    TeaserLayout2Component,\n  ],\n  imports: [NavigationModule],\n  exports: [\n    TeaserLayout2Component,\n  ],\n  providers: [],\n})\nexport class TeaserLayout2Module {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "TeaserLayout2Component"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "NavigationModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "TeaserLayout2Component"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "TeaserLayout3Module",
+            "id": "module-TeaserLayout3Module-ec5a0a09bb539d5fcb04504aa0d2cd41221e0d8db31fa487d3715a2e9a0d2c1b9366beaab8a61fae284d26eebe845393e9cde96d345ceba8447772a0b10cadb4",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/ng-components/src/components/teaser-stack/teaser-layout-3/teaser-layout-3.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { NavigationModule } from '../../../directives/navigation/navigation.module';\nimport { TeaserLayout3Component } from './teaser-layout-3.component';\n\n@NgModule({\n  declarations: [\n    TeaserLayout3Component,\n  ],\n  imports: [NavigationModule],\n  exports: [\n    TeaserLayout3Component,\n  ],\n  providers: [],\n})\nexport class TeaserLayout3Module {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "TeaserLayout3Component"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "NavigationModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "TeaserLayout3Component"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "TeaserModule",
+            "id": "module-TeaserModule-165811387701ecba0c14908e7bca96a2469507f5956acb3f90f337b552d209fbfb10874af3d1c74d3c9b2ed1273d4ecaa9a0832e148b1b556a8c102bb214ef4f",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/ng-components/src/components/teaser-stack/teaser/teaser.module.ts",
+            "methods": [],
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { TeaserLayout1Module } from '../teaser-layout-1/teaser-layout-1.module';\nimport { TeaserLayout2Module } from '../teaser-layout-2/teaser-layout-2.module';\nimport { TeaserLayout3Module } from '../teaser-layout-3/teaser-layout-3.module';\nimport { TeaserComponent } from './teaser.component';\n\n@NgModule({\n  declarations: [\n    TeaserComponent\n  ],\n  imports: [CommonModule, TeaserLayout1Module, TeaserLayout2Module, TeaserLayout3Module],\n  exports: [\n    TeaserComponent\n  ],\n  providers: [],\n})\nexport class TeaserModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -961,16 +1578,58 @@
                     "elements": [
                         {
                             "name": "TeaserComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "TeaserLayout1Module"
                         },
                         {
-                            "name": "TeaserLayout1Component"
+                            "name": "TeaserLayout2Module"
                         },
                         {
-                            "name": "TeaserLayout2Component"
-                        },
+                            "name": "TeaserLayout3Module"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
                         {
-                            "name": "TeaserStackComponent"
-                        },
+                            "name": "TeaserComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "TeaserStackLayout1Module",
+            "id": "module-TeaserStackLayout1Module-24efa5c30251794c2c0bb7602046cc4be08e2fd931502d9fb8d56c64f6ec5d636b53e23d4321f5e4d664c9bed0c1d8e4eea2c77fb99f82ba0c4a2ee6b8ea8d22",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/ng-components/src/components/teaser-stack/teaser-stack-layout-1/teaser-stack-layout-1.module.ts",
+            "methods": [],
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\nimport { NgxMasonryModule } from 'ngx-masonry';\nimport { TeaserModule } from '../teaser/teaser.module';\nimport { TeaserStackLayout1Component } from './teaser-stack-layout-1.component';\n\n@NgModule({\n  declarations: [\n    TeaserStackLayout1Component,\n  ],\n  imports: [CommonModule, NgxMasonryModule, TeaserModule, BrowserAnimationsModule],\n  exports: [\n    TeaserStackLayout1Component,\n  ],\n  providers: [],\n})\nexport class TeaserStackLayout1Module {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
                         {
                             "name": "TeaserStackLayout1Component"
                         }
@@ -978,7 +1637,59 @@
                 },
                 {
                     "type": "imports",
+                    "elements": [
+                        {
+                            "name": "TeaserModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "TeaserStackLayout1Component"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
                     "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "TeaserStackModule",
+            "id": "module-TeaserStackModule-c1c0d0fa8891e1aba57c4e4b68dcd2c518cc466209e6875145ad6c3ce14b01dc873f094cec438e54c21ee5193771d376249047e30dd500968f8f4077ccc430a9",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/ng-components/src/components/teaser-stack/teaser-stack.module.ts",
+            "methods": [],
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { RouterModule } from '@angular/router';\nimport { TeaserStackLayout1Module } from './teaser-stack-layout-1/teaser-stack-layout-1.module';\nimport { TeaserStackComponent } from './teaser-stack.component';\n\n@NgModule({\n  declarations: [\n    TeaserStackComponent,\n  ],\n  imports: [CommonModule, RouterModule, TeaserStackLayout1Module],\n  exports: [TeaserStackComponent],\n  providers: [],\n})\nexport class TeaserStackModule {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "TeaserStackComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "TeaserStackLayout1Module"
+                        }
+                    ]
                 },
                 {
                     "type": "exports",
@@ -1003,6 +1714,56 @@
         "variables": [
             {
                 "name": "_1_Layout1WithFixHeight",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/teaser-stack/teaser-stack.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "_10_Layout1WithMixedTeaser",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/teaser-stack/teaser-stack.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "_11_Layout3WithResponsiveHeight",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/teaser-stack/teaser-stack.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "_12_Layout3WithFixedHeight",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/teaser-stack/teaser-stack.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "_13_Layout3WithFixedHeight",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/teaser-stack/teaser-stack.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "_14_Layout3WithResponsiveHeight",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "projects/ng-components/src/components/teaser-stack/teaser-stack.stories.ts",
@@ -1142,6 +1903,26 @@
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
             {
+                "name": "images",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/teaser-stack/teaser-stack.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/308490B.JPG&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=pp-static/images/QXX_display.png&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/623XB.jpg&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/W011100B.png&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/4214037b.jpg&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=pp-static/images/4218087Ba.jpg&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/4243525B2.JPG&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/11663B.jpg&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=pp-static/images/product/70218Ba.jpg&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=pp-static/images/85553.jpg&width=218&height=175\"',\n]"
+            },
+            {
+                "name": "isFullPath",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/directives/navigation/navigation.directive.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "(url: string) : boolean => {\n  return url.startsWith('https') || url.startsWith('http');\n}"
+            },
+            {
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1158,7 +1939,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
-                "defaultValue": "{\n  columnCount: 3,\n  layout: 'layout-1',\n  title: 'Science articles header',\n  teasers: [\n    {\n      imageUrl:\n        'https://media.istockphoto.com/photos/nyhavn-copenhagen-denmark-picture-id901375804?k=20&m=901375804&s=612x612&w=0&h=LjDZ-dPGoCVU-xy-A4TyU8y6amshakYf5uTPWIKU5e8=',\n      header: 'How customers won’t feel alone',\n      description:\n        'Starbucks uses round tables specifically so customers won’t feel alone. The lack of edges makes it seem less like people are missing. The lack of edges makes it seem less like people are missing.',\n      border: true,\n      borderColor: '#DBDBDB',\n      backgroundImageSize: 'cover',\n      backgroundImagePosition: 'center center',\n    },\n    {\n      imageUrl:\n        'http://ekkotek.com/MobileApps/youtubeApi/examples/images/Swan_large.jpg',\n      header: 'The best known brand in the world',\n      description:\n        'The Coca-Cola logo can be recognized by 94 percent of the world’s population',\n      border: true,\n      borderColor: '#DBDBDB',\n      backgroundImageSize: 'cover',\n      backgroundImagePosition: 'center center',\n    },\n    {\n      imageUrl:\n        'https://stimg.cardekho.com/images/carexteriorimages/930x620/Hyundai/Venue/9154/1655441194954/front-left-side-47.jpg?tr=w-375',\n      header: 'Tuesday',\n      description:\n        'On average the most productive day of the workweek is Tuesday',\n      border: true,\n      borderColor: '#DBDBDB',\n      backgroundImageSize: 'cover',\n      backgroundImagePosition: 'center center',\n    },\n    {\n      imageUrl:\n        'https://images.unsplash.com/photo-1551651767-d5ffbdd04b83?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Y29wZW5oYWdlbnxlbnwwfHwwfHw%3D&w=1000&q=80',\n      header: \"The Meaning Behind Yahoo's Full Name\",\n      description:\n        \"Yahoo stands for 'Yet Another Hierarchical Officious Oracle.' Learn more about the meaning of Yahoo and how it became a household name.'\",\n      border: true,\n      borderColor: '#DBDBDB',\n      backgroundImageSize: 'cover',\n      backgroundImagePosition: 'center center',\n    },\n    {\n      imageUrl:\n        'https://cdn.theatlantic.com/media/img/photo/2020/11/montana-photos/a01_23355789779-1/original.jpg',\n      header: 'Ah Ikea, how we love you so',\n      description: 'One in 10 Europeans are conceived in an Ikea bed',\n      border: true,\n      borderColor: '#DBDBDB',\n      backgroundImageSize: 'cover',\n      backgroundImagePosition: 'center center',\n    },\n    {\n      imageUrl:\n        'https://vinusimages.co/wp-content/uploads/2018/10/EG7A2390.jpgA_.jpg',\n      header: 'Google was originally called BackRub',\n      description:\n        'Google cofounders Larry Page and Sergey Brin are definitely fans of wordplay, and they seem to have a thing for company names that are both goofy and yet significant at the same time.',\n      border: true,\n      borderColor: '#DBDBDB',\n      backgroundImageSize: 'cover',\n      backgroundImagePosition: 'center center',\n    },\n  ],\n}"
+                "defaultValue": "{\n  columnCount: 3,\n  layout: 'layout-1',\n  title: 'Science articles header',\n  description: 'Description test',\n  teasers: [\n    {\n      imageUrl:\n        'https://media.istockphoto.com/photos/nyhavn-copenhagen-denmark-picture-id901375804?k=20&m=901375804&s=612x612&w=0&h=LjDZ-dPGoCVU-xy-A4TyU8y6amshakYf5uTPWIKU5e8=',\n      header: 'How customers won’t feel alone',\n      description:\n        'Starbucks uses round tables specifically so customers won’t feel alone. The lack of edges makes it seem less like people are missing. The lack of edges makes it seem less like people are missing.',\n      border: true,\n      borderColor: '#DBDBDB',\n      backgroundImageSize: 'cover',\n      backgroundImagePosition: 'center center',\n    },\n    {\n      imageUrl:\n        'http://ekkotek.com/MobileApps/youtubeApi/examples/images/Swan_large.jpg',\n      header: 'The best known brand in the world',\n      description:\n        'The Coca-Cola logo can be recognized by 94 percent of the world’s population',\n      border: true,\n      borderColor: '#DBDBDB',\n      backgroundImageSize: 'cover',\n      backgroundImagePosition: 'center center',\n    },\n    {\n      imageUrl:\n        'https://stimg.cardekho.com/images/carexteriorimages/930x620/Hyundai/Venue/9154/1655441194954/front-left-side-47.jpg?tr=w-375',\n      header: 'Tuesday',\n      description:\n        'On average the most productive day of the workweek is Tuesday',\n      border: true,\n      borderColor: '#DBDBDB',\n      backgroundImageSize: 'cover',\n      backgroundImagePosition: 'center center',\n    },\n    {\n      imageUrl:\n        'https://images.unsplash.com/photo-1551651767-d5ffbdd04b83?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Y29wZW5oYWdlbnxlbnwwfHwwfHw%3D&w=1000&q=80',\n      header: \"The Meaning Behind Yahoo's Full Name\",\n      description:\n        \"Yahoo stands for 'Yet Another Hierarchical Officious Oracle.' Learn more about the meaning of Yahoo and how it became a household name.'\",\n      border: true,\n      borderColor: '#DBDBDB',\n      backgroundImageSize: 'cover',\n      backgroundImagePosition: 'center center',\n    },\n    {\n      imageUrl:\n        'https://cdn.theatlantic.com/media/img/photo/2020/11/montana-photos/a01_23355789779-1/original.jpg',\n      header: 'Ah Ikea, how we love you so',\n      description: 'One in 10 Europeans are conceived in an Ikea bed',\n      border: true,\n      borderColor: '#DBDBDB',\n      backgroundImageSize: 'cover',\n      backgroundImagePosition: 'center center',\n    },\n    {\n      imageUrl:\n        'https://vinusimages.co/wp-content/uploads/2018/10/EG7A2390.jpgA_.jpg',\n      header: 'Google was originally called BackRub',\n      description:\n        'Google cofounders Larry Page and Sergey Brin are definitely fans of wordplay, and they seem to have a thing for company names that are both goofy and yet significant at the same time.',\n      border: true,\n      borderColor: '#DBDBDB',\n      backgroundImageSize: 'cover',\n      backgroundImagePosition: 'center center',\n    },\n  ],\n}"
             },
             {
                 "name": "Template",
@@ -1210,7 +1991,7 @@
                 "name": "ITeaserLayout",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "\"layout-1\" | \"layout-2\"",
+                "rawtype": "\"layout-1\" | \"layout-2\" | \"layout-3\"",
                 "file": "projects/ng-components/src/components/teaser-stack/teaser-stack.interface.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1234,6 +2015,56 @@
             "projects/ng-components/src/components/teaser-stack/teaser-stack.stories.ts": [
                 {
                     "name": "_1_Layout1WithFixHeight",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/teaser-stack/teaser-stack.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "_10_Layout1WithMixedTeaser",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/teaser-stack/teaser-stack.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "_11_Layout3WithResponsiveHeight",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/teaser-stack/teaser-stack.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "_12_Layout3WithFixedHeight",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/teaser-stack/teaser-stack.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "_13_Layout3WithFixedHeight",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/teaser-stack/teaser-stack.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "_14_Layout3WithResponsiveHeight",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "projects/ng-components/src/components/teaser-stack/teaser-stack.stories.ts",
@@ -1323,6 +2154,16 @@
                     "defaultValue": "Template.bind({})"
                 },
                 {
+                    "name": "images",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/teaser-stack/teaser-stack.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/308490B.JPG&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=pp-static/images/QXX_display.png&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/623XB.jpg&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/W011100B.png&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/4214037b.jpg&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=pp-static/images/4218087Ba.jpg&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/4243525B2.JPG&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/11663B.jpg&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=pp-static/images/product/70218Ba.jpg&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=pp-static/images/85553.jpg&width=218&height=175\"',\n]"
+                },
+                {
                     "name": "teaserstack",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -1330,7 +2171,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "object",
-                    "defaultValue": "{\n  columnCount: 3,\n  layout: 'layout-1',\n  title: 'Science articles header',\n  teasers: [\n    {\n      imageUrl:\n        'https://media.istockphoto.com/photos/nyhavn-copenhagen-denmark-picture-id901375804?k=20&m=901375804&s=612x612&w=0&h=LjDZ-dPGoCVU-xy-A4TyU8y6amshakYf5uTPWIKU5e8=',\n      header: 'How customers won’t feel alone',\n      description:\n        'Starbucks uses round tables specifically so customers won’t feel alone. The lack of edges makes it seem less like people are missing. The lack of edges makes it seem less like people are missing.',\n      border: true,\n      borderColor: '#DBDBDB',\n      backgroundImageSize: 'cover',\n      backgroundImagePosition: 'center center',\n    },\n    {\n      imageUrl:\n        'http://ekkotek.com/MobileApps/youtubeApi/examples/images/Swan_large.jpg',\n      header: 'The best known brand in the world',\n      description:\n        'The Coca-Cola logo can be recognized by 94 percent of the world’s population',\n      border: true,\n      borderColor: '#DBDBDB',\n      backgroundImageSize: 'cover',\n      backgroundImagePosition: 'center center',\n    },\n    {\n      imageUrl:\n        'https://stimg.cardekho.com/images/carexteriorimages/930x620/Hyundai/Venue/9154/1655441194954/front-left-side-47.jpg?tr=w-375',\n      header: 'Tuesday',\n      description:\n        'On average the most productive day of the workweek is Tuesday',\n      border: true,\n      borderColor: '#DBDBDB',\n      backgroundImageSize: 'cover',\n      backgroundImagePosition: 'center center',\n    },\n    {\n      imageUrl:\n        'https://images.unsplash.com/photo-1551651767-d5ffbdd04b83?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Y29wZW5oYWdlbnxlbnwwfHwwfHw%3D&w=1000&q=80',\n      header: \"The Meaning Behind Yahoo's Full Name\",\n      description:\n        \"Yahoo stands for 'Yet Another Hierarchical Officious Oracle.' Learn more about the meaning of Yahoo and how it became a household name.'\",\n      border: true,\n      borderColor: '#DBDBDB',\n      backgroundImageSize: 'cover',\n      backgroundImagePosition: 'center center',\n    },\n    {\n      imageUrl:\n        'https://cdn.theatlantic.com/media/img/photo/2020/11/montana-photos/a01_23355789779-1/original.jpg',\n      header: 'Ah Ikea, how we love you so',\n      description: 'One in 10 Europeans are conceived in an Ikea bed',\n      border: true,\n      borderColor: '#DBDBDB',\n      backgroundImageSize: 'cover',\n      backgroundImagePosition: 'center center',\n    },\n    {\n      imageUrl:\n        'https://vinusimages.co/wp-content/uploads/2018/10/EG7A2390.jpgA_.jpg',\n      header: 'Google was originally called BackRub',\n      description:\n        'Google cofounders Larry Page and Sergey Brin are definitely fans of wordplay, and they seem to have a thing for company names that are both goofy and yet significant at the same time.',\n      border: true,\n      borderColor: '#DBDBDB',\n      backgroundImageSize: 'cover',\n      backgroundImagePosition: 'center center',\n    },\n  ],\n}"
+                    "defaultValue": "{\n  columnCount: 3,\n  layout: 'layout-1',\n  title: 'Science articles header',\n  description: 'Description test',\n  teasers: [\n    {\n      imageUrl:\n        'https://media.istockphoto.com/photos/nyhavn-copenhagen-denmark-picture-id901375804?k=20&m=901375804&s=612x612&w=0&h=LjDZ-dPGoCVU-xy-A4TyU8y6amshakYf5uTPWIKU5e8=',\n      header: 'How customers won’t feel alone',\n      description:\n        'Starbucks uses round tables specifically so customers won’t feel alone. The lack of edges makes it seem less like people are missing. The lack of edges makes it seem less like people are missing.',\n      border: true,\n      borderColor: '#DBDBDB',\n      backgroundImageSize: 'cover',\n      backgroundImagePosition: 'center center',\n    },\n    {\n      imageUrl:\n        'http://ekkotek.com/MobileApps/youtubeApi/examples/images/Swan_large.jpg',\n      header: 'The best known brand in the world',\n      description:\n        'The Coca-Cola logo can be recognized by 94 percent of the world’s population',\n      border: true,\n      borderColor: '#DBDBDB',\n      backgroundImageSize: 'cover',\n      backgroundImagePosition: 'center center',\n    },\n    {\n      imageUrl:\n        'https://stimg.cardekho.com/images/carexteriorimages/930x620/Hyundai/Venue/9154/1655441194954/front-left-side-47.jpg?tr=w-375',\n      header: 'Tuesday',\n      description:\n        'On average the most productive day of the workweek is Tuesday',\n      border: true,\n      borderColor: '#DBDBDB',\n      backgroundImageSize: 'cover',\n      backgroundImagePosition: 'center center',\n    },\n    {\n      imageUrl:\n        'https://images.unsplash.com/photo-1551651767-d5ffbdd04b83?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Y29wZW5oYWdlbnxlbnwwfHwwfHw%3D&w=1000&q=80',\n      header: \"The Meaning Behind Yahoo's Full Name\",\n      description:\n        \"Yahoo stands for 'Yet Another Hierarchical Officious Oracle.' Learn more about the meaning of Yahoo and how it became a household name.'\",\n      border: true,\n      borderColor: '#DBDBDB',\n      backgroundImageSize: 'cover',\n      backgroundImagePosition: 'center center',\n    },\n    {\n      imageUrl:\n        'https://cdn.theatlantic.com/media/img/photo/2020/11/montana-photos/a01_23355789779-1/original.jpg',\n      header: 'Ah Ikea, how we love you so',\n      description: 'One in 10 Europeans are conceived in an Ikea bed',\n      border: true,\n      borderColor: '#DBDBDB',\n      backgroundImageSize: 'cover',\n      backgroundImagePosition: 'center center',\n    },\n    {\n      imageUrl:\n        'https://vinusimages.co/wp-content/uploads/2018/10/EG7A2390.jpgA_.jpg',\n      header: 'Google was originally called BackRub',\n      description:\n        'Google cofounders Larry Page and Sergey Brin are definitely fans of wordplay, and they seem to have a thing for company names that are both goofy and yet significant at the same time.',\n      border: true,\n      borderColor: '#DBDBDB',\n      backgroundImageSize: 'cover',\n      backgroundImagePosition: 'center center',\n    },\n  ],\n}"
                 },
                 {
                     "name": "Template",
@@ -1405,6 +2246,18 @@
                     "deprecationMessage": "",
                     "type": "literal type"
                 }
+            ],
+            "projects/ng-components/src/directives/navigation/navigation.directive.ts": [
+                {
+                    "name": "isFullPath",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/directives/navigation/navigation.directive.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "(url: string) : boolean => {\n  return url.startsWith('https') || url.startsWith('http');\n}"
+                }
             ]
         },
         "groupedFunctions": {},
@@ -1450,7 +2303,7 @@
                     "name": "ITeaserLayout",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "\"layout-1\" | \"layout-2\"",
+                    "rawtype": "\"layout-1\" | \"layout-2\" | \"layout-3\"",
                     "file": "projects/ng-components/src/components/teaser-stack/teaser-stack.interface.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -1531,7 +2384,7 @@
                 "linktype": "component",
                 "name": "TeaserLayout1Component",
                 "coveragePercent": 0,
-                "coverageCount": "0/11",
+                "coverageCount": "0/12",
                 "status": "low"
             },
             {
@@ -1540,7 +2393,16 @@
                 "linktype": "component",
                 "name": "TeaserLayout2Component",
                 "coveragePercent": 0,
-                "coverageCount": "0/11",
+                "coverageCount": "0/12",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/teaser-stack/teaser-layout-3/teaser-layout-3.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TeaserLayout3Component",
+                "coveragePercent": 0,
+                "coverageCount": "0/12",
                 "status": "low"
             },
             {
@@ -1549,7 +2411,7 @@
                 "linktype": "component",
                 "name": "TeaserStackLayout1Component",
                 "coveragePercent": 0,
-                "coverageCount": "0/11",
+                "coverageCount": "0/12",
                 "status": "low"
             },
             {
@@ -1567,6 +2429,56 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "_1_Layout1WithFixHeight",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/teaser-stack/teaser-stack.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "_10_Layout1WithMixedTeaser",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/teaser-stack/teaser-stack.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "_11_Layout3WithResponsiveHeight",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/teaser-stack/teaser-stack.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "_12_Layout3WithFixedHeight",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/teaser-stack/teaser-stack.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "_13_Layout3WithFixedHeight",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/teaser-stack/teaser-stack.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "_14_Layout3WithResponsiveHeight",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -1656,6 +2568,16 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "images",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/teaser-stack/teaser-stack.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "teaserstack",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -1677,7 +2599,7 @@
                 "linktype": "component",
                 "name": "TeaserComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/12",
+                "coverageCount": "0/13",
                 "status": "low"
             },
             {
@@ -1686,7 +2608,26 @@
                 "linktype": "interface",
                 "name": "ITeaser",
                 "coveragePercent": 0,
-                "coverageCount": "0/12",
+                "coverageCount": "0/13",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/directives/navigation/navigation.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "NavigationDirective",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/directives/navigation/navigation.directive.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "isFullPath",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {

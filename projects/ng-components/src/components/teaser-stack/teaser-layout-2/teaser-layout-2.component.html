@@ -1,33 +1,15 @@
-<ng-container *ngIf="link; else withoutLink">
-  <a
-    class="teaser"
-    [routerLink]="link"
-    [style.--background-image]="imageUrl ? 'url(' + imageUrl + ')' : ''"
-    [style.--teaser-height]="teaserHeight ? teaserHeight + 'px' : ''"
-    [style.--background-color]="backgroundColor"
-    [style.--background-image-position]="backgroundImagePosition"
-    [style.--background-image-size]="backgroundImageSize"
-  >
-    <ng-container *ngTemplateOutlet="teaser"></ng-container>
-  </a>
-</ng-container>
-
-<ng-template #withoutLink>
-  <section
-    class="teaser"
-    [style.--background-image]="imageUrl ? 'url(' + imageUrl + ')' : ''"
-    [style.--teaser-height]="teaserHeight ? teaserHeight + 'px' : ''"
-    [style.--background-color]="backgroundColor"
-    [style.--background-image-position]="backgroundImagePosition"
-    [style.--background-image-size]="backgroundImageSize"
-  >
-    <ng-container *ngTemplateOutlet="teaser"></ng-container>
-  </section>
-</ng-template>
-<ng-template #teaser>
+<a
+  class="teaser"
+  [smNavigate]="link || ''"
+  [style.--background-image]="imageUrl ? 'url(' + imageUrl + ')' : ''"
+  [style.--teaser-height]="teaserHeight ? teaserHeight + 'px' : ''"
+  [style.--background-color]="backgroundColor"
+  [style.--background-image-position]="backgroundImagePosition"
+  [style.--background-image-size]="backgroundImageSize"
+>
   <img *ngIf="!teaserHeight" src="{{imageUrl}}">
   <div class="teaser__titles">
     <h3>{{ header }}</h3>
     <p>{{ description }}</p>
   </div>
-</ng-template>
+</a>
