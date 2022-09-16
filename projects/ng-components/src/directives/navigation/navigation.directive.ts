@@ -21,7 +21,7 @@ export class NavigationDirective {
 
   private _target = '';
   @Input() set smNavigateTarget(target: string) {
-    this._target = target === 'blank' ? '_blank' : '';
+    this._target = target === 'blank' || target === '_blank' ? '_blank' : '';
     this.renderer.setAttribute(this.el.nativeElement, 'target', this.target);
   }
 
