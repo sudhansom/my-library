@@ -131,12 +131,12 @@
     "directives": [
         {
             "name": "NavigationDirective",
-            "id": "directive-NavigationDirective-bcdf062677808c5c4e4e44e8a50ad8814919ccf76fcdacd4b094047d758fea33ebc4082089b19a59de62c35eb21fbe52a821bee3c9c005bb0440e212ce8e1f55",
+            "id": "directive-NavigationDirective-32de948e5c98bce4f255419f7f7fa392b90dd351c94feb5868d7321f90971286d433a9c2b5e4ba2ee573ed094d5833c429aae2f4b77844632dbe5ffe78edebf1",
             "file": "projects/ng-components/src/directives/navigation/navigation.directive.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/core';\nimport { Router } from '@angular/router';\n\nexport const isFullPath = (url: string) : boolean => {\n  return url.startsWith('https') || url.startsWith('http');\n}\n\n@Directive({\n  selector: '[smNavigate]',\n})\nexport class NavigationDirective {\n  private _url = '';\n  @Input() set smNavigate(url: string) {\n    this._url = url;\n    this.renderer.setAttribute(this.el.nativeElement, 'href', this.url);\n  }\n\n  get url() {\n    return this._url;\n  }\n\n  private _target = '';\n  @Input() set smNavigateTarget(target: string) {\n    this._target = target === 'blank' ? '_blank' : '';\n    this.renderer.setAttribute(this.el.nativeElement, 'target', this.target);\n  }\n\n  get target() {\n    return this._target;\n  }\n\n  constructor(private el: ElementRef, private renderer: Renderer2, private router: Router) {}\n\n\n  @HostListener(\"click\", [\"$event\"])\n  public onClick(evt: Event): void\n  {\n    if(!this.url) {\n      return;\n    }\n    if (isFullPath(this.url)) {\n      return;\n    }\n\n    evt.preventDefault();\n    if (this.target === '_blank') {\n      window.open(this.url, '_blank');\n    }\n    else {\n      this.router.navigateByUrl(this.url);\n    }\n  }\n}\n",
+            "sourceCode": "import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/core';\nimport { Router } from '@angular/router';\n\nexport const isFullPath = (url: string) : boolean => {\n  return url.startsWith('https') || url.startsWith('http');\n}\n\n@Directive({\n  selector: '[smNavigate]',\n})\nexport class NavigationDirective {\n  private _url = '';\n  @Input() set smNavigate(url: string) {\n    this._url = url;\n    this.renderer.setAttribute(this.el.nativeElement, 'href', this.url);\n  }\n\n  get url() {\n    return this._url;\n  }\n\n  private _target = '';\n  @Input() set smNavigateTarget(target: string) {\n    this._target = target === 'blank' || target === '_blank' ? '_blank' : '';\n    this.renderer.setAttribute(this.el.nativeElement, 'target', this.target);\n  }\n\n  get target() {\n    return this._target;\n  }\n\n  constructor(private el: ElementRef, private renderer: Renderer2, private router: Router) {}\n\n\n  @HostListener(\"click\", [\"$event\"])\n  public onClick(evt: Event): void\n  {\n    if(!this.url) {\n      evt.preventDefault();\n      return;\n    }\n    if (isFullPath(this.url)) {\n      return;\n    }\n\n    evt.preventDefault();\n    if (this.target === '_blank') {\n      window.open(this.url, '_blank');\n    }\n    else {\n      this.router.navigateByUrl(this.url);\n    }\n  }\n}\n",
             "selector": "[smNavigate]",
             "providers": [],
             "inputsClass": [
@@ -780,7 +780,7 @@
                     }
                 }
             },
-            "templateData": "<ng-container *ngIf=\"link; else withoutLink\">\n  <a\n    class=\"teaser\"\n    [smNavigate]=\"link || ''\"\n    [class.border]=\"border\"\n    [style.--border-color]=\"borderColor ? borderColor : '#DBDBDB'\"\n    [style.--image-height]=\"teaserHeightForTemplate\"\n    [style.--background-color]=\"backgroundColor\"\n    [style.--text-color]=\"textColor\"\n    [style.--background-image-size]=\"backgroundImageSize\"\n  >\n    <ng-container *ngTemplateOutlet=\"teaser\"></ng-container>\n  </a>\n</ng-container>\n\n<ng-template #withoutLink>\n  <section\n    class=\"teaser\"\n    [class.border]=\"border\"\n    [style.--border-color]=\"borderColor ? borderColor : '#DBDBDB'\"\n    [style.--image-height]=\"teaserHeightForTemplate\"\n    [style.--background-color]=\"backgroundColor\"\n    [style.--text-color]=\"textColor\"\n    [style.--background-image-size]=\"backgroundImageSize\"\n  >\n    <ng-container *ngTemplateOutlet=\"teaser\"></ng-container>\n  </section>\n</ng-template>\n<ng-template #teaser>\n  <div class=\"teaser__image-container\">\n    <img src=\"{{ imageUrl }}\" width=\"100%\" alt=\"{{ header }}\" />\n  </div>\n  <div class=\"teaser__text-container\">\n    <h3 class=\"text text--h3\">{{ header }}</h3>\n    <p class=\"text text--p\">\n      {{ description }} {{link}}\n    </p>\n  </div>\n</ng-template>\n"
+            "templateData": "<a\n  class=\"teaser\"\n  [smNavigate]=\"link || ''\"\n  [class.border]=\"border\"\n  [style.--border-color]=\"borderColor ? borderColor : '#DBDBDB'\"\n  [style.--image-height]=\"teaserHeightForTemplate\"\n  [style.--background-color]=\"backgroundColor\"\n  [style.--text-color]=\"textColor\"\n  [style.--background-image-size]=\"backgroundImageSize\"\n>\n  <div class=\"teaser__image-container\">\n    <img src=\"{{ imageUrl }}\" width=\"100%\" alt=\"{{ header }}\" />\n  </div>\n  <div class=\"teaser__text-container\">\n    <h3 class=\"text text--h3\">{{ header }}</h3>\n    <p class=\"text text--p\">\n      {{ description }} {{link}}\n    </p>\n  </div>\n</a>\n"
         },
         {
             "name": "TeaserLayout2Component",
@@ -912,7 +912,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<ng-container *ngIf=\"link; else withoutLink\">\n  <a\n    class=\"teaser\"\n    [smNavigate]=\"link || ''\"\n    [style.--background-image]=\"imageUrl ? 'url(' + imageUrl + ')' : ''\"\n    [style.--teaser-height]=\"teaserHeight ? teaserHeight + 'px' : ''\"\n    [style.--background-color]=\"backgroundColor\"\n    [style.--background-image-position]=\"backgroundImagePosition\"\n    [style.--background-image-size]=\"backgroundImageSize\"\n  >\n    <ng-container *ngTemplateOutlet=\"teaser\"></ng-container>\n  </a>\n</ng-container>\n\n<ng-template #withoutLink>\n  <section\n    class=\"teaser\"\n    [style.--background-image]=\"imageUrl ? 'url(' + imageUrl + ')' : ''\"\n    [style.--teaser-height]=\"teaserHeight ? teaserHeight + 'px' : ''\"\n    [style.--background-color]=\"backgroundColor\"\n    [style.--background-image-position]=\"backgroundImagePosition\"\n    [style.--background-image-size]=\"backgroundImageSize\"\n  >\n    <ng-container *ngTemplateOutlet=\"teaser\"></ng-container>\n  </section>\n</ng-template>\n<ng-template #teaser>\n  <img *ngIf=\"!teaserHeight\" src=\"{{imageUrl}}\">\n  <div class=\"teaser__titles\">\n    <h3>{{ header }}</h3>\n    <p>{{ description }}</p>\n  </div>\n</ng-template>\n"
+            "templateData": "<a\n  class=\"teaser\"\n  [smNavigate]=\"link || ''\"\n  [style.--background-image]=\"imageUrl ? 'url(' + imageUrl + ')' : ''\"\n  [style.--teaser-height]=\"teaserHeight ? teaserHeight + 'px' : ''\"\n  [style.--background-color]=\"backgroundColor\"\n  [style.--background-image-position]=\"backgroundImagePosition\"\n  [style.--background-image-size]=\"backgroundImageSize\"\n>\n  <img *ngIf=\"!teaserHeight\" src=\"{{imageUrl}}\">\n  <div class=\"teaser__titles\">\n    <h3>{{ header }}</h3>\n    <p>{{ description }}</p>\n  </div>\n</a>\n"
         },
         {
             "name": "TeaserLayout3Component",
@@ -1044,7 +1044,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<ng-container *ngIf=\"link; else withoutLink\">\n  <a\n    class=\"teaser\"\n    [class.border]=\"border\"\n    [smNavigate]=\"link || ''\"\n    [style.--border-color]=\"borderColor || 'rgba(0,0,0, 0.1)'\"\n    [style.--background-image]=\"imageUrl ? 'url(' + imageUrl + ')' : ''\"\n    [style.--teaser-height]=\"teaserHeight ? teaserHeight + 'px' : ''\"\n    [style.--text-color]=\"textColor\"\n    [style.--background-color]=\"backgroundColor\"\n    [style.--background-image-size]=\"backgroundImageSize\"\n    [style.--background-image-position]=\"backgroundImagePosition\"\n  >\n    <ng-container *ngTemplateOutlet=\"teaser\"></ng-container>\n  </a>\n</ng-container>\n\n<ng-template #withoutLink>\n  <section\n    class=\"teaser\"\n    [class.border]=\"border\"\n    [style.--border-color]=\"borderColor || 'rgba(0,0,0, 0.1)'\"\n    [style.--background-image]=\"imageUrl ? 'url(' + imageUrl + ')' : ''\"\n    [style.--teaser-height]=\"teaserHeight ? teaserHeight + 'px' : ''\"\n    [style.--text-color]=\"textColor\"\n    [style.--background-color]=\"backgroundColor\"\n    [style.--background-image-size]=\"backgroundImageSize\"\n    [style.--background-image-position]=\"backgroundImagePosition\"\n  >\n    <ng-container *ngTemplateOutlet=\"teaser\"></ng-container>\n  </section>\n</ng-template>\n<ng-template #teaser>\n  <div class=\"teaser__image-container\">\n    <img class=\"image\" src=\"{{ imageUrl }}\" alt=\"{{ header }}\" />\n  </div>\n  <div class=\"teaser__text-container\" *ngIf=\"header || description\">\n    <h3 *ngIf=\"header\" class=\"teaser__text-container__header\">{{ header }}</h3>\n    <p *ngIf=\"description\" class=\"teaser__text-container__description\">\n      {{ description }}\n    </p>\n  </div>\n</ng-template>\n"
+            "templateData": "<a\n  class=\"teaser\"\n  [class.border]=\"border\"\n  [smNavigate]=\"link || ''\"\n  [style.--border-color]=\"borderColor || 'rgba(0,0,0, 0.1)'\"\n  [style.--background-image]=\"imageUrl ? 'url(' + imageUrl + ')' : ''\"\n  [style.--teaser-height]=\"teaserHeight ? teaserHeight + 'px' : ''\"\n  [style.--text-color]=\"textColor\"\n  [style.--background-color]=\"backgroundColor\"\n  [style.--background-image-size]=\"backgroundImageSize\"\n  [style.--background-image-position]=\"backgroundImagePosition\"\n>\n  <div class=\"teaser__image-container\">\n    <img class=\"image\" src=\"{{ imageUrl }}\" alt=\"{{ header }}\" />\n  </div>\n  <div class=\"teaser__text-container\" *ngIf=\"header || description\">\n    <h3 *ngIf=\"header\" class=\"teaser__text-container__header\">{{ header }}</h3>\n    <p *ngIf=\"description\" class=\"teaser__text-container__description\">\n      {{ description }}\n    </p>\n  </div>\n</a>\n"
         },
         {
             "name": "TeaserStackComponent",
@@ -1323,7 +1323,7 @@
                     }
                 }
             },
-            "templateData": "<div class=\"teaser-stack-layout-1\" [style.--background-color]=\"backgroundColor\" [ngClass]=\"{'full-page-width': fullPageWidth}\">\n  <div class=\"teaser-stack-layout-1-container\">\n    <h2 *ngIf=\"title\" class=\"teaser-stack-title\">\n      {{ title }}\n    </h2>\n    <p *ngIf=\"description\" class=\"teaser-stack-description\">\n      {{ description }}\n    </p>\n    <div\n      class=\"teaser-stack\"\n      [ngClass]=\"teaserHeight ? 'no-float' : 'float'\"\n      [style.--column-count]=\"columnCount\"\n    >\n      <ngx-masonry *ngIf=\"!teaserHeight; else withoutTeaserHeight\">\n        <sm-teaser\n          ngxMasonryItem\n          *ngFor=\"let teaser of finalTeasers\"\n          [imageUrl]=\"teaser?.imageUrl\"\n          [header]=\"teaser?.header\"\n          [description]=\"teaser?.description\"\n          [border]=\"teaser?.border\"\n          [borderColor]=\"teaser?.borderColor\"\n          [textColor]=\"teaser?.textColor\"\n          [link]=\"teaser?.link\"\n          [backgroundColor]=\"teaser?.backgroundColor\"\n          [backgroundImageSize]=\"teaser.backgroundImageSize\"\n          [layout]=\"teaser.layout || layout\"\n          [backgroundImagePosition]=\"teaser.backgroundImagePosition\"\n          [teaserHeight]=\"teaser.teaserHeight || teaserHeight\"\n        ></sm-teaser>\n      </ngx-masonry>\n      <ng-template #withoutTeaserHeight>\n        <sm-teaser\n          *ngFor=\"let teaser of finalTeasers\"\n          [imageUrl]=\"teaser?.imageUrl\"\n          [header]=\"teaser?.header\"\n          [description]=\"teaser?.description\"\n          [border]=\"teaser?.border\"\n          [borderColor]=\"teaser?.borderColor\"\n          [textColor]=\"teaser?.textColor\"\n          [link]=\"teaser?.link\"\n          [backgroundColor]=\"teaser?.backgroundColor\"\n          [backgroundImageSize]=\"teaser.backgroundImageSize\"\n          [layout]=\"teaser.layout || layout\"\n          [backgroundImagePosition]=\"teaser.backgroundImagePosition\"\n          [teaserHeight]=\"teaser.teaserHeight || teaserHeight\"\n        ></sm-teaser>\n      </ng-template>\n    </div>\n    <div *ngIf=\"readMoreLink && readMoreLabel\" class=\"teaser-stack-read-more-link\">\n      <a [routerLink]=\"readMoreLink\" >\n        {{readMoreLabel}}\n      </a>\n    </div>\n  </div>\n</div>\n"
+            "templateData": "<div class=\"teaser-stack-layout-1\" [style.--background-color]=\"backgroundColor\" [ngClass]=\"{'full-page-width': fullPageWidth}\">\n  <div class=\"teaser-stack-layout-1-container\">\n    <h2 *ngIf=\"title\" class=\"teaser-stack-title\">\n      {{ title }}\n    </h2>\n    <p *ngIf=\"description\" class=\"teaser-stack-description\">\n      {{ description }}\n    </p>\n    <div\n      class=\"teaser-stack\"\n      [ngClass]=\"teaserHeight ? 'no-float' : 'float'\"\n      [style.--column-count]=\"columnCount\"\n    >\n      <ngx-masonry *ngIf=\"!teaserHeight; else withoutTeaserHeight\">\n        <sm-teaser\n          ngxMasonryItem\n          *ngFor=\"let teaser of finalTeasers\"\n          [imageUrl]=\"teaser?.imageUrl\"\n          [header]=\"teaser?.header\"\n          [description]=\"teaser?.description\"\n          [border]=\"teaser?.border\"\n          [borderColor]=\"teaser?.borderColor\"\n          [textColor]=\"teaser?.textColor\"\n          [link]=\"teaser?.link\"\n          [backgroundColor]=\"teaser?.backgroundColor\"\n          [backgroundImageSize]=\"teaser.backgroundImageSize\"\n          [layout]=\"teaser.layout || layout\"\n          [backgroundImagePosition]=\"teaser.backgroundImagePosition\"\n          [teaserHeight]=\"teaser.teaserHeight || teaserHeight\"\n        ></sm-teaser>\n      </ngx-masonry>\n      <ng-template #withoutTeaserHeight>\n        <sm-teaser\n          *ngFor=\"let teaser of finalTeasers\"\n          [imageUrl]=\"teaser?.imageUrl\"\n          [header]=\"teaser?.header\"\n          [description]=\"teaser?.description\"\n          [border]=\"teaser?.border\"\n          [borderColor]=\"teaser?.borderColor\"\n          [textColor]=\"teaser?.textColor\"\n          [link]=\"teaser?.link\"\n          [backgroundColor]=\"teaser?.backgroundColor\"\n          [backgroundImageSize]=\"teaser.backgroundImageSize\"\n          [layout]=\"teaser.layout || layout\"\n          [backgroundImagePosition]=\"teaser.backgroundImagePosition\"\n          [teaserHeight]=\"teaser.teaserHeight || teaserHeight\"\n        ></sm-teaser>\n      </ng-template>\n    </div>\n    <div *ngIf=\"readMoreLink && readMoreLabel\" class=\"teaser-stack-read-more-link\">\n      <a [smNavigate]=\"readMoreLink\" >\n        {{readMoreLabel}}\n      </a>\n    </div>\n  </div>\n</div>\n"
         }
     ],
     "modules": [
@@ -1417,13 +1417,13 @@
         },
         {
             "name": "TeaserLayout1Module",
-            "id": "module-TeaserLayout1Module-5096055c6f35fadc141b1f7b3603e1be2158c419e335eca6274c469b7261865f55ef0e4987c2d5d01e03023892eed6c51e7afddc83974f78bb56e56ebb805664",
+            "id": "module-TeaserLayout1Module-966bc9287a053559ac47f72764fcd48de83b7874139393505fde8cfd8f1bfb6a630d2eefd960e32182c2783f60f816784be91200aeb2c6f91dc5d447f1a506ea",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/ng-components/src/components/teaser-stack/teaser-layout-1/teaser-layout-1.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { NavigationModule } from '../../../directives/navigation/navigation.module';\nimport { TeaserLayout1Component } from './teaser-layout-1.component';\n\n@NgModule({\n  declarations: [\n    TeaserLayout1Component,\n  ],\n  imports: [NavigationModule],\n  exports: [\n    TeaserLayout1Component,\n  ],\n  providers: [],\n})\nexport class TeaserLayout1Module {}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { NavigationModule } from '../../../directives/navigation/navigation.module';\nimport { TeaserLayout1Component } from './teaser-layout-1.component';\n\n@NgModule({\n  declarations: [\n    TeaserLayout1Component,\n  ],\n  imports: [CommonModule, NavigationModule],\n  exports: [\n    TeaserLayout1Component,\n  ],\n  providers: [],\n})\nexport class TeaserLayout1Module {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -1465,13 +1465,13 @@
         },
         {
             "name": "TeaserLayout2Module",
-            "id": "module-TeaserLayout2Module-3e3004e4e132e8a1c9a3df14965ee5c02eadbfaccc3efafc4138e330809a5022aeccab8db21882dd079f400bc297ec2a0a13b6f107f0d52359622cf0ede6531e",
+            "id": "module-TeaserLayout2Module-dd8ba7f300655972c40f0f0c1cd5775a30c3190668765e52c22e764d48e834fbc353ac324c29794c667ca12e164123a85ec2f92f788df6093a08780de8803201",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/ng-components/src/components/teaser-stack/teaser-layout-2/teaser-layout-2.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { NavigationModule } from '../../../directives/navigation/navigation.module';\nimport { TeaserLayout2Component } from './teaser-layout-2.component';\n\n@NgModule({\n  declarations: [\n    TeaserLayout2Component,\n  ],\n  imports: [NavigationModule],\n  exports: [\n    TeaserLayout2Component,\n  ],\n  providers: [],\n})\nexport class TeaserLayout2Module {}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { NavigationModule } from '../../../directives/navigation/navigation.module';\nimport { TeaserLayout2Component } from './teaser-layout-2.component';\n\n@NgModule({\n  declarations: [\n    TeaserLayout2Component,\n  ],\n  imports: [CommonModule, NavigationModule],\n  exports: [\n    TeaserLayout2Component,\n  ],\n  providers: [],\n})\nexport class TeaserLayout2Module {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -1513,13 +1513,13 @@
         },
         {
             "name": "TeaserLayout3Module",
-            "id": "module-TeaserLayout3Module-ec5a0a09bb539d5fcb04504aa0d2cd41221e0d8db31fa487d3715a2e9a0d2c1b9366beaab8a61fae284d26eebe845393e9cde96d345ceba8447772a0b10cadb4",
+            "id": "module-TeaserLayout3Module-9fa981a81b078a36417adc359d3c5a06d289a715edfa96b5fd9a825a9e12e3c596b93e4d69636b658a8c3b27bf76316ffa88c684f13fddb293b6d68899d7ab28",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/ng-components/src/components/teaser-stack/teaser-layout-3/teaser-layout-3.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { NavigationModule } from '../../../directives/navigation/navigation.module';\nimport { TeaserLayout3Component } from './teaser-layout-3.component';\n\n@NgModule({\n  declarations: [\n    TeaserLayout3Component,\n  ],\n  imports: [NavigationModule],\n  exports: [\n    TeaserLayout3Component,\n  ],\n  providers: [],\n})\nexport class TeaserLayout3Module {}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { NavigationModule } from '../../../directives/navigation/navigation.module';\nimport { TeaserLayout3Component } from './teaser-layout-3.component';\n\n@NgModule({\n  declarations: [\n    TeaserLayout3Component,\n  ],\n  imports: [CommonModule, NavigationModule],\n  exports: [\n    TeaserLayout3Component,\n  ],\n  providers: [],\n})\nexport class TeaserLayout3Module {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -1615,13 +1615,13 @@
         },
         {
             "name": "TeaserStackLayout1Module",
-            "id": "module-TeaserStackLayout1Module-24efa5c30251794c2c0bb7602046cc4be08e2fd931502d9fb8d56c64f6ec5d636b53e23d4321f5e4d664c9bed0c1d8e4eea2c77fb99f82ba0c4a2ee6b8ea8d22",
+            "id": "module-TeaserStackLayout1Module-00e7f14fb435e2f8b082e8f6317c29100ceeb03a2928e5e2dfa6f3804e4d110fc93e658829c1fe265cb3cd69ba312086d8a16a1ae5d15563509987d3ae4cf967",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/ng-components/src/components/teaser-stack/teaser-stack-layout-1/teaser-stack-layout-1.module.ts",
             "methods": [],
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\nimport { NgxMasonryModule } from 'ngx-masonry';\nimport { TeaserModule } from '../teaser/teaser.module';\nimport { TeaserStackLayout1Component } from './teaser-stack-layout-1.component';\n\n@NgModule({\n  declarations: [\n    TeaserStackLayout1Component,\n  ],\n  imports: [CommonModule, NgxMasonryModule, TeaserModule, BrowserAnimationsModule],\n  exports: [\n    TeaserStackLayout1Component,\n  ],\n  providers: [],\n})\nexport class TeaserStackLayout1Module {}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\nimport { NgxMasonryModule } from 'ngx-masonry';\nimport { NavigationModule } from '../../../directives/navigation/navigation.module';\nimport { TeaserModule } from '../teaser/teaser.module';\nimport { TeaserStackLayout1Component } from './teaser-stack-layout-1.component';\n\n@NgModule({\n  declarations: [\n    TeaserStackLayout1Component,\n  ],\n  imports: [CommonModule, NgxMasonryModule, TeaserModule, BrowserAnimationsModule, NavigationModule],\n  exports: [\n    TeaserStackLayout1Component,\n  ],\n  providers: [],\n})\nexport class TeaserStackLayout1Module {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -1638,6 +1638,9 @@
                 {
                     "type": "imports",
                     "elements": [
+                        {
+                            "name": "NavigationModule"
+                        },
                         {
                             "name": "TeaserModule"
                         }

@@ -1,7 +1,7 @@
 @use 'projects/variables';
 .teaser-stack-layout-1 {
   background-color: var(--background-color);
-  padding: calc(var(--content-margin) * 2) var(--content-margin);
+  padding: calc(var(--content-margin) * 4) calc(var(--content-margin) * 2);
 
   &:not(.full-page-width) {
     .teaser-stack-layout-1-container {
@@ -11,22 +11,24 @@
     }
   }
 }
+.teaser-stack-text-container {
+  margin-bottom: 20px;
+}
 .teaser-stack-title {
   text-align: center;
-  font-size: 32px;
+  font-size: 36px;
   color: var(--text-color);
   margin: 0;
   font-family: var(--font-family);
-  line-height: 43px;
+  line-height: 40px;
 }
 .teaser-stack-description {
   margin: 0;
   text-align: center;
   font-family: var(--font-family);
   margin-top: 5px;
-}
-.teaser-stack {
-  margin-top: 20px;
+  font-size: 20px;
+  line-height: 24px;
 }
 
 .no-float {

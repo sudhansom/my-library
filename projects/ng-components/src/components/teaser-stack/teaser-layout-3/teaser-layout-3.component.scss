@@ -3,14 +3,34 @@
     font-family: var(--font-family);
     border-radius: 5px;
     background-color: var(--background-color);
-    overflow: hidden;
     display: block;
     text-decoration: none;
     height: 100%;
+    border: var(--border);
+    box-shadow: var(--box-shadow);
 
-    &.border {
-      box-shadow: 0 2px 7px 0 var(--border-color);
+    @media not all and (hover: none) {
+      &.has-hover-box-shadow {
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          opacity: 0;
+          box-shadow: var(--hover-box-shadow);
+          transition: opacity .2s ease-in-out;
+        }
+
+        &:hover::after {
+          opacity: 1;
+        }
+      }
     }
+
 
     &__image-container {
       padding: 10px;
