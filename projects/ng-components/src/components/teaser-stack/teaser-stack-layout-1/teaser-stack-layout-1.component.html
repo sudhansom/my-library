@@ -1,11 +1,13 @@
 <div class="teaser-stack-layout-1" [style.--background-color]="backgroundColor" [ngClass]="{'full-page-width': fullPageWidth}">
   <div class="teaser-stack-layout-1-container">
-    <h2 *ngIf="title" class="teaser-stack-title">
-      {{ title }}
-    </h2>
-    <p *ngIf="description" class="teaser-stack-description">
-      {{ description }}
-    </p>
+    <div *ngIf="title || description" class="teaser-stack-text-container">
+      <h2 *ngIf="title" class="teaser-stack-title">
+        {{ title }}
+      </h2>
+      <p *ngIf="description" class="teaser-stack-description">
+        {{ description }}
+      </p>
+    </div>
     <div
       class="teaser-stack"
       [ngClass]="teaserHeight ? 'no-float' : 'float'"
@@ -19,7 +21,9 @@
           [header]="teaser?.header"
           [description]="teaser?.description"
           [border]="teaser?.border"
-          [borderColor]="teaser?.borderColor"
+          [hoverBorder]="teaser?.hoverBorder"
+          [boxShadow]="teaser?.boxShadow"
+          [hoverBoxShadow]="teaser?.hoverBoxShadow"
           [textColor]="teaser?.textColor"
           [link]="teaser?.link"
           [backgroundColor]="teaser?.backgroundColor"
@@ -36,7 +40,9 @@
           [header]="teaser?.header"
           [description]="teaser?.description"
           [border]="teaser?.border"
-          [borderColor]="teaser?.borderColor"
+          [hoverBorder]="teaser?.hoverBorder"
+          [boxShadow]="teaser?.boxShadow"
+          [hoverBoxShadow]="teaser?.hoverBoxShadow"
           [textColor]="teaser?.textColor"
           [link]="teaser?.link"
           [backgroundColor]="teaser?.backgroundColor"

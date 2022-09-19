@@ -13,8 +13,10 @@ export class TeaserLayout2Component {
   @Input() imageUrl?: string;
   @Input() header?: string;
   @Input() description?: string;
-  @Input() border?: boolean;
-  @Input() borderColor?: string;
+  @Input() border?: string;
+  @Input() hoverBorder?: string;
+  @Input() boxShadow?: string;
+  @Input() hoverBoxShadow?: string;
   @Input() textColor?: string;
   @Input() backgroundColor?: string;
   @Input() backgroundImageSize?: IBackgroundImageSize = 'cover';

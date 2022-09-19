@@ -28,8 +28,7 @@ const teaserstack = {
       header: 'How customers won’t feel alone',
       description:
         'Starbucks uses round tables specifically so customers won’t feel alone. The lack of edges makes it seem less like people are missing. The lack of edges makes it seem less like people are missing.',
-      border: true,
-      borderColor: '#DBDBDB',
+      border: '1px solid #DBDBDB',
       backgroundImageSize: 'cover',
       backgroundImagePosition: 'center center',
     },
@@ -39,8 +38,7 @@ const teaserstack = {
       header: 'The best known brand in the world',
       description:
         'The Coca-Cola logo can be recognized by 94 percent of the world’s population',
-      border: true,
-      borderColor: '#DBDBDB',
+      border: '1px solid #DBDBDB',
       backgroundImageSize: 'cover',
       backgroundImagePosition: 'center center',
     },
@@ -50,8 +48,7 @@ const teaserstack = {
       header: 'Tuesday',
       description:
         'On average the most productive day of the workweek is Tuesday',
-      border: true,
-      borderColor: '#DBDBDB',
+      border: '1px solid #DBDBDB',
       backgroundImageSize: 'cover',
       backgroundImagePosition: 'center center',
     },
@@ -61,8 +58,7 @@ const teaserstack = {
       header: "The Meaning Behind Yahoo's Full Name",
       description:
         "Yahoo stands for 'Yet Another Hierarchical Officious Oracle.' Learn more about the meaning of Yahoo and how it became a household name.'",
-      border: true,
-      borderColor: '#DBDBDB',
+      border: '1px solid #DBDBDB',
       backgroundImageSize: 'cover',
       backgroundImagePosition: 'center center',
     },
@@ -71,8 +67,7 @@ const teaserstack = {
         'https://cdn.theatlantic.com/media/img/photo/2020/11/montana-photos/a01_23355789779-1/original.jpg',
       header: 'Ah Ikea, how we love you so',
       description: 'One in 10 Europeans are conceived in an Ikea bed',
-      border: true,
-      borderColor: '#DBDBDB',
+      border: '1px solid #DBDBDB',
       backgroundImageSize: 'cover',
       backgroundImagePosition: 'center center',
     },
@@ -82,8 +77,7 @@ const teaserstack = {
       header: 'Google was originally called BackRub',
       description:
         'Google cofounders Larry Page and Sergey Brin are definitely fans of wordplay, and they seem to have a thing for company names that are both goofy and yet significant at the same time.',
-      border: true,
-      borderColor: '#DBDBDB',
+      border: '1px solid #DBDBDB',
       backgroundImageSize: 'cover',
       backgroundImagePosition: 'center center',
     },
@@ -281,8 +275,7 @@ _11_Layout3WithResponsiveHeight.args = {
       imageUrl,
       header: `Header ${index}`,
       description: `Description ${index}`,
-      border: true,
-      borderColor: '#DBDBDB',
+      border: '1px solid #DBDBDB',
       backgroundImageSize: 'contain',
       backgroundImagePosition: 'center center',
     };
@@ -295,16 +288,19 @@ _12_Layout3WithFixedHeight.args = {
   layout: 'layout-3',
   title: 'Layout-3 with fix height',
   description: 'Teasers have link',
-  teaserHeight: 150,
+  teaserHeight: 100,
+  fullPageWidth: true,
   teasers: images.map((imageUrl, index) => {
     return {
       imageUrl,
       link: `/index/${index}`,
       header: `Header ${index}`,
       description: `Description ${index}`,
-      border: true,
-      borderColor: '#DBDBDB',
+      border: `1px solid rgba(0,0,0,.1)`,
+      boxShadow: `0 2px 7px 0 rgba(0, 0, 0, 0.1)`,
+      hoverBoxShadow: `0 8px 13px 0 rgba(0, 0, 0, 0.16)`,
       backgroundImageSize: 'contain',
+      backgroundColor: '#fff',
       backgroundImagePosition: 'center center',
     };
   }) as ITeaser[]
@@ -321,8 +317,7 @@ _13_Layout3WithFixedHeight.args = {
     return {
       imageUrl,
       link: `/index/${index}`,
-      border: true,
-      borderColor: '#DBDBDB',
+      border: '1px solid #DBDBDB',
       backgroundImageSize: 'contain',
       backgroundImagePosition: 'center center',
     };
@@ -340,8 +335,7 @@ _14_Layout3WithResponsiveHeight.args = {
     return {
       imageUrl,
       link: `/index/${index}`,
-      border: true,
-      borderColor: '#DBDBDB',
+      border: '1px solid #DBDBDB',
       backgroundImageSize: 'contain',
       backgroundImagePosition: 'center center',
     };

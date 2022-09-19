@@ -7,8 +7,10 @@ export interface ITeaser {
   imageUrl?: string;
   header?: string;
   description?: string;
-  border?: boolean;
-  borderColor?: string;
+  border?: string;
+  hoverBorder?: string;
+  boxShadow?: string;
+  hoverBoxShadow?: string;
   textColor?: string;
   backgroundColor?: string;
   backgroundImageSize?: IBackgroundImageSize;
@@ -28,8 +30,10 @@ export class TeaserComponent {
   @Input() imageUrl?: string;
   @Input() header?: string;
   @Input() description?: string;
-  @Input() border?: boolean;
-  @Input() borderColor?: string;
+  @Input() border?: string;
+  @Input() hoverBorder?: string;
+  @Input() boxShadow?: string;
+  @Input() hoverBoxShadow?: string;
   @Input() textColor?: string;
   @Input() backgroundColor?: string;
   @Input() backgroundImageSize?: IBackgroundImageSize;

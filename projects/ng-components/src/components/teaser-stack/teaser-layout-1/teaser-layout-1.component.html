@@ -1,8 +1,11 @@
 <a
   class="teaser"
+  [class.has-hover-box-shadow]="hoverBoxShadow"
   [smNavigate]="link || ''"
-  [class.border]="border"
-  [style.--border-color]="borderColor ? borderColor : '#DBDBDB'"
+  [style.--border]="border"
+  [style.--hover-border]="hoverBorder || border"
+  [style.--box-shadow]="boxShadow"
+  [style.--hover-box-shadow]="hoverBoxShadow || boxShadow"
   [style.--image-height]="teaserHeightForTemplate"
   [style.--background-color]="backgroundColor"
   [style.--text-color]="textColor"

@@ -6,10 +6,31 @@
     background-color: var(--background-color);
     display: block;
     text-decoration: none;
+    border: var(--border);
+    box-shadow: var(--box-shadow);
 
-    &.border {
-      border: 1px solid var(--border-color);
+    @media not all and (hover: none) {
+      &.has-hover-box-shadow {
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          opacity: 0;
+          box-shadow: var(--hover-box-shadow);
+          transition: opacity .2s ease-in-out;
+        }
+
+        &:hover::after {
+          opacity: 1;
+        }
+      }
     }
+
     &__image-container {
       overflow: hidden;
       img {
