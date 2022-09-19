@@ -2,7 +2,7 @@ import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/
 import { Router } from '@angular/router';
 
 export const isFullPath = (url: string) : boolean => {
-  return url.startsWith('https') || url.startsWith('http');
+  return url.startsWith && (url.startsWith('https') || url.startsWith('http'));
 }
 
 @Directive({
