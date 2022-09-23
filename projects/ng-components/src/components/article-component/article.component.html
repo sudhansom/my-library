@@ -2,9 +2,11 @@
   class="image-article"
   [class.left]="imagePosition === 'left'"
   [class.right]="imagePosition === 'right'"
-  [style.--background-image]="'url(' + image + ')'"
+  [style.--background-image]="'url(\'' + image + '\')'"
 >
-  <img class="image-article__image" src="{{ image }}" alt="" />
+  <div class="image-article__image-container">
+    <img class="image-article__image-container__image" src="{{ image }}" alt="" />
+  </div>
   <div class="image-article__article">
     <img class="icon" src="{{ icon }}" alt="logo" />
     <h3 class="header">{{ header }}</h3>
