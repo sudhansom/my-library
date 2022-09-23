@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnDestroy, ViewChild } from '@angular/core';
+import { NgxMasonryComponent } from 'ngx-masonry';
 import { IBackgroundImagePosition, IBackgroundImageSize, ITeaserStackLayout } from '../teaser-stack.interface';
 import { ITeaser } from '../teaser/teaser.component';
 
@@ -9,7 +10,7 @@ import { ITeaser } from '../teaser/teaser.component';
   styleUrls: ['./teaser-stack-layout-1.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TeaserStackLayout1Component {
+export class TeaserStackLayout1Component implements OnDestroy {
   @Input() teaserHeight?: number;
   @Input() columnCount?: number = 3;
   @Input() rowCount?: number;
@@ -24,6 +25,17 @@ export class TeaserStackLayout1Component {
   @Input() backgroundImage?: string;
   @Input() backgroundImageSize?: IBackgroundImageSize = 'cover';
   @Input() backgroundImagePosition?: IBackgroundImagePosition = 'center center';
+
+  @ViewChild(NgxMasonryComponent) masonry?: NgxMasonryComponent;
+
+  private timeoutTimer?: NodeJS.Timeout;
+
+  reDoLayout() {
+    this.timeoutTimer = setTimeout(() => {
+      this.masonry?.reloadItems();
+      this.masonry?.layout();
+    }, 1000);
+  }
 
   get useMasonry() {
     // Layout-1 has default height
@@ -42,5 +54,11 @@ export class TeaserStackLayout1Component {
       return this.teasers.splice(0, totalItems);
     }
     return this.teasers;
+  }
+
+  ngOnDestroy() {
+    if (this.timeoutTimer) {
+      clearTimeout(this.timeoutTimer);
+    }
   }
 }

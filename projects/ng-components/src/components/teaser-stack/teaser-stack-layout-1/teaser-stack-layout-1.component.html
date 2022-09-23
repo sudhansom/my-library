@@ -1,8 +1,9 @@
 <div class="teaser-stack-layout-1"
   [style.--background-color]="backgroundColor"
-  [style.--background-image]="backgroundImage ? 'url(\'' + backgroundImage + '\')' : ''"
   [style.--background-image-position]="backgroundImagePosition"
   [style.--background-image-size]="backgroundImageSize"
+  [smScaleImage]="backgroundImage || ''"
+  [smWidthRounding]="100"
   [ngClass]="{'full-page-width': fullPageWidth}">
   <div class="teaser-stack-layout-1-container">
     <div *ngIf="title || description" class="teaser-stack-text-container">
@@ -18,7 +19,7 @@
       [ngClass]="teaserHeight ? 'no-float' : 'float'"
       [style.--column-count]="columnCount"
     >
-      <ngx-masonry *ngIf="!teaserHeight; else withoutTeaserHeight">
+      <ngx-masonry (layoutComplete)="reDoLayout()" *ngIf="!teaserHeight; else withoutTeaserHeight">
         <sm-teaser
           ngxMasonryItem
           *ngFor="let teaser of finalTeasers"

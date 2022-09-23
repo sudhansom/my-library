@@ -1,6 +1,161 @@
 {
-    "pipes": [],
+    "pipes": [
+        {
+            "name": "ScaleImagePipe",
+            "id": "pipe-ScaleImagePipe-3852b457f27df690c0b604cd7994206f3eeafa54d5194863fca7f5619ef1676c9dfcaf4f4fdaf836a9dcda10a02010b6bc7bc7bac1ee672a99e81eee84ee6f0f",
+            "file": "projects/ng-components/src/pipes/scaleimage/scale-image.pipe.ts",
+            "type": "pipe",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "transform",
+                    "args": [
+                        {
+                            "name": "imageUrl",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "width",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 9,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "imageUrl",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "width",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "pure": true,
+            "ngname": "scaleImage",
+            "sourceCode": "import { Pipe, PipeTransform } from '@angular/core';\nimport { prefixScaleImageUrl } from '../../utils/prefixScaleImageUrl';\n\n@Pipe({\n  name: 'scaleImage',\n  pure: true\n})\nexport class ScaleImagePipe implements PipeTransform {\n  transform(imageUrl: string, width: number) {\n    return prefixScaleImageUrl(imageUrl, {\n      width: width,\n      padCanvas: false\n    });\n  }\n}\n"
+        }
+    ],
     "interfaces": [
+        {
+            "name": "IPrefixImageUtlOptions",
+            "id": "interface-IPrefixImageUtlOptions-8e0fa86ee26dfcda82a92e01a3e7660140b7bf44b5552f2d3c3a4df07159e1536a403f69ba385759fc89371fecad7ece642c92dfcb2b72ff8a1c87f8841cd4ed",
+            "file": "projects/ng-components/src/utils/prefixScaleImageUrl.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { isExternalUrl } from \"./isExternalUrl\";\n\ninterface IPrefixImageUtlOptions {\n  context?: string;\n  width?: number;\n  height?: number;\n  bgcolor?: string;\n  position?: string;\n  padCanvas?: boolean;\n  cover?: boolean;\n  maxScale?: number;\n  fallbackPath?: string;\n}\n\nexport const prefixScaleImageUrl = (value: string, options: IPrefixImageUtlOptions) => {\n  if (isExternalUrl(value)) {\n    return value;\n  }\n  else {\n    var query : any = {\n      path: value,\n      context: options.context,\n      width: options.width,\n      height: options.height,\n\n      bgcolor: options.bgcolor,\n      position: options.position,\n\n      padCanvas: options.padCanvas,\n      cover: options.cover,\n\n      maxScale: options.maxScale,\n      fallbackPath: options.fallbackPath\n    };\n\n    const params = Object.keys(query)\n      .filter(key => {\n        const val = query[key];\n\n        return val !== null && val !== undefined && val !== '';\n      })\n      .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(query[key])}`)\n      .join('&')\n\n    return `/.0/cms/scaleImage.aspx?${params}`;\n  }\n}\n",
+            "properties": [
+                {
+                    "name": "bgcolor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 7
+                },
+                {
+                    "name": "context",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "cover",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": true,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "fallbackPath",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "height",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": true,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "maxScale",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": true,
+                    "description": "",
+                    "line": 11
+                },
+                {
+                    "name": "padCanvas",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": true,
+                    "description": "",
+                    "line": 9
+                },
+                {
+                    "name": "position",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 8
+                },
+                {
+                    "name": "width",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": true,
+                    "description": "",
+                    "line": 5
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        },
         {
             "name": "ITeaser",
             "id": "interface-ITeaser-ca8fda1dcca71d97304842deb2b57c34cfc1a6f35844c76d9cbf0d2f6a3d057e57336f9128a8c6ade78900b33f7e8a90f08de5822afecbbfee637513e252e4d5",
@@ -398,6 +553,218 @@
                         "type": "",
                         "returnType": "",
                         "line": 28
+                    }
+                }
+            }
+        },
+        {
+            "name": "ScaleImageDirective",
+            "id": "directive-ScaleImageDirective-b3360bad8a98dc92437a081a8a59aa5d466f0bde4fe073c0b918980dc167b226ddb0b1b596044c028914258470c365bbc0703dfe35d5667f95b30e7220455331",
+            "file": "projects/ng-components/src/directives/scaleimage/scale-image.directive.ts",
+            "type": "directive",
+            "description": "<p>Directive to auto set width to scale-image and lazy load image\nUsage &lt;img [smScaleImage]=&quot;imgPath&quot; [smWidthRounding]=&quot;100&quot; [smMaxWidth] = &quot;1220&quot;&gt;\nUse <img src=\"{{imgPath | scaleImage: 500}}\" loading=\"lazy\"> if you want static width</p>\n",
+            "rawdescription": "\n\nDirective to auto set width to scale-image and lazy load image\nUsage <img [smScaleImage]=\"imgPath\" [smWidthRounding]=\"100\" [smMaxWidth] = \"1220\">\nUse <img src=\"{{imgPath | scaleImage: 500}}\" loading=\"lazy\"> if you want static width\n",
+            "sourceCode": "import {\n  Directive,\n  ElementRef,\n  Input,\n  OnDestroy,\n  OnInit,\n  Renderer2\n} from '@angular/core';\nimport { prefixScaleImageUrl } from '../../utils/prefixScaleImageUrl';\n\nconst calculateOptimalWidth = (width: number, widthRounding: number, maxWidth: number) => {\n  let optimalWidth = width;\n\n  if (widthRounding) {\n    optimalWidth = Math.ceil(width / widthRounding) * widthRounding;\n  }\n\n  if (optimalWidth > maxWidth) {\n    return maxWidth;\n  }\n\n  return optimalWidth;\n};\n\n/**\n * Directive to auto set width to scale-image and lazy load image\n * Usage <img [smScaleImage]=\"imgPath\" [smWidthRounding]=\"100\" [smMaxWidth] = \"1220\">\n * Use <img src=\"{{imgPath | scaleImage: 500}}\" loading=\"lazy\"> if you want static width\n */\n\n@Directive({\n  selector: '[smScaleImage]',\n})\nexport class ScaleImageDirective implements OnInit, OnDestroy {\n  private _imageUrl = '';\n\n  @Input() set smScaleImage(imageUrl: string) {\n    if (this._imageUrl !== imageUrl) {\n      this._imageUrl = imageUrl;\n      this.appendImage();\n    }\n  }\n\n  get imageUrl() {\n    return this._imageUrl;\n  }\n\n  @Input() smWidthRounding = 0;\n  @Input() smMaxWidth = 1500;\n\n  private visible = false;\n  private observer: IntersectionObserver | undefined;\n\n  constructor(private el: ElementRef, private renderer: Renderer2) {}\n\n  ngOnInit() {\n    this.observer = new IntersectionObserver(([entry]) => {\n      if (entry.intersectionRatio > 0) {\n        this.visible = true;\n        this.appendImage();\n        this.unsubscribeObserver();\n      }\n    });\n\n    this.observer.observe(this.el.nativeElement);\n  }\n\n  appendImage() {\n    if (this.imageUrl && this.visible) {\n      const isImg = this.el.nativeElement.tagName.toLowerCase() === 'img';\n\n      if (isImg) {\n        // Add srcset and sizes if needed\n        this.renderer.setAttribute(\n          this.el.nativeElement,\n          'src',\n          prefixScaleImageUrl(this.imageUrl, {\n            width: calculateOptimalWidth(this.el.nativeElement.parentElement.offsetWidth, this.smWidthRounding, this.smMaxWidth),\n            padCanvas: false\n          })\n        );\n      }\n      else {\n        this.renderer.setStyle(\n          this.el.nativeElement,\n          'backgroundImage',\n          `url('${prefixScaleImageUrl(this.imageUrl, {\n            width: calculateOptimalWidth(this.el.nativeElement.offsetWidth, this.smWidthRounding, this.smMaxWidth),\n            padCanvas: false\n          })}')`\n        );\n      }\n    }\n  }\n\n  unsubscribeObserver() {\n    if (this.observer) {\n      this.observer.disconnect();\n      this.observer = undefined;\n    }\n  }\n\n  ngOnDestroy() {\n    this.unsubscribeObserver();\n  }\n}\n",
+            "selector": "[smScaleImage]",
+            "providers": [],
+            "inputsClass": [
+                {
+                    "name": "smMaxWidth",
+                    "defaultValue": "1500",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 49,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "smScaleImage",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 37,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "smWidthRounding",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 48,
+                    "type": "number",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "propertiesClass": [
+                {
+                    "name": "_imageUrl",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 35,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "observer",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "IntersectionObserver | undefined",
+                    "optional": false,
+                    "description": "",
+                    "line": 52,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "visible",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 51,
+                    "modifierKind": [
+                        121
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "appendImage",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 68,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 103,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 56,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "unsubscribeObserver",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 96,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "implements": [
+                "OnInit",
+                "OnDestroy"
+            ],
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "el",
+                        "type": "ElementRef",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "renderer",
+                        "type": "Renderer2",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 52,
+                "jsdoctags": [
+                    {
+                        "name": "el",
+                        "type": "ElementRef",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "renderer",
+                        "type": "Renderer2",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "accessors": {
+                "smScaleImage": {
+                    "name": "smScaleImage",
+                    "setSignature": {
+                        "name": "smScaleImage",
+                        "type": "void",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "args": [
+                            {
+                                "name": "imageUrl",
+                                "type": "string",
+                                "deprecated": false,
+                                "deprecationMessage": ""
+                            }
+                        ],
+                        "returnType": "void",
+                        "line": 37,
+                        "jsdoctags": [
+                            {
+                                "name": "imageUrl",
+                                "type": "string",
+                                "deprecated": false,
+                                "deprecationMessage": "",
+                                "tagName": {
+                                    "text": "param"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "imageUrl": {
+                    "name": "imageUrl",
+                    "getSignature": {
+                        "name": "imageUrl",
+                        "type": "",
+                        "returnType": "",
+                        "line": 44
                     }
                 }
             }
@@ -830,7 +1197,7 @@
                     }
                 }
             },
-            "templateData": "<a\n  class=\"teaser\"\n  [class.has-hover-box-shadow]=\"hoverBoxShadow\"\n  [smNavigate]=\"link || ''\"\n  [style.--border]=\"border\"\n  [style.--hover-border]=\"hoverBorder || border\"\n  [style.--box-shadow]=\"boxShadow\"\n  [style.--hover-box-shadow]=\"hoverBoxShadow || boxShadow\"\n  [style.--image-height]=\"teaserHeightForTemplate\"\n  [style.--background-color]=\"backgroundColor\"\n  [style.--text-color]=\"textColor\"\n  [style.--background-image-size]=\"backgroundImageSize\"\n>\n  <div class=\"teaser__image-container\">\n    <img src=\"{{ imageUrl }}\" width=\"100%\" alt=\"{{ header }}\" />\n  </div>\n  <div class=\"teaser__text-container\">\n    <h3 class=\"text text--h3\">{{ header }}</h3>\n    <p class=\"text text--p\">\n      {{ description }} {{link}}\n    </p>\n  </div>\n</a>\n"
+            "templateData": "<a\n  class=\"teaser\"\n  [class.has-hover-box-shadow]=\"hoverBoxShadow\"\n  [smNavigate]=\"link || ''\"\n  [style.--border]=\"border\"\n  [style.--hover-border]=\"hoverBorder || border\"\n  [style.--box-shadow]=\"boxShadow\"\n  [style.--hover-box-shadow]=\"hoverBoxShadow || boxShadow\"\n  [style.--image-height]=\"teaserHeightForTemplate\"\n  [style.--background-color]=\"backgroundColor\"\n  [style.--text-color]=\"textColor\"\n  [style.--background-image-size]=\"backgroundImageSize\"\n>\n  <div class=\"teaser__image-container\">\n    <img [smScaleImage]=\"imageUrl || ''\" masonryLazy loading=\"lazy\" [smWidthRounding]=\"100\" width=\"100%\" alt=\"{{ header }}\" />\n  </div>\n  <div class=\"teaser__text-container\">\n    <h3 class=\"text text--h3\">{{ header }}</h3>\n    <p class=\"text text--p\">\n      {{ description }} {{link}}\n    </p>\n  </div>\n</a>\n"
         },
         {
             "name": "TeaserLayout2Component",
@@ -973,12 +1340,12 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".teaser {\n  font-family: var(--font-family);\n  border-radius: 4px;\n  height: var(--teaser-height);\n  text-align: center;\n  background-image: var(--background-image);\n  background-color: var(--background-color);\n  background-position: var(--background-image-position);\n  background-size: var(--background-image-size);\n  position: relative;\n  overflow: hidden;\n  display: block;\n  text-decoration: none;\n\n  img {\n    object-fit: cover;\n    max-width: 100%;\n    display: block;\n  }\n\n  &__titles {\n    position: absolute;\n    bottom: 28px;\n    left: 40px;\n    right: 40px;\n\n    h3 {\n      color: #fff;\n      font-size: 24px;\n      line-height: 29px;\n      text-align: center;\n      display: -webkit-box;\n      -webkit-line-clamp: 2;\n      -webkit-box-orient: vertical;\n      overflow: hidden;\n    }\n    p {\n      color: #fff;\n      font-size: 16px;\n      line-height: 19px;\n      text-align: center;\n      margin: 0;\n      display: -webkit-box;\n      -webkit-line-clamp: 1;\n      -webkit-box-orient: vertical;\n      overflow: hidden;\n    }\n  }\n  &:hover {\n    &::before {\n      content: \"\";\n      background-image: linear-gradient(\n        180deg,\n        rgba(238, 238, 238, 0) 0%,\n        rgba(255, 255, 255, 0.89) 100%\n      );\n      position: absolute;\n      top: 0;\n      left: 0;\n      right: 0;\n      bottom: 0;\n    }\n\n    h3 {\n      color: var(--primary-color);\n    }\n    p {\n      color: var(--primary-color);\n    }\n  }\n}\n",
+                    "data": ".teaser {\n  font-family: var(--font-family);\n  border-radius: 4px;\n  height: var(--teaser-height);\n  text-align: center;\n  background-color: var(--background-color);\n  background-position: var(--background-image-position);\n  background-size: var(--background-image-size);\n  position: relative;\n  overflow: hidden;\n  display: block;\n  text-decoration: none;\n\n  img {\n    object-fit: cover;\n    max-width: 100%;\n    display: block;\n  }\n\n  &__titles {\n    position: absolute;\n    bottom: 28px;\n    left: 40px;\n    right: 40px;\n\n    h3 {\n      color: #fff;\n      font-size: 24px;\n      line-height: 29px;\n      text-align: center;\n      display: -webkit-box;\n      -webkit-line-clamp: 2;\n      -webkit-box-orient: vertical;\n      overflow: hidden;\n    }\n    p {\n      color: #fff;\n      font-size: 16px;\n      line-height: 19px;\n      text-align: center;\n      margin: 0;\n      display: -webkit-box;\n      -webkit-line-clamp: 1;\n      -webkit-box-orient: vertical;\n      overflow: hidden;\n    }\n  }\n  &:hover {\n    &::before {\n      content: \"\";\n      background-image: linear-gradient(\n        180deg,\n        rgba(238, 238, 238, 0) 0%,\n        rgba(255, 255, 255, 0.89) 100%\n      );\n      position: absolute;\n      top: 0;\n      left: 0;\n      right: 0;\n      bottom: 0;\n    }\n\n    h3 {\n      color: var(--primary-color);\n    }\n    p {\n      color: var(--primary-color);\n    }\n  }\n}\n",
                     "styleUrl": "./teaser-layout-2.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<a\n  class=\"teaser\"\n  [smNavigate]=\"link || ''\"\n  [style.--background-image]=\"imageUrl ? 'url(' + imageUrl + ')' : ''\"\n  [style.--teaser-height]=\"teaserHeight ? teaserHeight + 'px' : ''\"\n  [style.--background-color]=\"backgroundColor\"\n  [style.--background-image-position]=\"backgroundImagePosition\"\n  [style.--background-image-size]=\"backgroundImageSize\"\n>\n  <img *ngIf=\"!teaserHeight\" src=\"{{imageUrl}}\">\n  <div class=\"teaser__titles\">\n    <h3>{{ header }}</h3>\n    <p>{{ description }}</p>\n  </div>\n</a>\n"
+            "templateData": "<a\n  class=\"teaser\"\n  [smNavigate]=\"link || ''\"\n  [smScaleImage]=\"imageUrl || ''\"\n  [smWidthRounding]=\"100\"\n  [style.--teaser-height]=\"teaserHeight ? teaserHeight + 'px' : ''\"\n  [style.--background-color]=\"backgroundColor\"\n  [style.--background-image-position]=\"backgroundImagePosition\"\n  [style.--background-image-size]=\"backgroundImageSize\"\n>\n  <img *ngIf=\"!teaserHeight\"\n    [smScaleImage]=\"imageUrl || ''\"\n    masonryLazy loading=\"lazy\"\n    [smWidthRounding]=\"100\">\n  <div class=\"teaser__titles\">\n    <h3>{{ header }}</h3>\n    <p>{{ description }}</p>\n  </div>\n</a>\n"
         },
         {
             "name": "TeaserLayout3Component",
@@ -1126,11 +1493,11 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<a\n  class=\"teaser\"\n  [class.has-hover-box-shadow]=\"hoverBoxShadow\"\n  [smNavigate]=\"link || ''\"\n  [style.--border]=\"border\"\n  [style.--hover-border]=\"hoverBorder || border\"\n  [style.--box-shadow]=\"boxShadow\"\n  [style.--hover-box-shadow]=\"hoverBoxShadow || boxShadow\"\n  [style.--background-image]=\"imageUrl ? 'url(' + imageUrl + ')' : ''\"\n  [style.--teaser-height]=\"teaserHeight ? teaserHeight + 'px' : ''\"\n  [style.--text-color]=\"textColor\"\n  [style.--background-color]=\"backgroundColor\"\n  [style.--background-image-size]=\"backgroundImageSize\"\n  [style.--background-image-position]=\"backgroundImagePosition\"\n>\n  <div class=\"teaser__image-container\">\n    <img class=\"image\" src=\"{{ imageUrl }}\" alt=\"{{ header }}\" />\n  </div>\n  <div class=\"teaser__text-container\" *ngIf=\"header || description\">\n    <h3 *ngIf=\"header\" class=\"teaser__text-container__header\">{{ header }}</h3>\n    <p *ngIf=\"description\" class=\"teaser__text-container__description\">\n      {{ description }}\n    </p>\n  </div>\n</a>\n"
+            "templateData": "<a\n  class=\"teaser\"\n  [class.has-hover-box-shadow]=\"hoverBoxShadow\"\n  [smNavigate]=\"link || ''\"\n  [style.--border]=\"border\"\n  [style.--hover-border]=\"hoverBorder || border\"\n  [style.--box-shadow]=\"boxShadow\"\n  [style.--hover-box-shadow]=\"hoverBoxShadow || boxShadow\"\n  [style.--teaser-height]=\"teaserHeight ? teaserHeight + 'px' : ''\"\n  [style.--text-color]=\"textColor\"\n  [style.--background-color]=\"backgroundColor\"\n  [style.--background-image-size]=\"backgroundImageSize\"\n  [style.--background-image-position]=\"backgroundImagePosition\"\n>\n  <div class=\"teaser__image-container\">\n    <img class=\"image\" [smScaleImage]=\"imageUrl || ''\" masonryLazy loading=\"lazy\" [smWidthRounding]=\"100\" alt=\"{{ header }}\" />\n  </div>\n  <div class=\"teaser__text-container\" *ngIf=\"header || description\">\n    <h3 *ngIf=\"header\" class=\"teaser__text-container__header\">{{ header }}</h3>\n    <p *ngIf=\"description\" class=\"teaser__text-container__description\">\n      {{ description }}\n    </p>\n  </div>\n</a>\n"
         },
         {
             "name": "TeaserStackComponent",
-            "id": "component-TeaserStackComponent-8b961aaac909aa9f64c34a59e092be78a4224f1f9219cc0ac8997bfaef11b3631f85017c6224c6a9127e071b986bbec4d31a9163a6016cd8853f8c5a9d644652",
+            "id": "component-TeaserStackComponent-c23219d9194941fcf422dce9de0da8304fe03a8b540e1348b9eb1a4e8fe539a039afd9ece2f1eb3492d1f605d71b4a1f7c848f1e16e96f786ac91cee4bddf59d",
             "file": "projects/ng-components/src/components/teaser-stack/teaser-stack.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -1152,6 +1519,32 @@
                     "deprecationMessage": "",
                     "line": 17,
                     "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "backgroundImage",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "backgroundImagePosition",
+                    "defaultValue": "'center center'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 24,
+                    "type": "IBackgroundImagePosition",
+                    "decorators": []
+                },
+                {
+                    "name": "backgroundImageSize",
+                    "defaultValue": "'cover'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "IBackgroundImageSize",
                     "decorators": []
                 },
                 {
@@ -1247,15 +1640,15 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\nimport { ITeaserStackLayout } from './teaser-stack.interface';\nimport { ITeaser } from './teaser/teaser.component';\n\n@Component({\n  selector: 'sm-teaser-stack',\n  templateUrl: './teaser-stack.component.html',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TeaserStackComponent {\n  @Input() teaserHeight?: number;\n  @Input() columnCount?: number;\n  @Input() rowCount?: number;\n  @Input() title?: string;\n  @Input() description?: string;\n  @Input() teasers: ITeaser[] = [];\n  @Input() backgroundColor?: string;\n  @Input() fullPageWidth?: boolean;\n  @Input() readMoreLink?: string;\n  @Input() readMoreLabel?: string;\n  @Input() layout: ITeaserStackLayout = 'layout-1';\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\nimport { IBackgroundImagePosition, IBackgroundImageSize, ITeaserStackLayout } from './teaser-stack.interface';\nimport { ITeaser } from './teaser/teaser.component';\n\n@Component({\n  selector: 'sm-teaser-stack',\n  templateUrl: './teaser-stack.component.html',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TeaserStackComponent {\n  @Input() teaserHeight?: number;\n  @Input() columnCount?: number;\n  @Input() rowCount?: number;\n  @Input() title?: string;\n  @Input() description?: string;\n  @Input() teasers: ITeaser[] = [];\n  @Input() backgroundColor?: string;\n  @Input() fullPageWidth?: boolean;\n  @Input() readMoreLink?: string;\n  @Input() readMoreLabel?: string;\n  @Input() layout: ITeaserStackLayout = 'layout-1';\n  @Input() backgroundImage?: string;\n  @Input() backgroundImageSize?: IBackgroundImageSize = 'cover';\n  @Input() backgroundImagePosition?: IBackgroundImagePosition = 'center center';\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "templateData": "<!-- We don't have anything special to do in teaser-stack for layout-2, so layout-2 === layout-1 -->\n<!-- Add ngSwitch if needed in future -->\n<sm-teaser-stack-layout-1\n  [teaserHeight]=\"teaserHeight\"\n  [columnCount]=\"columnCount\"\n  [rowCount]=\"rowCount\"\n  [readMoreLabel]=\"readMoreLabel\"\n  [readMoreLink]=\"readMoreLink\"\n  [title]=\"title\"\n  [description]=\"description\"\n  [teasers]=\"teasers\"\n  [fullPageWidth]=\"fullPageWidth\"\n  [backgroundColor]=\"backgroundColor\"\n  [layout]=\"layout\">\n</sm-teaser-stack-layout-1>\n"
+            "templateData": "<!-- We don't have anything special to do in teaser-stack for layout-2, so layout-2 === layout-1 -->\n<!-- Add ngSwitch if needed in future -->\n<sm-teaser-stack-layout-1\n  [teaserHeight]=\"teaserHeight\"\n  [columnCount]=\"columnCount\"\n  [rowCount]=\"rowCount\"\n  [readMoreLabel]=\"readMoreLabel\"\n  [readMoreLink]=\"readMoreLink\"\n  [title]=\"title\"\n  [description]=\"description\"\n  [teasers]=\"teasers\"\n  [fullPageWidth]=\"fullPageWidth\"\n  [backgroundColor]=\"backgroundColor\"\n  [backgroundImage]=\"backgroundImage\"\n  [backgroundImageSize]=\"backgroundImageSize\"\n  [backgroundImagePosition]=\"backgroundImagePosition\"\n  [layout]=\"layout\">\n</sm-teaser-stack-layout-1>\n"
         },
         {
             "name": "TeaserStackLayout1Component",
-            "id": "component-TeaserStackLayout1Component-65326efe51a4fe564793e798521c5ca5be169cd1192f88b53bfa613e3cbcf76d5295d71e0f37ea58d0200d88eacef0c4d9d9324b76fd5a19efd6f6f832a1b94e",
+            "id": "component-TeaserStackLayout1Component-4cb69446b82ee176033e29cf46574b96aab85860845f2d52d7c0f6af5bfb1597bca0ceb138dfb7e4994eeb5c95c24798d332b3d7b434aa5d12a2263340a2ed54",
             "file": "projects/ng-components/src/components/teaser-stack/teaser-stack-layout-1/teaser-stack-layout-1.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -1277,8 +1670,34 @@
                     "name": "backgroundColor",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 20,
                     "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "backgroundImage",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "backgroundImagePosition",
+                    "defaultValue": "'center center'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 27,
+                    "type": "IBackgroundImagePosition",
+                    "decorators": []
+                },
+                {
+                    "name": "backgroundImageSize",
+                    "defaultValue": "'cover'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 26,
+                    "type": "IBackgroundImageSize",
                     "decorators": []
                 },
                 {
@@ -1286,7 +1705,7 @@
                     "defaultValue": "3",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 14,
+                    "line": 15,
                     "type": "number",
                     "decorators": []
                 },
@@ -1294,7 +1713,7 @@
                     "name": "description",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 18,
                     "type": "string",
                     "decorators": []
                 },
@@ -1303,7 +1722,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 20,
+                    "line": 21,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -1312,7 +1731,7 @@
                     "defaultValue": "'layout-1'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 23,
+                    "line": 24,
                     "type": "ITeaserStackLayout",
                     "decorators": []
                 },
@@ -1320,7 +1739,7 @@
                     "name": "readMoreLabel",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 22,
+                    "line": 23,
                     "type": "string",
                     "decorators": []
                 },
@@ -1328,7 +1747,7 @@
                     "name": "readMoreLink",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 21,
+                    "line": 22,
                     "type": "string",
                     "decorators": []
                 },
@@ -1336,7 +1755,7 @@
                     "name": "rowCount",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 16,
                     "type": "number",
                     "decorators": []
                 },
@@ -1344,7 +1763,7 @@
                     "name": "teaserHeight",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 14,
                     "type": "number",
                     "decorators": []
                 },
@@ -1353,7 +1772,7 @@
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
+                    "line": 19,
                     "type": "ITeaser[]",
                     "decorators": []
                 },
@@ -1361,14 +1780,63 @@
                     "name": "title",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 17,
                     "type": "string",
                     "decorators": []
                 }
             ],
             "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "masonry",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "NgxMasonryComponent",
+                    "optional": true,
+                    "description": "",
+                    "line": 29,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "NgxMasonryComponent"
+                        }
+                    ]
+                },
+                {
+                    "name": "timeoutTimer",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "NodeJS.Timeout",
+                    "optional": true,
+                    "description": "",
+                    "line": 31,
+                    "modifierKind": [
+                        121
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 59,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "reDoLayout",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 33,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -1376,15 +1844,18 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\nimport { ITeaserStackLayout } from '../teaser-stack.interface';\nimport { ITeaser } from '../teaser/teaser.component';\n\n\n@Component({\n  selector: 'sm-teaser-stack-layout-1',\n  templateUrl: './teaser-stack-layout-1.component.html',\n  styleUrls: ['./teaser-stack-layout-1.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TeaserStackLayout1Component {\n  @Input() teaserHeight?: number;\n  @Input() columnCount?: number = 3;\n  @Input() rowCount?: number;\n  @Input() title?: string;\n  @Input() description?: string;\n  @Input() teasers: ITeaser[] = [];\n  @Input() backgroundColor?: string;\n  @Input() fullPageWidth? = false;\n  @Input() readMoreLink?: string;\n  @Input() readMoreLabel?: string;\n  @Input() layout: ITeaserStackLayout = 'layout-1';\n\n  get useMasonry() {\n    // Layout-1 has default height\n    if (this.layout === 'layout-1') {\n      return false;\n    }\n    return !this.teaserHeight || this.teasers.every(teaser => !teaser.teaserHeight);\n  }\n\n  get finalTeasers() {\n    if (this.rowCount && this.columnCount) {\n      const totalItems = this.columnCount * this.rowCount;\n      if (this.teasers.length <= totalItems) {\n        return this.teasers;\n      }\n      return this.teasers.splice(0, totalItems);\n    }\n    return this.teasers;\n  }\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input, OnDestroy, ViewChild } from '@angular/core';\nimport { NgxMasonryComponent } from 'ngx-masonry';\nimport { IBackgroundImagePosition, IBackgroundImageSize, ITeaserStackLayout } from '../teaser-stack.interface';\nimport { ITeaser } from '../teaser/teaser.component';\n\n\n@Component({\n  selector: 'sm-teaser-stack-layout-1',\n  templateUrl: './teaser-stack-layout-1.component.html',\n  styleUrls: ['./teaser-stack-layout-1.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TeaserStackLayout1Component implements OnDestroy {\n  @Input() teaserHeight?: number;\n  @Input() columnCount?: number = 3;\n  @Input() rowCount?: number;\n  @Input() title?: string;\n  @Input() description?: string;\n  @Input() teasers: ITeaser[] = [];\n  @Input() backgroundColor?: string;\n  @Input() fullPageWidth? = false;\n  @Input() readMoreLink?: string;\n  @Input() readMoreLabel?: string;\n  @Input() layout: ITeaserStackLayout = 'layout-1';\n  @Input() backgroundImage?: string;\n  @Input() backgroundImageSize?: IBackgroundImageSize = 'cover';\n  @Input() backgroundImagePosition?: IBackgroundImagePosition = 'center center';\n\n  @ViewChild(NgxMasonryComponent) masonry?: NgxMasonryComponent;\n\n  private timeoutTimer?: NodeJS.Timeout;\n\n  reDoLayout() {\n    this.timeoutTimer = setTimeout(() => {\n      this.masonry?.reloadItems();\n      this.masonry?.layout();\n    }, 1000);\n  }\n\n  get useMasonry() {\n    // Layout-1 has default height\n    if (this.layout === 'layout-1') {\n      return false;\n    }\n    return !this.teaserHeight || this.teasers.every(teaser => !teaser.teaserHeight);\n  }\n\n  get finalTeasers() {\n    if (this.rowCount && this.columnCount) {\n      const totalItems = this.columnCount * this.rowCount;\n      if (this.teasers.length <= totalItems) {\n        return this.teasers;\n      }\n      return this.teasers.splice(0, totalItems);\n    }\n    return this.teasers;\n  }\n\n  ngOnDestroy() {\n    if (this.timeoutTimer) {\n      clearTimeout(this.timeoutTimer);\n    }\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@use 'projects/variables';\n.teaser-stack-layout-1 {\n  background-color: var(--background-color);\n  padding: calc(var(--content-margin) * 4) calc(var(--content-margin) * 2);\n\n  &:not(.full-page-width) {\n    .teaser-stack-layout-1-container {\n      margin-left: auto;\n      margin-right: auto;\n      max-width: var(--max-content-width);\n    }\n  }\n}\n.teaser-stack-text-container {\n  margin-bottom: 20px;\n}\n.teaser-stack-title {\n  text-align: center;\n  font-size: 36px;\n  color: var(--text-color);\n  margin: 0;\n  font-family: var(--font-family);\n  line-height: 40px;\n}\n.teaser-stack-description {\n  margin: 0;\n  text-align: center;\n  font-family: var(--font-family);\n  margin-top: 5px;\n  font-size: 20px;\n  line-height: 24px;\n}\n\n.no-float {\n  display: grid;\n  gap: var(--content-margin);\n  grid-template-columns: 1fr;\n}\n\n.float sm-teaser {\n  display: block;\n  margin-bottom: var(--content-margin);\n}\n\n.teaser-stack-read-more-link {\n  text-align: center;\n  margin-top: var(--content-margin);\n  a {\n    text-decoration: none;\n    color: var(--primary-color);\n\n    &:hover {\n      text-decoration: underline;\n    }\n  }\n}\n\n@media (min-width: map-get(variables.$breakpoints, \"phone\")) {\n  .no-float {\n    grid-template-columns: repeat(var(--column-count), 1fr);\n  }\n  .float ngx-masonry {\n    margin-right: -var(--content-margin);\n  }\n  .float sm-teaser {\n    width: calc(100% / var(--column-count) - var(--content-margin));\n    margin-right: var(--content-margin);\n    margin-bottom: var(--content-margin);\n  }\n}\n\n@media (min-width: map-get(variables.$breakpoints, \"phone\")) and (max-width: map-get(variables.$breakpoints, \"tablet\")) {\n  .teaser-stack {\n    --column-count: 2 !important; // Force 2 items per row in tablets\n  }\n}\n",
+                    "data": "@use 'projects/variables';\n.teaser-stack-layout-1 {\n  background-color: var(--background-color);\n  padding: calc(var(--content-margin) * 4) calc(var(--content-margin) * 2);\n  background-position: var(--background-image-position);\n  background-size: var(--background-image-size);\n  background-repeat: no-repeat;\n\n  &:not(.full-page-width) {\n    .teaser-stack-layout-1-container {\n      margin-left: auto;\n      margin-right: auto;\n      max-width: var(--max-content-width);\n    }\n  }\n}\n.teaser-stack-text-container {\n  margin-bottom: 20px;\n}\n.teaser-stack-title {\n  text-align: center;\n  font-size: 36px;\n  color: var(--text-color);\n  margin: 0;\n  font-family: var(--font-family);\n  line-height: 40px;\n}\n.teaser-stack-description {\n  margin: 0;\n  text-align: center;\n  font-family: var(--font-family);\n  margin-top: 5px;\n  font-size: 20px;\n  line-height: 24px;\n}\n\n.no-float {\n  display: grid;\n  gap: var(--content-margin);\n  grid-template-columns: 1fr;\n}\n\n.float sm-teaser {\n  display: block;\n  margin-bottom: var(--content-margin);\n}\n\n.teaser-stack-read-more-link {\n  text-align: center;\n  margin-top: var(--content-margin);\n  a {\n    text-decoration: none;\n    color: var(--primary-color);\n\n    &:hover {\n      text-decoration: underline;\n    }\n  }\n}\n\n@media (min-width: map-get(variables.$breakpoints, \"phone\")) {\n  .no-float {\n    grid-template-columns: repeat(var(--column-count), 1fr);\n  }\n  .float ngx-masonry {\n    margin-right: -var(--content-margin);\n  }\n  .float sm-teaser {\n    width: calc(100% / var(--column-count) - var(--content-margin));\n    margin-right: var(--content-margin);\n    margin-bottom: var(--content-margin);\n  }\n}\n\n@media (min-width: map-get(variables.$breakpoints, \"phone\")) and (max-width: map-get(variables.$breakpoints, \"tablet\")) {\n  .teaser-stack {\n    --column-count: 2 !important; // Force 2 items per row in tablets\n  }\n}\n",
                     "styleUrl": "./teaser-stack-layout-1.component.scss"
                 }
             ],
             "stylesData": "",
+            "implements": [
+                "OnDestroy"
+            ],
             "accessors": {
                 "useMasonry": {
                     "name": "useMasonry",
@@ -1392,7 +1863,7 @@
                         "name": "useMasonry",
                         "type": "",
                         "returnType": "",
-                        "line": 25
+                        "line": 40
                     }
                 },
                 "finalTeasers": {
@@ -1401,11 +1872,11 @@
                         "name": "finalTeasers",
                         "type": "",
                         "returnType": "",
-                        "line": 33
+                        "line": 48
                     }
                 }
             },
-            "templateData": "<div class=\"teaser-stack-layout-1\" [style.--background-color]=\"backgroundColor\" [ngClass]=\"{'full-page-width': fullPageWidth}\">\n  <div class=\"teaser-stack-layout-1-container\">\n    <div *ngIf=\"title || description\" class=\"teaser-stack-text-container\">\n      <h2 *ngIf=\"title\" class=\"teaser-stack-title\">\n        {{ title }}\n      </h2>\n      <p *ngIf=\"description\" class=\"teaser-stack-description\">\n        {{ description }}\n      </p>\n    </div>\n    <div\n      class=\"teaser-stack\"\n      [ngClass]=\"teaserHeight ? 'no-float' : 'float'\"\n      [style.--column-count]=\"columnCount\"\n    >\n      <ngx-masonry *ngIf=\"!teaserHeight; else withoutTeaserHeight\">\n        <sm-teaser\n          ngxMasonryItem\n          *ngFor=\"let teaser of finalTeasers\"\n          [imageUrl]=\"teaser?.imageUrl\"\n          [header]=\"teaser?.header\"\n          [description]=\"teaser?.description\"\n          [border]=\"teaser?.border\"\n          [hoverBorder]=\"teaser?.hoverBorder\"\n          [boxShadow]=\"teaser?.boxShadow\"\n          [hoverBoxShadow]=\"teaser?.hoverBoxShadow\"\n          [textColor]=\"teaser?.textColor\"\n          [link]=\"teaser?.link\"\n          [backgroundColor]=\"teaser?.backgroundColor\"\n          [backgroundImageSize]=\"teaser.backgroundImageSize\"\n          [layout]=\"teaser.layout || layout\"\n          [backgroundImagePosition]=\"teaser.backgroundImagePosition\"\n          [teaserHeight]=\"teaser.teaserHeight || teaserHeight\"\n        ></sm-teaser>\n      </ngx-masonry>\n      <ng-template #withoutTeaserHeight>\n        <sm-teaser\n          *ngFor=\"let teaser of finalTeasers\"\n          [imageUrl]=\"teaser?.imageUrl\"\n          [header]=\"teaser?.header\"\n          [description]=\"teaser?.description\"\n          [border]=\"teaser?.border\"\n          [hoverBorder]=\"teaser?.hoverBorder\"\n          [boxShadow]=\"teaser?.boxShadow\"\n          [hoverBoxShadow]=\"teaser?.hoverBoxShadow\"\n          [textColor]=\"teaser?.textColor\"\n          [link]=\"teaser?.link\"\n          [backgroundColor]=\"teaser?.backgroundColor\"\n          [backgroundImageSize]=\"teaser.backgroundImageSize\"\n          [layout]=\"teaser.layout || layout\"\n          [backgroundImagePosition]=\"teaser.backgroundImagePosition\"\n          [teaserHeight]=\"teaser.teaserHeight || teaserHeight\"\n        ></sm-teaser>\n      </ng-template>\n    </div>\n    <div *ngIf=\"readMoreLink && readMoreLabel\" class=\"teaser-stack-read-more-link\">\n      <a [smNavigate]=\"readMoreLink\" >\n        {{readMoreLabel}}\n      </a>\n    </div>\n  </div>\n</div>\n"
+            "templateData": "<div class=\"teaser-stack-layout-1\"\n  [style.--background-color]=\"backgroundColor\"\n  [style.--background-image-position]=\"backgroundImagePosition\"\n  [style.--background-image-size]=\"backgroundImageSize\"\n  [smScaleImage]=\"backgroundImage || ''\"\n  [smWidthRounding]=\"100\"\n  [ngClass]=\"{'full-page-width': fullPageWidth}\">\n  <div class=\"teaser-stack-layout-1-container\">\n    <div *ngIf=\"title || description\" class=\"teaser-stack-text-container\">\n      <h2 *ngIf=\"title\" class=\"teaser-stack-title\">\n        {{ title }}\n      </h2>\n      <p *ngIf=\"description\" class=\"teaser-stack-description\">\n        {{ description }}\n      </p>\n    </div>\n    <div\n      class=\"teaser-stack\"\n      [ngClass]=\"teaserHeight ? 'no-float' : 'float'\"\n      [style.--column-count]=\"columnCount\"\n    >\n      <ngx-masonry (layoutComplete)=\"reDoLayout()\" *ngIf=\"!teaserHeight; else withoutTeaserHeight\">\n        <sm-teaser\n          ngxMasonryItem\n          *ngFor=\"let teaser of finalTeasers\"\n          [imageUrl]=\"teaser?.imageUrl\"\n          [header]=\"teaser?.header\"\n          [description]=\"teaser?.description\"\n          [border]=\"teaser?.border\"\n          [hoverBorder]=\"teaser?.hoverBorder\"\n          [boxShadow]=\"teaser?.boxShadow\"\n          [hoverBoxShadow]=\"teaser?.hoverBoxShadow\"\n          [textColor]=\"teaser?.textColor\"\n          [link]=\"teaser?.link\"\n          [backgroundColor]=\"teaser?.backgroundColor\"\n          [backgroundImageSize]=\"teaser.backgroundImageSize\"\n          [layout]=\"teaser.layout || layout\"\n          [backgroundImagePosition]=\"teaser.backgroundImagePosition\"\n          [teaserHeight]=\"teaser.teaserHeight || teaserHeight\"\n        ></sm-teaser>\n      </ngx-masonry>\n      <ng-template #withoutTeaserHeight>\n        <sm-teaser\n          *ngFor=\"let teaser of finalTeasers\"\n          [imageUrl]=\"teaser?.imageUrl\"\n          [header]=\"teaser?.header\"\n          [description]=\"teaser?.description\"\n          [border]=\"teaser?.border\"\n          [hoverBorder]=\"teaser?.hoverBorder\"\n          [boxShadow]=\"teaser?.boxShadow\"\n          [hoverBoxShadow]=\"teaser?.hoverBoxShadow\"\n          [textColor]=\"teaser?.textColor\"\n          [link]=\"teaser?.link\"\n          [backgroundColor]=\"teaser?.backgroundColor\"\n          [backgroundImageSize]=\"teaser.backgroundImageSize\"\n          [layout]=\"teaser.layout || layout\"\n          [backgroundImagePosition]=\"teaser.backgroundImagePosition\"\n          [teaserHeight]=\"teaser.teaserHeight || teaserHeight\"\n        ></sm-teaser>\n      </ng-template>\n    </div>\n    <div *ngIf=\"readMoreLink && readMoreLabel\" class=\"teaser-stack-read-more-link\">\n      <a [smNavigate]=\"readMoreLink\" >\n        {{readMoreLabel}}\n      </a>\n    </div>\n  </div>\n</div>\n"
         }
     ],
     "modules": [
@@ -1498,14 +1969,102 @@
             ]
         },
         {
+            "name": "ScaleImageDirectiveModule",
+            "id": "module-ScaleImageDirectiveModule-5b598732bc9539b7b8e24e347a808f0c3060555831a6474984fd06be59f9aadacaece8a850260ce79e62bc9ae7a3a5e06487430e758cd0206d55ef9eda1493cd",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/ng-components/src/directives/scaleimage/scale-image.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { ScaleImageDirective } from './scale-image.directive';\n\n@NgModule({\n  declarations: [\n    ScaleImageDirective\n  ],\n  imports: [],\n  exports: [ScaleImageDirective],\n  providers: [],\n})\nexport class ScaleImageDirectiveModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ScaleImageDirective"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ScaleImageDirective"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "ScaleImagePipeModule",
+            "id": "module-ScaleImagePipeModule-c57a72f7f40aaa3b607da059267624be07a20018d1280b596efa9446d8f8fcb003cc68377b7eee0ad076e0639f6a2d605bf491d7b2e26a0b8210b3fdd47b291f",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/ng-components/src/pipes/scaleimage/scale-image.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { ScaleImagePipe } from './scale-image.pipe';\n\n@NgModule({\n  declarations: [\n    ScaleImagePipe\n  ],\n  imports: [],\n  exports: [ScaleImagePipe],\n  providers: [],\n})\nexport class ScaleImagePipeModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ScaleImagePipe"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ScaleImagePipe"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "TeaserLayout1Module",
-            "id": "module-TeaserLayout1Module-966bc9287a053559ac47f72764fcd48de83b7874139393505fde8cfd8f1bfb6a630d2eefd960e32182c2783f60f816784be91200aeb2c6f91dc5d447f1a506ea",
+            "id": "module-TeaserLayout1Module-d51daaa87040bbd5c1afd03b1ecc0c6a02401955892f5107fef4e7beb0ea37c76265b5debc41193a5feafd6936fd3fb65516825f9e7fc2f4ec1d968c42a99db0",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/ng-components/src/components/teaser-stack/teaser-layout-1/teaser-layout-1.module.ts",
             "methods": [],
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { NavigationModule } from '../../../directives/navigation/navigation.module';\nimport { TeaserLayout1Component } from './teaser-layout-1.component';\n\n@NgModule({\n  declarations: [\n    TeaserLayout1Component,\n  ],\n  imports: [CommonModule, NavigationModule],\n  exports: [\n    TeaserLayout1Component,\n  ],\n  providers: [],\n})\nexport class TeaserLayout1Module {}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { NavigationModule } from '../../../directives/navigation/navigation.module';\nimport { TeaserLayout1Component } from './teaser-layout-1.component';\nimport { ScaleImageDirectiveModule } from '../../../directives/scaleimage/scale-image.module';\n\n@NgModule({\n  declarations: [\n    TeaserLayout1Component,\n  ],\n  imports: [CommonModule, NavigationModule, ScaleImageDirectiveModule],\n  exports: [\n    TeaserLayout1Component,\n  ],\n  providers: [],\n})\nexport class TeaserLayout1Module {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -1524,6 +2083,9 @@
                     "elements": [
                         {
                             "name": "NavigationModule"
+                        },
+                        {
+                            "name": "ScaleImageDirectiveModule"
                         }
                     ]
                 },
@@ -1547,13 +2109,13 @@
         },
         {
             "name": "TeaserLayout2Module",
-            "id": "module-TeaserLayout2Module-dd8ba7f300655972c40f0f0c1cd5775a30c3190668765e52c22e764d48e834fbc353ac324c29794c667ca12e164123a85ec2f92f788df6093a08780de8803201",
+            "id": "module-TeaserLayout2Module-bf5ec496315c097c7132a8f08f938ba697d6617b23460a772886f0b3e218edd0551b096b560d13324191786d94872475d5f0721c24dbc97ff323aa11d4bcdf37",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/ng-components/src/components/teaser-stack/teaser-layout-2/teaser-layout-2.module.ts",
             "methods": [],
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { NavigationModule } from '../../../directives/navigation/navigation.module';\nimport { TeaserLayout2Component } from './teaser-layout-2.component';\n\n@NgModule({\n  declarations: [\n    TeaserLayout2Component,\n  ],\n  imports: [CommonModule, NavigationModule],\n  exports: [\n    TeaserLayout2Component,\n  ],\n  providers: [],\n})\nexport class TeaserLayout2Module {}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { NavigationModule } from '../../../directives/navigation/navigation.module';\nimport { TeaserLayout2Component } from './teaser-layout-2.component';\nimport { ScaleImageDirectiveModule } from '../../../directives/scaleimage/scale-image.module';\n\n@NgModule({\n  declarations: [\n    TeaserLayout2Component,\n  ],\n  imports: [CommonModule, NavigationModule, ScaleImageDirectiveModule],\n  exports: [\n    TeaserLayout2Component,\n  ],\n  providers: [],\n})\nexport class TeaserLayout2Module {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -1572,6 +2134,9 @@
                     "elements": [
                         {
                             "name": "NavigationModule"
+                        },
+                        {
+                            "name": "ScaleImageDirectiveModule"
                         }
                     ]
                 },
@@ -1595,13 +2160,13 @@
         },
         {
             "name": "TeaserLayout3Module",
-            "id": "module-TeaserLayout3Module-9fa981a81b078a36417adc359d3c5a06d289a715edfa96b5fd9a825a9e12e3c596b93e4d69636b658a8c3b27bf76316ffa88c684f13fddb293b6d68899d7ab28",
+            "id": "module-TeaserLayout3Module-7b5ac1227d0a13911d188fe58676d060ca5e54afdaebc15606c74c42047f858e47f151ec11922869ffd623428cf0a27584231fae335b1181bb0d19867d80ee04",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/ng-components/src/components/teaser-stack/teaser-layout-3/teaser-layout-3.module.ts",
             "methods": [],
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { NavigationModule } from '../../../directives/navigation/navigation.module';\nimport { TeaserLayout3Component } from './teaser-layout-3.component';\n\n@NgModule({\n  declarations: [\n    TeaserLayout3Component,\n  ],\n  imports: [CommonModule, NavigationModule],\n  exports: [\n    TeaserLayout3Component,\n  ],\n  providers: [],\n})\nexport class TeaserLayout3Module {}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { ScaleImageDirectiveModule } from '../../../directives/scaleimage/scale-image.module';\nimport { NavigationModule } from '../../../directives/navigation/navigation.module';\nimport { TeaserLayout3Component } from './teaser-layout-3.component';\n\n@NgModule({\n  declarations: [\n    TeaserLayout3Component,\n  ],\n  imports: [CommonModule, NavigationModule, ScaleImageDirectiveModule],\n  exports: [\n    TeaserLayout3Component,\n  ],\n  providers: [],\n})\nexport class TeaserLayout3Module {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -1620,6 +2185,9 @@
                     "elements": [
                         {
                             "name": "NavigationModule"
+                        },
+                        {
+                            "name": "ScaleImageDirectiveModule"
                         }
                     ]
                 },
@@ -1697,13 +2265,13 @@
         },
         {
             "name": "TeaserStackLayout1Module",
-            "id": "module-TeaserStackLayout1Module-00e7f14fb435e2f8b082e8f6317c29100ceeb03a2928e5e2dfa6f3804e4d110fc93e658829c1fe265cb3cd69ba312086d8a16a1ae5d15563509987d3ae4cf967",
+            "id": "module-TeaserStackLayout1Module-6ee54cc4e999f31e5a58fab7ad2dfc0c9f6fe806e9d93042389d8081a3027c8c7bdecabf818848279401593032a5288f85254b7dea841b616e356b9fe3f9ccab",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/ng-components/src/components/teaser-stack/teaser-stack-layout-1/teaser-stack-layout-1.module.ts",
             "methods": [],
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\nimport { NgxMasonryModule } from 'ngx-masonry';\nimport { NavigationModule } from '../../../directives/navigation/navigation.module';\nimport { TeaserModule } from '../teaser/teaser.module';\nimport { TeaserStackLayout1Component } from './teaser-stack-layout-1.component';\n\n@NgModule({\n  declarations: [\n    TeaserStackLayout1Component,\n  ],\n  imports: [CommonModule, NgxMasonryModule, TeaserModule, BrowserAnimationsModule, NavigationModule],\n  exports: [\n    TeaserStackLayout1Component,\n  ],\n  providers: [],\n})\nexport class TeaserStackLayout1Module {}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\nimport { NgxMasonryModule } from 'ngx-masonry';\nimport { ScaleImageDirectiveModule } from '../../../directives/scaleimage/scale-image.module';\nimport { NavigationModule } from '../../../directives/navigation/navigation.module';\nimport { TeaserModule } from '../teaser/teaser.module';\nimport { TeaserStackLayout1Component } from './teaser-stack-layout-1.component';\n\n@NgModule({\n  declarations: [\n    TeaserStackLayout1Component,\n  ],\n  imports: [CommonModule, NgxMasonryModule, TeaserModule, BrowserAnimationsModule, NavigationModule, ScaleImageDirectiveModule],\n  exports: [\n    TeaserStackLayout1Component,\n  ],\n  providers: [],\n})\nexport class TeaserStackLayout1Module {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -1722,6 +2290,9 @@
                     "elements": [
                         {
                             "name": "NavigationModule"
+                        },
+                        {
+                            "name": "ScaleImageDirectiveModule"
                         },
                         {
                             "name": "TeaserModule"
@@ -1858,6 +2429,16 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "_15_Layout3WithFixedHeight",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/teaser-stack/teaser-stack.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "_2_Layout1WithResponsiveHeight",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1978,6 +2559,16 @@
                 "defaultValue": "(args: ButtonComponent) => ({\n  component: ButtonComponent,\n  props: args,\n  template: `\n    <button sitemule-button\n      ${args.loading ? 'loading' : ''}\n      ${args.fullWidth ? 'fullWidth' : ''}\n      ${args.stroked ? 'stroked' : ''}\n      ${args.uppercase ? 'uppercase' : ''}\n      color=\"${args.color}\"\n      size=\"${args.size}\">Button</button>`\n})"
             },
             {
+                "name": "calculateOptimalWidth",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/directives/scaleimage/scale-image.directive.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "(width: number, widthRounding: number, maxWidth: number) => {\n  let optimalWidth = width;\n\n  if (widthRounding) {\n    optimalWidth = Math.ceil(width / widthRounding) * widthRounding;\n  }\n\n  if (optimalWidth > maxWidth) {\n    return maxWidth;\n  }\n\n  return optimalWidth;\n}"
+            },
+            {
                 "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1995,7 +2586,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "[]",
-                "defaultValue": "[\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/308490B.JPG&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=pp-static/images/QXX_display.png&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/623XB.jpg&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/W011100B.png&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/4214037b.jpg&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=pp-static/images/4218087Ba.jpg&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/4243525B2.JPG&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/11663B.jpg&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=pp-static/images/product/70218Ba.jpg&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=pp-static/images/85553.jpg&width=218&height=175\"',\n]"
+                "defaultValue": "[\n  'https://folkelarsen.dk/cms-media/catalog/308490B.JPG',\n  'https://folkelarsen.dk/pp-static/images/QXX_display.png',\n  'https://folkelarsen.dk/cms-media/catalog/623XB.jpg',\n  'https://folkelarsen.dk/cms-media/catalog/W011100B.png',\n  'https://folkelarsen.dk/cms-media/catalog/4214037b.jpg',\n  'https://folkelarsen.dk/pp-static/images/4218087Ba.jpg',\n  'https://folkelarsen.dk/cms-media/catalog/4243525B2.JPG',\n  'https://folkelarsen.dk/cms-media/catalog/11663B.jpg',\n  'https://folkelarsen.dk/pp-static/images/product/70218Ba.jpg',\n  'https://folkelarsen.dk/pp-static/images/85553.jpg',\n]"
+            },
+            {
+                "name": "isExternalUrl",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/utils/isExternalUrl.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "(url: string) => {\n  return /(^\\/\\/|:\\/\\/|mailto:|^\\/?.0\\/)/.test(url);\n}"
             },
             {
                 "name": "isFullPath",
@@ -2006,6 +2607,16 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "(url: string) : boolean => {\n  return url.startsWith && (url.startsWith('https') || url.startsWith('http'));\n}"
+            },
+            {
+                "name": "prefixScaleImageUrl",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/utils/prefixScaleImageUrl.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "(value: string, options: IPrefixImageUtlOptions) => {\n  if (isExternalUrl(value)) {\n    return value;\n  }\n  else {\n    var query : any = {\n      path: value,\n      context: options.context,\n      width: options.width,\n      height: options.height,\n\n      bgcolor: options.bgcolor,\n      position: options.position,\n\n      padCanvas: options.padCanvas,\n      cover: options.cover,\n\n      maxScale: options.maxScale,\n      fallbackPath: options.fallbackPath\n    };\n\n    const params = Object.keys(query)\n      .filter(key => {\n        const val = query[key];\n\n        return val !== null && val !== undefined && val !== '';\n      })\n      .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(query[key])}`)\n      .join('&')\n\n    return `/.0/cms/scaleImage.aspx?${params}`;\n  }\n}"
             },
             {
                 "name": "require",
@@ -2159,6 +2770,16 @@
                     "defaultValue": "Template.bind({})"
                 },
                 {
+                    "name": "_15_Layout3WithFixedHeight",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/teaser-stack/teaser-stack.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
                     "name": "_2_Layout1WithResponsiveHeight",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -2246,7 +2867,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
-                    "defaultValue": "[\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/308490B.JPG&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=pp-static/images/QXX_display.png&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/623XB.jpg&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/W011100B.png&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/4214037b.jpg&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=pp-static/images/4218087Ba.jpg&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/4243525B2.JPG&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/11663B.jpg&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=pp-static/images/product/70218Ba.jpg&width=218&height=175\"',\n  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=pp-static/images/85553.jpg&width=218&height=175\"',\n]"
+                    "defaultValue": "[\n  'https://folkelarsen.dk/cms-media/catalog/308490B.JPG',\n  'https://folkelarsen.dk/pp-static/images/QXX_display.png',\n  'https://folkelarsen.dk/cms-media/catalog/623XB.jpg',\n  'https://folkelarsen.dk/cms-media/catalog/W011100B.png',\n  'https://folkelarsen.dk/cms-media/catalog/4214037b.jpg',\n  'https://folkelarsen.dk/pp-static/images/4218087Ba.jpg',\n  'https://folkelarsen.dk/cms-media/catalog/4243525B2.JPG',\n  'https://folkelarsen.dk/cms-media/catalog/11663B.jpg',\n  'https://folkelarsen.dk/pp-static/images/product/70218Ba.jpg',\n  'https://folkelarsen.dk/pp-static/images/85553.jpg',\n]"
                 },
                 {
                     "name": "teaserstack",
@@ -2311,6 +2932,18 @@
                     "defaultValue": "(args: ButtonComponent) => ({\n  component: ButtonComponent,\n  props: args,\n  template: `\n    <button sitemule-button\n      ${args.loading ? 'loading' : ''}\n      ${args.fullWidth ? 'fullWidth' : ''}\n      ${args.stroked ? 'stroked' : ''}\n      ${args.uppercase ? 'uppercase' : ''}\n      color=\"${args.color}\"\n      size=\"${args.size}\">Button</button>`\n})"
                 }
             ],
+            "projects/ng-components/src/directives/scaleimage/scale-image.directive.ts": [
+                {
+                    "name": "calculateOptimalWidth",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/directives/scaleimage/scale-image.directive.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "(width: number, widthRounding: number, maxWidth: number) => {\n  let optimalWidth = width;\n\n  if (widthRounding) {\n    optimalWidth = Math.ceil(width / widthRounding) * widthRounding;\n  }\n\n  if (optimalWidth > maxWidth) {\n    return maxWidth;\n  }\n\n  return optimalWidth;\n}"
+                }
+            ],
             "projects/ng-components/src/test.ts": [
                 {
                     "name": "context",
@@ -2332,6 +2965,18 @@
                     "type": "literal type"
                 }
             ],
+            "projects/ng-components/src/utils/isExternalUrl.ts": [
+                {
+                    "name": "isExternalUrl",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/utils/isExternalUrl.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "(url: string) => {\n  return /(^\\/\\/|:\\/\\/|mailto:|^\\/?.0\\/)/.test(url);\n}"
+                }
+            ],
             "projects/ng-components/src/directives/navigation/navigation.directive.ts": [
                 {
                     "name": "isFullPath",
@@ -2342,6 +2987,18 @@
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "(url: string) : boolean => {\n  return url.startsWith && (url.startsWith('https') || url.startsWith('http'));\n}"
+                }
+            ],
+            "projects/ng-components/src/utils/prefixScaleImageUrl.ts": [
+                {
+                    "name": "prefixScaleImageUrl",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/utils/prefixScaleImageUrl.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "(value: string, options: IPrefixImageUtlOptions) => {\n  if (isExternalUrl(value)) {\n    return value;\n  }\n  else {\n    var query : any = {\n      path: value,\n      context: options.context,\n      width: options.width,\n      height: options.height,\n\n      bgcolor: options.bgcolor,\n      position: options.position,\n\n      padCanvas: options.padCanvas,\n      cover: options.cover,\n\n      maxScale: options.maxScale,\n      fallbackPath: options.fallbackPath\n    };\n\n    const params = Object.keys(query)\n      .filter(key => {\n        const val = query[key];\n\n        return val !== null && val !== undefined && val !== '';\n      })\n      .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(query[key])}`)\n      .join('&')\n\n    return `/.0/cms/scaleImage.aspx?${params}`;\n  }\n}"
                 }
             ]
         },
@@ -2496,7 +3153,7 @@
                 "linktype": "component",
                 "name": "TeaserStackLayout1Component",
                 "coveragePercent": 0,
-                "coverageCount": "0/12",
+                "coverageCount": "0/19",
                 "status": "low"
             },
             {
@@ -2505,7 +3162,7 @@
                 "linktype": "component",
                 "name": "TeaserStackComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/12",
+                "coverageCount": "0/15",
                 "status": "low"
             },
             {
@@ -2564,6 +3221,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "_14_Layout3WithResponsiveHeight",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/teaser-stack/teaser-stack.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "_15_Layout3WithFixedHeight",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -2716,6 +3383,34 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/ng-components/src/directives/scaleimage/scale-image.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "ScaleImageDirective",
+                "coveragePercent": 8,
+                "coverageCount": "1/12",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/directives/scaleimage/scale-image.directive.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "calculateOptimalWidth",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/pipes/scaleimage/scale-image.pipe.ts",
+                "type": "pipe",
+                "linktype": "pipe",
+                "name": "ScaleImagePipe",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/ng-components/src/test.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -2731,6 +3426,35 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/utils/isExternalUrl.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "isExternalUrl",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/utils/prefixScaleImageUrl.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "IPrefixImageUtlOptions",
+                "coveragePercent": 0,
+                "coverageCount": "0/10",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/utils/prefixScaleImageUrl.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "prefixScaleImageUrl",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
