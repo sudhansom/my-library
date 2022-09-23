@@ -19,5 +19,11 @@ export * from "./components/teaser-stack/teaser/teaser.component";
 export * from "./components/teaser-stack/teaser/teaser.module";
 export * from "./directives/navigation/navigation.directive";
 export * from "./directives/navigation/navigation.module";
+export * from "./directives/scaleimage/scale-image.directive";
+export * from "./directives/scaleimage/scale-image.module";
+export * from "./pipes/scaleimage/scale-image.pipe";
+export * from "./pipes/scaleimage/scale-image.module";
+export * from "./utils/isExternalUrl";
+export * from "./utils/prefixScaleImageUrl";
 
 

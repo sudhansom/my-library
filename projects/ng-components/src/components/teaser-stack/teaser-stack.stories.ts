@@ -253,16 +253,16 @@ _10_Layout1WithMixedTeaser.args = {
 };
 
 const images = [
-  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/308490B.JPG&width=218&height=175"',
-  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=pp-static/images/QXX_display.png&width=218&height=175"',
-  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/623XB.jpg&width=218&height=175"',
-  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/W011100B.png&width=218&height=175"',
-  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/4214037b.jpg&width=218&height=175"',
-  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=pp-static/images/4218087Ba.jpg&width=218&height=175"',
-  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/4243525B2.JPG&width=218&height=175"',
-  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=cms-media/catalog/11663B.jpg&width=218&height=175"',
-  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=pp-static/images/product/70218Ba.jpg&width=218&height=175"',
-  'https://folkelarsen.dk/.0/cms/scaleImage.aspx?path=pp-static/images/85553.jpg&width=218&height=175"',
+  'https://folkelarsen.dk/cms-media/catalog/308490B.JPG',
+  'https://folkelarsen.dk/pp-static/images/QXX_display.png',
+  'https://folkelarsen.dk/cms-media/catalog/623XB.jpg',
+  'https://folkelarsen.dk/cms-media/catalog/W011100B.png',
+  'https://folkelarsen.dk/cms-media/catalog/4214037b.jpg',
+  'https://folkelarsen.dk/pp-static/images/4218087Ba.jpg',
+  'https://folkelarsen.dk/cms-media/catalog/4243525B2.JPG',
+  'https://folkelarsen.dk/cms-media/catalog/11663B.jpg',
+  'https://folkelarsen.dk/pp-static/images/product/70218Ba.jpg',
+  'https://folkelarsen.dk/pp-static/images/85553.jpg',
 ]
 export const _11_Layout3WithResponsiveHeight = Template.bind({});
 _11_Layout3WithResponsiveHeight.storyName = 'Layout 3 with responsive height';

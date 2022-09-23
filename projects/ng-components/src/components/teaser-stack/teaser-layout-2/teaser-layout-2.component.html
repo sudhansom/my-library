@@ -1,13 +1,17 @@
 <a
   class="teaser"
   [smNavigate]="link || ''"
-  [style.--background-image]="imageUrl ? 'url(' + imageUrl + ')' : ''"
+  [smScaleImage]="imageUrl || ''"
+  [smWidthRounding]="100"
   [style.--teaser-height]="teaserHeight ? teaserHeight + 'px' : ''"
   [style.--background-color]="backgroundColor"
   [style.--background-image-position]="backgroundImagePosition"
   [style.--background-image-size]="backgroundImageSize"
 >
-  <img *ngIf="!teaserHeight" src="{{imageUrl}}">
+  <img *ngIf="!teaserHeight"
+    [smScaleImage]="imageUrl || ''"
+    masonryLazy loading="lazy"
+    [smWidthRounding]="100">
   <div class="teaser__titles">
     <h3>{{ header }}</h3>
     <p>{{ description }}</p>
