@@ -22,7 +22,7 @@
       <ngx-masonry (layoutComplete)="reDoLayout()" *ngIf="!teaserHeight; else withoutTeaserHeight">
         <sm-teaser
           ngxMasonryItem
-          *ngFor="let teaser of finalTeasers"
+          *ngFor="let teaser of finalTeasers; trackBy: trackByFn"
           [imageUrl]="teaser?.imageUrl"
           [header]="teaser?.header"
           [description]="teaser?.description"
@@ -41,7 +41,7 @@
       </ngx-masonry>
       <ng-template #withoutTeaserHeight>
         <sm-teaser
-          *ngFor="let teaser of finalTeasers"
+          *ngFor="let teaser of finalTeasers; trackBy: trackByFn"
           [imageUrl]="teaser?.imageUrl"
           [header]="teaser?.header"
           [description]="teaser?.description"

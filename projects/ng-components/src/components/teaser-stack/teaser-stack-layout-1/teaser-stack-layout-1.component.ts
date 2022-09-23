@@ -56,6 +56,10 @@ export class TeaserStackLayout1Component implements OnDestroy {
     return this.teasers;
   }
 
+  trackByFn(_index: number, teaser: ITeaser) {
+    return teaser.header;
+  }
+
   ngOnDestroy() {
     if (this.timeoutTimer) {
       clearTimeout(this.timeoutTimer);
