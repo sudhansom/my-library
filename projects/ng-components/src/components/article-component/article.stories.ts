@@ -22,6 +22,8 @@ const links = [
     target: '_blank',
     backgroundColor: '#9925f1',
     color: 'white',
+    size: 'sm',
+    stroked: true,
   },
   {
     label: 'Or get support',
@@ -29,6 +31,8 @@ const links = [
     target: '_blank',
     backgroundColor: 'rgb(248, 248, 248)',
     color: '#9925f1',
+    size: 'md',
+    stroked: true,
   },
 ];
 

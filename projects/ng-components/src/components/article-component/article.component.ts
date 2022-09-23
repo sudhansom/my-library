@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
-export interface ILink{
+interface ILink{
   topLink?: boolean
   label: string
   href: string
