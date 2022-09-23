@@ -1,10 +1,12 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
+type targetType = '_blank' | '_self'  | '_parent' | '_top';
+
 interface ILink{
   topLink?: boolean
   label: string
   href: string
-  target: string
+  target: targetType
   backgroundColor: string
   color: string
 }
@@ -16,10 +18,10 @@ interface ILink{
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ArticleComponent {
-  @Input() imagePosition: string = 'left';
+  @Input() imagePosition: 'left' | 'right' = 'left';
   @Input() image: string = '';
   @Input() icon: string = '';
   @Input() header: string = '';
   @Input() description: string = '';
-  @Input() links: ILink[] | undefined | null = [];
+  @Input() links: ILink[] = [];
 }

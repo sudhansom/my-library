@@ -1,4 +1,3 @@
-import { RouterTestingModule } from '@angular/router/testing';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { ArticleComponent } from './article.component';
 import { ArticleModule } from './article.module';
@@ -10,7 +9,7 @@ export default {
   decorators: [
     moduleMetadata({
       declarations: [],
-      imports: [RouterTestingModule, ArticleModule],
+      imports: [ArticleModule],
     }),
   ],
 } as Meta;
@@ -22,8 +21,6 @@ const links = [
     target: '_blank',
     backgroundColor: '#9925f1',
     color: 'white',
-    size: 'sm',
-    stroked: true,
   },
   {
     label: 'Or get support',
@@ -31,8 +28,6 @@ const links = [
     target: '_blank',
     backgroundColor: 'rgb(248, 248, 248)',
     color: '#9925f1',
-    size: 'md',
-    stroked: true,
   },
 ];
 
