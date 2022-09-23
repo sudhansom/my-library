@@ -12,7 +12,12 @@ export class NavigationDirective {
   private _url = '';
   @Input() set smNavigate(url: string) {
     this._url = url;
-    this.renderer.setAttribute(this.el.nativeElement, 'href', this.url);
+    if (this.url) {
+      this.renderer.setAttribute(this.el.nativeElement, 'href', this.url);
+    }
+    else {
+      this.renderer.removeAttribute(this.el.nativeElement, 'href');
+    }
   }
 
   get url() {
