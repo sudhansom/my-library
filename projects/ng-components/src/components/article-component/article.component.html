@@ -1,0 +1,30 @@
+<div
+  class="image-article"
+  [class.left]="imagePosition === 'left'"
+  [class.right]="imagePosition === 'right'"
+  [style.--background-image]="'url(' + image + ')'"
+>
+  <img class="image-article__image" src="{{ image }}" alt="" />
+  <div class="image-article__article">
+    <img class="icon" src="{{ icon }}" alt="logo" />
+    <h3 class="header">{{ header }}</h3>
+    <p class="description">
+      {{ description }}
+    </p>
+
+    <div class="image-article__article__links-container" *ngIf="links?.length">
+      <a
+        class="btn"
+        *ngFor="let link of links"
+        [ngStyle]="{
+          backgroundColor: link.backgroundColor,
+          color: link.color
+        }"
+        [href]="link.href"
+        [target]="link.target"
+      >
+        {{ link.label }}
+      </a>
+    </div>
+  </div>
+</div>

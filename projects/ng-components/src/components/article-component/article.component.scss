@@ -1,0 +1,111 @@
+@use '../../../../variables';
+
+:host {
+  .image-article {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    background-color: rgb(248, 248, 248);
+
+    &.right {
+      img {
+        order: 0;
+      }
+    }
+
+    &__image {
+      width: calc(100% - var(--content-margin) * 2);
+      margin-left: var(--content-margin);
+      margin-right: var(--content-margin);
+      border-radius: 10px;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+    &__article {
+      padding: 12px var(--content-margin);
+      .icon {
+        margin-bottom: 12px;
+        margin-right: -15px;
+        border-radius: 7px;
+      }
+      .header {
+        color:#092728;
+        font-size: 30px;
+        line-height: 33px;
+        margin: 0;
+      }
+      .description {
+        color:#887d8c;
+        font-size: 16px;
+        line-height: 26px;
+        margin-top: 10px;
+      }
+      &__links-container {
+        .btn {
+          margin-top: 0;
+          font-size: 14px;
+          padding: 10px 20px;
+        }
+      }
+    }
+  }
+  @media (min-width: map-get(variables.$breakpoints, "phone")) {
+    display: grid;
+    grid-template-columns: [left] 1fr [center] minmax(
+        auto,
+        calc(var(--inner-container-width) + var(--content-margin) * 2)
+      ) [right] 1fr;
+
+    .image-article {
+      &.left {
+        grid-column: left / span 2;
+        margin-right: var(--content-margin);
+      }
+      &.right {
+        grid-column: center / span 2;
+        margin-left: var(--content-margin);
+      }
+    }
+    .image-article {
+      flex-direction: row;
+      align-items: center;
+      gap: 60px;
+
+      &.right {
+        img {
+          order: 2;
+        }
+      }
+
+      &__image {
+        width: 45%;
+        margin: 0;
+      }
+
+      &__article {
+        padding: 12px 0;
+        flex: 1;
+
+        .icon {
+          margin-bottom: 36px;
+        }
+
+        .header {
+          font-size: 46px;
+          line-height: 46px;
+          font-weight: 800;
+        }
+        .description {
+          font-size: 16px;
+          line-height: 26px;
+        }
+        &__links-container {
+          margin-top: 20px;
+          .btn {
+            font-size: 24px;
+            padding: 16px 30px;
+          }
+        }
+      }
+    }
+  }
+}

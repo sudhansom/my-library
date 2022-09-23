@@ -4,3 +4,50 @@ $breakpoints: (
   "tablet": 1024px,
   "desktop": 1280px,
 );
+
+$primary-color: rgb(0, 59, 110);
+$accend-color: rgb(197, 26, 27);
+$text-colors: (
+  "white": white,
+  "light": lighten(black, 40%),
+  "dark": black,
+  "black": black,
+);
+
+$element-colors: (
+  "light": #f2f2f2,
+  "base": #dcdddf,
+  "dark": #d9d9d9,
+);
+
+// $theme should not be used if possible.
+// use css variable instead, So it can be customized from projects
+$theme: (
+  "primary": $primary-color,
+  "accend": $accend-color,
+  "company": $primary-color,
+  "warning": yellow,
+  "danger": red,
+  "success": #2aaa13,
+  "info": lightblue,
+  "text": $text-colors,
+  "element": $element-colors,
+  "breakpoints": $breakpoints,
+);
+
+:root {
+  --primary-color: rgb(153, 37, 241);
+  --accend-color: rgb(197, 26, 27);
+  --success-color: #2aaa13;
+  --danger-color: red;
+  --text-color: #353535;
+  --text-color-white: #fff;
+  --default-font-size: 12px;
+  --bold-font-weight: 800;
+  --font-family: "HaboroSans";
+  --max-content-width: 1450px;
+  --content-margin: 20px;
+  --layer-one: 1;
+  --layer-two: 3;
+  --inner-container-width: 1015px;
+}
