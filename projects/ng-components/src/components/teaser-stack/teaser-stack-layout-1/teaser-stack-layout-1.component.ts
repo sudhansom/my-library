@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { ITeaserStackLayout } from '../teaser-stack.interface';
+import { IBackgroundImagePosition, IBackgroundImageSize, ITeaserStackLayout } from '../teaser-stack.interface';
 import { ITeaser } from '../teaser/teaser.component';
 
 
@@ -21,6 +21,9 @@ export class TeaserStackLayout1Component {
   @Input() readMoreLink?: string;
   @Input() readMoreLabel?: string;
   @Input() layout: ITeaserStackLayout = 'layout-1';
+  @Input() backgroundImage?: string;
+  @Input() backgroundImageSize?: IBackgroundImageSize = 'cover';
+  @Input() backgroundImagePosition?: IBackgroundImagePosition = 'center center';
 
   get useMasonry() {
     // Layout-1 has default height

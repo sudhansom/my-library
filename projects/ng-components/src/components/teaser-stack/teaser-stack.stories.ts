@@ -341,3 +341,26 @@ _14_Layout3WithResponsiveHeight.args = {
     };
   }) as ITeaser[]
 };
+
+export const _15_Layout3WithFixedHeight = Template.bind({});
+_15_Layout3WithFixedHeight.storyName = 'Layout 3 with fix height and background image';
+_15_Layout3WithFixedHeight.args = {
+  columnCount: 5,
+  layout: 'layout-3',
+  title: 'Layout-3 with fix height and without text',
+  description: 'Teasers have link',
+  teaserHeight: 150,
+  backgroundImage: 'https://static-cse.canva.com/blob/572029/removingbackgroundimages_Unsplash.jpeg',
+  teasers: images.map((imageUrl, index) => {
+    return {
+      imageUrl,
+      link: `/index/${index}`,
+      backgroundImageSize: 'contain',
+      backgroundColor: '#fff',
+      backgroundImagePosition: 'center center',
+      border: `1px solid rgba(0,0,0,.1)`,
+      boxShadow: `0 2px 7px 0 rgba(0, 0, 0, 0.1)`,
+      hoverBoxShadow: `0 8px 13px 0 rgba(0, 0, 0, 0.16)`,
+    };
+  }) as ITeaser[]
+};

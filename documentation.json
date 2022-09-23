@@ -149,12 +149,12 @@
     "directives": [
         {
             "name": "NavigationDirective",
-            "id": "directive-NavigationDirective-32de948e5c98bce4f255419f7f7fa392b90dd351c94feb5868d7321f90971286d433a9c2b5e4ba2ee573ed094d5833c429aae2f4b77844632dbe5ffe78edebf1",
+            "id": "directive-NavigationDirective-8c3d37c1a848f1a0c6856e9ca4ccb718da1b87a8592a33660a9b0c6d61761b6775ce66730a1285fb0dab3609dd80e1eecec04d4858157a041f4a7cb417fbfda9",
             "file": "projects/ng-components/src/directives/navigation/navigation.directive.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/core';\nimport { Router } from '@angular/router';\n\nexport const isFullPath = (url: string) : boolean => {\n  return url.startsWith('https') || url.startsWith('http');\n}\n\n@Directive({\n  selector: '[smNavigate]',\n})\nexport class NavigationDirective {\n  private _url = '';\n  @Input() set smNavigate(url: string) {\n    this._url = url;\n    this.renderer.setAttribute(this.el.nativeElement, 'href', this.url);\n  }\n\n  get url() {\n    return this._url;\n  }\n\n  private _target = '';\n  @Input() set smNavigateTarget(target: string) {\n    this._target = target === 'blank' || target === '_blank' ? '_blank' : '';\n    this.renderer.setAttribute(this.el.nativeElement, 'target', this.target);\n  }\n\n  get target() {\n    return this._target;\n  }\n\n  constructor(private el: ElementRef, private renderer: Renderer2, private router: Router) {}\n\n\n  @HostListener(\"click\", [\"$event\"])\n  public onClick(evt: Event): void\n  {\n    if(!this.url) {\n      evt.preventDefault();\n      return;\n    }\n    if (isFullPath(this.url)) {\n      return;\n    }\n\n    evt.preventDefault();\n    if (this.target === '_blank') {\n      window.open(this.url, '_blank');\n    }\n    else {\n      this.router.navigateByUrl(this.url);\n    }\n  }\n}\n",
+            "sourceCode": "import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/core';\nimport { Router } from '@angular/router';\n\nexport const isFullPath = (url: string) : boolean => {\n  return url.startsWith && (url.startsWith('https') || url.startsWith('http'));\n}\n\n@Directive({\n  selector: '[smNavigate]',\n})\nexport class NavigationDirective {\n  private _url = '';\n  @Input() set smNavigate(url: string) {\n    this._url = url;\n    this.renderer.setAttribute(this.el.nativeElement, 'href', this.url);\n  }\n\n  get url() {\n    return this._url;\n  }\n\n  private _target = '';\n  @Input() set smNavigateTarget(target: string) {\n    this._target = target === 'blank' || target === '_blank' ? '_blank' : '';\n    this.renderer.setAttribute(this.el.nativeElement, 'target', this.target);\n  }\n\n  get target() {\n    return this._target;\n  }\n\n  constructor(private el: ElementRef, private renderer: Renderer2, private router: Router) {}\n\n\n  @HostListener(\"click\", [\"$event\"])\n  public onClick(evt: Event): void\n  {\n    if(!this.url) {\n      evt.preventDefault();\n      return;\n    }\n    if (isFullPath(this.url)) {\n      return;\n    }\n\n    evt.preventDefault();\n    if (this.target === '_blank') {\n      window.open(this.url, '_blank');\n    }\n    else {\n      this.router.navigateByUrl(this.url);\n    }\n  }\n}\n",
             "selector": "[smNavigate]",
             "providers": [],
             "inputsClass": [
@@ -2005,7 +2005,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "(url: string) : boolean => {\n  return url.startsWith('https') || url.startsWith('http');\n}"
+                "defaultValue": "(url: string) : boolean => {\n  return url.startsWith && (url.startsWith('https') || url.startsWith('http'));\n}"
             },
             {
                 "name": "require",
@@ -2341,7 +2341,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "(url: string) : boolean => {\n  return url.startsWith('https') || url.startsWith('http');\n}"
+                    "defaultValue": "(url: string) : boolean => {\n  return url.startsWith && (url.startsWith('https') || url.startsWith('http'));\n}"
                 }
             ]
         },

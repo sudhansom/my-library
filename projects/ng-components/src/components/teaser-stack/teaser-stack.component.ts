@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { ITeaserStackLayout } from './teaser-stack.interface';
+import { IBackgroundImagePosition, IBackgroundImageSize, ITeaserStackLayout } from './teaser-stack.interface';
 import { ITeaser } from './teaser/teaser.component';
 
 @Component({
@@ -19,4 +19,7 @@ export class TeaserStackComponent {
   @Input() readMoreLink?: string;
   @Input() readMoreLabel?: string;
   @Input() layout: ITeaserStackLayout = 'layout-1';
+  @Input() backgroundImage?: string;
+  @Input() backgroundImageSize?: IBackgroundImageSize = 'cover';
+  @Input() backgroundImagePosition?: IBackgroundImagePosition = 'center center';
 }

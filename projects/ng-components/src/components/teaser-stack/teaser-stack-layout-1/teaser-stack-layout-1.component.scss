@@ -2,6 +2,10 @@
 .teaser-stack-layout-1 {
   background-color: var(--background-color);
   padding: calc(var(--content-margin) * 4) calc(var(--content-margin) * 2);
+  background-image: var(--background-image);
+  background-position: var(--background-image-position);
+  background-size: var(--background-image-size);
+  background-repeat: no-repeat;
 
   &:not(.full-page-width) {
     .teaser-stack-layout-1-container {

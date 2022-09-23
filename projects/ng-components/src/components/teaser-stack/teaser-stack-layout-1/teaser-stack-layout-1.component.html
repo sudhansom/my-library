@@ -1,4 +1,9 @@
-<div class="teaser-stack-layout-1" [style.--background-color]="backgroundColor" [ngClass]="{'full-page-width': fullPageWidth}">
+<div class="teaser-stack-layout-1"
+  [style.--background-color]="backgroundColor"
+  [style.--background-image]="backgroundImage ? 'url(\'' + backgroundImage + '\')' : ''"
+  [style.--background-image-position]="backgroundImagePosition"
+  [style.--background-image-size]="backgroundImageSize"
+  [ngClass]="{'full-page-width': fullPageWidth}">
   <div class="teaser-stack-layout-1-container">
     <div *ngIf="title || description" class="teaser-stack-text-container">
       <h2 *ngIf="title" class="teaser-stack-title">
