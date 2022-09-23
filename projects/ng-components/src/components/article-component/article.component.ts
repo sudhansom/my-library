@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
-type targetType = '_blank' | '_self'  | '_parent' | '_top';
+type TargetType = '_blank' | '_self'  | '_parent' | '_top';
 
 interface ILink{
   topLink?: boolean
   label: string
   href: string
-  target: targetType
+  target: string
   backgroundColor: string
   color: string
 }
