@@ -19,13 +19,15 @@
       <a
         sitemule-button
         *ngFor="let link of links"
+        [color]="link.color"
         [ngStyle]="{
           backgroundColor: link.backgroundColor,
           color: link.color
         }"
         [href]="link.href"
         [target]="link.target"
-        [size]="'sm'"
+        [stroked]="true"
+        size="sm"
       >
         {{ link.label }}
       </a>
