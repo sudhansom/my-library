@@ -6,7 +6,7 @@ export interface ILink{
   topLink?: boolean
   label: string
   href: string
-  target: string
+  target: TargetType
   backgroundColor: string
   color: string
 }
