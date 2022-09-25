@@ -28,13 +28,6 @@
         justify-content: center;
         gap: 10px;
       }
-      .btn {
-        font-size: 16px;
-        padding: 10px 24px;
-        margin-top: 10px;
-        background-color: var(--button-background-color);
-        color: var(--button-color);
-      }
       .note {
         font-size: 11px;
         color: #8c8383;
@@ -56,7 +49,7 @@
       }
 
       &__content {
-        color: var(--text-color-white);
+        color: #fff; // should come from variables.
         position: absolute;
         bottom: 50px;
         padding: 40px;
@@ -68,12 +61,6 @@
           font-size: 24px;
           line-height: 30px;
           font-weight: 500;
-        }
-
-        .btn{
-          font-size: 24px;
-          padding: 16px 32px;
-          margin-top: 20px;
         }
         .note {
           font-size: 14px;
