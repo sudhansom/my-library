@@ -12,7 +12,7 @@
         sitemule-button
         *ngFor="let link of links"
         [style.--button-color]="link.color"
-        [style.--button-background-color]="link.backgroundColor"
+        [ngStyle]="{'backgroundColor': link.backgroundColor, 'color': link.color}"
         [href]="link.href"
         [target]="link.target"
       >
