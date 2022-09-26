@@ -16,10 +16,11 @@ export class ButtonComponent {
   @Input() uppercase = false;
   @Input() color = '';
   @Input() size : ButtonSize = 'md';
+  @Input() mobileTabletSize: ButtonSize = 'md';
 
   @HostBinding('class') get HostClass() {
     return `${this.color} ${this.loading !== false ? 'loading' : ''} ${
       this.fullWidth !== false ? 'full-width' : ''
-    } ${this.stroked !== false ? 'stroked' : 'not-stroked'} size-${this.size} ${this.uppercase !== false ? 'uppercase' : ''}`;
+    } ${this.stroked !== false ? 'stroked' : 'not-stroked'} size-${this.size} mobileTabletSize-${this.mobileTabletSize} ${this.uppercase !== false ? 'uppercase' : ''}`;
   }
 }
