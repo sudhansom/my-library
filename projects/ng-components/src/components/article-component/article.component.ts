@@ -8,7 +8,7 @@ export interface ILink{
   href: string
   target: TargetType
   backgroundColor: string
-  color: string
+  color: 'success' | 'primary' | 'accent' | 'danger'
 }
 
 @Component({

@@ -41,6 +41,7 @@ const AnchorTemplate: Story<ButtonComponent> = (args: ButtonComponent) => ({
       ${args.stroked ? 'stroked' : ''}
       ${args.uppercase ? 'uppercase' : ''}
       color="${args.color}"
+      mobileTabletSize="lg"
       size="${args.size}">A href</a>`
 });
 export const AnchorButton = AnchorTemplate.bind({});
