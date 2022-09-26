@@ -15,7 +15,7 @@
       &__image {
         display: block;
         width: 100%;
-        border-radius: 10px;
+        border-radius: var(--image-border-radius);
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
       }
     }
@@ -68,7 +68,7 @@
           margin: 0;
 
           &__image {
-            border-radius: var(--border-radius);
+            border-radius: var(--image-border-radius);
           }
       }
 

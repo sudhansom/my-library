@@ -8,7 +8,7 @@ export interface ILink{
   href: string
   target: TargetType
   backgroundColor: string
-  color: 'success' | 'primary' | 'accent' | 'danger'
+  color: string
 }
 
 @Component({
@@ -24,4 +24,5 @@ export class ArticleComponent {
   @Input() header: string = '';
   @Input() description: string = '';
   @Input() links: ILink[] = [];
+  @Input() imageBorderRadius = '10px';
 }
