@@ -25,7 +25,7 @@ export class ButtonComponent {
   @Input() textSize: TextSize = 'md';
   @Input() mobileTabletSize: ButtonSize = 'md';
   @Input() mobileTextSize: TextSize = 'md';
-  @Input() borderRadius = '12px';
+  @Input() borderRadius = '5px';
 
   @HostBinding('class') get HostClass() {
     return `${this.color ? this.color : ''} ${
