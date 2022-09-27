@@ -2,38 +2,36 @@
 
 :host {
   .image-article {
+    padding: 12px var(--content-margin);
     display: flex;
     flex-direction: column;
     row-gap: 12px;
-    background-color: rgb(248, 248, 248);
+    background-color: rgb(248, 248, 248); // comes from data or variable
 
     &__image-container {
       order: 0;
-      margin-left: var(--content-margin);
-      margin-right: var(--content-margin);
 
       &__image {
         display: block;
         width: 100%;
         border-radius: var(--image-border-radius);
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; // comes from data or variable
       }
     }
     &__article {
-      padding: 12px var(--content-margin);
       .icon {
         margin-bottom: 12px;
         margin-right: -15px;
         border-radius: 7px;
       }
       .header {
-        color:#092728;
+        color:#092728; // comes from data or variable
         font-size: 30px;
         line-height: 33px;
         margin: 0;
       }
       .description {
-        color:#887d8c;
+        color:#887d8c; // comes from data or variable
         font-size: 16px;
         line-height: 26px;
         margin-top: 10px;
@@ -58,6 +56,7 @@
       }
     }
     .image-article {
+      padding: 0;
       flex-direction: row;
       align-items: center;
       gap: 60px;
