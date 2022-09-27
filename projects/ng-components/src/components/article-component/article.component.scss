@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 12px;
-    background-color: rgb(248, 248, 248); // comes from data or variable
+    background-color: var(--background-color);
 
     &__image-container {
       order: 0;
@@ -15,7 +15,7 @@
         display: block;
         width: 100%;
         border-radius: var(--image-border-radius-mobile);
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; // comes from data or variable
+        box-shadow:  var(--box-shadow);
       }
     }
     &__article {
@@ -25,13 +25,13 @@
         border-radius: 7px;
       }
       .header {
-        color:#092728; // comes from data or variable
+        color:#092728; // may come from data or variable
         font-size: 30px;
         line-height: 33px;
         margin: 0;
       }
       .description {
-        color:#887d8c; // comes from data or variable
+        color:#887d8c; // may come from data or variable
         font-size: 16px;
         line-height: 26px;
         margin-top: 10px;
