@@ -45,18 +45,18 @@
   }
 
   &.textSize-sm {
-    font-size: 16px;
+    font-size: 12px;
   }
   &.textSize-md {
-    font-size: 20px;
+    font-size: 16px;
   }
   &.textSize-lg {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   @media (max-width: map-get(variables.$breakpoints, "tablet")) {
     &.mobileTextSize-sm {
-      font-size: 10px;
+      font-size: 12px;
     }
     &.mobileTextSize-md {
       font-size: 16px;

@@ -14,7 +14,7 @@
       &__image {
         display: block;
         width: 100%;
-        border-radius: var(--image-border-radius);
+        border-radius: var(--image-border-radius-mobile);
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; // comes from data or variable
       }
     }

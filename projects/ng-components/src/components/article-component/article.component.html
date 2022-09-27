@@ -3,6 +3,7 @@
   [class.left]="imagePosition === 'left'"
   [class.right]="imagePosition === 'right'"
   [style.--image-order]="imagePosition === 'left'? 0 : 2"
+  [style.--image-border-radius-mobile]="imageBorderRadius"
   [style.--image-border-radius]="imagePosition ==='left'? '0 ' + imageBorderRadius + ' ' + imageBorderRadius + ' 0' :  imageBorderRadius + ' 0 '  + '0 ' + imageBorderRadius "
   [style.--background-image]="'url(\'' + image + '\')'"
 >
@@ -28,7 +29,7 @@
         [href]="link.href"
         [target]="link.target"
         [stroked]="false"
-        size="sm"
+        size="md"
         mobileTabletSize="md"
         textSize="md"
         mobileTextSize="md"
