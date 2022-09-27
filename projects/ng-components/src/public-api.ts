@@ -2,6 +2,8 @@
  * Public API Surface of ng-components
  */
 
+export * from "./components/article-component/article.component";
+export * from "./components/article-component/article.module";
 export * from './components/button/button.component';
 export * from './components/button/button.module';
 export * from "./components/teaser-stack/teaser-layout-1/teaser-layout-1.component";
@@ -21,9 +23,7 @@ export * from "./directives/navigation/navigation.directive";
 export * from "./directives/navigation/navigation.module";
 export * from "./directives/scaleimage/scale-image.directive";
 export * from "./directives/scaleimage/scale-image.module";
-export * from "./pipes/scaleimage/scale-image.pipe";
 export * from "./pipes/scaleimage/scale-image.module";
+export * from "./pipes/scaleimage/scale-image.pipe";
 export * from "./utils/isExternalUrl";
 export * from "./utils/prefixScaleImageUrl";
-
-
