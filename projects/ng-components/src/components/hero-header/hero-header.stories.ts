@@ -23,6 +23,11 @@ const headerLinks: ILink[] = [
     target: '_blank',
     backgroundColor: '#9925f1',
     color: 'white',
+    size: 'lg',
+    textSize: 'lg',
+    mobileTabletSize: 'md',
+    mobileTextSize: 'md',
+    borderRadius: '10px',
   }
 ];
 
