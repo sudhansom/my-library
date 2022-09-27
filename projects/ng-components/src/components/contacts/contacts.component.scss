@@ -1,0 +1,45 @@
+@use '../../../../variables';
+
+:host {
+  .contacts-container {
+    background-color: var(--background-color);
+    padding: 0 var(--content-margin);
+    &__contacts {
+      max-width: var(--max-content-width);
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+
+      &__section {
+        text-align: center;
+        color: #25122d;
+        font-family: var(--font-family);
+        &__header {
+          font-size: 46px;
+          margin: 50px 0 20px;
+        }
+        &__description {
+          font-size: 20px;
+          line-height: 34px;
+          margin: 0;
+        }
+        &__address {
+          white-space: pre-wrap;
+          line-height: 26px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: map-get(variables.$breakpoints, 'phone')) {
+    .contacts-container {
+      &__contacts {
+        grid-template-columns: 1fr 1fr;
+        &__section {
+          text-align: left;
+        }
+      }
+    }
+  }
+}

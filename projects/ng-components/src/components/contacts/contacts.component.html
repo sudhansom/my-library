@@ -1,0 +1,15 @@
+<div class="contacts-container" [style.--background-color]="backgroundColor">
+  <div class="contacts-container__contacts">
+    <section class="contacts-container__contacts__section" *ngFor="let contact of contacts">
+      <h2 class="contacts-container__contacts__section__header">{{ contact.department }}</h2>
+      <p
+        *ngIf="contact.address"
+        class="contacts-container__contacts__section__address contacts__section__description"
+      >
+        {{ contact?.address }}
+      </p>
+      <p class="contacts-container__contacts__section__description">Phone {{ contact.phone }}</p>
+      <p class="contacts-container__contacts__section__description">Mail {{ contact.email }}</p>
+    </section>
+  </div>
+</div>
