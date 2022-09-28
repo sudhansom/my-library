@@ -47,6 +47,9 @@ articleComponentLeft.args = {
     'Flexible and in total control of your hands with simple CMS like handling. Use your IBM i™ data and create endless diagrams on the fly. Create fast and easy new tables to overview important numbers, contact information and much more.',
   links: links,
   imageBorderRadius: '10px',
+  backgroundColor: '#fff',
+  boxShadow:'rgba(149, 157, 165, 0.2) 0px 8px 24px',
+
 };
 
 export const articleComponentRight = Template.bind({});
@@ -60,4 +63,6 @@ articleComponentRight.args = {
     'Flexible and in total control of your hands with simple CMS like handling. Use your IBM i™ data and create endless diagrams on the fly. Create fast and easy new tables to overview important numbers, contact information and much more.',
   links: links,
   imageBorderRadius: '10px',
+  backgroundColor: 'rgb(248, 248, 248)',
+  boxShadow:'rgba(149, 157, 165, 0.2) 0px 8px 24px',
 };

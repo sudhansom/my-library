@@ -25,4 +25,6 @@ export class ArticleComponent {
   @Input() description: string = '';
   @Input() links: ILink[] = [];
   @Input() imageBorderRadius = '10px';
+  @Input() backgroundColor: string = '';
+  @Input() boxShadow: string = '';
 }

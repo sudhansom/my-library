@@ -6,6 +6,8 @@
   [style.--image-border-radius-mobile]="imageBorderRadius"
   [style.--image-border-radius]="imagePosition ==='left'? '0 ' + imageBorderRadius + ' ' + imageBorderRadius + ' 0' :  imageBorderRadius + ' 0 '  + '0 ' + imageBorderRadius "
   [style.--background-image]="'url(\'' + image + '\')'"
+  [style.--background-color]="backgroundColor"
+  [style.--box-shadow]="boxShadow"
 >
   <div class="image-article__image-container">
     <img class="image-article__image-container__image" src="{{ image }}" alt="" />
