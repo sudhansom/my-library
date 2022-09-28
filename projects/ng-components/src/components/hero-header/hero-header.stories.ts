@@ -1,5 +1,5 @@
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
-import { HeroHeaderComponent, ILink } from './hero-header.component';
+import { HeroHeaderComponent } from './hero-header.component';
 import { HeroHeaderModule } from './hero-header.module';
 
 
@@ -16,18 +16,12 @@ export default {
 } as Meta;
 
 
-const headerLinks: ILink[] = [
+const headerLinks = [
   {
     label: 'Get Started',
     href: 'https://www.folkelarsen.dk/page1',
-    target: '_blank',
     backgroundColor: '#9925f1',
     color: 'white',
-    size: 'lg',
-    textSize: 'lg',
-    mobileTabletSize: 'md',
-    mobileTextSize: 'md',
-    borderRadius: '10px',
   }
 ];
 
