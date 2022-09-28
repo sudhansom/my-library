@@ -62,13 +62,63 @@
     ],
     "interfaces": [
         {
+            "name": "IContact",
+            "id": "interface-IContact-3205115c4217b97ede5d3e79b27a8723440c81b603672ca8696de79fea7f20bdb15438286bac831f96192b0a7ea75ba92a38c99c0efbb2ed79c41d763b2a9984",
+            "file": "projects/ng-components/src/components/contacts/contacts.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\nexport interface IContact {\n  department: string\n  address?: string\n  phone: string\n  email: string\n}\n\n@Component({\n  selector: 'sm-contacts',\n  templateUrl: './contacts.component.html',\n  styleUrls: ['./contacts.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class ContactsComponent {\n @Input() contacts: IContact [] = [];\n @Input() backgroundColor: string = '#fff';\n}\n",
+            "properties": [
+                {
+                    "name": "address",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "department",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "email",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                },
+                {
+                    "name": "phone",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        },
+        {
             "name": "ILink",
-            "id": "interface-ILink-1d4a9d1d09378537b0e7ae15da0f0ed6651a95941ffea1ee2773ceafacf4577e1323ad1ff6524d7134de4ade9dd337a4a844434ff94c80a1d308c886d73771ca",
+            "id": "interface-ILink-dc3defe35a5e10f8f4637307c660878f137e23ea478224e481785e66da00a396e82597dc6ab482e3b7d693fb2dd0887f512466abe96af708127aa3d53024c542",
             "file": "projects/ng-components/src/components/article-component/article.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\ntype TargetType = '_blank' | '_self'  | '_parent' | '_top';\n\nexport interface ILink{\n  topLink?: boolean\n  label: string\n  href: string\n  target: TargetType\n  backgroundColor: string\n  color: string\n}\n\n@Component({\n  selector: 'sm-article',\n  templateUrl: './article.component.html',\n  styleUrls: ['./article.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class ArticleComponent {\n  @Input() imagePosition: 'left' | 'right' = 'left';\n  @Input() image: string = '';\n  @Input() icon: string = '';\n  @Input() header: string = '';\n  @Input() description: string = '';\n  @Input() links: ILink[] = [];\n  @Input() imageBorderRadius = '10px';\n  @Input() backgroundColor: string = '';\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\ntype TargetType = '_blank' | '_self'  | '_parent' | '_top';\n\nexport interface ILink{\n  topLink?: boolean\n  label: string\n  href: string\n  target: TargetType\n  backgroundColor: string\n  color: string\n}\n\n@Component({\n  selector: 'sm-article',\n  templateUrl: './article.component.html',\n  styleUrls: ['./article.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class ArticleComponent {\n  @Input() imagePosition: 'left' | 'right' = 'left';\n  @Input() image: string = '';\n  @Input() icon: string = '';\n  @Input() header: string = '';\n  @Input() description: string = '';\n  @Input() links: ILink[] = [];\n  @Input() imageBorderRadius = '10px';\n  @Input() backgroundColor: string = '';\n  @Input() boxShadow: string = '';\n}\n",
             "properties": [
                 {
                     "name": "backgroundColor",
@@ -128,6 +178,122 @@
             "indexSignatures": [],
             "kind": 165,
             "methods": []
+        },
+        {
+            "name": "ILink",
+            "id": "interface-ILink-87f8f4760171444abe25399257015fc9ed8e207bdeaae566384acaf3a7fd8e3a7cdac387fc300a2bae335c304fc2c9dda79665b1c61bd811a747ca6c6f095d48-1",
+            "file": "projects/ng-components/src/components/hero-header/hero-header.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\ntype TargetType = '_blank' | '_top';\ntype ButtonSize = 'sm' | 'md' | 'lg';\n\ninterface ILink {\n  topLink?: boolean;\n  label: string;\n  href: string;\n  target?: TargetType;\n  backgroundColor: string;\n  color: string;\n  size: ButtonSize;\n  textSize: ButtonSize;\n  mobileTabletSize: ButtonSize;\n  mobileTextSize: ButtonSize;\n  borderRadius: string;\n}\n\n@Component({\n  selector: 'sm-hero-header',\n  templateUrl: './hero-header.component.html',\n  styleUrls: ['./hero-header.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class HeroHeaderComponent {\n  @Input() header: string = '';\n  @Input() description: string = '';\n  @Input() note: string = '';\n  @Input() links?: ILink[] = [];\n  @Input() image: string = '';\n}\n",
+            "properties": [
+                {
+                    "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                },
+                {
+                    "name": "borderRadius",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 17
+                },
+                {
+                    "name": "color",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "href",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                },
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                },
+                {
+                    "name": "mobileTabletSize",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ButtonSize",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "mobileTextSize",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ButtonSize",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                },
+                {
+                    "name": "size",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ButtonSize",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                },
+                {
+                    "name": "target",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TargetType",
+                    "optional": true,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "textSize",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ButtonSize",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                },
+                {
+                    "name": "topLink",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": true,
+                    "description": "",
+                    "line": 7
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": [],
+            "isDuplicate": true,
+            "duplicateId": 1,
+            "duplicateName": "ILink-1"
         },
         {
             "name": "IPrefixImageUtlOptions",
@@ -841,7 +1007,7 @@
     "components": [
         {
             "name": "ArticleComponent",
-            "id": "component-ArticleComponent-1d4a9d1d09378537b0e7ae15da0f0ed6651a95941ffea1ee2773ceafacf4577e1323ad1ff6524d7134de4ade9dd337a4a844434ff94c80a1d308c886d73771ca",
+            "id": "component-ArticleComponent-dc3defe35a5e10f8f4637307c660878f137e23ea478224e481785e66da00a396e82597dc6ab482e3b7d693fb2dd0887f512466abe96af708127aa3d53024c542",
             "file": "projects/ng-components/src/components/article-component/article.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -865,6 +1031,15 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 28,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "boxShadow",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 29,
                     "type": "string",
                     "decorators": []
                 },
@@ -942,16 +1117,16 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\ntype TargetType = '_blank' | '_self'  | '_parent' | '_top';\n\nexport interface ILink{\n  topLink?: boolean\n  label: string\n  href: string\n  target: TargetType\n  backgroundColor: string\n  color: string\n}\n\n@Component({\n  selector: 'sm-article',\n  templateUrl: './article.component.html',\n  styleUrls: ['./article.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class ArticleComponent {\n  @Input() imagePosition: 'left' | 'right' = 'left';\n  @Input() image: string = '';\n  @Input() icon: string = '';\n  @Input() header: string = '';\n  @Input() description: string = '';\n  @Input() links: ILink[] = [];\n  @Input() imageBorderRadius = '10px';\n  @Input() backgroundColor: string = '';\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\ntype TargetType = '_blank' | '_self'  | '_parent' | '_top';\n\nexport interface ILink{\n  topLink?: boolean\n  label: string\n  href: string\n  target: TargetType\n  backgroundColor: string\n  color: string\n}\n\n@Component({\n  selector: 'sm-article',\n  templateUrl: './article.component.html',\n  styleUrls: ['./article.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class ArticleComponent {\n  @Input() imagePosition: 'left' | 'right' = 'left';\n  @Input() image: string = '';\n  @Input() icon: string = '';\n  @Input() header: string = '';\n  @Input() description: string = '';\n  @Input() links: ILink[] = [];\n  @Input() imageBorderRadius = '10px';\n  @Input() backgroundColor: string = '';\n  @Input() boxShadow: string = '';\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@use '../../../../variables';\n\n:host {\n  .image-article {\n    padding: 12px var(--content-margin);\n    display: flex;\n    flex-direction: column;\n    row-gap: 12px;\n    background-color: rgb(248, 248, 248); // comes from data or variable\n\n    &__image-container {\n      order: 0;\n\n      &__image {\n        display: block;\n        width: 100%;\n        border-radius: var(--image-border-radius-mobile);\n        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; // comes from data or variable\n      }\n    }\n    &__article {\n      .icon {\n        margin-bottom: 12px;\n        margin-right: -15px;\n        border-radius: 7px;\n      }\n      .header {\n        color:#092728; // comes from data or variable\n        font-size: 30px;\n        line-height: 33px;\n        margin: 0;\n      }\n      .description {\n        color:#887d8c; // comes from data or variable\n        font-size: 16px;\n        line-height: 26px;\n        margin-top: 10px;\n      }\n    }\n  }\n  @media (min-width: map-get(variables.$breakpoints, \"phone\")) {\n    display: grid;\n    grid-template-columns: [left] 1fr [center] minmax(\n        auto,\n        calc(var(--max-content-width) + var(--content-margin) * 2)\n      ) [right] 1fr;\n\n    .image-article {\n      &.left {\n        grid-column: left / span 2;\n        margin-right: var(--content-margin);\n      }\n      &.right {\n        grid-column: center / span 2;\n        margin-left: var(--content-margin);\n      }\n    }\n    .image-article {\n      padding: 0;\n      flex-direction: row;\n      align-items: center;\n      gap: 60px;\n\n      &__image-container {\n          order: var(--image-order);\n          width: 45%;\n          margin: 0;\n\n          &__image {\n            border-radius: var(--image-border-radius);\n          }\n      }\n\n      &__article {\n        padding: 12px 0;\n        flex: 1;\n\n        .icon {\n          margin-bottom: 36px;\n        }\n\n        .header {\n          font-size: 46px;\n          line-height: 46px;\n          font-weight: 800;\n        }\n        .description {\n          font-size: 16px;\n          line-height: 26px;\n        }\n        &__links-container {\n          margin-top: 20px;\n        }\n      }\n    }\n  }\n}\n",
+                    "data": "@use '../../../../variables';\n\n:host {\n  .image-article {\n    padding: 12px var(--content-margin);\n    display: flex;\n    flex-direction: column;\n    row-gap: 12px;\n    background-color: var(--background-color);\n\n    &__image-container {\n      order: 0;\n\n      &__image {\n        display: block;\n        width: 100%;\n        border-radius: var(--image-border-radius-mobile);\n        box-shadow:  var(--box-shadow);\n      }\n    }\n    &__article {\n      .icon {\n        margin-bottom: 12px;\n        margin-right: -15px;\n        border-radius: 7px;\n      }\n      .header {\n        color:#092728; // may come from data or variable\n        font-size: 30px;\n        line-height: 33px;\n        margin: 0;\n      }\n      .description {\n        color:#887d8c; // may come from data or variable\n        font-size: 16px;\n        line-height: 26px;\n        margin-top: 10px;\n      }\n    }\n  }\n  @media (min-width: map-get(variables.$breakpoints, \"phone\")) {\n    display: grid;\n    grid-template-columns: [left] 1fr [center] minmax(\n        auto,\n        calc(var(--max-content-width) + var(--content-margin) * 2)\n      ) [right] 1fr;\n\n    .image-article {\n      &.left {\n        grid-column: left / span 2;\n        margin-right: var(--content-margin);\n      }\n      &.right {\n        grid-column: center / span 2;\n        margin-left: var(--content-margin);\n      }\n    }\n    .image-article {\n      padding: 0;\n      flex-direction: row;\n      align-items: center;\n      gap: 60px;\n\n      &__image-container {\n          order: var(--image-order);\n          width: 45%;\n          margin: 0;\n\n          &__image {\n            border-radius: var(--image-border-radius);\n          }\n      }\n\n      &__article {\n        padding: 12px 0;\n        flex: 1;\n\n        .icon {\n          margin-bottom: 36px;\n        }\n\n        .header {\n          font-size: 46px;\n          line-height: 46px;\n          font-weight: 800;\n        }\n        .description {\n          font-size: 16px;\n          line-height: 26px;\n        }\n        &__links-container {\n          margin-top: 20px;\n        }\n      }\n    }\n  }\n}\n",
                     "styleUrl": "./article.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<div\n  class=\"image-article\"\n  [class.left]=\"imagePosition === 'left'\"\n  [class.right]=\"imagePosition === 'right'\"\n  [style.--image-order]=\"imagePosition === 'left'? 0 : 2\"\n  [style.--image-border-radius-mobile]=\"imageBorderRadius\"\n  [style.--image-border-radius]=\"imagePosition ==='left'? '0 ' + imageBorderRadius + ' ' + imageBorderRadius + ' 0' :  imageBorderRadius + ' 0 '  + '0 ' + imageBorderRadius \"\n  [style.--background-image]=\"'url(\\'' + image + '\\')'\"\n>\n  <div class=\"image-article__image-container\">\n    <img class=\"image-article__image-container__image\" src=\"{{ image }}\" alt=\"\" />\n  </div>\n  <div class=\"image-article__article\">\n    <img class=\"icon\" src=\"{{ icon }}\" alt=\"logo\" />\n    <h3 class=\"header\">{{ header }}</h3>\n    <p class=\"description\">\n      {{ description }}\n    </p>\n\n    <div class=\"image-article__article__links-container\" *ngIf=\"links?.length\">\n      <a\n        sitemule-button\n        *ngFor=\"let link of links\"\n        [color]=\"link.color\"\n        [ngStyle]=\"{\n          backgroundColor: link.backgroundColor,\n          color: link.color\n        }\"\n        [href]=\"link.href\"\n        [target]=\"link.target\"\n        [stroked]=\"false\"\n        size=\"md\"\n        mobileTabletSize=\"md\"\n        textSize=\"md\"\n        mobileTextSize=\"md\"\n      >\n        {{ link.label }}\n      </a>\n    </div>\n  </div>\n</div>\n"
+            "templateData": "<div\n  class=\"image-article\"\n  [class.left]=\"imagePosition === 'left'\"\n  [class.right]=\"imagePosition === 'right'\"\n  [style.--image-order]=\"imagePosition === 'left'? 0 : 2\"\n  [style.--image-border-radius-mobile]=\"imageBorderRadius\"\n  [style.--image-border-radius]=\"imagePosition ==='left'? '0 ' + imageBorderRadius + ' ' + imageBorderRadius + ' 0' :  imageBorderRadius + ' 0 '  + '0 ' + imageBorderRadius \"\n  [style.--background-image]=\"'url(\\'' + image + '\\')'\"\n  [style.--background-color]=\"backgroundColor\"\n  [style.--box-shadow]=\"boxShadow\"\n>\n  <div class=\"image-article__image-container\">\n    <img class=\"image-article__image-container__image\" src=\"{{ image }}\" alt=\"\" />\n  </div>\n  <div class=\"image-article__article\">\n    <img class=\"icon\" src=\"{{ icon }}\" alt=\"logo\" />\n    <h3 class=\"header\">{{ header }}</h3>\n    <p class=\"description\">\n      {{ description }}\n    </p>\n\n    <div class=\"image-article__article__links-container\" *ngIf=\"links?.length\">\n      <a\n        sitemule-button\n        *ngFor=\"let link of links\"\n        [color]=\"link.color\"\n        [ngStyle]=\"{\n          backgroundColor: link.backgroundColor,\n          color: link.color\n        }\"\n        [href]=\"link.href\"\n        [target]=\"link.target\"\n        [stroked]=\"false\"\n        size=\"md\"\n        mobileTabletSize=\"md\"\n        textSize=\"md\"\n        mobileTextSize=\"md\"\n      >\n        {{ link.label }}\n      </a>\n    </div>\n  </div>\n</div>\n"
         },
         {
             "name": "ButtonComponent",
@@ -1120,6 +1295,153 @@
                 }
             },
             "templateData": "<ng-content></ng-content>\n"
+        },
+        {
+            "name": "ContactsComponent",
+            "id": "component-ContactsComponent-3205115c4217b97ede5d3e79b27a8723440c81b603672ca8696de79fea7f20bdb15438286bac831f96192b0a7ea75ba92a38c99c0efbb2ed79c41d763b2a9984",
+            "file": "projects/ng-components/src/components/contacts/contacts.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "sm-contacts",
+            "styleUrls": [
+                "./contacts.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./contacts.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "defaultValue": "'#fff'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "contacts",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "IContact[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\nexport interface IContact {\n  department: string\n  address?: string\n  phone: string\n  email: string\n}\n\n@Component({\n  selector: 'sm-contacts',\n  templateUrl: './contacts.component.html',\n  styleUrls: ['./contacts.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class ContactsComponent {\n @Input() contacts: IContact [] = [];\n @Input() backgroundColor: string = '#fff';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@use '../../../../variables';\n\n:host {\n  .contacts-container {\n    background-color: var(--background-color);\n    padding: 0 var(--content-margin);\n    &__contacts {\n      max-width: var(--max-content-width);\n      margin: auto;\n      display: grid;\n      grid-template-columns: 1fr;\n      gap: 20px;\n\n      &__section {\n        color: #25122d;\n        font-family: var(--font-family);\n        &__header {\n          font-size: 46px;\n          margin: 50px 0 20px;\n        }\n        &__description {\n          font-size: 20px;\n          line-height: 34px;\n          margin: 0;\n\n          a {\n            text-decoration: none;\n            color: initial;\n          }\n        }\n        &__address {\n          white-space: pre-wrap;\n          font-size: 20px;\n          line-height: 26px;\n        }\n      }\n    }\n  }\n\n  @media (min-width: map-get(variables.$breakpoints, 'phone')) {\n    .contacts-container {\n      &__contacts {\n        grid-template-columns: 1fr 1fr;\n      }\n    }\n  }\n}\n",
+                    "styleUrl": "./contacts.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"contacts-container\" [style.--background-color]=\"backgroundColor\">\n  <div class=\"contacts-container__contacts\">\n    <section class=\"contacts-container__contacts__section\" *ngFor=\"let contact of contacts\">\n      <h2 class=\"contacts-container__contacts__section__header\">{{ contact.department }}</h2>\n      <p\n        *ngIf=\"contact.address\"\n        class=\"contacts-container__contacts__section__address\"\n      >{{ contact?.address }}</p>\n      <p *ngIf=\"contact.phone\" class=\"contacts-container__contacts__section__description\">Phone <a href=\"tel: {{ contact.phone }}\">{{ contact.phone }}</a></p>\n      <p *ngIf=\"contact.email\" class=\"contacts-container__contacts__section__description\">Mail <a href=\"mailto: {{ contact.email }}\">{{ contact.email }}</a></p>\n    </section>\n  </div>\n</div>\n"
+        },
+        {
+            "name": "HeroHeaderComponent",
+            "id": "component-HeroHeaderComponent-87f8f4760171444abe25399257015fc9ed8e207bdeaae566384acaf3a7fd8e3a7cdac387fc300a2bae335c304fc2c9dda79665b1c61bd811a747ca6c6f095d48",
+            "file": "projects/ng-components/src/components/hero-header/hero-header.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "sm-hero-header",
+            "styleUrls": [
+                "./hero-header.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./hero-header.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "description",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 28,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "header",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 27,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "image",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 31,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "links",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 30,
+                    "type": "ILink[]",
+                    "decorators": []
+                },
+                {
+                    "name": "note",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 29,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\ntype TargetType = '_blank' | '_top';\ntype ButtonSize = 'sm' | 'md' | 'lg';\n\ninterface ILink {\n  topLink?: boolean;\n  label: string;\n  href: string;\n  target?: TargetType;\n  backgroundColor: string;\n  color: string;\n  size: ButtonSize;\n  textSize: ButtonSize;\n  mobileTabletSize: ButtonSize;\n  mobileTextSize: ButtonSize;\n  borderRadius: string;\n}\n\n@Component({\n  selector: 'sm-hero-header',\n  templateUrl: './hero-header.component.html',\n  styleUrls: ['./hero-header.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class HeroHeaderComponent {\n  @Input() header: string = '';\n  @Input() description: string = '';\n  @Input() note: string = '';\n  @Input() links?: ILink[] = [];\n  @Input() image: string = '';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@use '../../../../variables';\n\n:host {\n  .hero-header {\n    text-align: center;\n\n    img{\n      max-width: 100%;\n    }\n\n    &__content {\n      color: #25122D;\n      padding: 10px var(--content-margin);\n      .header {\n        font-size: 36px;\n        line-height: 36px;\n        margin: 0;\n      }\n      .description {\n        font-size: 16px;\n        line-height: 18px;\n        margin-top: 10px;\n        font-weight: 600;\n      }\n\n      .links {\n        display: flex;\n        justify-content: center;\n        gap: 10px;\n      }\n      .note {\n        font-size: 11px;\n        color: #8c8383;\n        margin-top: 8px;\n      }\n    }\n  }\n  @media(min-width: map-get(variables.$breakpoints, \"phone\")){\n    .hero-header {\n      height: calc(90vh - 84px);\n      background-image: linear-gradient(179.71deg, rgba(34, 9, 54, 0) 0%, rgba(34, 9, 54, 0.89) 100%), var(--background-image);\n      background-size: cover;\n      background-position: top center;\n      position: relative;\n      display: flex;\n      justify-content: center;\n      img {\n        display: none;\n      }\n\n      &__content {\n        color: #fff; // should come from variables.\n        position: absolute;\n        bottom: 50px;\n        padding: 40px;\n        .header {\n          font-size: 72px;\n          line-height: 72px;\n        }\n        .description {\n          font-size: 24px;\n          line-height: 30px;\n          font-weight: 500;\n        }\n        .note {\n          font-size: 14px;\n          margin-top: 14px;\n        }\n      }\n    }\n  }\n}\n",
+                    "styleUrl": "./hero-header.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"hero-header\" [style.--background-image]=\"'url(' + image + ')'\">\n  <div>\n    <img src=\"{{ image }}\" />\n  </div>\n  <div class=\"hero-header__content\">\n    <h2 class=\"header\">{{ header }}</h2>\n    <p class=\"description\">\n      {{ description }}\n    </p>\n    <div *ngIf=\"links?.length\" class=\"links\">\n      <a\n        sitemule-button\n        *ngFor=\"let link of links\"\n        [style.--button-color]=\"link.color\"\n        [ngStyle]=\"{'backgroundColor': link.backgroundColor, 'color': link.color}\"\n        [href]=\"link.href\"\n        [target]=\"link.target\"\n        [size]=\"link.size\"\n        [textSize]=\"link.textSize\"\n        [mobileTabletSize]=\"link.mobileTabletSize\"\n        [mobileTextSize]=\"link.mobileTextSize\"\n        [borderRadius]=\"link.borderRadius\"\n      >\n        {{ link.label }}\n      </a>\n    </div>\n    <p class=\"note\">{{ note }}</p>\n  </div>\n</div>\n"
         },
         {
             "name": "TeaserComponent",
@@ -2250,6 +2572,98 @@
             ]
         },
         {
+            "name": "ContactsModule",
+            "id": "module-ContactsModule-9c4401f741fff76fcf8655ffefe1c3b4bcb61daf40f1bb046a02f19acaa4fa0a22bf3624dc9fcbf7b9a2dbaf3aa3e76dddfff1c8ed81e6f2fad5b6d0b997d48a",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/ng-components/src/components/contacts/contacts.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { ContactsComponent } from './contacts.component';\n\n@NgModule({\n  declarations: [ContactsComponent],\n  imports: [CommonModule],\n  exports: [ContactsComponent],\n  providers: [],\n})\nexport class ContactsModule {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ContactsComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ContactsComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "HeroHeaderModule",
+            "id": "module-HeroHeaderModule-5eb6690828b89efa1d0f9521f94dfd112ef79845c38a5a9733198482e082e9653c3ad576958cee493a3634ffddadf2b410c73e1ffc180d166360868dc5110232",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/ng-components/src/components/hero-header/hero-header.module.ts",
+            "methods": [],
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { ButtonModule } from '../button/button.module';\nimport { HeroHeaderComponent } from './hero-header.component';\n\n@NgModule({\n  declarations: [HeroHeaderComponent],\n  imports: [CommonModule, ButtonModule],\n  exports: [HeroHeaderComponent],\n  providers: [],\n})\nexport class HeroHeaderModule {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "HeroHeaderComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "ButtonModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "HeroHeaderComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "NavigationModule",
             "id": "module-NavigationModule-d3c67420471450305fb290b0c5df1fffa6563d2a8ada83e9f543631a0841887d1b8a050be84738349ed7844805f7e1ba284e2a286b218d4e406b8fbc404c22fa",
             "description": "",
@@ -2844,6 +3258,16 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "_contacts",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/contacts/contacts.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "AnchorButton",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2914,6 +3338,16 @@
                 "defaultValue": "(width: number, widthRounding: number, maxWidth: number) => {\n  let optimalWidth = width;\n\n  if (widthRounding) {\n    optimalWidth = Math.ceil(width / widthRounding) * widthRounding;\n  }\n\n  if (optimalWidth > maxWidth) {\n    return maxWidth;\n  }\n\n  return optimalWidth;\n}"
             },
             {
+                "name": "contacts",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/contacts/contacts.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\n  {\n    department: 'Sales',\n    phone: '+45 70203010',\n    email: 'sales@icecap.com'\n},\n{\n  department: 'Support',\n  phone: '+45 70203011',\n  email: 'support@icecap.com'\n},\n{\n  department: 'Developer',\n  phone: '+45 70203012',\n  email: 'dev@icecap.com'\n},\n{\n  department: 'Corporate',\n  address: 'System & Methode 8,\\nHaandvaerksvinget,\\n2970 Zealand \\nDenmark',\n  phone: '+45 70203010',\n  email: 'info@system-methode.com'\n},\n]"
+            },
+            {
                 "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2922,6 +3356,26 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "headerLinks",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/hero-header/hero-header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\n  {\n    label: 'Get Started',\n    href: 'https://www.folkelarsen.dk/page1',\n    backgroundColor: '#9925f1',\n    color: 'white',\n    size: 'lg' as 'lg',\n    textSize: 'lg' as 'lg',\n    mobileTabletSize: 'md' as 'md',\n    mobileTextSize: 'md' as 'md',\n    borderRadius: '10px',\n  }\n]"
+            },
+            {
+                "name": "heroHeader",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/hero-header/hero-header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "images",
@@ -3006,6 +3460,26 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/ng-components/src/components/contacts/contacts.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ContactsComponent>",
+                "defaultValue": "(args:ContactsComponent) => ({\n  component:ContactsComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/hero-header/hero-header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<HeroHeaderComponent>",
+                "defaultValue": "(args:HeroHeaderComponent) => ({\n  component:HeroHeaderComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/ng-components/src/components/teaser-stack/teaser-stack.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3021,6 +3495,17 @@
                 "subtype": "typealias",
                 "rawtype": "\"sm\" | \"md\" | \"lg\"",
                 "file": "projects/ng-components/src/components/button/button.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 186
+            },
+            {
+                "name": "ButtonSize",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"sm\" | \"md\" | \"lg\"",
+                "file": "projects/ng-components/src/components/hero-header/hero-header.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -3076,6 +3561,17 @@
                 "subtype": "typealias",
                 "rawtype": "\"_blank\" | \"_self\" | \"_parent\" | \"_top\"",
                 "file": "projects/ng-components/src/components/article-component/article.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 186
+            },
+            {
+                "name": "TargetType",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"_blank\" | \"_top\"",
+                "file": "projects/ng-components/src/components/hero-header/hero-header.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -3277,6 +3773,38 @@
                     "defaultValue": "(args: TeaserStackComponent) => ({\n  component: TeaserStackComponent,\n  props: args,\n})"
                 }
             ],
+            "projects/ng-components/src/components/contacts/contacts.stories.ts": [
+                {
+                    "name": "_contacts",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/contacts/contacts.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "contacts",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/contacts/contacts.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\n  {\n    department: 'Sales',\n    phone: '+45 70203010',\n    email: 'sales@icecap.com'\n},\n{\n  department: 'Support',\n  phone: '+45 70203011',\n  email: 'support@icecap.com'\n},\n{\n  department: 'Developer',\n  phone: '+45 70203012',\n  email: 'dev@icecap.com'\n},\n{\n  department: 'Corporate',\n  address: 'System & Methode 8,\\nHaandvaerksvinget,\\n2970 Zealand \\nDenmark',\n  phone: '+45 70203010',\n  email: 'info@system-methode.com'\n},\n]"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/contacts/contacts.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ContactsComponent>",
+                    "defaultValue": "(args:ContactsComponent) => ({\n  component:ContactsComponent,\n  props: args,\n})"
+                }
+            ],
             "projects/ng-components/src/components/button/button.stories.ts": [
                 {
                     "name": "AnchorButton",
@@ -3394,6 +3922,38 @@
                     "type": "literal type"
                 }
             ],
+            "projects/ng-components/src/components/hero-header/hero-header.stories.ts": [
+                {
+                    "name": "headerLinks",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/hero-header/hero-header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\n  {\n    label: 'Get Started',\n    href: 'https://www.folkelarsen.dk/page1',\n    backgroundColor: '#9925f1',\n    color: 'white',\n    size: 'lg' as 'lg',\n    textSize: 'lg' as 'lg',\n    mobileTabletSize: 'md' as 'md',\n    mobileTextSize: 'md' as 'md',\n    borderRadius: '10px',\n  }\n]"
+                },
+                {
+                    "name": "heroHeader",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/hero-header/hero-header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/hero-header/hero-header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<HeroHeaderComponent>",
+                    "defaultValue": "(args:HeroHeaderComponent) => ({\n  component:HeroHeaderComponent,\n  props: args,\n})"
+                }
+            ],
             "projects/ng-components/src/utils/isExternalUrl.ts": [
                 {
                     "name": "isExternalUrl",
@@ -3456,6 +4016,30 @@
                     "deprecationMessage": "",
                     "description": "",
                     "kind": 177
+                }
+            ],
+            "projects/ng-components/src/components/hero-header/hero-header.component.ts": [
+                {
+                    "name": "ButtonSize",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"sm\" | \"md\" | \"lg\"",
+                    "file": "projects/ng-components/src/components/hero-header/hero-header.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 186
+                },
+                {
+                    "name": "TargetType",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"_blank\" | \"_top\"",
+                    "file": "projects/ng-components/src/components/hero-header/hero-header.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 186
                 }
             ],
             "projects/ng-components/src/components/teaser-stack/teaser-stack.interface.ts": [
@@ -3530,7 +4114,7 @@
                 "linktype": "component",
                 "name": "ArticleComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/9",
+                "coverageCount": "0/10",
                 "status": "low"
             },
             {
@@ -3627,6 +4211,102 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "ButtonTemplate",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/contacts/contacts.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ContactsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/contacts/contacts.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "IContact",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/contacts/contacts.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "_contacts",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/contacts/contacts.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "contacts",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/contacts/contacts.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/hero-header/hero-header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeroHeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/hero-header/hero-header.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ILink",
+                "coveragePercent": 0,
+                "coverageCount": "0/12",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/hero-header/hero-header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "headerLinks",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/hero-header/hero-header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "heroHeader",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/hero-header/hero-header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

@@ -1,7 +1,10 @@
 /*
  * Public API Surface of ng-components
  */
-
+export * from "./components/hero-header/hero-header.component";
+export * from "./components/hero-header/hero-header.module";
+export * from "./components/contacts/contacts.module";
+export * from "./components/contacts/contacts.component";
 export * from "./components/article-component/article.component";
 export * from "./components/article-component/article.module";
 export * from './components/button/button.component';
