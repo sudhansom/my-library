@@ -26,6 +26,6 @@ export class HeroHeaderComponent {
   @Input() header: string = '';
   @Input() description: string = '';
   @Input() note: string = '';
-  @Input() links: ILink[] | undefined = [];
+  @Input() links: ILink[] = [];
   @Input() image: string = '';
 }
