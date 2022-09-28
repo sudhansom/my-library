@@ -1,5 +1,5 @@
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
-import { ArticleComponent } from './article.component';
+import { ArticleComponent, ILink } from './article.component';
 import { ArticleModule } from './article.module';
 
 export default {
@@ -14,16 +14,18 @@ export default {
   ],
 } as Meta;
 
-const links = [
+const links: ILink[] = [
   {
     label: 'Get Started',
     href: 'https://www.folkelarsen.dk/page1',
+    target: '_blank',
     backgroundColor: '#9925f1',
     color: 'white',
   },
   {
     label: 'Or get support',
     href: 'https://www.folkelarsen.dk/page1',
+    target: '_blank',
     backgroundColor: 'rgb(248, 248, 248)',
     color: '#9925f1',
   },
