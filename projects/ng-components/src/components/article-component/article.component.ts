@@ -2,11 +2,11 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 type TargetType = '_blank' | '_self'  | '_parent' | '_top';
 
-export interface ILink{
+interface ILink{
   topLink?: boolean
   label: string
   href: string
-  target: TargetType
+  target?: TargetType
   backgroundColor: string
   color: string
 }
