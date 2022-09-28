@@ -1,0 +1,12 @@
+<ng-template #nestedItems let-items>
+  <div *ngFor="let item of items" class="navigation__item" [class.navigation__item__active]="item.isActive" [class.navigation__item__expanded]="item.expanded">
+    <a *ngIf="item.url" [smNavigate]="item.url" class="navigation__link">{{item.title}}</a>
+    <div *ngIf="!item.url" class="navigation__link" (click)="onClick(item)">{{item.title}}</div>
+    <div *ngIf="item.items && item.items.length" class="navigation__inner__items">
+      <ng-container *ngTemplateOutlet="nestedItems; context: {$implicit: item.items}"></ng-container>
+    </div>
+  </div>
+</ng-template>
+<ng-container *ngIf="formattedItems$ | async as items">
+  <ng-container *ngTemplateOutlet="nestedItems; context: {$implicit: items}"></ng-container>
+</ng-container>

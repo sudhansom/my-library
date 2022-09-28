@@ -3,6 +3,8 @@
  */
 export * from "./components/hero-header/hero-header.component";
 export * from "./components/hero-header/hero-header.module";
+export * from "./components/navigation/navigation.component";
+export * from "./components/navigation/navigation.module";
 export * from "./components/contacts/contacts.module";
 export * from "./components/contacts/contacts.component";
 export * from "./components/article-component/article.component";
