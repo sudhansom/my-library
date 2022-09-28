@@ -6,8 +6,8 @@
         *ngIf="contact.address"
         class="contacts-container__contacts__section__address"
       >{{ contact?.address }}</p>
-      <p class="contacts-container__contacts__section__description">Phone <a href="tel: {{ contact.phone }}">{{ contact.phone }}</a></p>
-      <p class="contacts-container__contacts__section__description">Mail <a href="mailto: {{ contact.email }}">{{ contact.email }}</a></p>
+      <p *ngIf="contact.phone" class="contacts-container__contacts__section__description">Phone <a href="tel: {{ contact.phone }}">{{ contact.phone }}</a></p>
+      <p *ngIf="contact.email" class="contacts-container__contacts__section__description">Mail <a href="mailto: {{ contact.email }}">{{ contact.email }}</a></p>
     </section>
   </div>
 </div>
