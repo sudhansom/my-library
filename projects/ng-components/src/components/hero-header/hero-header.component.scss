@@ -1,0 +1,72 @@
+@use '../../../../variables';
+
+:host {
+  .hero-header {
+    text-align: center;
+
+    img{
+      max-width: 100%;
+    }
+
+    &__content {
+      color: #25122D;
+      padding: 10px var(--content-margin);
+      .header {
+        font-size: 36px;
+        line-height: 36px;
+        margin: 0;
+      }
+      .description {
+        font-size: 16px;
+        line-height: 18px;
+        margin-top: 10px;
+        font-weight: 600;
+      }
+
+      .links {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+      .note {
+        font-size: 11px;
+        color: #8c8383;
+        margin-top: 8px;
+      }
+    }
+  }
+  @media(min-width: map-get(variables.$breakpoints, "phone")){
+    .hero-header {
+      height: calc(90vh - 84px);
+      background-image: linear-gradient(179.71deg, rgba(34, 9, 54, 0) 0%, rgba(34, 9, 54, 0.89) 100%), var(--background-image);
+      background-size: cover;
+      background-position: top center;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      img {
+        display: none;
+      }
+
+      &__content {
+        color: #fff; // should come from variables.
+        position: absolute;
+        bottom: 50px;
+        padding: 40px;
+        .header {
+          font-size: 72px;
+          line-height: 72px;
+        }
+        .description {
+          font-size: 24px;
+          line-height: 30px;
+          font-weight: 500;
+        }
+        .note {
+          font-size: 14px;
+          margin-top: 14px;
+        }
+      }
+    }
+  }
+}
