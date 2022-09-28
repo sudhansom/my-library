@@ -15,13 +15,7 @@ export default {
   ],
 } as Meta;
 
-export interface IContact {
-  department: string
-  address?: string
-  phone: string
-  email: string
-}
-const contacts: IContact[] = [
+const contacts = [
   {
     department: 'Sales',
     phone: '+45 70203010',

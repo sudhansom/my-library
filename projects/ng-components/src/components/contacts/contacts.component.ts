@@ -1,6 +1,11 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { IContact } from './contacts.stories';
 
+export interface IContact {
+  department: string
+  address?: string
+  phone: string
+  email: string
+}
 
 @Component({
   selector: 'sm-contacts',
