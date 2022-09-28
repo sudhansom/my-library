@@ -1,13 +1,13 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
-type TargetType = '_blank' | '_top';
+type TargetType = '_blank' | '_self'  | '_parent' | '_top';
 type ButtonSize = 'sm' | 'md' | 'lg';
 
-export interface ILink {
+interface ILink {
   topLink?: boolean;
   label: string;
   href: string;
-  target: TargetType;
+  target?: TargetType;
   backgroundColor: string;
   color: string;
   size: ButtonSize;
@@ -27,6 +27,6 @@ export class HeroHeaderComponent {
   @Input() header: string = '';
   @Input() description: string = '';
   @Input() note: string = '';
-  @Input() links: ILink[] | undefined = [];
+  @Input() links?: ILink[] = [];
   @Input() image: string = '';
 }
