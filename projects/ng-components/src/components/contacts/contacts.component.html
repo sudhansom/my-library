@@ -4,12 +4,10 @@
       <h2 class="contacts-container__contacts__section__header">{{ contact.department }}</h2>
       <p
         *ngIf="contact.address"
-        class="contacts-container__contacts__section__address contacts__section__description"
-      >
-        {{ contact?.address }}
-      </p>
-      <p class="contacts-container__contacts__section__description">Phone {{ contact.phone }}</p>
-      <p class="contacts-container__contacts__section__description">Mail {{ contact.email }}</p>
+        class="contacts-container__contacts__section__address"
+      >{{ contact?.address }}</p>
+      <p class="contacts-container__contacts__section__description">Phone <a href="tel: {{ contact.phone }}">{{ contact.phone }}</a></p>
+      <p class="contacts-container__contacts__section__description">Mail <a href="mailto: {{ contact.email }}">{{ contact.email }}</a></p>
     </section>
   </div>
 </div>
