@@ -11,6 +11,9 @@ export const isFullPath = (url: string) : boolean => {
 export class NavigationDirective {
   private _url = '';
   @Input() set smNavigate(url: string) {
+    if (url === this._url) {
+      return;
+    }
     this._url = url;
     if (this.url) {
       this.renderer.setAttribute(this.el.nativeElement, 'href', this.url);
@@ -26,8 +29,16 @@ export class NavigationDirective {
 
   private _target = '';
   @Input() set smNavigateTarget(target: string) {
+    if (target === this._target) {
+      return;
+    }
     this._target = target === 'blank' || target === '_blank' ? '_blank' : '';
-    this.renderer.setAttribute(this.el.nativeElement, 'target', this.target);
+    if (this.target) {
+      this.renderer.setAttribute(this.el.nativeElement, 'target', this.target);
+    }
+    else {
+      this.renderer.removeAttribute(this.el.nativeElement, 'target');
+    }
   }
 
   get target() {
