@@ -248,6 +248,7 @@ _10_Layout1WithMixedTeaser.args = {
       return {
         ...teaser,
         link: `/index/${index}`,
+        linkTarget: 'blank'
       };
     }) as ITeaser[],
 };

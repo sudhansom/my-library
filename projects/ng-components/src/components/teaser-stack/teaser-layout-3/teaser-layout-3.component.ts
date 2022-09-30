@@ -9,6 +9,7 @@ import { IBackgroundImagePosition, IBackgroundImageSize } from '../teaser-stack.
 })
 export class TeaserLayout3Component {
   @Input() link?: string;
+  @Input() linkTarget?: 'blank';
   @Input() teaserHeight?: number;
   @Input() imageUrl?: string;
   @Input() header?: string;
