@@ -3,6 +3,7 @@ import { IBackgroundImagePosition, IBackgroundImageSize, ITeaserLayout } from '.
 
 export interface ITeaser {
   link?: string;
+  linkTarget?: 'blank';
   teaserHeight?: number;
   imageUrl?: string;
   header?: string;
@@ -26,6 +27,7 @@ export interface ITeaser {
 })
 export class TeaserComponent {
   @Input() link?: string;
+  @Input() linkTarget?: 'blank';
   @Input() teaserHeight?: number;
   @Input() imageUrl?: string;
   @Input() header?: string;

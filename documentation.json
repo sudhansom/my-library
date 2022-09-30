@@ -113,12 +113,12 @@
         },
         {
             "name": "ILink",
-            "id": "interface-ILink-dc3defe35a5e10f8f4637307c660878f137e23ea478224e481785e66da00a396e82597dc6ab482e3b7d693fb2dd0887f512466abe96af708127aa3d53024c542",
+            "id": "interface-ILink-f6a98a892d534c350d92493e5602f9c065919dcfa5d3747120f03dfb01a6934bae56b546ed901148514fd4b55af658119754647d3f27e6332eeab5a639d83f10",
             "file": "projects/ng-components/src/components/article-component/article.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\ntype TargetType = '_blank' | '_self'  | '_parent' | '_top';\n\nexport interface ILink{\n  topLink?: boolean\n  label: string\n  href: string\n  target: TargetType\n  backgroundColor: string\n  color: string\n}\n\n@Component({\n  selector: 'sm-article',\n  templateUrl: './article.component.html',\n  styleUrls: ['./article.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class ArticleComponent {\n  @Input() imagePosition: 'left' | 'right' = 'left';\n  @Input() image: string = '';\n  @Input() icon: string = '';\n  @Input() header: string = '';\n  @Input() description: string = '';\n  @Input() links: ILink[] = [];\n  @Input() imageBorderRadius = '10px';\n  @Input() backgroundColor: string = '';\n  @Input() boxShadow: string = '';\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\ntype TargetType = '_blank' | '_self'  | '_parent' | '_top';\n\ninterface ILink{\n  topLink?: boolean\n  label: string\n  href: string\n  target?: TargetType\n  backgroundColor: string\n  color: string\n}\n\n@Component({\n  selector: 'sm-article',\n  templateUrl: './article.component.html',\n  styleUrls: ['./article.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class ArticleComponent {\n  @Input() imagePosition: 'left' | 'right' = 'left';\n  @Input() image: string = '';\n  @Input() icon: string = '';\n  @Input() header: string = '';\n  @Input() description: string = '';\n  @Input() links: ILink[] = [];\n  @Input() imageBorderRadius = '10px';\n  @Input() backgroundColor: string = '';\n  @Input() boxShadow: string = '';\n}\n",
             "properties": [
                 {
                     "name": "backgroundColor",
@@ -161,7 +161,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "TargetType",
-                    "optional": false,
+                    "optional": true,
                     "description": "",
                     "line": 9
                 },
@@ -181,12 +181,12 @@
         },
         {
             "name": "ILink",
-            "id": "interface-ILink-87f8f4760171444abe25399257015fc9ed8e207bdeaae566384acaf3a7fd8e3a7cdac387fc300a2bae335c304fc2c9dda79665b1c61bd811a747ca6c6f095d48-1",
+            "id": "interface-ILink-d7a90cf52553a0b1da5176767d28e4333746835c1b7f8d281d2156cf90b7e7262cc6c4cd5a6e766ddb72e8a094009a501a8e1fad9e06aba8a0d2c655b7d02355-1",
             "file": "projects/ng-components/src/components/hero-header/hero-header.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\ntype TargetType = '_blank' | '_top';\ntype ButtonSize = 'sm' | 'md' | 'lg';\n\ninterface ILink {\n  topLink?: boolean;\n  label: string;\n  href: string;\n  target?: TargetType;\n  backgroundColor: string;\n  color: string;\n  size: ButtonSize;\n  textSize: ButtonSize;\n  mobileTabletSize: ButtonSize;\n  mobileTextSize: ButtonSize;\n  borderRadius: string;\n}\n\n@Component({\n  selector: 'sm-hero-header',\n  templateUrl: './hero-header.component.html',\n  styleUrls: ['./hero-header.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class HeroHeaderComponent {\n  @Input() header: string = '';\n  @Input() description: string = '';\n  @Input() note: string = '';\n  @Input() links?: ILink[] = [];\n  @Input() image: string = '';\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\ntype TargetType = '_blank' | '_self'  | '_parent' | '_top';\ntype ButtonSize = 'sm' | 'md' | 'lg';\n\ninterface ILink {\n  topLink?: boolean;\n  label: string;\n  href: string;\n  target?: TargetType;\n  backgroundColor: string;\n  color: string;\n  size: ButtonSize;\n  textSize: ButtonSize;\n  mobileTabletSize: ButtonSize;\n  mobileTextSize: ButtonSize;\n  borderRadius: string;\n}\n\n@Component({\n  selector: 'sm-hero-header',\n  templateUrl: './hero-header.component.html',\n  styleUrls: ['./hero-header.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class HeroHeaderComponent {\n  @Input() header: string = '';\n  @Input() description: string = '';\n  @Input() note: string = '';\n  @Input() links?: ILink[] = [];\n  @Input() image: string = '';\n}\n",
             "properties": [
                 {
                     "name": "backgroundColor",
@@ -392,12 +392,12 @@
         },
         {
             "name": "ITeaser",
-            "id": "interface-ITeaser-ca8fda1dcca71d97304842deb2b57c34cfc1a6f35844c76d9cbf0d2f6a3d057e57336f9128a8c6ade78900b33f7e8a90f08de5822afecbbfee637513e252e4d5",
+            "id": "interface-ITeaser-a22ca045719258676baf9b903b73b7325d3fdf891957547e607736cb0442b2f68cf41f9bfef54f9a33694193f83b31bd8d48226f353dba95256f3b2bfd7a6aaa",
             "file": "projects/ng-components/src/components/teaser-stack/teaser/teaser.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\nimport { IBackgroundImagePosition, IBackgroundImageSize, ITeaserLayout } from '../teaser-stack.interface';\n\nexport interface ITeaser {\n  link?: string;\n  teaserHeight?: number;\n  imageUrl?: string;\n  header?: string;\n  description?: string;\n  border?: string;\n  hoverBorder?: string;\n  boxShadow?: string;\n  hoverBoxShadow?: string;\n  textColor?: string;\n  backgroundColor?: string;\n  backgroundImageSize?: IBackgroundImageSize;\n  backgroundImagePosition?: IBackgroundImagePosition;\n  layout?: ITeaserLayout;\n}\n\n@Component({\n  selector: 'sm-teaser',\n  templateUrl: './teaser.component.html',\n  styleUrls: ['./teaser.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TeaserComponent {\n  @Input() link?: string;\n  @Input() teaserHeight?: number;\n  @Input() imageUrl?: string;\n  @Input() header?: string;\n  @Input() description?: string;\n  @Input() border?: string;\n  @Input() hoverBorder?: string;\n  @Input() boxShadow?: string;\n  @Input() hoverBoxShadow?: string;\n  @Input() textColor?: string;\n  @Input() backgroundColor?: string;\n  @Input() backgroundImageSize?: IBackgroundImageSize;\n  @Input() backgroundImagePosition?: IBackgroundImagePosition;\n  @Input() layout: ITeaserLayout = 'layout-1';\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\nimport { IBackgroundImagePosition, IBackgroundImageSize, ITeaserLayout } from '../teaser-stack.interface';\n\nexport interface ITeaser {\n  link?: string;\n  linkTarget?: 'blank';\n  teaserHeight?: number;\n  imageUrl?: string;\n  header?: string;\n  description?: string;\n  border?: string;\n  hoverBorder?: string;\n  boxShadow?: string;\n  hoverBoxShadow?: string;\n  textColor?: string;\n  backgroundColor?: string;\n  backgroundImageSize?: IBackgroundImageSize;\n  backgroundImagePosition?: IBackgroundImagePosition;\n  layout?: ITeaserLayout;\n}\n\n@Component({\n  selector: 'sm-teaser',\n  templateUrl: './teaser.component.html',\n  styleUrls: ['./teaser.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TeaserComponent {\n  @Input() link?: string;\n  @Input() teaserHeight?: number;\n  @Input() imageUrl?: string;\n  @Input() header?: string;\n  @Input() description?: string;\n  @Input() border?: string;\n  @Input() hoverBorder?: string;\n  @Input() boxShadow?: string;\n  @Input() hoverBoxShadow?: string;\n  @Input() textColor?: string;\n  @Input() backgroundColor?: string;\n  @Input() backgroundImageSize?: IBackgroundImageSize;\n  @Input() backgroundImagePosition?: IBackgroundImagePosition;\n  @Input() layout: ITeaserLayout = 'layout-1';\n}\n",
             "properties": [
                 {
                     "name": "backgroundColor",
@@ -406,7 +406,7 @@
                     "type": "string",
                     "optional": true,
                     "description": "",
-                    "line": 15
+                    "line": 16
                 },
                 {
                     "name": "backgroundImagePosition",
@@ -415,7 +415,7 @@
                     "type": "IBackgroundImagePosition",
                     "optional": true,
                     "description": "",
-                    "line": 17
+                    "line": 18
                 },
                 {
                     "name": "backgroundImageSize",
@@ -424,7 +424,7 @@
                     "type": "IBackgroundImageSize",
                     "optional": true,
                     "description": "",
-                    "line": 16
+                    "line": 17
                 },
                 {
                     "name": "border",
@@ -433,7 +433,7 @@
                     "type": "string",
                     "optional": true,
                     "description": "",
-                    "line": 10
+                    "line": 11
                 },
                 {
                     "name": "boxShadow",
@@ -442,7 +442,7 @@
                     "type": "string",
                     "optional": true,
                     "description": "",
-                    "line": 12
+                    "line": 13
                 },
                 {
                     "name": "description",
@@ -451,7 +451,7 @@
                     "type": "string",
                     "optional": true,
                     "description": "",
-                    "line": 9
+                    "line": 10
                 },
                 {
                     "name": "header",
@@ -460,7 +460,7 @@
                     "type": "string",
                     "optional": true,
                     "description": "",
-                    "line": 8
+                    "line": 9
                 },
                 {
                     "name": "hoverBorder",
@@ -469,7 +469,7 @@
                     "type": "string",
                     "optional": true,
                     "description": "",
-                    "line": 11
+                    "line": 12
                 },
                 {
                     "name": "hoverBoxShadow",
@@ -478,7 +478,7 @@
                     "type": "string",
                     "optional": true,
                     "description": "",
-                    "line": 13
+                    "line": 14
                 },
                 {
                     "name": "imageUrl",
@@ -487,7 +487,7 @@
                     "type": "string",
                     "optional": true,
                     "description": "",
-                    "line": 7
+                    "line": 8
                 },
                 {
                     "name": "layout",
@@ -496,7 +496,7 @@
                     "type": "ITeaserLayout",
                     "optional": true,
                     "description": "",
-                    "line": 18
+                    "line": 19
                 },
                 {
                     "name": "link",
@@ -508,13 +508,22 @@
                     "line": 5
                 },
                 {
+                    "name": "linkTarget",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 6
+                },
+                {
                     "name": "teaserHeight",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "number",
                     "optional": true,
                     "description": "",
-                    "line": 6
+                    "line": 7
                 },
                 {
                     "name": "textColor",
@@ -523,7 +532,75 @@
                     "type": "string",
                     "optional": true,
                     "description": "",
-                    "line": 14
+                    "line": 15
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        },
+        {
+            "name": "MenuItem",
+            "id": "interface-MenuItem-26ed1f82ecac114365a189aa1cc2a670b8f11ec773f55db3b29e55f73a7b1239f910cfb00c001c5b7309242ebaba33ef9e4d5cda03bad049844f57e8d2eca79c",
+            "file": "projects/ng-components/src/components/navigation/navigation.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\nimport { BehaviorSubject } from 'rxjs';\n\ninterface MenuItem {\n  id: string;\n  title: string;\n  url?: string;\n  expanded: boolean;\n  isActive: boolean;\n  items?: MenuItem[];\n}\n\nconst isActive = (item: MenuItem, activeUrl: string): boolean => {\n  return (\n    item.url === activeUrl || !!item.items?.some((i) => isActive(i, activeUrl))\n  );\n};\n\nconst getAllActiveIds = (items: MenuItem[], ac: string) => {\n  const ids : string[] = [];\n  items.forEach(item => {\n    const activeInItems = getAllActiveIds(item.items || [], ac);\n\n    if (activeInItems.length) {\n      [...activeInItems, item.id].forEach(x => ids.push(x));\n    }\n    else if(item.url === ac) {\n      ids.push(item.id);\n    }\n\n  });\n  return ids;\n};\n\n@Component({\n  selector: 'sm-navigation',\n  templateUrl: './navigation.component.html',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class NavigationComponent {\n  private _activeUrl: string = '';\n\n  @Input() set activeUrl(activeUrl: string) {\n    this._activeUrl = activeUrl || '';\n    this.addInitialActiveUrlIdIntoExpandedList();\n  }\n\n  get activeUrl(): string {\n    return this._activeUrl;\n  }\n\n  private _items: MenuItem[] = [];\n\n  @Input() set items(items: MenuItem[]) {\n    this._items = items || [];\n    this.addInitialActiveUrlIdIntoExpandedList();\n  }\n\n  get items(): MenuItem[] {\n    return this._items;\n  }\n\n  formattedItems$ = new BehaviorSubject<MenuItem[]>([]);\n\n  expandedItemIds = new Set<string>();\n\n  addInitialActiveUrlIdIntoExpandedList() {\n    getAllActiveIds(this.items, this.activeUrl).forEach(id => this.expandedItemIds.add(id));\n    this.calculateFormattedMenuItems();\n  }\n\n  getFormattedMenuItems(): MenuItem[] {\n    const menuItemMapper = (item: MenuItem) : MenuItem => {\n      const active = isActive(item, this.activeUrl);\n\n      return {\n        ...item,\n        url: item.url,\n        isActive: active,\n        expanded: this.expandedItemIds.has(item.id),\n        items: item.items?.map(item => menuItemMapper(item)),\n      };\n    }\n    return this.items.map<MenuItem>(menuItemMapper);\n  }\n\n  calculateFormattedMenuItems() {\n    this.formattedItems$.next(this.getFormattedMenuItems());\n  }\n\n  onClick(clickedItem: MenuItem) {\n    // Item should have some children items to be expanded/collapsed\n    if (clickedItem.items?.length) {\n      const isExpanded = this.expandedItemIds.has(clickedItem.id);\n\n      if (isExpanded) {\n        this.expandedItemIds.delete(clickedItem.id);\n      }\n      else {\n        this.expandedItemIds.add(clickedItem.id);\n      }\n\n      this.calculateFormattedMenuItems()\n    };\n  }\n}\n",
+            "properties": [
+                {
+                    "name": "expanded",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                },
+                {
+                    "name": "id",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "isActive",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                },
+                {
+                    "name": "items",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "MenuItem[]",
+                    "optional": true,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "title",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "url",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 7
                 }
             ],
             "indexSignatures": [],
@@ -538,12 +615,12 @@
     "directives": [
         {
             "name": "NavigationDirective",
-            "id": "directive-NavigationDirective-4b109df8204446cc0eba0a90f3caa95c7a5f5f13c48cd404cb9e942e978a3e7355139bcc3933743f8acdacabf3e5714689665d3669a15c06238342b7f1912be7",
+            "id": "directive-NavigationDirective-8bb0292f9c85ad9ff0a4b026ac9c267e63ff4f2eedbcf33f24f6b2fe7d076a018ad1f902ee5f43146373d32d0b7cba21c90bd1b59999be0337fe8205ecffbc7c",
             "file": "projects/ng-components/src/directives/navigation/navigation.directive.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/core';\nimport { Router } from '@angular/router';\n\nexport const isFullPath = (url: string) : boolean => {\n  return url.startsWith && (url.startsWith('https') || url.startsWith('http'));\n}\n\n@Directive({\n  selector: '[smNavigate]',\n})\nexport class NavigationDirective {\n  private _url = '';\n  @Input() set smNavigate(url: string) {\n    this._url = url;\n    if (this.url) {\n      this.renderer.setAttribute(this.el.nativeElement, 'href', this.url);\n    }\n    else {\n      this.renderer.removeAttribute(this.el.nativeElement, 'href');\n    }\n  }\n\n  get url() {\n    return this._url;\n  }\n\n  private _target = '';\n  @Input() set smNavigateTarget(target: string) {\n    this._target = target === 'blank' || target === '_blank' ? '_blank' : '';\n    this.renderer.setAttribute(this.el.nativeElement, 'target', this.target);\n  }\n\n  get target() {\n    return this._target;\n  }\n\n  constructor(private el: ElementRef, private renderer: Renderer2, private router: Router) {}\n\n\n  @HostListener(\"click\", [\"$event\"])\n  public onClick(evt: Event): void\n  {\n    if(!this.url) {\n      evt.preventDefault();\n      return;\n    }\n    if (isFullPath(this.url)) {\n      return;\n    }\n\n    evt.preventDefault();\n    if (this.target === '_blank') {\n      window.open(this.url, '_blank');\n    }\n    else {\n      this.router.navigateByUrl(this.url);\n    }\n  }\n}\n",
+            "sourceCode": "import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/core';\nimport { Router } from '@angular/router';\n\nexport const isFullPath = (url: string) : boolean => {\n  return url.startsWith && (url.startsWith('https') || url.startsWith('http'));\n}\n\n@Directive({\n  selector: '[smNavigate]',\n})\nexport class NavigationDirective {\n  private _url = '';\n  @Input() set smNavigate(url: string) {\n    this._url = url;\n    if (this.url) {\n      this.renderer.setAttribute(this.el.nativeElement, 'href', this.url);\n    }\n    else {\n      this.renderer.removeAttribute(this.el.nativeElement, 'href');\n    }\n  }\n\n  get url() {\n    return this._url;\n  }\n\n  private _target = '';\n  @Input() set smNavigateTarget(target: string) {\n    this._target = target === 'blank' || target === '_blank' ? '_blank' : '';\n    if (this.target) {\n      this.renderer.setAttribute(this.el.nativeElement, 'target', this.target);\n    }\n    else {\n      this.renderer.removeAttribute(this.el.nativeElement, 'target');\n    }\n  }\n\n  get target() {\n    return this._target;\n  }\n\n  constructor(private el: ElementRef, private renderer: Renderer2, private router: Router) {}\n\n\n  @HostListener(\"click\", [\"$event\"])\n  public onClick(evt: Event): void\n  {\n    if(!this.url) {\n      evt.preventDefault();\n      return;\n    }\n    if (isFullPath(this.url)) {\n      return;\n    }\n\n    evt.preventDefault();\n    if (this.target === '_blank') {\n      window.open(this.url, '_blank');\n    }\n    else {\n      this.router.navigateByUrl(this.url);\n    }\n  }\n}\n",
             "selector": "[smNavigate]",
             "providers": [],
             "inputsClass": [
@@ -584,7 +661,7 @@
                     ],
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 41
+                    "line": 46
                 }
             ],
             "propertiesClass": [
@@ -629,7 +706,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 41,
+                    "line": 46,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "decorators": [
@@ -679,7 +756,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 35,
+                "line": 40,
                 "jsdoctags": [
                     {
                         "name": "el",
@@ -786,7 +863,7 @@
                         "name": "target",
                         "type": "",
                         "returnType": "",
-                        "line": 33
+                        "line": 38
                     }
                 }
             }
@@ -1007,7 +1084,7 @@
     "components": [
         {
             "name": "ArticleComponent",
-            "id": "component-ArticleComponent-dc3defe35a5e10f8f4637307c660878f137e23ea478224e481785e66da00a396e82597dc6ab482e3b7d693fb2dd0887f512466abe96af708127aa3d53024c542",
+            "id": "component-ArticleComponent-f6a98a892d534c350d92493e5602f9c065919dcfa5d3747120f03dfb01a6934bae56b546ed901148514fd4b55af658119754647d3f27e6332eeab5a639d83f10",
             "file": "projects/ng-components/src/components/article-component/article.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -1117,7 +1194,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\ntype TargetType = '_blank' | '_self'  | '_parent' | '_top';\n\nexport interface ILink{\n  topLink?: boolean\n  label: string\n  href: string\n  target: TargetType\n  backgroundColor: string\n  color: string\n}\n\n@Component({\n  selector: 'sm-article',\n  templateUrl: './article.component.html',\n  styleUrls: ['./article.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class ArticleComponent {\n  @Input() imagePosition: 'left' | 'right' = 'left';\n  @Input() image: string = '';\n  @Input() icon: string = '';\n  @Input() header: string = '';\n  @Input() description: string = '';\n  @Input() links: ILink[] = [];\n  @Input() imageBorderRadius = '10px';\n  @Input() backgroundColor: string = '';\n  @Input() boxShadow: string = '';\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\ntype TargetType = '_blank' | '_self'  | '_parent' | '_top';\n\ninterface ILink{\n  topLink?: boolean\n  label: string\n  href: string\n  target?: TargetType\n  backgroundColor: string\n  color: string\n}\n\n@Component({\n  selector: 'sm-article',\n  templateUrl: './article.component.html',\n  styleUrls: ['./article.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class ArticleComponent {\n  @Input() imagePosition: 'left' | 'right' = 'left';\n  @Input() image: string = '';\n  @Input() icon: string = '';\n  @Input() header: string = '';\n  @Input() description: string = '';\n  @Input() links: ILink[] = [];\n  @Input() imageBorderRadius = '10px';\n  @Input() backgroundColor: string = '';\n  @Input() boxShadow: string = '';\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1358,7 +1435,7 @@
         },
         {
             "name": "HeroHeaderComponent",
-            "id": "component-HeroHeaderComponent-87f8f4760171444abe25399257015fc9ed8e207bdeaae566384acaf3a7fd8e3a7cdac387fc300a2bae335c304fc2c9dda79665b1c61bd811a747ca6c6f095d48",
+            "id": "component-HeroHeaderComponent-d7a90cf52553a0b1da5176767d28e4333746835c1b7f8d281d2156cf90b7e7262cc6c4cd5a6e766ddb72e8a094009a501a8e1fad9e06aba8a0d2c655b7d02355",
             "file": "projects/ng-components/src/components/hero-header/hero-header.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -1432,7 +1509,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\ntype TargetType = '_blank' | '_top';\ntype ButtonSize = 'sm' | 'md' | 'lg';\n\ninterface ILink {\n  topLink?: boolean;\n  label: string;\n  href: string;\n  target?: TargetType;\n  backgroundColor: string;\n  color: string;\n  size: ButtonSize;\n  textSize: ButtonSize;\n  mobileTabletSize: ButtonSize;\n  mobileTextSize: ButtonSize;\n  borderRadius: string;\n}\n\n@Component({\n  selector: 'sm-hero-header',\n  templateUrl: './hero-header.component.html',\n  styleUrls: ['./hero-header.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class HeroHeaderComponent {\n  @Input() header: string = '';\n  @Input() description: string = '';\n  @Input() note: string = '';\n  @Input() links?: ILink[] = [];\n  @Input() image: string = '';\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\ntype TargetType = '_blank' | '_self'  | '_parent' | '_top';\ntype ButtonSize = 'sm' | 'md' | 'lg';\n\ninterface ILink {\n  topLink?: boolean;\n  label: string;\n  href: string;\n  target?: TargetType;\n  backgroundColor: string;\n  color: string;\n  size: ButtonSize;\n  textSize: ButtonSize;\n  mobileTabletSize: ButtonSize;\n  mobileTextSize: ButtonSize;\n  borderRadius: string;\n}\n\n@Component({\n  selector: 'sm-hero-header',\n  templateUrl: './hero-header.component.html',\n  styleUrls: ['./hero-header.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class HeroHeaderComponent {\n  @Input() header: string = '';\n  @Input() description: string = '';\n  @Input() note: string = '';\n  @Input() links?: ILink[] = [];\n  @Input() image: string = '';\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1444,8 +1521,239 @@
             "templateData": "<div class=\"hero-header\" [style.--background-image]=\"'url(' + image + ')'\">\n  <div>\n    <img src=\"{{ image }}\" />\n  </div>\n  <div class=\"hero-header__content\">\n    <h2 class=\"header\">{{ header }}</h2>\n    <p class=\"description\">\n      {{ description }}\n    </p>\n    <div *ngIf=\"links?.length\" class=\"links\">\n      <a\n        sitemule-button\n        *ngFor=\"let link of links\"\n        [style.--button-color]=\"link.color\"\n        [ngStyle]=\"{'backgroundColor': link.backgroundColor, 'color': link.color}\"\n        [href]=\"link.href\"\n        [target]=\"link.target\"\n        [size]=\"link.size\"\n        [textSize]=\"link.textSize\"\n        [mobileTabletSize]=\"link.mobileTabletSize\"\n        [mobileTextSize]=\"link.mobileTextSize\"\n        [borderRadius]=\"link.borderRadius\"\n      >\n        {{ link.label }}\n      </a>\n    </div>\n    <p class=\"note\">{{ note }}</p>\n  </div>\n</div>\n"
         },
         {
+            "name": "NavigationComponent",
+            "id": "component-NavigationComponent-26ed1f82ecac114365a189aa1cc2a670b8f11ec773f55db3b29e55f73a7b1239f910cfb00c001c5b7309242ebaba33ef9e4d5cda03bad049844f57e8d2eca79c",
+            "file": "projects/ng-components/src/components/navigation/navigation.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "sm-navigation",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./navigation.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "activeUrl",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 43,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "items",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 54,
+                    "type": "MenuItem[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "_activeUrl",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 41,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "_items",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "MenuItem[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 52,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "expandedItemIds",
+                    "defaultValue": "new Set<string>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 65
+                },
+                {
+                    "name": "formattedItems$",
+                    "defaultValue": "new BehaviorSubject<MenuItem[]>([])",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 63
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "addInitialActiveUrlIdIntoExpandedList",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 67,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "calculateFormattedMenuItems",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 87,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "getFormattedMenuItems",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "MenuItem[]",
+                    "typeParameters": [],
+                    "line": 72,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onClick",
+                    "args": [
+                        {
+                            "name": "clickedItem",
+                            "type": "MenuItem",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 91,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "clickedItem",
+                            "type": "MenuItem",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\nimport { BehaviorSubject } from 'rxjs';\n\ninterface MenuItem {\n  id: string;\n  title: string;\n  url?: string;\n  expanded: boolean;\n  isActive: boolean;\n  items?: MenuItem[];\n}\n\nconst isActive = (item: MenuItem, activeUrl: string): boolean => {\n  return (\n    item.url === activeUrl || !!item.items?.some((i) => isActive(i, activeUrl))\n  );\n};\n\nconst getAllActiveIds = (items: MenuItem[], ac: string) => {\n  const ids : string[] = [];\n  items.forEach(item => {\n    const activeInItems = getAllActiveIds(item.items || [], ac);\n\n    if (activeInItems.length) {\n      [...activeInItems, item.id].forEach(x => ids.push(x));\n    }\n    else if(item.url === ac) {\n      ids.push(item.id);\n    }\n\n  });\n  return ids;\n};\n\n@Component({\n  selector: 'sm-navigation',\n  templateUrl: './navigation.component.html',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class NavigationComponent {\n  private _activeUrl: string = '';\n\n  @Input() set activeUrl(activeUrl: string) {\n    this._activeUrl = activeUrl || '';\n    this.addInitialActiveUrlIdIntoExpandedList();\n  }\n\n  get activeUrl(): string {\n    return this._activeUrl;\n  }\n\n  private _items: MenuItem[] = [];\n\n  @Input() set items(items: MenuItem[]) {\n    this._items = items || [];\n    this.addInitialActiveUrlIdIntoExpandedList();\n  }\n\n  get items(): MenuItem[] {\n    return this._items;\n  }\n\n  formattedItems$ = new BehaviorSubject<MenuItem[]>([]);\n\n  expandedItemIds = new Set<string>();\n\n  addInitialActiveUrlIdIntoExpandedList() {\n    getAllActiveIds(this.items, this.activeUrl).forEach(id => this.expandedItemIds.add(id));\n    this.calculateFormattedMenuItems();\n  }\n\n  getFormattedMenuItems(): MenuItem[] {\n    const menuItemMapper = (item: MenuItem) : MenuItem => {\n      const active = isActive(item, this.activeUrl);\n\n      return {\n        ...item,\n        url: item.url,\n        isActive: active,\n        expanded: this.expandedItemIds.has(item.id),\n        items: item.items?.map(item => menuItemMapper(item)),\n      };\n    }\n    return this.items.map<MenuItem>(menuItemMapper);\n  }\n\n  calculateFormattedMenuItems() {\n    this.formattedItems$.next(this.getFormattedMenuItems());\n  }\n\n  onClick(clickedItem: MenuItem) {\n    // Item should have some children items to be expanded/collapsed\n    if (clickedItem.items?.length) {\n      const isExpanded = this.expandedItemIds.has(clickedItem.id);\n\n      if (isExpanded) {\n        this.expandedItemIds.delete(clickedItem.id);\n      }\n      else {\n        this.expandedItemIds.add(clickedItem.id);\n      }\n\n      this.calculateFormattedMenuItems()\n    };\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "accessors": {
+                "activeUrl": {
+                    "name": "activeUrl",
+                    "setSignature": {
+                        "name": "activeUrl",
+                        "type": "void",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "args": [
+                            {
+                                "name": "activeUrl",
+                                "type": "string",
+                                "deprecated": false,
+                                "deprecationMessage": ""
+                            }
+                        ],
+                        "returnType": "void",
+                        "line": 43,
+                        "jsdoctags": [
+                            {
+                                "name": "activeUrl",
+                                "type": "string",
+                                "deprecated": false,
+                                "deprecationMessage": "",
+                                "tagName": {
+                                    "text": "param"
+                                }
+                            }
+                        ]
+                    },
+                    "getSignature": {
+                        "name": "activeUrl",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 48
+                    }
+                },
+                "items": {
+                    "name": "items",
+                    "setSignature": {
+                        "name": "items",
+                        "type": "void",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "args": [
+                            {
+                                "name": "items",
+                                "type": "MenuItem[]",
+                                "deprecated": false,
+                                "deprecationMessage": ""
+                            }
+                        ],
+                        "returnType": "void",
+                        "line": 54,
+                        "jsdoctags": [
+                            {
+                                "name": "items",
+                                "type": "MenuItem[]",
+                                "deprecated": false,
+                                "deprecationMessage": "",
+                                "tagName": {
+                                    "text": "param"
+                                }
+                            }
+                        ]
+                    },
+                    "getSignature": {
+                        "name": "items",
+                        "type": "[]",
+                        "returnType": "MenuItem[]",
+                        "line": 59
+                    }
+                }
+            },
+            "templateData": "<ng-template #nestedItems let-items>\n  <div *ngFor=\"let item of items\" class=\"navigation__item\" [class.navigation__item__active]=\"item.isActive\" [class.navigation__item__expanded]=\"item.expanded\">\n    <a *ngIf=\"item.url\" [smNavigate]=\"item.url\" class=\"navigation__link\">{{item.title}}</a>\n    <div *ngIf=\"!item.url\" class=\"navigation__link\" (click)=\"onClick(item)\">{{item.title}}</div>\n    <div *ngIf=\"item.items && item.items.length\" class=\"navigation__inner__items\">\n      <ng-container *ngTemplateOutlet=\"nestedItems; context: {$implicit: item.items}\"></ng-container>\n    </div>\n  </div>\n</ng-template>\n<ng-container *ngIf=\"formattedItems$ | async as items\">\n  <ng-container *ngTemplateOutlet=\"nestedItems; context: {$implicit: items}\"></ng-container>\n</ng-container>\n"
+        },
+        {
             "name": "TeaserComponent",
-            "id": "component-TeaserComponent-ca8fda1dcca71d97304842deb2b57c34cfc1a6f35844c76d9cbf0d2f6a3d057e57336f9128a8c6ade78900b33f7e8a90f08de5822afecbbfee637513e252e4d5",
+            "id": "component-TeaserComponent-a22ca045719258676baf9b903b73b7325d3fdf891957547e607736cb0442b2f68cf41f9bfef54f9a33694193f83b31bd8d48226f353dba95256f3b2bfd7a6aaa",
             "file": "projects/ng-components/src/components/teaser-stack/teaser/teaser.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -1467,7 +1775,7 @@
                     "name": "backgroundColor",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 38,
+                    "line": 39,
                     "type": "string",
                     "decorators": []
                 },
@@ -1475,7 +1783,7 @@
                     "name": "backgroundImagePosition",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 40,
+                    "line": 41,
                     "type": "IBackgroundImagePosition",
                     "decorators": []
                 },
@@ -1483,7 +1791,7 @@
                     "name": "backgroundImageSize",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 39,
+                    "line": 40,
                     "type": "IBackgroundImageSize",
                     "decorators": []
                 },
@@ -1491,7 +1799,7 @@
                     "name": "border",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 33,
+                    "line": 34,
                     "type": "string",
                     "decorators": []
                 },
@@ -1499,7 +1807,7 @@
                     "name": "boxShadow",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 35,
+                    "line": 36,
                     "type": "string",
                     "decorators": []
                 },
@@ -1507,7 +1815,7 @@
                     "name": "description",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 32,
+                    "line": 33,
                     "type": "string",
                     "decorators": []
                 },
@@ -1515,7 +1823,7 @@
                     "name": "header",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 31,
+                    "line": 32,
                     "type": "string",
                     "decorators": []
                 },
@@ -1523,7 +1831,7 @@
                     "name": "hoverBorder",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 34,
+                    "line": 35,
                     "type": "string",
                     "decorators": []
                 },
@@ -1531,7 +1839,7 @@
                     "name": "hoverBoxShadow",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 36,
+                    "line": 37,
                     "type": "string",
                     "decorators": []
                 },
@@ -1539,7 +1847,7 @@
                     "name": "imageUrl",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 30,
+                    "line": 31,
                     "type": "string",
                     "decorators": []
                 },
@@ -1548,7 +1856,7 @@
                     "defaultValue": "'layout-1'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 41,
+                    "line": 42,
                     "type": "ITeaserLayout",
                     "decorators": []
                 },
@@ -1556,7 +1864,7 @@
                     "name": "link",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 28,
+                    "line": 29,
                     "type": "string",
                     "decorators": []
                 },
@@ -1564,7 +1872,7 @@
                     "name": "teaserHeight",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 29,
+                    "line": 30,
                     "type": "number",
                     "decorators": []
                 },
@@ -1572,7 +1880,7 @@
                     "name": "textColor",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 37,
+                    "line": 38,
                     "type": "string",
                     "decorators": []
                 }
@@ -1587,7 +1895,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\nimport { IBackgroundImagePosition, IBackgroundImageSize, ITeaserLayout } from '../teaser-stack.interface';\n\nexport interface ITeaser {\n  link?: string;\n  teaserHeight?: number;\n  imageUrl?: string;\n  header?: string;\n  description?: string;\n  border?: string;\n  hoverBorder?: string;\n  boxShadow?: string;\n  hoverBoxShadow?: string;\n  textColor?: string;\n  backgroundColor?: string;\n  backgroundImageSize?: IBackgroundImageSize;\n  backgroundImagePosition?: IBackgroundImagePosition;\n  layout?: ITeaserLayout;\n}\n\n@Component({\n  selector: 'sm-teaser',\n  templateUrl: './teaser.component.html',\n  styleUrls: ['./teaser.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TeaserComponent {\n  @Input() link?: string;\n  @Input() teaserHeight?: number;\n  @Input() imageUrl?: string;\n  @Input() header?: string;\n  @Input() description?: string;\n  @Input() border?: string;\n  @Input() hoverBorder?: string;\n  @Input() boxShadow?: string;\n  @Input() hoverBoxShadow?: string;\n  @Input() textColor?: string;\n  @Input() backgroundColor?: string;\n  @Input() backgroundImageSize?: IBackgroundImageSize;\n  @Input() backgroundImagePosition?: IBackgroundImagePosition;\n  @Input() layout: ITeaserLayout = 'layout-1';\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\nimport { IBackgroundImagePosition, IBackgroundImageSize, ITeaserLayout } from '../teaser-stack.interface';\n\nexport interface ITeaser {\n  link?: string;\n  linkTarget?: 'blank';\n  teaserHeight?: number;\n  imageUrl?: string;\n  header?: string;\n  description?: string;\n  border?: string;\n  hoverBorder?: string;\n  boxShadow?: string;\n  hoverBoxShadow?: string;\n  textColor?: string;\n  backgroundColor?: string;\n  backgroundImageSize?: IBackgroundImageSize;\n  backgroundImagePosition?: IBackgroundImagePosition;\n  layout?: ITeaserLayout;\n}\n\n@Component({\n  selector: 'sm-teaser',\n  templateUrl: './teaser.component.html',\n  styleUrls: ['./teaser.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TeaserComponent {\n  @Input() link?: string;\n  @Input() teaserHeight?: number;\n  @Input() imageUrl?: string;\n  @Input() header?: string;\n  @Input() description?: string;\n  @Input() border?: string;\n  @Input() hoverBorder?: string;\n  @Input() boxShadow?: string;\n  @Input() hoverBoxShadow?: string;\n  @Input() textColor?: string;\n  @Input() backgroundColor?: string;\n  @Input() backgroundImageSize?: IBackgroundImageSize;\n  @Input() backgroundImagePosition?: IBackgroundImagePosition;\n  @Input() layout: ITeaserLayout = 'layout-1';\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1600,7 +1908,7 @@
         },
         {
             "name": "TeaserLayout1Component",
-            "id": "component-TeaserLayout1Component-91f2273e63bf1526f93ca5da1a0d74ce06f9dc138100c607d4f6b3fa417545ca261b617a466bd2bca249232483214bd2e8c175613e559cbe6f00ecb08946eb20",
+            "id": "component-TeaserLayout1Component-1970007bb379330d1746be0acb71744e4f237ac7b63b7e8ca53430ee685097b46af3f2baa5346910209487c1002f106de07564252fb00a3a45da8897757e0c37",
             "file": "projects/ng-components/src/components/teaser-stack/teaser-layout-1/teaser-layout-1.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -1622,7 +1930,7 @@
                     "name": "backgroundColor",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 24,
+                    "line": 25,
                     "type": "string",
                     "decorators": []
                 },
@@ -1630,7 +1938,7 @@
                     "name": "backgroundImagePosition",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 26,
+                    "line": 27,
                     "type": "IBackgroundImagePosition",
                     "decorators": []
                 },
@@ -1638,7 +1946,7 @@
                     "name": "backgroundImageSize",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 25,
+                    "line": 26,
                     "type": "IBackgroundImageSize",
                     "decorators": []
                 },
@@ -1646,7 +1954,7 @@
                     "name": "border",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 20,
                     "type": "string",
                     "decorators": []
                 },
@@ -1654,7 +1962,7 @@
                     "name": "boxShadow",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 21,
+                    "line": 22,
                     "type": "string",
                     "decorators": []
                 },
@@ -1662,7 +1970,7 @@
                     "name": "description",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
+                    "line": 19,
                     "type": "string",
                     "decorators": []
                 },
@@ -1670,7 +1978,7 @@
                     "name": "header",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 18,
                     "type": "string",
                     "decorators": []
                 },
@@ -1678,7 +1986,7 @@
                     "name": "hoverBorder",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 20,
+                    "line": 21,
                     "type": "string",
                     "decorators": []
                 },
@@ -1686,7 +1994,7 @@
                     "name": "hoverBoxShadow",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 22,
+                    "line": 23,
                     "type": "string",
                     "decorators": []
                 },
@@ -1694,7 +2002,7 @@
                     "name": "imageUrl",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 17,
                     "type": "string",
                     "decorators": []
                 },
@@ -1707,10 +2015,18 @@
                     "decorators": []
                 },
                 {
-                    "name": "teaserHeight",
+                    "name": "linkTarget",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 15,
+                    "type": "",
+                    "decorators": []
+                },
+                {
+                    "name": "teaserHeight",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
                     "type": "number",
                     "decorators": []
                 },
@@ -1718,7 +2034,7 @@
                     "name": "textColor",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 23,
+                    "line": 24,
                     "type": "string",
                     "decorators": []
                 }
@@ -1733,7 +2049,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\nimport {\n  IBackgroundImagePosition,\n  IBackgroundImageSize\n} from '../teaser-stack.interface';\n\n@Component({\n  selector: 'sm-teaser-layout-1',\n  templateUrl: './teaser-layout-1.component.html',\n  styleUrls: ['./teaser-layout-1.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TeaserLayout1Component {\n  @Input() link?: string;\n  @Input() teaserHeight?: number;\n  @Input() imageUrl?: string;\n  @Input() header?: string;\n  @Input() description?: string;\n  @Input() border?: string;\n  @Input() hoverBorder?: string;\n  @Input() boxShadow?: string;\n  @Input() hoverBoxShadow?: string;\n  @Input() textColor?: string;\n  @Input() backgroundColor?: string;\n  @Input() backgroundImageSize?: IBackgroundImageSize;\n  @Input() backgroundImagePosition?: IBackgroundImagePosition;\n\n  get teaserHeightForTemplate() {\n    return this.teaserHeight ? `${this.teaserHeight}px` : undefined;\n  }\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\nimport {\n  IBackgroundImagePosition,\n  IBackgroundImageSize\n} from '../teaser-stack.interface';\n\n@Component({\n  selector: 'sm-teaser-layout-1',\n  templateUrl: './teaser-layout-1.component.html',\n  styleUrls: ['./teaser-layout-1.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TeaserLayout1Component {\n  @Input() link?: string;\n  @Input() linkTarget?: 'blank';\n  @Input() teaserHeight?: number;\n  @Input() imageUrl?: string;\n  @Input() header?: string;\n  @Input() description?: string;\n  @Input() border?: string;\n  @Input() hoverBorder?: string;\n  @Input() boxShadow?: string;\n  @Input() hoverBoxShadow?: string;\n  @Input() textColor?: string;\n  @Input() backgroundColor?: string;\n  @Input() backgroundImageSize?: IBackgroundImageSize;\n  @Input() backgroundImagePosition?: IBackgroundImagePosition;\n\n  get teaserHeightForTemplate() {\n    return this.teaserHeight ? `${this.teaserHeight}px` : undefined;\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1749,15 +2065,15 @@
                         "name": "teaserHeightForTemplate",
                         "type": "",
                         "returnType": "",
-                        "line": 28
+                        "line": 29
                     }
                 }
             },
-            "templateData": "<a\n  class=\"teaser\"\n  [class.has-hover-box-shadow]=\"hoverBoxShadow\"\n  [smNavigate]=\"link || ''\"\n  [style.--border]=\"border\"\n  [style.--hover-border]=\"hoverBorder || border\"\n  [style.--box-shadow]=\"boxShadow\"\n  [style.--hover-box-shadow]=\"hoverBoxShadow || boxShadow\"\n  [style.--image-height]=\"teaserHeightForTemplate\"\n  [style.--background-color]=\"backgroundColor\"\n  [style.--text-color]=\"textColor\"\n  [style.--background-image-size]=\"backgroundImageSize\"\n>\n  <div class=\"teaser__image-container\">\n    <img [smScaleImage]=\"imageUrl || ''\" masonryLazy loading=\"lazy\" [smWidthRounding]=\"100\" width=\"100%\" alt=\"{{ header }}\" />\n  </div>\n  <div class=\"teaser__text-container\">\n    <h3 class=\"text text--h3\">{{ header }}</h3>\n    <p class=\"text text--p\">\n      {{ description }} {{link}}\n    </p>\n  </div>\n</a>\n"
+            "templateData": "<a\n  class=\"teaser\"\n  [class.has-hover-box-shadow]=\"hoverBoxShadow\"\n  [smNavigate]=\"link || ''\"\n  [smNavigateTarget]=\"linkTarget || ''\"\n  [style.--border]=\"border\"\n  [style.--hover-border]=\"hoverBorder || border\"\n  [style.--box-shadow]=\"boxShadow\"\n  [style.--hover-box-shadow]=\"hoverBoxShadow || boxShadow\"\n  [style.--image-height]=\"teaserHeightForTemplate\"\n  [style.--background-color]=\"backgroundColor\"\n  [style.--text-color]=\"textColor\"\n  [style.--background-image-size]=\"backgroundImageSize\"\n>\n  <div class=\"teaser__image-container\">\n    <img [smScaleImage]=\"imageUrl || ''\" masonryLazy loading=\"lazy\" [smWidthRounding]=\"100\" width=\"100%\" alt=\"{{ header }}\" />\n  </div>\n  <div class=\"teaser__text-container\">\n    <h3 class=\"text text--h3\">{{ header }}</h3>\n    <p class=\"text text--p\">\n      {{ description }} {{link}}\n    </p>\n  </div>\n</a>\n"
         },
         {
             "name": "TeaserLayout2Component",
-            "id": "component-TeaserLayout2Component-25e674050b2ccf3372b96e94c0d5f89cfec4c4737b6528235794a0c63bc95dd8bbd09c1c5640fca9f7a95eca9e7145766add644beff2e9c0950c622bb094ba38",
+            "id": "component-TeaserLayout2Component-a6bad35231477942d7efc7593fdb90aca08ff851979859ca0004bcde207dc416ddbaad783f8c958537337dcc11435e34317c1e2b3d86b5f496ab7c3a7c20465a",
             "file": "projects/ng-components/src/components/teaser-stack/teaser-layout-2/teaser-layout-2.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -1779,7 +2095,7 @@
                     "name": "backgroundColor",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 21,
+                    "line": 22,
                     "type": "string",
                     "decorators": []
                 },
@@ -1788,7 +2104,7 @@
                     "defaultValue": "'center center'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 23,
+                    "line": 24,
                     "type": "IBackgroundImagePosition",
                     "decorators": []
                 },
@@ -1797,7 +2113,7 @@
                     "defaultValue": "'cover'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 22,
+                    "line": 23,
                     "type": "IBackgroundImageSize",
                     "decorators": []
                 },
@@ -1805,7 +2121,7 @@
                     "name": "border",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 17,
                     "type": "string",
                     "decorators": []
                 },
@@ -1813,7 +2129,7 @@
                     "name": "boxShadow",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
+                    "line": 19,
                     "type": "string",
                     "decorators": []
                 },
@@ -1821,7 +2137,7 @@
                     "name": "description",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 16,
                     "type": "string",
                     "decorators": []
                 },
@@ -1829,7 +2145,7 @@
                     "name": "header",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 14,
+                    "line": 15,
                     "type": "string",
                     "decorators": []
                 },
@@ -1837,7 +2153,7 @@
                     "name": "hoverBorder",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 18,
                     "type": "string",
                     "decorators": []
                 },
@@ -1845,7 +2161,7 @@
                     "name": "hoverBoxShadow",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 20,
                     "type": "string",
                     "decorators": []
                 },
@@ -1853,7 +2169,7 @@
                     "name": "imageUrl",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 14,
                     "type": "string",
                     "decorators": []
                 },
@@ -1866,10 +2182,18 @@
                     "decorators": []
                 },
                 {
-                    "name": "teaserHeight",
+                    "name": "linkTarget",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 12,
+                    "type": "",
+                    "decorators": []
+                },
+                {
+                    "name": "teaserHeight",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
                     "type": "number",
                     "decorators": []
                 },
@@ -1877,7 +2201,7 @@
                     "name": "textColor",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 20,
+                    "line": 21,
                     "type": "string",
                     "decorators": []
                 }
@@ -1892,7 +2216,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\nimport { IBackgroundImagePosition, IBackgroundImageSize } from '../teaser-stack.interface';\n\n@Component({\n  selector: 'sm-teaser-layout-2',\n  templateUrl: './teaser-layout-2.component.html',\n  styleUrls: ['./teaser-layout-2.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TeaserLayout2Component {\n  @Input() link?: string;\n  @Input() teaserHeight?: number;\n  @Input() imageUrl?: string;\n  @Input() header?: string;\n  @Input() description?: string;\n  @Input() border?: string;\n  @Input() hoverBorder?: string;\n  @Input() boxShadow?: string;\n  @Input() hoverBoxShadow?: string;\n  @Input() textColor?: string;\n  @Input() backgroundColor?: string;\n  @Input() backgroundImageSize?: IBackgroundImageSize = 'cover';\n  @Input() backgroundImagePosition?: IBackgroundImagePosition = 'center center';\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\nimport { IBackgroundImagePosition, IBackgroundImageSize } from '../teaser-stack.interface';\n\n@Component({\n  selector: 'sm-teaser-layout-2',\n  templateUrl: './teaser-layout-2.component.html',\n  styleUrls: ['./teaser-layout-2.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TeaserLayout2Component {\n  @Input() link?: string;\n  @Input() linkTarget?: 'blank';\n  @Input() teaserHeight?: number;\n  @Input() imageUrl?: string;\n  @Input() header?: string;\n  @Input() description?: string;\n  @Input() border?: string;\n  @Input() hoverBorder?: string;\n  @Input() boxShadow?: string;\n  @Input() hoverBoxShadow?: string;\n  @Input() textColor?: string;\n  @Input() backgroundColor?: string;\n  @Input() backgroundImageSize?: IBackgroundImageSize = 'cover';\n  @Input() backgroundImagePosition?: IBackgroundImagePosition = 'center center';\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1901,11 +2225,11 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<a\n  class=\"teaser\"\n  [smNavigate]=\"link || ''\"\n  [smScaleImage]=\"imageUrl || ''\"\n  [smWidthRounding]=\"100\"\n  [style.--teaser-height]=\"teaserHeight ? teaserHeight + 'px' : ''\"\n  [style.--background-color]=\"backgroundColor\"\n  [style.--background-image-position]=\"backgroundImagePosition\"\n  [style.--background-image-size]=\"backgroundImageSize\"\n>\n  <img *ngIf=\"!teaserHeight\"\n    [smScaleImage]=\"imageUrl || ''\"\n    masonryLazy loading=\"lazy\"\n    [smWidthRounding]=\"100\">\n  <div class=\"teaser__titles\">\n    <h3>{{ header }}</h3>\n    <p>{{ description }}</p>\n  </div>\n</a>\n"
+            "templateData": "<a\n  class=\"teaser\"\n  [smNavigate]=\"link || ''\"\n  [smNavigateTarget]=\"linkTarget || ''\"\n  [smScaleImage]=\"imageUrl || ''\"\n  [smWidthRounding]=\"100\"\n  [style.--teaser-height]=\"teaserHeight ? teaserHeight + 'px' : ''\"\n  [style.--background-color]=\"backgroundColor\"\n  [style.--background-image-position]=\"backgroundImagePosition\"\n  [style.--background-image-size]=\"backgroundImageSize\"\n>\n  <img *ngIf=\"!teaserHeight\"\n    [smScaleImage]=\"imageUrl || ''\"\n    masonryLazy loading=\"lazy\"\n    [smWidthRounding]=\"100\">\n  <div class=\"teaser__titles\">\n    <h3>{{ header }}</h3>\n    <p>{{ description }}</p>\n  </div>\n</a>\n"
         },
         {
             "name": "TeaserLayout3Component",
-            "id": "component-TeaserLayout3Component-bd1815aecc1ece38b3c316734b97072db046f04bfbd3ad0f994002a5b4ee4d435dfe093c55b8ebebe43a5b1d049e238e06037adf1b114135000507d6f87a8485",
+            "id": "component-TeaserLayout3Component-b1a238b227b56f7e831a13f07503eeac9698252e3e4761cde88f02a531e4c807a06433d519d799e2efa9bfd237e6beda6775611768c27845d076d274557b8ad2",
             "file": "projects/ng-components/src/components/teaser-stack/teaser-layout-3/teaser-layout-3.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -1927,7 +2251,7 @@
                     "name": "backgroundColor",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 21,
+                    "line": 22,
                     "type": "string",
                     "decorators": []
                 },
@@ -1936,7 +2260,7 @@
                     "defaultValue": "'center center'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 23,
+                    "line": 24,
                     "type": "IBackgroundImagePosition",
                     "decorators": []
                 },
@@ -1945,7 +2269,7 @@
                     "defaultValue": "'cover'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 22,
+                    "line": 23,
                     "type": "IBackgroundImageSize",
                     "decorators": []
                 },
@@ -1953,7 +2277,7 @@
                     "name": "border",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 17,
                     "type": "string",
                     "decorators": []
                 },
@@ -1961,7 +2285,7 @@
                     "name": "boxShadow",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
+                    "line": 19,
                     "type": "string",
                     "decorators": []
                 },
@@ -1969,7 +2293,7 @@
                     "name": "description",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 16,
                     "type": "string",
                     "decorators": []
                 },
@@ -1977,7 +2301,7 @@
                     "name": "header",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 14,
+                    "line": 15,
                     "type": "string",
                     "decorators": []
                 },
@@ -1985,7 +2309,7 @@
                     "name": "hoverBorder",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 18,
                     "type": "string",
                     "decorators": []
                 },
@@ -1993,7 +2317,7 @@
                     "name": "hoverBoxShadow",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 20,
                     "type": "string",
                     "decorators": []
                 },
@@ -2001,7 +2325,7 @@
                     "name": "imageUrl",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 14,
                     "type": "string",
                     "decorators": []
                 },
@@ -2014,10 +2338,18 @@
                     "decorators": []
                 },
                 {
-                    "name": "teaserHeight",
+                    "name": "linkTarget",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 12,
+                    "type": "",
+                    "decorators": []
+                },
+                {
+                    "name": "teaserHeight",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
                     "type": "number",
                     "decorators": []
                 },
@@ -2025,7 +2357,7 @@
                     "name": "textColor",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 20,
+                    "line": 21,
                     "type": "string",
                     "decorators": []
                 }
@@ -2040,7 +2372,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\nimport { IBackgroundImagePosition, IBackgroundImageSize } from '../teaser-stack.interface';\n\n@Component({\n  selector: 'sm-teaser-layout-3',\n  templateUrl: './teaser-layout-3.component.html',\n  styleUrls: ['./teaser-layout-3.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TeaserLayout3Component {\n  @Input() link?: string;\n  @Input() teaserHeight?: number;\n  @Input() imageUrl?: string;\n  @Input() header?: string;\n  @Input() description?: string;\n  @Input() border?: string;\n  @Input() hoverBorder?: string;\n  @Input() boxShadow?: string;\n  @Input() hoverBoxShadow?: string;\n  @Input() textColor?: string;\n  @Input() backgroundColor?: string;\n  @Input() backgroundImageSize?: IBackgroundImageSize = 'cover';\n  @Input() backgroundImagePosition?: IBackgroundImagePosition = 'center center';\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\nimport { IBackgroundImagePosition, IBackgroundImageSize } from '../teaser-stack.interface';\n\n@Component({\n  selector: 'sm-teaser-layout-3',\n  templateUrl: './teaser-layout-3.component.html',\n  styleUrls: ['./teaser-layout-3.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TeaserLayout3Component {\n  @Input() link?: string;\n  @Input() linkTarget?: 'blank';\n  @Input() teaserHeight?: number;\n  @Input() imageUrl?: string;\n  @Input() header?: string;\n  @Input() description?: string;\n  @Input() border?: string;\n  @Input() hoverBorder?: string;\n  @Input() boxShadow?: string;\n  @Input() hoverBoxShadow?: string;\n  @Input() textColor?: string;\n  @Input() backgroundColor?: string;\n  @Input() backgroundImageSize?: IBackgroundImageSize = 'cover';\n  @Input() backgroundImagePosition?: IBackgroundImagePosition = 'center center';\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2049,7 +2381,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<a\n  class=\"teaser\"\n  [class.has-hover-box-shadow]=\"hoverBoxShadow\"\n  [smNavigate]=\"link || ''\"\n  [style.--border]=\"border\"\n  [style.--hover-border]=\"hoverBorder || border\"\n  [style.--box-shadow]=\"boxShadow\"\n  [style.--hover-box-shadow]=\"hoverBoxShadow || boxShadow\"\n  [style.--teaser-height]=\"teaserHeight ? teaserHeight + 'px' : ''\"\n  [style.--text-color]=\"textColor\"\n  [style.--background-color]=\"backgroundColor\"\n  [style.--background-image-size]=\"backgroundImageSize\"\n  [style.--background-image-position]=\"backgroundImagePosition\"\n>\n  <div class=\"teaser__image-container\">\n    <img class=\"image\" [smScaleImage]=\"imageUrl || ''\" masonryLazy loading=\"lazy\" [smWidthRounding]=\"100\" alt=\"{{ header }}\" />\n  </div>\n  <div class=\"teaser__text-container\" *ngIf=\"header || description\">\n    <h3 *ngIf=\"header\" class=\"teaser__text-container__header\">{{ header }}</h3>\n    <p *ngIf=\"description\" class=\"teaser__text-container__description\">\n      {{ description }}\n    </p>\n  </div>\n</a>\n"
+            "templateData": "<a\n  class=\"teaser\"\n  [class.has-hover-box-shadow]=\"hoverBoxShadow\"\n  [smNavigate]=\"link || ''\"\n  [smNavigateTarget]=\"linkTarget || ''\"\n  [style.--border]=\"border\"\n  [style.--hover-border]=\"hoverBorder || border\"\n  [style.--box-shadow]=\"boxShadow\"\n  [style.--hover-box-shadow]=\"hoverBoxShadow || boxShadow\"\n  [style.--teaser-height]=\"teaserHeight ? teaserHeight + 'px' : ''\"\n  [style.--text-color]=\"textColor\"\n  [style.--background-color]=\"backgroundColor\"\n  [style.--background-image-size]=\"backgroundImageSize\"\n  [style.--background-image-position]=\"backgroundImagePosition\"\n>\n  <div class=\"teaser__image-container\">\n    <img class=\"image\" [smScaleImage]=\"imageUrl || ''\" masonryLazy loading=\"lazy\" [smWidthRounding]=\"100\" alt=\"{{ header }}\" />\n  </div>\n  <div class=\"teaser__text-container\" *ngIf=\"header || description\">\n    <h3 *ngIf=\"header\" class=\"teaser__text-container__header\">{{ header }}</h3>\n    <p *ngIf=\"description\" class=\"teaser__text-container__description\">\n      {{ description }}\n    </p>\n  </div>\n</a>\n"
         },
         {
             "name": "TeaserStackComponent",
@@ -2475,7 +2807,7 @@
                     }
                 }
             },
-            "templateData": "<div class=\"teaser-stack-layout-1\"\n  [style.--background-color]=\"backgroundColor\"\n  [style.--background-image-position]=\"backgroundImagePosition\"\n  [style.--background-image-size]=\"backgroundImageSize\"\n  [smScaleImage]=\"backgroundImage || ''\"\n  [smWidthRounding]=\"100\"\n  [ngClass]=\"{'full-page-width': fullPageWidth}\">\n  <div class=\"teaser-stack-layout-1-container\">\n    <div *ngIf=\"title || description\" class=\"teaser-stack-text-container\">\n      <h2 *ngIf=\"title\" class=\"teaser-stack-title\">\n        {{ title }}\n      </h2>\n      <p *ngIf=\"description\" class=\"teaser-stack-description\">\n        {{ description }}\n      </p>\n    </div>\n    <div\n      class=\"teaser-stack\"\n      [ngClass]=\"teaserHeight ? 'no-float' : 'float'\"\n      [style.--column-count]=\"columnCount\"\n    >\n      <ngx-masonry (layoutComplete)=\"reDoLayout()\" *ngIf=\"!teaserHeight; else withoutTeaserHeight\">\n        <sm-teaser\n          ngxMasonryItem\n          *ngFor=\"let teaser of finalTeasers; trackBy: trackByFn\"\n          [imageUrl]=\"teaser?.imageUrl\"\n          [header]=\"teaser?.header\"\n          [description]=\"teaser?.description\"\n          [border]=\"teaser?.border\"\n          [hoverBorder]=\"teaser?.hoverBorder\"\n          [boxShadow]=\"teaser?.boxShadow\"\n          [hoverBoxShadow]=\"teaser?.hoverBoxShadow\"\n          [textColor]=\"teaser?.textColor\"\n          [link]=\"teaser?.link\"\n          [backgroundColor]=\"teaser?.backgroundColor\"\n          [backgroundImageSize]=\"teaser.backgroundImageSize\"\n          [layout]=\"teaser.layout || layout\"\n          [backgroundImagePosition]=\"teaser.backgroundImagePosition\"\n          [teaserHeight]=\"teaser.teaserHeight || teaserHeight\"\n        ></sm-teaser>\n      </ngx-masonry>\n      <ng-template #withoutTeaserHeight>\n        <sm-teaser\n          *ngFor=\"let teaser of finalTeasers; trackBy: trackByFn\"\n          [imageUrl]=\"teaser?.imageUrl\"\n          [header]=\"teaser?.header\"\n          [description]=\"teaser?.description\"\n          [border]=\"teaser?.border\"\n          [hoverBorder]=\"teaser?.hoverBorder\"\n          [boxShadow]=\"teaser?.boxShadow\"\n          [hoverBoxShadow]=\"teaser?.hoverBoxShadow\"\n          [textColor]=\"teaser?.textColor\"\n          [link]=\"teaser?.link\"\n          [backgroundColor]=\"teaser?.backgroundColor\"\n          [backgroundImageSize]=\"teaser.backgroundImageSize\"\n          [layout]=\"teaser.layout || layout\"\n          [backgroundImagePosition]=\"teaser.backgroundImagePosition\"\n          [teaserHeight]=\"teaser.teaserHeight || teaserHeight\"\n        ></sm-teaser>\n      </ng-template>\n    </div>\n    <div *ngIf=\"readMoreLink && readMoreLabel\" class=\"teaser-stack-read-more-link\">\n      <a [smNavigate]=\"readMoreLink\" >\n        {{readMoreLabel}}\n      </a>\n    </div>\n  </div>\n</div>\n"
+            "templateData": "<div class=\"teaser-stack-layout-1\"\n  [style.--background-color]=\"backgroundColor\"\n  [style.--background-image-position]=\"backgroundImagePosition\"\n  [style.--background-image-size]=\"backgroundImageSize\"\n  [smScaleImage]=\"backgroundImage || ''\"\n  [smWidthRounding]=\"100\"\n  [ngClass]=\"{'full-page-width': fullPageWidth}\">\n  <div class=\"teaser-stack-layout-1-container\">\n    <div *ngIf=\"title || description\" class=\"teaser-stack-text-container\">\n      <h2 *ngIf=\"title\" class=\"teaser-stack-title\">\n        {{ title }}\n      </h2>\n      <p *ngIf=\"description\" class=\"teaser-stack-description\">\n        {{ description }}\n      </p>\n    </div>\n    <div\n      class=\"teaser-stack\"\n      [ngClass]=\"teaserHeight ? 'no-float' : 'float'\"\n      [style.--column-count]=\"columnCount\"\n    >\n      <ngx-masonry (layoutComplete)=\"reDoLayout()\" *ngIf=\"!teaserHeight; else withoutTeaserHeight\">\n        <sm-teaser\n          ngxMasonryItem\n          *ngFor=\"let teaser of finalTeasers; trackBy: trackByFn\"\n          [imageUrl]=\"teaser?.imageUrl\"\n          [header]=\"teaser?.header\"\n          [description]=\"teaser?.description\"\n          [border]=\"teaser?.border\"\n          [hoverBorder]=\"teaser?.hoverBorder\"\n          [boxShadow]=\"teaser?.boxShadow\"\n          [hoverBoxShadow]=\"teaser?.hoverBoxShadow\"\n          [textColor]=\"teaser?.textColor\"\n          [link]=\"teaser?.link\"\n          [linkTarget]=\"teaser?.linkTarget\"\n          [backgroundColor]=\"teaser?.backgroundColor\"\n          [backgroundImageSize]=\"teaser.backgroundImageSize\"\n          [layout]=\"teaser.layout || layout\"\n          [backgroundImagePosition]=\"teaser.backgroundImagePosition\"\n          [teaserHeight]=\"teaser.teaserHeight || teaserHeight\"\n        ></sm-teaser>\n      </ngx-masonry>\n      <ng-template #withoutTeaserHeight>\n        <sm-teaser\n          *ngFor=\"let teaser of finalTeasers; trackBy: trackByFn\"\n          [imageUrl]=\"teaser?.imageUrl\"\n          [header]=\"teaser?.header\"\n          [description]=\"teaser?.description\"\n          [border]=\"teaser?.border\"\n          [hoverBorder]=\"teaser?.hoverBorder\"\n          [boxShadow]=\"teaser?.boxShadow\"\n          [hoverBoxShadow]=\"teaser?.hoverBoxShadow\"\n          [textColor]=\"teaser?.textColor\"\n          [link]=\"teaser?.link\"\n          [linkTarget]=\"teaser?.linkTarget\"\n          [backgroundColor]=\"teaser?.backgroundColor\"\n          [backgroundImageSize]=\"teaser.backgroundImageSize\"\n          [layout]=\"teaser.layout || layout\"\n          [backgroundImagePosition]=\"teaser.backgroundImagePosition\"\n          [teaserHeight]=\"teaser.teaserHeight || teaserHeight\"\n        ></sm-teaser>\n      </ng-template>\n    </div>\n    <div *ngIf=\"readMoreLink && readMoreLabel\" class=\"teaser-stack-read-more-link\">\n      <a [smNavigate]=\"readMoreLink\" >\n        {{readMoreLabel}}\n      </a>\n    </div>\n  </div>\n</div>\n"
         }
     ],
     "modules": [
@@ -2650,6 +2982,50 @@
                     "elements": [
                         {
                             "name": "HeroHeaderComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "NavigationComponentModule",
+            "id": "module-NavigationComponentModule-91b6e21de037b29927890f9f593de9a563a97c0504afd74672818b6068a30e1ea08ff141729b44baf4ef59af7665c9b057a9582adebb9a24251e9b1f43bc6883",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/ng-components/src/components/navigation/navigation.module.ts",
+            "methods": [],
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { RouterModule } from '@angular/router';\nimport { NavigationModule as NavigationDirectiveModule } from '../../directives/navigation/navigation.module';\nimport { NavigationComponent } from './navigation.component';\n\n@NgModule({\n  declarations: [NavigationComponent],\n  imports: [\n    CommonModule,\n    RouterModule,\n    NavigationDirectiveModule,\n  ],\n  exports: [NavigationComponent]\n})\nexport class NavigationComponentModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "NavigationComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "NavigationComponent"
                         }
                     ]
                 },
@@ -3358,6 +3734,16 @@
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
             {
+                "name": "getAllActiveIds",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/navigation/navigation.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "(items: MenuItem[], ac: string) => {\n  const ids : string[] = [];\n  items.forEach(item => {\n    const activeInItems = getAllActiveIds(item.items || [], ac);\n\n    if (activeInItems.length) {\n      [...activeInItems, item.id].forEach(x => ids.push(x));\n    }\n    else if(item.url === ac) {\n      ids.push(item.id);\n    }\n\n  });\n  return ids;\n}"
+            },
+            {
                 "name": "headerLinks",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -3388,6 +3774,16 @@
                 "defaultValue": "[\n  'https://folkelarsen.dk/cms-media/catalog/308490B.JPG',\n  'https://folkelarsen.dk/pp-static/images/QXX_display.png',\n  'https://folkelarsen.dk/cms-media/catalog/623XB.jpg',\n  'https://folkelarsen.dk/cms-media/catalog/W011100B.png',\n  'https://folkelarsen.dk/cms-media/catalog/4214037b.jpg',\n  'https://folkelarsen.dk/pp-static/images/4218087Ba.jpg',\n  'https://folkelarsen.dk/cms-media/catalog/4243525B2.JPG',\n  'https://folkelarsen.dk/cms-media/catalog/11663B.jpg',\n  'https://folkelarsen.dk/pp-static/images/product/70218Ba.jpg',\n  'https://folkelarsen.dk/pp-static/images/85553.jpg',\n]"
             },
             {
+                "name": "isActive",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/navigation/navigation.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "(item: MenuItem, activeUrl: string): boolean => {\n  return (\n    item.url === activeUrl || !!item.items?.some((i) => isActive(i, activeUrl))\n  );\n}"
+            },
+            {
                 "name": "isExternalUrl",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -3414,8 +3810,8 @@
                 "file": "projects/ng-components/src/components/article-component/article.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "ILink[]",
-                "defaultValue": "[\n  {\n    label: 'Get Started',\n    href: 'https://www.folkelarsen.dk/page1',\n    target: '_blank',\n    backgroundColor: '#9925f1',\n    color: 'white',\n  },\n  {\n    label: 'Or get support',\n    href: 'https://www.folkelarsen.dk/page1',\n    target: '_blank',\n    backgroundColor: 'rgb(248, 248, 248)',\n    color: '#9925f1',\n  },\n]"
+                "type": "[]",
+                "defaultValue": "[\n  {\n    label: 'Get Started',\n    href: 'https://www.folkelarsen.dk/page1',\n    backgroundColor: '#9925f1',\n    color: 'white',\n  },\n  {\n    label: 'Or get support',\n    href: 'https://www.folkelarsen.dk/page1',\n    backgroundColor: 'rgb(248, 248, 248)',\n    color: '#9925f1',\n  },\n]"
             },
             {
                 "name": "prefixScaleImageUrl",
@@ -3570,7 +3966,7 @@
                 "name": "TargetType",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "\"_blank\" | \"_top\"",
+                "rawtype": "\"_blank\" | \"_self\" | \"_parent\" | \"_top\"",
                 "file": "projects/ng-components/src/components/hero-header/hero-header.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3875,8 +4271,8 @@
                     "file": "projects/ng-components/src/components/article-component/article.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "ILink[]",
-                    "defaultValue": "[\n  {\n    label: 'Get Started',\n    href: 'https://www.folkelarsen.dk/page1',\n    target: '_blank',\n    backgroundColor: '#9925f1',\n    color: 'white',\n  },\n  {\n    label: 'Or get support',\n    href: 'https://www.folkelarsen.dk/page1',\n    target: '_blank',\n    backgroundColor: 'rgb(248, 248, 248)',\n    color: '#9925f1',\n  },\n]"
+                    "type": "[]",
+                    "defaultValue": "[\n  {\n    label: 'Get Started',\n    href: 'https://www.folkelarsen.dk/page1',\n    backgroundColor: '#9925f1',\n    color: 'white',\n  },\n  {\n    label: 'Or get support',\n    href: 'https://www.folkelarsen.dk/page1',\n    backgroundColor: 'rgb(248, 248, 248)',\n    color: '#9925f1',\n  },\n]"
                 },
                 {
                     "name": "Template",
@@ -3920,6 +4316,28 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "literal type"
+                }
+            ],
+            "projects/ng-components/src/components/navigation/navigation.component.ts": [
+                {
+                    "name": "getAllActiveIds",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/navigation/navigation.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "(items: MenuItem[], ac: string) => {\n  const ids : string[] = [];\n  items.forEach(item => {\n    const activeInItems = getAllActiveIds(item.items || [], ac);\n\n    if (activeInItems.length) {\n      [...activeInItems, item.id].forEach(x => ids.push(x));\n    }\n    else if(item.url === ac) {\n      ids.push(item.id);\n    }\n\n  });\n  return ids;\n}"
+                },
+                {
+                    "name": "isActive",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/navigation/navigation.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "(item: MenuItem, activeUrl: string): boolean => {\n  return (\n    item.url === activeUrl || !!item.items?.some((i) => isActive(i, activeUrl))\n  );\n}"
                 }
             ],
             "projects/ng-components/src/components/hero-header/hero-header.stories.ts": [
@@ -4034,7 +4452,7 @@
                     "name": "TargetType",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "\"_blank\" | \"_top\"",
+                    "rawtype": "\"_blank\" | \"_self\" | \"_parent\" | \"_top\"",
                     "file": "projects/ng-components/src/components/hero-header/hero-header.component.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -4312,12 +4730,50 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/ng-components/src/components/navigation/navigation.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "NavigationComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/11",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/navigation/navigation.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "MenuItem",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/navigation/navigation.component.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "getAllActiveIds",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/navigation/navigation.component.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "isActive",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/ng-components/src/components/teaser-stack/teaser-layout-1/teaser-layout-1.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "TeaserLayout1Component",
                 "coveragePercent": 0,
-                "coverageCount": "0/14",
+                "coverageCount": "0/15",
                 "status": "low"
             },
             {
@@ -4326,7 +4782,7 @@
                 "linktype": "component",
                 "name": "TeaserLayout2Component",
                 "coveragePercent": 0,
-                "coverageCount": "0/14",
+                "coverageCount": "0/15",
                 "status": "low"
             },
             {
@@ -4335,7 +4791,7 @@
                 "linktype": "component",
                 "name": "TeaserLayout3Component",
                 "coveragePercent": 0,
-                "coverageCount": "0/14",
+                "coverageCount": "0/15",
                 "status": "low"
             },
             {
@@ -4551,7 +5007,7 @@
                 "linktype": "interface",
                 "name": "ITeaser",
                 "coveragePercent": 0,
-                "coverageCount": "0/15",
+                "coverageCount": "0/16",
                 "status": "low"
             },
             {
