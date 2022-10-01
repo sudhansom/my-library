@@ -8,7 +8,6 @@
   [style.--box-shadow]="boxShadow"
   [style.--hover-box-shadow]="hoverBoxShadow || boxShadow"
   [style.--teaser-height]="teaserHeight ? teaserHeight + 'px' : ''"
-  [style.--text-color]="textColor"
   [style.--background-color]="backgroundColor"
   [style.--background-image-size]="backgroundImageSize"
   [style.--background-image-position]="backgroundImagePosition"
@@ -17,8 +16,8 @@
     <img class="image" [smScaleImage]="imageUrl || ''" masonryLazy loading="lazy" [smWidthRounding]="100" alt="{{ header }}" />
   </div>
   <div class="teaser__text-container" *ngIf="header || description">
-    <h3 *ngIf="header" class="teaser__text-container__header">{{ header }}</h3>
-    <p *ngIf="description" class="teaser__text-container__description">
+    <h3 *ngIf="header" [style.color]="textColor" class="teaser__text-container__header">{{ header }}</h3>
+    <p *ngIf="description" [style.color]="textColor" class="teaser__text-container__description">
       {{ description }}
     </p>
   </div>
