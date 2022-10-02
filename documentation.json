@@ -296,6 +296,74 @@
             "duplicateName": "ILink-1"
         },
         {
+            "name": "ILinks",
+            "id": "interface-ILinks-2220d30703f974d63e4e722463e385627cf3752090b5f9c35556a55ea4bcc4d126710b6c39fce07a8d3e68448b1674809cb770a043b07cdfd6e900b1018efdec",
+            "file": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\nexport interface ILinks {\n  label: string;\n  href: string;\n  size: 'lg' | 'sm' | 'md';\n  theme: string;\n  stroked: boolean;\n  target?: string;\n}\n\n@Component({\n  selector: 'sm-banner-layout-1',\n  templateUrl: './banner-layout-1.component.html',\n  styleUrls: ['./banner-layout-1.component.scss'],\n})\nexport class BannerLayout1Component {\n  @Input() title = '';\n  @Input() description = '';\n  @Input() height?: number;\n  @Input() contentPosition: 'left' | 'right' = 'left';\n  @Input() fullPageWidth = false;\n\n  @Input() backgroundImagePosition = '';\n  @Input() backgroundImageSize = '';\n  @Input() backgroundImageUrl = '';\n  @Input() backgroundImageFullPageWidth = false;\n\n  @Input() contentTextColor = '';\n  @Input() contentBackgroundColor = '';\n\n  @Input() links: ILinks[] = [];\n\n  constructor() { }\n}\n",
+            "properties": [
+                {
+                    "name": "href",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "size",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "\"lg\" | \"sm\" | \"md\"",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "stroked",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                },
+                {
+                    "name": "target",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 9
+                },
+                {
+                    "name": "theme",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        },
+        {
             "name": "IPrefixImageUtlOptions",
             "id": "interface-IPrefixImageUtlOptions-8e0fa86ee26dfcda82a92e01a3e7660140b7bf44b5552f2d3c3a4df07159e1536a403f69ba385759fc89371fecad7ece642c92dfcb2b72ff8a1c87f8841cd4ed",
             "file": "projects/ng-components/src/utils/prefixScaleImageUrl.ts",
@@ -1204,6 +1272,162 @@
             ],
             "stylesData": "",
             "templateData": "<div\n  class=\"image-article\"\n  [class.left]=\"imagePosition === 'left'\"\n  [class.right]=\"imagePosition === 'right'\"\n  [style.--image-order]=\"imagePosition === 'left'? 0 : 2\"\n  [style.--image-border-radius-mobile]=\"imageBorderRadius\"\n  [style.--image-border-radius]=\"imagePosition ==='left'? '0 ' + imageBorderRadius + ' ' + imageBorderRadius + ' 0' :  imageBorderRadius + ' 0 '  + '0 ' + imageBorderRadius \"\n  [style.--background-image]=\"'url(\\'' + image + '\\')'\"\n  [style.--background-color]=\"backgroundColor\"\n  [style.--box-shadow]=\"boxShadow\"\n>\n  <div class=\"image-article__image-container\">\n    <img class=\"image-article__image-container__image\" src=\"{{ image }}\" alt=\"\" />\n  </div>\n  <div class=\"image-article__article\">\n    <img class=\"icon\" src=\"{{ icon }}\" alt=\"logo\" />\n    <h3 class=\"header\">{{ header }}</h3>\n    <p class=\"description\">\n      {{ description }}\n    </p>\n\n    <div class=\"image-article__article__links-container\" *ngIf=\"links?.length\">\n      <a\n        sitemule-button\n        *ngFor=\"let link of links\"\n        [color]=\"link.color\"\n        [ngStyle]=\"{\n          backgroundColor: link.backgroundColor,\n          color: link.color\n        }\"\n        [href]=\"link.href\"\n        [target]=\"link.target\"\n        [stroked]=\"false\"\n        size=\"md\"\n        mobileTabletSize=\"md\"\n        textSize=\"md\"\n        mobileTextSize=\"md\"\n      >\n        {{ link.label }}\n      </a>\n    </div>\n  </div>\n</div>\n"
+        },
+        {
+            "name": "BannerLayout1Component",
+            "id": "component-BannerLayout1Component-2220d30703f974d63e4e722463e385627cf3752090b5f9c35556a55ea4bcc4d126710b6c39fce07a8d3e68448b1674809cb770a043b07cdfd6e900b1018efdec",
+            "file": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "sm-banner-layout-1",
+            "styleUrls": [
+                "./banner-layout-1.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./banner-layout-1.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundImageFullPageWidth",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 27,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "backgroundImagePosition",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 24,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "backgroundImageSize",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "backgroundImageUrl",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 26,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "contentBackgroundColor",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 30,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "contentPosition",
+                    "defaultValue": "'left'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "\"left\" | \"right\"",
+                    "decorators": []
+                },
+                {
+                    "name": "contentTextColor",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 29,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "description",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "fullPageWidth",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "height",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "links",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 32,
+                    "type": "ILinks[]",
+                    "decorators": []
+                },
+                {
+                    "name": "title",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\nexport interface ILinks {\n  label: string;\n  href: string;\n  size: 'lg' | 'sm' | 'md';\n  theme: string;\n  stroked: boolean;\n  target?: string;\n}\n\n@Component({\n  selector: 'sm-banner-layout-1',\n  templateUrl: './banner-layout-1.component.html',\n  styleUrls: ['./banner-layout-1.component.scss'],\n})\nexport class BannerLayout1Component {\n  @Input() title = '';\n  @Input() description = '';\n  @Input() height?: number;\n  @Input() contentPosition: 'left' | 'right' = 'left';\n  @Input() fullPageWidth = false;\n\n  @Input() backgroundImagePosition = '';\n  @Input() backgroundImageSize = '';\n  @Input() backgroundImageUrl = '';\n  @Input() backgroundImageFullPageWidth = false;\n\n  @Input() contentTextColor = '';\n  @Input() contentBackgroundColor = '';\n\n  @Input() links: ILinks[] = [];\n\n  constructor() { }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@use '../../../../../variables';\n\n:host {\n  .hero {\n    height: var(--hero-component-height);\n    background-image: var(--background-image);\n    background-size: var(--background-image-size);\n    background-position: var(--background-image-position);\n    background-repeat: no-repeat;\n\n    &__content-container {\n      height: 100%;\n      position: relative;\n    }\n\n    &__content {\n      width: calc(100% - var(--content-margin));\n      background-color: var(--content-background-color);\n      padding: 40px;\n      position: absolute;\n      bottom: 0;\n\n      h2 {\n        font-size: 35px;\n        line-height: 40px;\n        margin: 0;\n        color: var(--content-text-color);\n      }\n\n      p {\n        font-size: 16px;\n        line-height: 24px;\n        margin: 25px 0 30px;\n        color: var(--content-text-color);\n      }\n\n      a {\n        font-size: 16px;\n        text-decoration: none;\n      }\n    }\n\n    &.no-background-image-full-page-width {\n      margin-left: var(--content-margin);\n      margin-right: var(--content-margin);\n    }\n\n    @media (max-width: map-get(variables.$breakpoints, \"phone\")) {\n      a {\n        display: block;\n        margin-bottom: 10px;\n      }\n\n      .hero__content {\n        left: var(--content-margin);\n      }\n    }\n\n    @media (min-width: map-get(variables.$breakpoints, \"phone\")) {\n      a {\n        display: inline-block;\n        margin-right: 20px;\n      }\n\n      .hero__content {\n        width: 70%;\n      }\n\n      &.background-image-full-page-width {\n        &.content-position-right {\n          .hero__content {\n            right: var(--content-margin);\n          }\n        }\n\n        &.content-position-left {\n          .hero__content {\n            left: var(--content-margin);\n          }\n        }\n      }\n    }\n\n    @media (min-width: map-get(variables.$breakpoints, \"tablet\")) {\n      .hero__content {\n        width: 50%;\n      }\n\n      &.background-image-full-page-width {\n        &.no-full-page-width {\n          .hero__content-container {\n            margin-left: auto;\n            margin-right: auto;\n            max-width: calc(var(--max-content-width) + (var(--content-margin) * 2));\n          }\n        }\n      }\n\n      &.no-background-image-full-page-width {\n        margin-left: auto;\n        margin-right: auto;\n        max-width: var(--max-content-width);\n      }\n    }\n  }\n}\n",
+                    "styleUrl": "./banner-layout-1.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 32
+            },
+            "templateData": "<div\n  class=\"hero\"\n  *ngIf=\"title\"\n  [class.full-page-width]=\"fullPageWidth\"\n  [class.no-full-page-width]=\"!fullPageWidth\"\n  [class.background-image-full-page-width]=\"backgroundImageFullPageWidth\"\n  [class.no-background-image-full-page-width]=\"!backgroundImageFullPageWidth\"\n  [class.content-position-left]=\"contentPosition === 'left'\"\n  [class.content-position-right]=\"contentPosition === 'right'\"\n  [style.--hero-component-height]=\"height ? height + 'px' : '470px'\"\n  [style.--background-image]=\"'url(' + backgroundImageUrl + ')'\"\n  [style.--background-image-position]=\"backgroundImagePosition\"\n  [style.--background-image-size]=\"backgroundImageSize\"\n  [style.--content-text-color]=\"contentTextColor\"\n  [style.--content-background-color]=\"contentBackgroundColor\"\n>\n  <div class=\"hero__content-container\">\n    <div class=\"hero__content\">\n      <h2>{{ title }}</h2>\n      <p>\n        {{ description }}\n      </p>\n      <div *ngIf=\"links.length\" class=\"linkscontainer\">\n        <a\n          *ngFor=\"let link of links\"\n          sitemule-button\n          [smNavigate]=\"link.href\"\n          [stroked]=\"link.stroked\"\n          [size]=\"link.size\"\n          [color]=\"link.theme\"\n          style=\"background-color: #fff\"\n          [href]=\"link.href\"\n          [smNavigateTarget]=\"link.target\"\n          [uppercase]=\"true\"\n        >\n          {{ link.label }}\n        </a>\n      </div>\n    </div>\n  </div>\n</div>\n"
         },
         {
             "name": "ButtonComponent",
@@ -2389,7 +2613,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<a\n  class=\"teaser\"\n  [class.has-hover-box-shadow]=\"hoverBoxShadow\"\n  [smNavigate]=\"link || ''\"\n  [smNavigateTarget]=\"linkTarget || ''\"\n  [style.--border]=\"border\"\n  [style.--hover-border]=\"hoverBorder || border\"\n  [style.--box-shadow]=\"boxShadow\"\n  [style.--hover-box-shadow]=\"hoverBoxShadow || boxShadow\"\n  [style.--teaser-height]=\"teaserHeight ? teaserHeight + 'px' : ''\"\n  [style.--text-color]=\"textColor\"\n  [style.--background-color]=\"backgroundColor\"\n  [style.--background-image-size]=\"backgroundImageSize\"\n  [style.--background-image-position]=\"backgroundImagePosition\"\n>\n  <div class=\"teaser__image-container\">\n    <img class=\"image\" [smScaleImage]=\"imageUrl || ''\" masonryLazy loading=\"lazy\" [smWidthRounding]=\"100\" alt=\"{{ header }}\" />\n  </div>\n  <div class=\"teaser__text-container\" *ngIf=\"header || description\">\n    <h3 *ngIf=\"header\" class=\"teaser__text-container__header\">{{ header }}</h3>\n    <p *ngIf=\"description\" class=\"teaser__text-container__description\">\n      {{ description }}\n    </p>\n  </div>\n</a>\n"
+            "templateData": "<a\n  class=\"teaser\"\n  [class.has-hover-box-shadow]=\"hoverBoxShadow\"\n  [smNavigate]=\"link || ''\"\n  [smNavigateTarget]=\"linkTarget || ''\"\n  [style.--border]=\"border\"\n  [style.--hover-border]=\"hoverBorder || border\"\n  [style.--box-shadow]=\"boxShadow\"\n  [style.--hover-box-shadow]=\"hoverBoxShadow || boxShadow\"\n  [style.--teaser-height]=\"teaserHeight ? teaserHeight + 'px' : ''\"\n  [style.--background-color]=\"backgroundColor\"\n  [style.--background-image-size]=\"backgroundImageSize\"\n  [style.--background-image-position]=\"backgroundImagePosition\"\n>\n  <div class=\"teaser__image-container\">\n    <img class=\"image\" [smScaleImage]=\"imageUrl || ''\" masonryLazy loading=\"lazy\" [smWidthRounding]=\"100\" alt=\"{{ header }}\" />\n  </div>\n  <div class=\"teaser__text-container\" *ngIf=\"header || description\">\n    <h3 *ngIf=\"header\" [style.color]=\"textColor\" class=\"teaser__text-container__header\">{{ header }}</h3>\n    <p *ngIf=\"description\" [style.color]=\"textColor\" class=\"teaser__text-container__description\">\n      {{ description }}\n    </p>\n  </div>\n</a>\n"
         },
         {
             "name": "TeaserStackComponent",
@@ -2854,6 +3078,57 @@
                     "elements": [
                         {
                             "name": "ArticleComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "BannerLayout1Module",
+            "id": "module-BannerLayout1Module-2ae905571b0c9a229a77f5fa4ae06243be618247b9802291bd796d63e6891f1ddb0d36d1b190ce4c17769f1561d2551933fc1974327b938a4b7c7269b65f0c8f",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.module.ts",
+            "methods": [],
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { NavigationModule } from '../../../directives/navigation/navigation.module';\nimport { ButtonModule } from '../../button/button.module';\nimport { BannerLayout1Component } from './banner-layout-1.component';\n\n@NgModule({\n  declarations: [BannerLayout1Component],\n  imports: [NavigationModule, ButtonModule, CommonModule],\n  exports: [BannerLayout1Component],\n  providers: [],\n})\nexport class BannerLayout1Module {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "BannerLayout1Component"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "ButtonModule"
+                        },
+                        {
+                            "name": "NavigationModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "BannerLayout1Component"
                         }
                     ]
                 },
@@ -3772,6 +4047,16 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "heroInfo",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  title: 'Få gode råd om valg af det rigtige værktøj',\n  height: 500,\n  description:\n    'Om du har brug for hjælp til at vælge det rigtige værktøj eller et godt råd til en svær opgave, så er vi klar til at stille vores viden til rådighed for dig, så du får det helt rigtige udstyr til din opgave.',\n  contentPosition: 'left',\n  contentTextColor: 'white',\n  contentBackgroundColor: 'rgb(0, 59, 110)',\n  fullPageWidth: true,\n  backgroundImage: {\n    url: 'https://www.folkelarsen.dk/cms-media/page/hero-frontpage.jpg',\n    position: 'center top',\n    size: 'cover',\n    fullPageWidth: true,\n  },\n  links: [\n    {\n      label: 'SE VORES PRODUKTER',\n      href: 'https://www.folkelarsen.dk/page1',\n      target: '_blank',\n      size: 'md',\n      theme: 'primary',\n      stroked: true,\n    },\n  ],\n}"
+            },
+            {
                 "name": "images",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -3889,6 +4174,96 @@
                 "deprecationMessage": "",
                 "type": "Story<TeaserStackComponent>",
                 "defaultValue": "(args: TeaserStackComponent) => ({\n  component: TeaserStackComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<BannerLayout1Component>",
+                "defaultValue": "(args: BannerLayout1Component) => ({\n  component: BannerLayout1Component,\n  props: args,\n})"
+            },
+            {
+                "name": "type1",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "type2",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "type3",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "type4",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "type5",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "type6",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "type7",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "type8",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             }
         ],
         "functions": [],
@@ -4380,6 +4755,108 @@
                     "defaultValue": "(args:HeroHeaderComponent) => ({\n  component:HeroHeaderComponent,\n  props: args,\n})"
                 }
             ],
+            "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.stories.ts": [
+                {
+                    "name": "heroInfo",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  title: 'Få gode råd om valg af det rigtige værktøj',\n  height: 500,\n  description:\n    'Om du har brug for hjælp til at vælge det rigtige værktøj eller et godt råd til en svær opgave, så er vi klar til at stille vores viden til rådighed for dig, så du får det helt rigtige udstyr til din opgave.',\n  contentPosition: 'left',\n  contentTextColor: 'white',\n  contentBackgroundColor: 'rgb(0, 59, 110)',\n  fullPageWidth: true,\n  backgroundImage: {\n    url: 'https://www.folkelarsen.dk/cms-media/page/hero-frontpage.jpg',\n    position: 'center top',\n    size: 'cover',\n    fullPageWidth: true,\n  },\n  links: [\n    {\n      label: 'SE VORES PRODUKTER',\n      href: 'https://www.folkelarsen.dk/page1',\n      target: '_blank',\n      size: 'md',\n      theme: 'primary',\n      stroked: true,\n    },\n  ],\n}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<BannerLayout1Component>",
+                    "defaultValue": "(args: BannerLayout1Component) => ({\n  component: BannerLayout1Component,\n  props: args,\n})"
+                },
+                {
+                    "name": "type1",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "type2",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "type3",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "type4",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "type5",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "type6",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "type7",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "type8",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
+            ],
             "projects/ng-components/src/utils/isExternalUrl.ts": [
                 {
                     "name": "isExternalUrl",
@@ -4588,6 +5065,124 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BannerLayout1Component",
+                "coveragePercent": 0,
+                "coverageCount": "0/14",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ILinks",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "heroInfo",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "type1",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "type2",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "type3",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "type4",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "type5",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "type6",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "type7",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "type8",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

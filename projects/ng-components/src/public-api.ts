@@ -32,3 +32,5 @@ export * from "./pipes/scaleimage/scale-image.module";
 export * from "./pipes/scaleimage/scale-image.pipe";
 export * from "./utils/isExternalUrl";
 export * from "./utils/prefixScaleImageUrl";
+export * from "./components/banner/banner-layout-1/banner-layout-1.component";
+export * from "./components/banner/banner-layout-1/banner-layout-1.module";

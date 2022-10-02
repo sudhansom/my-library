@@ -1,0 +1,106 @@
+@use '../../../../../variables';
+
+:host {
+  .hero {
+    height: var(--hero-component-height);
+    background-image: var(--background-image);
+    background-size: var(--background-image-size);
+    background-position: var(--background-image-position);
+    background-repeat: no-repeat;
+
+    &__content-container {
+      height: 100%;
+      position: relative;
+    }
+
+    &__content {
+      width: calc(100% - var(--content-margin));
+      background-color: var(--content-background-color);
+      padding: 40px;
+      position: absolute;
+      bottom: 0;
+
+      h2 {
+        font-size: 35px;
+        line-height: 40px;
+        margin: 0;
+        color: var(--content-text-color);
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 24px;
+        margin: 25px 0 30px;
+        color: var(--content-text-color);
+      }
+
+      a {
+        font-size: 16px;
+        text-decoration: none;
+      }
+    }
+
+    &.no-background-image-full-page-width {
+      margin-left: var(--content-margin);
+      margin-right: var(--content-margin);
+    }
+
+    @media (max-width: map-get(variables.$breakpoints, "phone")) {
+      a {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .hero__content {
+        left: var(--content-margin);
+      }
+    }
+
+    @media (min-width: map-get(variables.$breakpoints, "phone")) {
+      a {
+        display: inline-block;
+        margin-right: 20px;
+      }
+
+      .hero__content {
+        width: 70%;
+      }
+
+      &.background-image-full-page-width {
+        &.content-position-right {
+          .hero__content {
+            right: var(--content-margin);
+          }
+        }
+
+        &.content-position-left {
+          .hero__content {
+            left: var(--content-margin);
+          }
+        }
+      }
+    }
+
+    @media (min-width: map-get(variables.$breakpoints, "tablet")) {
+      .hero__content {
+        width: 50%;
+      }
+
+      &.background-image-full-page-width {
+        &.no-full-page-width {
+          .hero__content-container {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: calc(var(--max-content-width) + (var(--content-margin) * 2));
+          }
+        }
+      }
+
+      &.no-background-image-full-page-width {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: var(--max-content-width);
+      }
+    }
+  }
+}

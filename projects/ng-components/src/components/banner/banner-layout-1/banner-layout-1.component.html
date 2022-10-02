@@ -1,0 +1,41 @@
+<div
+  class="hero"
+  *ngIf="title"
+  [class.full-page-width]="fullPageWidth"
+  [class.no-full-page-width]="!fullPageWidth"
+  [class.background-image-full-page-width]="backgroundImageFullPageWidth"
+  [class.no-background-image-full-page-width]="!backgroundImageFullPageWidth"
+  [class.content-position-left]="contentPosition === 'left'"
+  [class.content-position-right]="contentPosition === 'right'"
+  [style.--hero-component-height]="height ? height + 'px' : '470px'"
+  [style.--background-image]="'url(' + backgroundImageUrl + ')'"
+  [style.--background-image-position]="backgroundImagePosition"
+  [style.--background-image-size]="backgroundImageSize"
+  [style.--content-text-color]="contentTextColor"
+  [style.--content-background-color]="contentBackgroundColor"
+>
+  <div class="hero__content-container">
+    <div class="hero__content">
+      <h2>{{ title }}</h2>
+      <p>
+        {{ description }}
+      </p>
+      <div *ngIf="links.length" class="linkscontainer">
+        <a
+          *ngFor="let link of links"
+          sitemule-button
+          [smNavigate]="link.href"
+          [stroked]="link.stroked"
+          [size]="link.size"
+          [color]="link.theme"
+          style="background-color: #fff"
+          [href]="link.href"
+          [smNavigateTarget]="link.target || ''"
+          [uppercase]="true"
+        >
+          {{ link.label }}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
