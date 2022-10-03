@@ -1,6 +1,8 @@
 <a
   class="hero"
   *ngIf="title"
+  [smScaleImage]="backgroundImageUrl || ''"
+  [smWidthRounding]="100"
   [smNavigate]="wrapperLink?.href || ''"
   [smNavigateTarget]="wrapperLink?.target || ''"
   [class.full-page-width]="fullPageWidth"
@@ -10,7 +12,6 @@
   [class.content-position-left]="contentPosition === 'left'"
   [class.content-position-right]="contentPosition === 'right'"
   [style.--hero-component-height]="height ? height + 'px' : '470px'"
-  [style.--background-image]="'url(' + backgroundImageUrl + ')'"
   [style.--background-image-position]="backgroundImagePosition"
   [style.--background-image-size]="backgroundImageSize"
   [style.--content-text-color]="contentTextColor"

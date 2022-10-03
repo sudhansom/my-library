@@ -297,12 +297,12 @@
         },
         {
             "name": "ILinks",
-            "id": "interface-ILinks-2220d30703f974d63e4e722463e385627cf3752090b5f9c35556a55ea4bcc4d126710b6c39fce07a8d3e68448b1674809cb770a043b07cdfd6e900b1018efdec",
+            "id": "interface-ILinks-ffae120719c2dd064f2abb0701d5454a02a03abb6565825b4a19b5b15ff8dedd942d5e0bc3be276bd659baa90e7b32d2f8bdbaed626160e85bad790f079ecc31",
             "file": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\nexport interface ILinks {\n  label: string;\n  href: string;\n  size: 'lg' | 'sm' | 'md';\n  theme: string;\n  stroked: boolean;\n  target?: string;\n}\n\n@Component({\n  selector: 'sm-banner-layout-1',\n  templateUrl: './banner-layout-1.component.html',\n  styleUrls: ['./banner-layout-1.component.scss'],\n})\nexport class BannerLayout1Component {\n  @Input() title = '';\n  @Input() description = '';\n  @Input() height?: number;\n  @Input() contentPosition: 'left' | 'right' = 'left';\n  @Input() fullPageWidth = false;\n\n  @Input() backgroundImagePosition = '';\n  @Input() backgroundImageSize = '';\n  @Input() backgroundImageUrl = '';\n  @Input() backgroundImageFullPageWidth = false;\n\n  @Input() contentTextColor = '';\n  @Input() contentBackgroundColor = '';\n\n  @Input() links: ILinks[] = [];\n\n  constructor() { }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\ninterface ILinks {\n  label: string;\n  href: string;\n  size: 'lg' | 'sm' | 'md';\n  theme: string;\n  stroked: boolean;\n  target?: string;\n}\n\n@Component({\n  selector: 'sm-banner-layout-1',\n  templateUrl: './banner-layout-1.component.html',\n  styleUrls: ['./banner-layout-1.component.scss'],\n})\nexport class BannerLayout1Component {\n  @Input() title = '';\n  @Input() description = '';\n\n  @Input() height?: number;\n  @Input() contentPosition: 'left' | 'right' = 'left';\n  @Input() fullPageWidth = false;\n\n  @Input() backgroundImagePosition = '';\n  @Input() backgroundImageSize = '';\n  @Input() backgroundImageUrl = '';\n  @Input() backgroundImageFullPageWidth = false;\n\n  @Input() contentTextColor = '';\n  @Input() contentBackgroundColor = '';\n\n  @Input() links: ILinks[] = [];\n\n  @Input() wrapperLink?: {\n    href: string,\n    target?: string,\n  }\n}\n",
             "properties": [
                 {
                     "name": "href",
@@ -1275,7 +1275,7 @@
         },
         {
             "name": "BannerLayout1Component",
-            "id": "component-BannerLayout1Component-2220d30703f974d63e4e722463e385627cf3752090b5f9c35556a55ea4bcc4d126710b6c39fce07a8d3e68448b1674809cb770a043b07cdfd6e900b1018efdec",
+            "id": "component-BannerLayout1Component-ffae120719c2dd064f2abb0701d5454a02a03abb6565825b4a19b5b15ff8dedd942d5e0bc3be276bd659baa90e7b32d2f8bdbaed626160e85bad790f079ecc31",
             "file": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1297,7 +1297,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 27,
+                    "line": 28,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -1306,7 +1306,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 24,
+                    "line": 25,
                     "type": "string",
                     "decorators": []
                 },
@@ -1315,7 +1315,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 25,
+                    "line": 26,
                     "type": "string",
                     "decorators": []
                 },
@@ -1324,7 +1324,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 26,
+                    "line": 27,
                     "type": "string",
                     "decorators": []
                 },
@@ -1333,7 +1333,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 30,
+                    "line": 31,
                     "type": "string",
                     "decorators": []
                 },
@@ -1342,7 +1342,7 @@
                     "defaultValue": "'left'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 21,
+                    "line": 22,
                     "type": "\"left\" | \"right\"",
                     "decorators": []
                 },
@@ -1351,7 +1351,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 29,
+                    "line": 30,
                     "type": "string",
                     "decorators": []
                 },
@@ -1369,7 +1369,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 22,
+                    "line": 23,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -1377,7 +1377,7 @@
                     "name": "height",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 20,
+                    "line": 21,
                     "type": "number",
                     "decorators": []
                 },
@@ -1386,7 +1386,7 @@
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 32,
+                    "line": 33,
                     "type": "ILinks[]",
                     "decorators": []
                 },
@@ -1397,6 +1397,14 @@
                     "deprecationMessage": "",
                     "line": 18,
                     "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "wrapperLink",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 35,
+                    "type": "literal type",
                     "decorators": []
                 }
             ],
@@ -1410,24 +1418,16 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\nexport interface ILinks {\n  label: string;\n  href: string;\n  size: 'lg' | 'sm' | 'md';\n  theme: string;\n  stroked: boolean;\n  target?: string;\n}\n\n@Component({\n  selector: 'sm-banner-layout-1',\n  templateUrl: './banner-layout-1.component.html',\n  styleUrls: ['./banner-layout-1.component.scss'],\n})\nexport class BannerLayout1Component {\n  @Input() title = '';\n  @Input() description = '';\n  @Input() height?: number;\n  @Input() contentPosition: 'left' | 'right' = 'left';\n  @Input() fullPageWidth = false;\n\n  @Input() backgroundImagePosition = '';\n  @Input() backgroundImageSize = '';\n  @Input() backgroundImageUrl = '';\n  @Input() backgroundImageFullPageWidth = false;\n\n  @Input() contentTextColor = '';\n  @Input() contentBackgroundColor = '';\n\n  @Input() links: ILinks[] = [];\n\n  constructor() { }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\ninterface ILinks {\n  label: string;\n  href: string;\n  size: 'lg' | 'sm' | 'md';\n  theme: string;\n  stroked: boolean;\n  target?: string;\n}\n\n@Component({\n  selector: 'sm-banner-layout-1',\n  templateUrl: './banner-layout-1.component.html',\n  styleUrls: ['./banner-layout-1.component.scss'],\n})\nexport class BannerLayout1Component {\n  @Input() title = '';\n  @Input() description = '';\n\n  @Input() height?: number;\n  @Input() contentPosition: 'left' | 'right' = 'left';\n  @Input() fullPageWidth = false;\n\n  @Input() backgroundImagePosition = '';\n  @Input() backgroundImageSize = '';\n  @Input() backgroundImageUrl = '';\n  @Input() backgroundImageFullPageWidth = false;\n\n  @Input() contentTextColor = '';\n  @Input() contentBackgroundColor = '';\n\n  @Input() links: ILinks[] = [];\n\n  @Input() wrapperLink?: {\n    href: string,\n    target?: string,\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@use '../../../../../variables';\n\n:host {\n  .hero {\n    height: var(--hero-component-height);\n    background-image: var(--background-image);\n    background-size: var(--background-image-size);\n    background-position: var(--background-image-position);\n    background-repeat: no-repeat;\n\n    &__content-container {\n      height: 100%;\n      position: relative;\n    }\n\n    &__content {\n      width: calc(100% - var(--content-margin));\n      background-color: var(--content-background-color);\n      padding: 40px;\n      position: absolute;\n      bottom: 0;\n\n      h2 {\n        font-size: 35px;\n        line-height: 40px;\n        margin: 0;\n        color: var(--content-text-color);\n      }\n\n      p {\n        font-size: 16px;\n        line-height: 24px;\n        margin: 25px 0 30px;\n        color: var(--content-text-color);\n      }\n\n      a {\n        font-size: 16px;\n        text-decoration: none;\n      }\n    }\n\n    &.no-background-image-full-page-width {\n      margin-left: var(--content-margin);\n      margin-right: var(--content-margin);\n    }\n\n    @media (max-width: map-get(variables.$breakpoints, \"phone\")) {\n      a {\n        display: block;\n        margin-bottom: 10px;\n      }\n\n      .hero__content {\n        left: var(--content-margin);\n      }\n    }\n\n    @media (min-width: map-get(variables.$breakpoints, \"phone\")) {\n      a {\n        display: inline-block;\n        margin-right: 20px;\n      }\n\n      .hero__content {\n        width: 70%;\n      }\n\n      &.background-image-full-page-width {\n        &.content-position-right {\n          .hero__content {\n            right: var(--content-margin);\n          }\n        }\n\n        &.content-position-left {\n          .hero__content {\n            left: var(--content-margin);\n          }\n        }\n      }\n    }\n\n    @media (min-width: map-get(variables.$breakpoints, \"tablet\")) {\n      .hero__content {\n        width: 50%;\n      }\n\n      &.background-image-full-page-width {\n        &.no-full-page-width {\n          .hero__content-container {\n            margin-left: auto;\n            margin-right: auto;\n            max-width: calc(var(--max-content-width) + (var(--content-margin) * 2));\n          }\n        }\n      }\n\n      &.no-background-image-full-page-width {\n        margin-left: auto;\n        margin-right: auto;\n        max-width: var(--max-content-width);\n      }\n    }\n  }\n}\n",
+                    "data": "@use '../../../../../variables';\n\n:host {\n  .hero {\n    display: block;\n    height: var(--hero-component-height);\n    background-size: var(--background-image-size);\n    background-position: var(--background-image-position);\n    background-repeat: no-repeat;\n\n    &__content-container {\n      height: 100%;\n      position: relative;\n    }\n\n    &__content {\n      width: calc(100% - var(--content-margin));\n      background-color: var(--content-background-color);\n      padding: 40px;\n      position: absolute;\n      bottom: 0;\n\n      h2 {\n        font-size: 35px;\n        line-height: 40px;\n        margin: 0;\n        color: var(--content-text-color);\n      }\n\n      p {\n        font-size: 16px;\n        line-height: 24px;\n        margin: 25px 0 30px;\n        color: var(--content-text-color);\n      }\n\n      a {\n        font-size: 16px;\n        text-decoration: none;\n      }\n    }\n\n    &.no-background-image-full-page-width {\n      margin-left: var(--content-margin);\n      margin-right: var(--content-margin);\n    }\n\n    @media (max-width: map-get(variables.$breakpoints, \"phone\")) {\n      a {\n        display: block;\n        margin-bottom: 10px;\n      }\n\n      .hero__content {\n        left: var(--content-margin);\n      }\n    }\n\n    @media (min-width: map-get(variables.$breakpoints, \"phone\")) {\n      a {\n        display: inline-block;\n        margin-right: 20px;\n      }\n\n      .hero__content {\n        width: 70%;\n      }\n\n      &.background-image-full-page-width {\n        &.content-position-right {\n          .hero__content {\n            right: var(--content-margin);\n          }\n        }\n\n        &.content-position-left {\n          .hero__content {\n            left: var(--content-margin);\n          }\n        }\n      }\n    }\n\n    @media (min-width: map-get(variables.$breakpoints, \"tablet\")) {\n      .hero__content {\n        width: 50%;\n      }\n\n      &.background-image-full-page-width {\n        &.no-full-page-width {\n          .hero__content-container {\n            margin-left: auto;\n            margin-right: auto;\n            max-width: calc(var(--max-content-width) + (var(--content-margin) * 2));\n          }\n        }\n      }\n\n      &.no-background-image-full-page-width {\n        margin-left: auto;\n        margin-right: auto;\n        max-width: var(--max-content-width);\n      }\n    }\n  }\n}\n",
                     "styleUrl": "./banner-layout-1.component.scss"
                 }
             ],
             "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 32
-            },
-            "templateData": "<div\n  class=\"hero\"\n  *ngIf=\"title\"\n  [class.full-page-width]=\"fullPageWidth\"\n  [class.no-full-page-width]=\"!fullPageWidth\"\n  [class.background-image-full-page-width]=\"backgroundImageFullPageWidth\"\n  [class.no-background-image-full-page-width]=\"!backgroundImageFullPageWidth\"\n  [class.content-position-left]=\"contentPosition === 'left'\"\n  [class.content-position-right]=\"contentPosition === 'right'\"\n  [style.--hero-component-height]=\"height ? height + 'px' : '470px'\"\n  [style.--background-image]=\"'url(' + backgroundImageUrl + ')'\"\n  [style.--background-image-position]=\"backgroundImagePosition\"\n  [style.--background-image-size]=\"backgroundImageSize\"\n  [style.--content-text-color]=\"contentTextColor\"\n  [style.--content-background-color]=\"contentBackgroundColor\"\n>\n  <div class=\"hero__content-container\">\n    <div class=\"hero__content\">\n      <h2>{{ title }}</h2>\n      <p>\n        {{ description }}\n      </p>\n      <div *ngIf=\"links.length\" class=\"linkscontainer\">\n        <a\n          *ngFor=\"let link of links\"\n          sitemule-button\n          [smNavigate]=\"link.href\"\n          [stroked]=\"link.stroked\"\n          [size]=\"link.size\"\n          [color]=\"link.theme\"\n          style=\"background-color: #fff\"\n          [href]=\"link.href\"\n          [smNavigateTarget]=\"link.target\"\n          [uppercase]=\"true\"\n        >\n          {{ link.label }}\n        </a>\n      </div>\n    </div>\n  </div>\n</div>\n"
+            "templateData": "<a\n  class=\"hero\"\n  *ngIf=\"title\"\n  [smNavigate]=\"wrapperLink?.href || ''\"\n  [smNavigateTarget]=\"wrapperLink?.target || ''\"\n  [class.full-page-width]=\"fullPageWidth\"\n  [class.no-full-page-width]=\"!fullPageWidth\"\n  [class.background-image-full-page-width]=\"backgroundImageFullPageWidth\"\n  [class.no-background-image-full-page-width]=\"!backgroundImageFullPageWidth\"\n  [class.content-position-left]=\"contentPosition === 'left'\"\n  [class.content-position-right]=\"contentPosition === 'right'\"\n  [style.--hero-component-height]=\"height ? height + 'px' : '470px'\"\n  [style.--background-image]=\"'url(' + backgroundImageUrl + ')'\"\n  [style.--background-image-position]=\"backgroundImagePosition\"\n  [style.--background-image-size]=\"backgroundImageSize\"\n  [style.--content-text-color]=\"contentTextColor\"\n  [style.--content-background-color]=\"contentBackgroundColor\"\n>\n  <div class=\"hero__content-container\">\n    <div class=\"hero__content\">\n      <h2>{{ title }}</h2>\n      <p>\n        {{ description }}\n      </p>\n      <div *ngIf=\"links.length\" class=\"linkscontainer\">\n        <a\n          *ngFor=\"let link of links\"\n          sitemule-button\n          [smNavigate]=\"link.href\"\n          [stroked]=\"link.stroked\"\n          [size]=\"link.size\"\n          [color]=\"link.theme\"\n          style=\"background-color: #fff\"\n          [href]=\"link.href\"\n          [smNavigateTarget]=\"link.target || ''\"\n          [uppercase]=\"true\"\n        >\n          {{ link.label }}\n        </a>\n      </div>\n    </div>\n  </div>\n</a>\n"
         },
         {
             "name": "ButtonComponent",
@@ -3093,13 +3093,13 @@
         },
         {
             "name": "BannerLayout1Module",
-            "id": "module-BannerLayout1Module-2ae905571b0c9a229a77f5fa4ae06243be618247b9802291bd796d63e6891f1ddb0d36d1b190ce4c17769f1561d2551933fc1974327b938a4b7c7269b65f0c8f",
+            "id": "module-BannerLayout1Module-7e72c8e0ff6ed091fee16c87b2ad9ccb7c9358be0d6a14082f526878211c049f604514e36e6e974a7baf837701ca81801e101581609a159842aaafc55cfb95a4",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/ng-components/src/components/banner/banner-layout-1/banner-layout-1.module.ts",
             "methods": [],
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { NavigationModule } from '../../../directives/navigation/navigation.module';\nimport { ButtonModule } from '../../button/button.module';\nimport { BannerLayout1Component } from './banner-layout-1.component';\n\n@NgModule({\n  declarations: [BannerLayout1Component],\n  imports: [NavigationModule, ButtonModule, CommonModule],\n  exports: [BannerLayout1Component],\n  providers: [],\n})\nexport class BannerLayout1Module {}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { NavigationModule } from '../../../directives/navigation/navigation.module';\nimport { ScaleImageDirectiveModule } from '../../../directives/scaleimage/scale-image.module';\nimport { ButtonModule } from '../../button/button.module';\nimport { BannerLayout1Component } from './banner-layout-1.component';\n\n@NgModule({\n  declarations: [BannerLayout1Component],\n  imports: [NavigationModule, ButtonModule, CommonModule, ScaleImageDirectiveModule],\n  exports: [BannerLayout1Component],\n  providers: [],\n})\nexport class BannerLayout1Module {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -3121,6 +3121,9 @@
                         },
                         {
                             "name": "NavigationModule"
+                        },
+                        {
+                            "name": "ScaleImageDirectiveModule"
                         }
                     ]
                 },
