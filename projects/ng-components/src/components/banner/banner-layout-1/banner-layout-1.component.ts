@@ -17,6 +17,7 @@ interface ILinks {
 export class BannerLayout1Component {
   @Input() title = '';
   @Input() description = '';
+
   @Input() height?: number;
   @Input() contentPosition: 'left' | 'right' = 'left';
   @Input() fullPageWidth = false;
@@ -30,4 +31,9 @@ export class BannerLayout1Component {
   @Input() contentBackgroundColor = '';
 
   @Input() links: ILinks[] = [];
+
+  @Input() wrapperLink?: {
+    href: string,
+    target?: string,
+  }
 }

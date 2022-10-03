@@ -76,6 +76,10 @@ type2.args = {
   backgroundImageUrl: heroInfo.backgroundImage.url,
   backgroundImageFullPageWidth: false,
   links: heroInfo.links as any,
+  wrapperLink: {
+    href: '/',
+    target: 'blank'
+  }
 };
 
 export const type3 = Template.bind({});

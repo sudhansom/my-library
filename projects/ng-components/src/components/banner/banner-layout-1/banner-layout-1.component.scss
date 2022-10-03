@@ -2,6 +2,7 @@
 
 :host {
   .hero {
+    display: block;
     height: var(--hero-component-height);
     background-image: var(--background-image);
     background-size: var(--background-image-size);

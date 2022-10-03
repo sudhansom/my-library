@@ -1,6 +1,8 @@
-<div
+<a
   class="hero"
   *ngIf="title"
+  [smNavigate]="wrapperLink?.href || ''"
+  [smNavigateTarget]="wrapperLink?.target || ''"
   [class.full-page-width]="fullPageWidth"
   [class.no-full-page-width]="!fullPageWidth"
   [class.background-image-full-page-width]="backgroundImageFullPageWidth"
@@ -38,4 +40,4 @@
       </div>
     </div>
   </div>
-</div>
+</a>
