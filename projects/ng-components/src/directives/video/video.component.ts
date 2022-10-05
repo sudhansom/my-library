@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, ElementRef, HostListener, Input, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
+  // eslint-disable-next-line @angular-eslint/component-selector
   selector: '[smYoutubeSrc]',
   templateUrl: './video.component.html',
   styleUrls: ['./video.component.scss'],
