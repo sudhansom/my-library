@@ -8,6 +8,15 @@
       max-width: 100%;
     }
 
+    .video-container {
+      position: relative;
+      overflow: hidden;
+
+      @media(max-width: map-get(variables.$breakpoints, "phone")){
+        aspect-ratio: calc(16 / 9);
+      }
+    }
+
     &__content {
       color: #25122D;
       padding: 10px var(--content-margin);
@@ -48,8 +57,16 @@
         display: none;
       }
 
+      .video-container {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+
       &__content {
-        color: #fff; // should come from variables.
+        color: #fff;
         position: absolute;
         bottom: 50px;
         padding: 40px;

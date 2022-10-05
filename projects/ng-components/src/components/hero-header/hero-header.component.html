@@ -1,6 +1,9 @@
 <div class="hero-header" [style.--background-image]="'url(' + image + ')'">
-  <div>
+  <div *ngIf="image">
     <img src="{{ image }}" />
+  </div>
+  <div *ngIf="youtubeSrc" class="video-container">
+    <iframe [smYoutubeSrc]="youtubeSrc"></iframe>
   </div>
   <div class="hero-header__content">
     <h2 class="header">{{ header }}</h2>

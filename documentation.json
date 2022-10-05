@@ -181,12 +181,12 @@
         },
         {
             "name": "ILink",
-            "id": "interface-ILink-d7a90cf52553a0b1da5176767d28e4333746835c1b7f8d281d2156cf90b7e7262cc6c4cd5a6e766ddb72e8a094009a501a8e1fad9e06aba8a0d2c655b7d02355-1",
+            "id": "interface-ILink-2c846006899666ef4216e119ba864901a80c89177f9db28364ac5ff81997d56da06d225a76c3f4d619cfb180e5625f5409aa6070f927c84abb6f16589d032448-1",
             "file": "projects/ng-components/src/components/hero-header/hero-header.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\ntype TargetType = '_blank' | '_self'  | '_parent' | '_top';\ntype ButtonSize = 'sm' | 'md' | 'lg';\n\ninterface ILink {\n  topLink?: boolean;\n  label: string;\n  href: string;\n  target?: TargetType;\n  backgroundColor: string;\n  color: string;\n  size: ButtonSize;\n  textSize: ButtonSize;\n  mobileTabletSize: ButtonSize;\n  mobileTextSize: ButtonSize;\n  borderRadius: string;\n}\n\n@Component({\n  selector: 'sm-hero-header',\n  templateUrl: './hero-header.component.html',\n  styleUrls: ['./hero-header.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class HeroHeaderComponent {\n  @Input() header: string = '';\n  @Input() description: string = '';\n  @Input() note: string = '';\n  @Input() links?: ILink[] = [];\n  @Input() image: string = '';\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\ntype TargetType = '_blank' | '_self'  | '_parent' | '_top';\ntype ButtonSize = 'sm' | 'md' | 'lg';\n\ninterface ILink {\n  topLink?: boolean;\n  label: string;\n  href: string;\n  target?: TargetType;\n  backgroundColor: string;\n  color: string;\n  size: ButtonSize;\n  textSize: ButtonSize;\n  mobileTabletSize: ButtonSize;\n  mobileTextSize: ButtonSize;\n  borderRadius: string;\n}\n\n@Component({\n  selector: 'sm-hero-header',\n  templateUrl: './hero-header.component.html',\n  styleUrls: ['./hero-header.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class HeroHeaderComponent {\n  @Input() header: string = '';\n  @Input() description: string = '';\n  @Input() note: string = '';\n  @Input() links?: ILink[] = [];\n  @Input() image: string = '';\n  @Input() youtubeSrc: string = '';\n}\n",
             "properties": [
                 {
                     "name": "backgroundColor",
@@ -1427,7 +1427,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<a\n  class=\"hero\"\n  *ngIf=\"title\"\n  [smNavigate]=\"wrapperLink?.href || ''\"\n  [smNavigateTarget]=\"wrapperLink?.target || ''\"\n  [class.full-page-width]=\"fullPageWidth\"\n  [class.no-full-page-width]=\"!fullPageWidth\"\n  [class.background-image-full-page-width]=\"backgroundImageFullPageWidth\"\n  [class.no-background-image-full-page-width]=\"!backgroundImageFullPageWidth\"\n  [class.content-position-left]=\"contentPosition === 'left'\"\n  [class.content-position-right]=\"contentPosition === 'right'\"\n  [style.--hero-component-height]=\"height ? height + 'px' : '470px'\"\n  [style.--background-image]=\"'url(' + backgroundImageUrl + ')'\"\n  [style.--background-image-position]=\"backgroundImagePosition\"\n  [style.--background-image-size]=\"backgroundImageSize\"\n  [style.--content-text-color]=\"contentTextColor\"\n  [style.--content-background-color]=\"contentBackgroundColor\"\n>\n  <div class=\"hero__content-container\">\n    <div class=\"hero__content\">\n      <h2>{{ title }}</h2>\n      <p>\n        {{ description }}\n      </p>\n      <div *ngIf=\"links.length\" class=\"linkscontainer\">\n        <a\n          *ngFor=\"let link of links\"\n          sitemule-button\n          [smNavigate]=\"link.href\"\n          [stroked]=\"link.stroked\"\n          [size]=\"link.size\"\n          [color]=\"link.theme\"\n          style=\"background-color: #fff\"\n          [href]=\"link.href\"\n          [smNavigateTarget]=\"link.target || ''\"\n          [uppercase]=\"true\"\n        >\n          {{ link.label }}\n        </a>\n      </div>\n    </div>\n  </div>\n</a>\n"
+            "templateData": "<a\n  class=\"hero\"\n  *ngIf=\"title\"\n  [smScaleImage]=\"backgroundImageUrl || ''\"\n  [smWidthRounding]=\"100\"\n  [smNavigate]=\"wrapperLink?.href || ''\"\n  [smNavigateTarget]=\"wrapperLink?.target || ''\"\n  [class.full-page-width]=\"fullPageWidth\"\n  [class.no-full-page-width]=\"!fullPageWidth\"\n  [class.background-image-full-page-width]=\"backgroundImageFullPageWidth\"\n  [class.no-background-image-full-page-width]=\"!backgroundImageFullPageWidth\"\n  [class.content-position-left]=\"contentPosition === 'left'\"\n  [class.content-position-right]=\"contentPosition === 'right'\"\n  [style.--hero-component-height]=\"height ? height + 'px' : '470px'\"\n  [style.--background-image-position]=\"backgroundImagePosition\"\n  [style.--background-image-size]=\"backgroundImageSize\"\n  [style.--content-text-color]=\"contentTextColor\"\n  [style.--content-background-color]=\"contentBackgroundColor\"\n>\n  <div class=\"hero__content-container\">\n    <div class=\"hero__content\">\n      <h2>{{ title }}</h2>\n      <p>\n        {{ description }}\n      </p>\n      <div *ngIf=\"links.length\" class=\"linkscontainer\">\n        <a\n          *ngFor=\"let link of links\"\n          sitemule-button\n          [smNavigate]=\"link.href\"\n          [stroked]=\"link.stroked\"\n          [size]=\"link.size\"\n          [color]=\"link.theme\"\n          style=\"background-color: #fff\"\n          [href]=\"link.href\"\n          [smNavigateTarget]=\"link.target || ''\"\n          [uppercase]=\"true\"\n        >\n          {{ link.label }}\n        </a>\n      </div>\n    </div>\n  </div>\n</a>\n"
         },
         {
             "name": "ButtonComponent",
@@ -1659,7 +1659,7 @@
         },
         {
             "name": "HeroHeaderComponent",
-            "id": "component-HeroHeaderComponent-d7a90cf52553a0b1da5176767d28e4333746835c1b7f8d281d2156cf90b7e7262cc6c4cd5a6e766ddb72e8a094009a501a8e1fad9e06aba8a0d2c655b7d02355",
+            "id": "component-HeroHeaderComponent-2c846006899666ef4216e119ba864901a80c89177f9db28364ac5ff81997d56da06d225a76c3f4d619cfb180e5625f5409aa6070f927c84abb6f16589d032448",
             "file": "projects/ng-components/src/components/hero-header/hero-header.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -1721,6 +1721,15 @@
                     "line": 29,
                     "type": "string",
                     "decorators": []
+                },
+                {
+                    "name": "youtubeSrc",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 32,
+                    "type": "string",
+                    "decorators": []
                 }
             ],
             "outputsClass": [],
@@ -1733,16 +1742,16 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\ntype TargetType = '_blank' | '_self'  | '_parent' | '_top';\ntype ButtonSize = 'sm' | 'md' | 'lg';\n\ninterface ILink {\n  topLink?: boolean;\n  label: string;\n  href: string;\n  target?: TargetType;\n  backgroundColor: string;\n  color: string;\n  size: ButtonSize;\n  textSize: ButtonSize;\n  mobileTabletSize: ButtonSize;\n  mobileTextSize: ButtonSize;\n  borderRadius: string;\n}\n\n@Component({\n  selector: 'sm-hero-header',\n  templateUrl: './hero-header.component.html',\n  styleUrls: ['./hero-header.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class HeroHeaderComponent {\n  @Input() header: string = '';\n  @Input() description: string = '';\n  @Input() note: string = '';\n  @Input() links?: ILink[] = [];\n  @Input() image: string = '';\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\ntype TargetType = '_blank' | '_self'  | '_parent' | '_top';\ntype ButtonSize = 'sm' | 'md' | 'lg';\n\ninterface ILink {\n  topLink?: boolean;\n  label: string;\n  href: string;\n  target?: TargetType;\n  backgroundColor: string;\n  color: string;\n  size: ButtonSize;\n  textSize: ButtonSize;\n  mobileTabletSize: ButtonSize;\n  mobileTextSize: ButtonSize;\n  borderRadius: string;\n}\n\n@Component({\n  selector: 'sm-hero-header',\n  templateUrl: './hero-header.component.html',\n  styleUrls: ['./hero-header.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class HeroHeaderComponent {\n  @Input() header: string = '';\n  @Input() description: string = '';\n  @Input() note: string = '';\n  @Input() links?: ILink[] = [];\n  @Input() image: string = '';\n  @Input() youtubeSrc: string = '';\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@use '../../../../variables';\n\n:host {\n  .hero-header {\n    text-align: center;\n\n    img{\n      max-width: 100%;\n    }\n\n    &__content {\n      color: #25122D;\n      padding: 10px var(--content-margin);\n      .header {\n        font-size: 36px;\n        line-height: 36px;\n        margin: 0;\n      }\n      .description {\n        font-size: 16px;\n        line-height: 18px;\n        margin-top: 10px;\n        font-weight: 600;\n      }\n\n      .links {\n        display: flex;\n        justify-content: center;\n        gap: 10px;\n      }\n      .note {\n        font-size: 11px;\n        color: #8c8383;\n        margin-top: 8px;\n      }\n    }\n  }\n  @media(min-width: map-get(variables.$breakpoints, \"phone\")){\n    .hero-header {\n      height: calc(90vh - 84px);\n      background-image: linear-gradient(179.71deg, rgba(34, 9, 54, 0) 0%, rgba(34, 9, 54, 0.89) 100%), var(--background-image);\n      background-size: cover;\n      background-position: top center;\n      position: relative;\n      display: flex;\n      justify-content: center;\n      img {\n        display: none;\n      }\n\n      &__content {\n        color: #fff; // should come from variables.\n        position: absolute;\n        bottom: 50px;\n        padding: 40px;\n        .header {\n          font-size: 72px;\n          line-height: 72px;\n        }\n        .description {\n          font-size: 24px;\n          line-height: 30px;\n          font-weight: 500;\n        }\n        .note {\n          font-size: 14px;\n          margin-top: 14px;\n        }\n      }\n    }\n  }\n}\n",
+                    "data": "@use '../../../../variables';\n\n:host {\n  .hero-header {\n    text-align: center;\n\n    img{\n      max-width: 100%;\n    }\n\n    .video-container {\n      position: relative;\n      overflow: hidden;\n\n      @media(max-width: map-get(variables.$breakpoints, \"phone\")){\n        aspect-ratio: calc(16 / 9);\n      }\n    }\n\n    &__content {\n      color: #25122D;\n      padding: 10px var(--content-margin);\n      .header {\n        font-size: 36px;\n        line-height: 36px;\n        margin: 0;\n      }\n      .description {\n        font-size: 16px;\n        line-height: 18px;\n        margin-top: 10px;\n        font-weight: 600;\n      }\n\n      .links {\n        display: flex;\n        justify-content: center;\n        gap: 10px;\n      }\n      .note {\n        font-size: 11px;\n        color: #8c8383;\n        margin-top: 8px;\n      }\n    }\n  }\n  @media(min-width: map-get(variables.$breakpoints, \"phone\")){\n    .hero-header {\n      height: calc(90vh - 84px);\n      background-image: linear-gradient(179.71deg, rgba(34, 9, 54, 0) 0%, rgba(34, 9, 54, 0.89) 100%), var(--background-image);\n      background-size: cover;\n      background-position: top center;\n      position: relative;\n      display: flex;\n      justify-content: center;\n      img {\n        display: none;\n      }\n\n      .video-container {\n        position: absolute;\n        top: 0;\n        right: 0;\n        bottom: 0;\n        left: 0;\n      }\n\n      &__content {\n        color: #fff;\n        position: absolute;\n        bottom: 50px;\n        padding: 40px;\n        .header {\n          font-size: 72px;\n          line-height: 72px;\n        }\n        .description {\n          font-size: 24px;\n          line-height: 30px;\n          font-weight: 500;\n        }\n        .note {\n          font-size: 14px;\n          margin-top: 14px;\n        }\n      }\n    }\n  }\n}\n",
                     "styleUrl": "./hero-header.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"hero-header\" [style.--background-image]=\"'url(' + image + ')'\">\n  <div>\n    <img src=\"{{ image }}\" />\n  </div>\n  <div class=\"hero-header__content\">\n    <h2 class=\"header\">{{ header }}</h2>\n    <p class=\"description\">\n      {{ description }}\n    </p>\n    <div *ngIf=\"links?.length\" class=\"links\">\n      <a\n        sitemule-button\n        *ngFor=\"let link of links\"\n        [style.--button-color]=\"link.color\"\n        [ngStyle]=\"{'backgroundColor': link.backgroundColor, 'color': link.color}\"\n        [href]=\"link.href\"\n        [target]=\"link.target\"\n        [size]=\"link.size\"\n        [textSize]=\"link.textSize\"\n        [mobileTabletSize]=\"link.mobileTabletSize\"\n        [mobileTextSize]=\"link.mobileTextSize\"\n        [borderRadius]=\"link.borderRadius\"\n      >\n        {{ link.label }}\n      </a>\n    </div>\n    <p class=\"note\">{{ note }}</p>\n  </div>\n</div>\n"
+            "templateData": "<div class=\"hero-header\" [style.--background-image]=\"'url(' + image + ')'\">\n  <div *ngIf=\"image\">\n    <img src=\"{{ image }}\" />\n  </div>\n  <div *ngIf=\"youtubeSrc\" class=\"video-container\">\n    <iframe [smYoutubeSrc]=\"youtubeSrc\"></iframe>\n  </div>\n  <div class=\"hero-header__content\">\n    <h2 class=\"header\">{{ header }}</h2>\n    <p class=\"description\">\n      {{ description }}\n    </p>\n    <div *ngIf=\"links?.length\" class=\"links\">\n      <a\n        sitemule-button\n        *ngFor=\"let link of links\"\n        [style.--button-color]=\"link.color\"\n        [ngStyle]=\"{'backgroundColor': link.backgroundColor, 'color': link.color}\"\n        [href]=\"link.href\"\n        [target]=\"link.target\"\n        [size]=\"link.size\"\n        [textSize]=\"link.textSize\"\n        [mobileTabletSize]=\"link.mobileTabletSize\"\n        [mobileTextSize]=\"link.mobileTextSize\"\n        [borderRadius]=\"link.borderRadius\"\n      >\n        {{ link.label }}\n      </a>\n    </div>\n    <p class=\"note\">{{ note }}</p>\n  </div>\n</div>\n"
         },
         {
             "name": "NavigationComponent",
@@ -3040,6 +3049,200 @@
                 }
             },
             "templateData": "<div class=\"teaser-stack-layout-1\"\n  [style.--background-color]=\"backgroundColor\"\n  [style.--background-image-position]=\"backgroundImagePosition\"\n  [style.--background-image-size]=\"backgroundImageSize\"\n  [smScaleImage]=\"backgroundImage || ''\"\n  [smWidthRounding]=\"100\"\n  [ngClass]=\"{'full-page-width': fullPageWidth}\">\n  <div class=\"teaser-stack-layout-1-container\">\n    <div *ngIf=\"title || description\" class=\"teaser-stack-text-container\">\n      <h2 *ngIf=\"title\" class=\"teaser-stack-title\">\n        {{ title }}\n      </h2>\n      <p *ngIf=\"description\" class=\"teaser-stack-description\">\n        {{ description }}\n      </p>\n    </div>\n    <div\n      class=\"teaser-stack\"\n      [ngClass]=\"teaserHeight ? 'no-float' : 'float'\"\n      [style.--column-count]=\"columnCount\"\n    >\n      <ngx-masonry (layoutComplete)=\"reDoLayout()\" *ngIf=\"!teaserHeight; else withoutTeaserHeight\">\n        <sm-teaser\n          ngxMasonryItem\n          *ngFor=\"let teaser of finalTeasers; trackBy: trackByFn\"\n          [imageUrl]=\"teaser?.imageUrl\"\n          [header]=\"teaser?.header\"\n          [description]=\"teaser?.description\"\n          [border]=\"teaser?.border\"\n          [hoverBorder]=\"teaser?.hoverBorder\"\n          [boxShadow]=\"teaser?.boxShadow\"\n          [hoverBoxShadow]=\"teaser?.hoverBoxShadow\"\n          [textColor]=\"teaser?.textColor\"\n          [link]=\"teaser?.link\"\n          [linkTarget]=\"teaser?.linkTarget\"\n          [backgroundColor]=\"teaser?.backgroundColor\"\n          [backgroundImageSize]=\"teaser.backgroundImageSize\"\n          [layout]=\"teaser.layout || layout\"\n          [backgroundImagePosition]=\"teaser.backgroundImagePosition\"\n          [teaserHeight]=\"teaser.teaserHeight || teaserHeight\"\n        ></sm-teaser>\n      </ngx-masonry>\n      <ng-template #withoutTeaserHeight>\n        <sm-teaser\n          *ngFor=\"let teaser of finalTeasers; trackBy: trackByFn\"\n          [imageUrl]=\"teaser?.imageUrl\"\n          [header]=\"teaser?.header\"\n          [description]=\"teaser?.description\"\n          [border]=\"teaser?.border\"\n          [hoverBorder]=\"teaser?.hoverBorder\"\n          [boxShadow]=\"teaser?.boxShadow\"\n          [hoverBoxShadow]=\"teaser?.hoverBoxShadow\"\n          [textColor]=\"teaser?.textColor\"\n          [link]=\"teaser?.link\"\n          [linkTarget]=\"teaser?.linkTarget\"\n          [backgroundColor]=\"teaser?.backgroundColor\"\n          [backgroundImageSize]=\"teaser.backgroundImageSize\"\n          [layout]=\"teaser.layout || layout\"\n          [backgroundImagePosition]=\"teaser.backgroundImagePosition\"\n          [teaserHeight]=\"teaser.teaserHeight || teaserHeight\"\n        ></sm-teaser>\n      </ng-template>\n    </div>\n    <div *ngIf=\"readMoreLink && readMoreLabel\" class=\"teaser-stack-read-more-link\">\n      <a [smNavigate]=\"readMoreLink\" >\n        {{readMoreLabel}}\n      </a>\n    </div>\n  </div>\n</div>\n"
+        },
+        {
+            "name": "YoutubeVideoSrcComponent",
+            "id": "component-YoutubeVideoSrcComponent-947ec9d90dae3729b820a8e43f426f36179940bce60f95602676f8e21a9660c44e3e47cc9a190f0312d3701392406961ec857fd1e6324c59e2edc46ede9b573e",
+            "file": "projects/ng-components/src/directives/video/video.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "[smYoutubeSrc]",
+            "styleUrls": [
+                "./video.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./video.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "smYoutubeSrc",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "_smYoutubeSrc",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 10,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "aspectRatio",
+                    "defaultValue": "16 / 9",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 29
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "calcHeightWidth",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 34,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'window:resize', ['$event']"
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 52,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [
+                {
+                    "name": "window:resize",
+                    "args": [],
+                    "argsDecorator": [
+                        "$event"
+                    ],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 34
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, ElementRef, HostListener, Input, OnInit, Renderer2 } from '@angular/core';\n\n@Component({\n  selector: '[smYoutubeSrc]',\n  templateUrl: './video.component.html',\n  styleUrls: ['./video.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush\n})\nexport class YoutubeVideoSrcComponent implements OnInit {\n  private _smYoutubeSrc = '';\n  @Input() set smYoutubeSrc(src: string) {\n    if (src === this._smYoutubeSrc) {\n      return;\n    }\n\n    this._smYoutubeSrc = src;\n    if (this.smYoutubeSrc) {\n      this.renderer.setAttribute(this.el.nativeElement, 'src', this.smYoutubeSrc);\n    }\n    else {\n      this.renderer.removeAttribute(this.el.nativeElement, 'src');\n    }\n  }\n\n  get smYoutubeSrc() {\n    return this._smYoutubeSrc;\n  }\n\n  aspectRatio = 16 / 9;\n\n  constructor(private el: ElementRef, private renderer: Renderer2) { }\n\n  @HostListener('window:resize', ['$event'])\n  calcHeightWidth() {\n    const { clientHeight, clientWidth } = this.el.nativeElement.parentElement;\n    const parentAspectRatio = clientWidth / clientHeight;\n\n    if (parentAspectRatio > this.aspectRatio) {\n      this.renderer.setStyle(this.el.nativeElement, 'height', `${105 + (((parentAspectRatio - this.aspectRatio) / this.aspectRatio) * 100)}%`);\n      this.renderer.setStyle(this.el.nativeElement, 'width', '105%');\n    }\n    else if (parentAspectRatio < this.aspectRatio) {\n      this.renderer.setStyle(this.el.nativeElement, 'width', `${105 + (((this.aspectRatio - parentAspectRatio) / parentAspectRatio) * 100)}%`);\n      this.renderer.setStyle(this.el.nativeElement, 'height', '105%');\n    }\n    else {\n      this.renderer.setStyle(this.el.nativeElement, 'width', '105%');\n      this.renderer.setStyle(this.el.nativeElement, 'height', '105%');\n    }\n  }\n\n  ngOnInit() {\n    this.calcHeightWidth();\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  width: 100%;\n  height: 200%;\n  transform: translate(-50%, -50%);\n  pointer-events: none;\n}",
+                    "styleUrl": "./video.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "el",
+                        "type": "ElementRef",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "renderer",
+                        "type": "Renderer2",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 29,
+                "jsdoctags": [
+                    {
+                        "name": "el",
+                        "type": "ElementRef",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "renderer",
+                        "type": "Renderer2",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "accessors": {
+                "smYoutubeSrc": {
+                    "name": "smYoutubeSrc",
+                    "setSignature": {
+                        "name": "smYoutubeSrc",
+                        "type": "void",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "args": [
+                            {
+                                "name": "src",
+                                "type": "string",
+                                "deprecated": false,
+                                "deprecationMessage": ""
+                            }
+                        ],
+                        "returnType": "void",
+                        "line": 11,
+                        "jsdoctags": [
+                            {
+                                "name": "src",
+                                "type": "string",
+                                "deprecated": false,
+                                "deprecationMessage": "",
+                                "tagName": {
+                                    "text": "param"
+                                }
+                            }
+                        ]
+                    },
+                    "getSignature": {
+                        "name": "smYoutubeSrc",
+                        "type": "",
+                        "returnType": "",
+                        "line": 25
+                    }
+                }
+            },
+            "templateData": "<ng-content></ng-content>"
         }
     ],
     "modules": [
@@ -3235,13 +3438,13 @@
         },
         {
             "name": "HeroHeaderModule",
-            "id": "module-HeroHeaderModule-5eb6690828b89efa1d0f9521f94dfd112ef79845c38a5a9733198482e082e9653c3ad576958cee493a3634ffddadf2b410c73e1ffc180d166360868dc5110232",
+            "id": "module-HeroHeaderModule-31e750a47d74e6503ea84b79f0cb905bc84638557126d6c5a73fff6425eb9fdaffcbcdf6528d764bdb92f214d7c39f730e9b9e8f41425106eb9696ceefe5fc02",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/ng-components/src/components/hero-header/hero-header.module.ts",
             "methods": [],
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { ButtonModule } from '../button/button.module';\nimport { HeroHeaderComponent } from './hero-header.component';\n\n@NgModule({\n  declarations: [HeroHeaderComponent],\n  imports: [CommonModule, ButtonModule],\n  exports: [HeroHeaderComponent],\n  providers: [],\n})\nexport class HeroHeaderModule {}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { YoutubeVideoSrcModule } from '../../directives/video/video.module';\nimport { ButtonModule } from '../button/button.module';\nimport { HeroHeaderComponent } from './hero-header.component';\n\n@NgModule({\n  declarations: [\n    HeroHeaderComponent\n  ],\n  imports: [\n    CommonModule,\n    ButtonModule,\n    YoutubeVideoSrcModule,\n  ],\n  exports: [\n    HeroHeaderComponent\n  ],\n  providers: [],\n})\nexport class HeroHeaderModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -3260,6 +3463,9 @@
                     "elements": [
                         {
                             "name": "ButtonModule"
+                        },
+                        {
+                            "name": "YoutubeVideoSrcModule"
                         }
                     ]
                 },
@@ -3765,6 +3971,50 @@
                     "elements": []
                 }
             ]
+        },
+        {
+            "name": "YoutubeVideoSrcModule",
+            "id": "module-YoutubeVideoSrcModule-81c4787c9dea88002b0c601f0c6864348fba9b46536d887f0b26a79c5d3f34c54ad6621eefb31459ec3fae8973ec2653b4522a16d2d50837b1ae911e65311282",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/ng-components/src/directives/video/video.module.ts",
+            "methods": [],
+            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { NgModule } from \"@angular/core\";\nimport { YoutubeVideoSrcComponent } from \"./video.component\";\n\n@NgModule({\n  declarations: [\n    YoutubeVideoSrcComponent\n  ],\n  imports: [\n    CommonModule\n  ],\n  exports:[YoutubeVideoSrcComponent],\n  providers: [],\n  bootstrap: [],\n})\nexport class YoutubeVideoSrcModule {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "YoutubeVideoSrcComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "YoutubeVideoSrcComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
         }
     ],
     "miscellaneous": {
@@ -4041,6 +4291,16 @@
             },
             {
                 "name": "heroHeader",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/hero-header/hero-header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "heroHeaderWithVideo",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "projects/ng-components/src/components/hero-header/hero-header.stories.ts",
@@ -4748,6 +5008,16 @@
                     "defaultValue": "Template.bind({})"
                 },
                 {
+                    "name": "heroHeaderWithVideo",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/hero-header/hero-header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -5293,7 +5563,7 @@
                 "linktype": "component",
                 "name": "HeroHeaderComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {
@@ -5321,6 +5591,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "heroHeader",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/hero-header/hero-header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "heroHeaderWithVideo",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5652,6 +5932,15 @@
                 "name": "calculateOptimalWidth",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/directives/video/video.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "YoutubeVideoSrcComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
                 "status": "low"
             },
             {

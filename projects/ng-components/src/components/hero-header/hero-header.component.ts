@@ -29,4 +29,5 @@ export class HeroHeaderComponent {
   @Input() note: string = '';
   @Input() links?: ILink[] = [];
   @Input() image: string = '';
+  @Input() youtubeSrc: string = '';
 }
