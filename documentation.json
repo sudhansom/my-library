@@ -3052,7 +3052,7 @@
         },
         {
             "name": "YoutubeVideoSrcComponent",
-            "id": "component-YoutubeVideoSrcComponent-947ec9d90dae3729b820a8e43f426f36179940bce60f95602676f8e21a9660c44e3e47cc9a190f0312d3701392406961ec857fd1e6324c59e2edc46ede9b573e",
+            "id": "component-YoutubeVideoSrcComponent-ca166ff7cf5102f005d4a00ab2094c948ba33237ceb86f4483f1972018f12bfb00cbc5bb6c48914465a8619f6bb0e9b4303fc3e5c7b14830dc0bb4b1efbf6165",
             "file": "projects/ng-components/src/directives/video/video.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -3074,7 +3074,7 @@
                     "name": "smYoutubeSrc",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 11,
+                    "line": 12,
                     "type": "string",
                     "decorators": []
                 }
@@ -3089,7 +3089,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 10,
+                    "line": 11,
                     "modifierKind": [
                         121
                     ]
@@ -3102,7 +3102,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 29
+                    "line": 30
                 }
             ],
             "methodsClass": [
@@ -3112,7 +3112,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 34,
+                    "line": 35,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "decorators": [
@@ -3128,7 +3128,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 52,
+                    "line": 53,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -3145,13 +3145,13 @@
                     ],
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 34
+                    "line": 35
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, ElementRef, HostListener, Input, OnInit, Renderer2 } from '@angular/core';\n\n@Component({\n  selector: '[smYoutubeSrc]',\n  templateUrl: './video.component.html',\n  styleUrls: ['./video.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush\n})\nexport class YoutubeVideoSrcComponent implements OnInit {\n  private _smYoutubeSrc = '';\n  @Input() set smYoutubeSrc(src: string) {\n    if (src === this._smYoutubeSrc) {\n      return;\n    }\n\n    this._smYoutubeSrc = src;\n    if (this.smYoutubeSrc) {\n      this.renderer.setAttribute(this.el.nativeElement, 'src', this.smYoutubeSrc);\n    }\n    else {\n      this.renderer.removeAttribute(this.el.nativeElement, 'src');\n    }\n  }\n\n  get smYoutubeSrc() {\n    return this._smYoutubeSrc;\n  }\n\n  aspectRatio = 16 / 9;\n\n  constructor(private el: ElementRef, private renderer: Renderer2) { }\n\n  @HostListener('window:resize', ['$event'])\n  calcHeightWidth() {\n    const { clientHeight, clientWidth } = this.el.nativeElement.parentElement;\n    const parentAspectRatio = clientWidth / clientHeight;\n\n    if (parentAspectRatio > this.aspectRatio) {\n      this.renderer.setStyle(this.el.nativeElement, 'height', `${105 + (((parentAspectRatio - this.aspectRatio) / this.aspectRatio) * 100)}%`);\n      this.renderer.setStyle(this.el.nativeElement, 'width', '105%');\n    }\n    else if (parentAspectRatio < this.aspectRatio) {\n      this.renderer.setStyle(this.el.nativeElement, 'width', `${105 + (((this.aspectRatio - parentAspectRatio) / parentAspectRatio) * 100)}%`);\n      this.renderer.setStyle(this.el.nativeElement, 'height', '105%');\n    }\n    else {\n      this.renderer.setStyle(this.el.nativeElement, 'width', '105%');\n      this.renderer.setStyle(this.el.nativeElement, 'height', '105%');\n    }\n  }\n\n  ngOnInit() {\n    this.calcHeightWidth();\n  }\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, ElementRef, HostListener, Input, OnInit, Renderer2 } from '@angular/core';\n\n@Component({\n  // eslint-disable-next-line @angular-eslint/component-selector\n  selector: '[smYoutubeSrc]',\n  templateUrl: './video.component.html',\n  styleUrls: ['./video.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush\n})\nexport class YoutubeVideoSrcComponent implements OnInit {\n  private _smYoutubeSrc = '';\n  @Input() set smYoutubeSrc(src: string) {\n    if (src === this._smYoutubeSrc) {\n      return;\n    }\n\n    this._smYoutubeSrc = src;\n    if (this.smYoutubeSrc) {\n      this.renderer.setAttribute(this.el.nativeElement, 'src', this.smYoutubeSrc);\n    }\n    else {\n      this.renderer.removeAttribute(this.el.nativeElement, 'src');\n    }\n  }\n\n  get smYoutubeSrc() {\n    return this._smYoutubeSrc;\n  }\n\n  aspectRatio = 16 / 9;\n\n  constructor(private el: ElementRef, private renderer: Renderer2) { }\n\n  @HostListener('window:resize', ['$event'])\n  calcHeightWidth() {\n    const { clientHeight, clientWidth } = this.el.nativeElement.parentElement;\n    const parentAspectRatio = clientWidth / clientHeight;\n\n    if (parentAspectRatio > this.aspectRatio) {\n      this.renderer.setStyle(this.el.nativeElement, 'height', `${105 + (((parentAspectRatio - this.aspectRatio) / this.aspectRatio) * 100)}%`);\n      this.renderer.setStyle(this.el.nativeElement, 'width', '105%');\n    }\n    else if (parentAspectRatio < this.aspectRatio) {\n      this.renderer.setStyle(this.el.nativeElement, 'width', `${105 + (((this.aspectRatio - parentAspectRatio) / parentAspectRatio) * 100)}%`);\n      this.renderer.setStyle(this.el.nativeElement, 'height', '105%');\n    }\n    else {\n      this.renderer.setStyle(this.el.nativeElement, 'width', '105%');\n      this.renderer.setStyle(this.el.nativeElement, 'height', '105%');\n    }\n  }\n\n  ngOnInit() {\n    this.calcHeightWidth();\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3179,7 +3179,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 29,
+                "line": 30,
                 "jsdoctags": [
                     {
                         "name": "el",
@@ -3221,7 +3221,7 @@
                             }
                         ],
                         "returnType": "void",
-                        "line": 11,
+                        "line": 12,
                         "jsdoctags": [
                             {
                                 "name": "src",
@@ -3238,7 +3238,7 @@
                         "name": "smYoutubeSrc",
                         "type": "",
                         "returnType": "",
-                        "line": 25
+                        "line": 26
                     }
                 }
             },
