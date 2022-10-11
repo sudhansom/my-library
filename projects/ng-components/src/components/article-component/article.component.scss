@@ -31,16 +31,28 @@
         margin: 0;
       }
       .description {
-        color:#887d8c; // may come from data or variable
-        font-size: 16px;
+        color: var(--text-color);
+        font-size: 20px;
         line-height: 26px;
-        margin-top: 10px;
+        margin-top: 20px;
+      }
+      .sub-header {
+        margin: 0;
+        color: var(--text-color);
+        font-size: 20px;
+        line-height: 26px;
+      }
+      .sub-description {
+        margin: 0;
+        color: var(--text-color);
+        font-size: 20px;
+        line-height: 26px;
       }
 
       &__links-container {
         display: flex;
         gap: 10px;
-        margin-top: 20px;
+        margin-top: 25px;
       }
     }
   }
@@ -89,10 +101,6 @@
           font-size: 46px;
           line-height: 46px;
           font-weight: 800;
-        }
-        .description {
-          font-size: 16px;
-          line-height: 26px;
         }
         &__links-container {
           gap: 20px;

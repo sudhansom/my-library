@@ -8,15 +8,20 @@
   [style.--background-image]="'url(\'' + image + '\')'"
   [style.--background-color]="backgroundColor"
   [style.--box-shadow]="boxShadow"
+  [style.--text-color]="textColor"
 >
   <div class="image-article__image-container">
     <img class="image-article__image-container__image" src="{{ image }}" alt="" />
   </div>
   <div class="image-article__article">
-    <img class="icon" src="{{ icon }}" alt="logo" />
+    <img *ngIf="icon" class="icon" src="{{ icon }}" alt="logo" />
     <h3 class="header">{{ header }}</h3>
     <p class="description">
       {{ description }}
+    </p>
+    <h3 *ngIf="subHeader" class="sub-header">{{ subHeader }}</h3>
+    <p *ngIf="subDescription" class="sub-description">
+      {{ subDescription }}
     </p>
 
     <div class="image-article__article__links-container" *ngIf="links?.length">
