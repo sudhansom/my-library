@@ -36,6 +36,12 @@
         line-height: 26px;
         margin-top: 10px;
       }
+
+      &__links-container {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+      }
     }
   }
   @media (min-width: map-get(variables.$breakpoints, "phone")) {
@@ -89,7 +95,7 @@
           line-height: 26px;
         }
         &__links-container {
-          margin-top: 20px;
+          gap: 20px;
         }
       }
     }
