@@ -27,7 +27,5 @@ export class ArticleComponent {
   @Input() imageBorderRadius = '10px';
   @Input() backgroundColor: string = '';
   @Input() boxShadow: string = '';
-  @Input() subHeader: string = '';
-  @Input() subDescription: string = '';
   @Input() textColor: string = '';
 }
