@@ -56,3 +56,25 @@ heroHeaderWithVideo.args = {
   links: headerLinks,
   youtubeSrc: 'https://www.youtube.com/embed/Yj2iELI6OeI?controls=0&autoplay=1&mute=1&playsinline=1&loop=1&playlist=Yj2iELI6OeI'
 };
+
+export const heroHeaderSitemule = Template.bind({});
+heroHeaderSitemule.storyName = 'hero-header-sitemule';
+heroHeaderSitemule.args = {
+  topHeader: 'LAYOUT & TEMA',
+  header: 'Få flere designs hurtigt',
+  description:
+    'Ny variant, farve, størrelse, indhold, opbygning eller måske vil du bare ændre lidt i dit eksisterende udvalg? Vi hjælper dig. Simple konstruktioner og ændringer fra 1 time.',
+  links: headerLinks,
+  image: 'https://media.istockphoto.com/photos/copenhagen-denmark-at-nyhavn-canal-picture-id587892190?k=20&m=587892190&s=612x612&w=0&h=0GMRGE6VkLb61ryGz--XwoBD6ns0kwNWf-Dz9Agx_ew=',
+};
+
+export const heroHeaderSitemuleWithVideo = Template.bind({});
+heroHeaderSitemuleWithVideo.storyName = 'hero-header-sitemule with video';
+heroHeaderSitemuleWithVideo.args = {
+  topHeader: 'LAYOUT & TEMA',
+  header: 'Få flere designs hurtigt',
+  description:
+    'Ny variant, farve, størrelse, indhold, opbygning eller måske vil du bare ændre lidt i dit eksisterende udvalg? Vi hjælper dig. Simple konstruktioner og ændringer fra 1 time.',
+  links: headerLinks,
+  youtubeSrc: 'https://www.youtube.com/embed/Yj2iELI6OeI?controls=0&autoplay=1&mute=1&playsinline=1&loop=1&playlist=Yj2iELI6OeI'
+};

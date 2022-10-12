@@ -20,11 +20,20 @@
     &__content {
       color: #25122D;
       padding: 10px var(--content-margin);
+
+      .top-header {
+        font-size: 16px;
+        letter-spacing: 1px;
+        line-height: 20px;
+        margin-top: 0;
+      }
+
       .header {
         font-size: 36px;
         line-height: 36px;
         margin: 0;
       }
+
       .description {
         font-size: 16px;
         line-height: 18px;
@@ -37,6 +46,7 @@
         justify-content: center;
         gap: 10px;
       }
+
       .note {
         font-size: 11px;
         color: #8c8383;
@@ -53,6 +63,7 @@
       position: relative;
       display: flex;
       justify-content: center;
+      align-items: center;
       img {
         display: none;
       }
@@ -67,18 +78,28 @@
 
       &__content {
         color: #fff;
+        max-width: var(--max-content-width);
+        padding-left: 140px;
+        padding-right: 140px;
         position: absolute;
-        bottom: 50px;
-        padding: 40px;
+
+        .top-header {
+          font-size: 24px;
+          letter-spacing: 1px;
+          line-height: 36px;
+        }
+
         .header {
           font-size: 72px;
           line-height: 72px;
         }
+
         .description {
           font-size: 24px;
           line-height: 30px;
           font-weight: 500;
         }
+
         .note {
           font-size: 14px;
           margin-top: 14px;

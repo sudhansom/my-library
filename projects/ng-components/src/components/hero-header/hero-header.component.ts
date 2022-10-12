@@ -24,6 +24,7 @@ interface ILink {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeroHeaderComponent {
+  @Input() topHeader: string = '';
   @Input() header: string = '';
   @Input() description: string = '';
   @Input() note: string = '';
