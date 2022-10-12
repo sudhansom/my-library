@@ -6,6 +6,7 @@
     <iframe [smYoutubeSrc]="youtubeSrc"></iframe>
   </div>
   <div class="hero-header__content">
+    <h4 *ngIf="topHeader" class="top-header">{{ topHeader }}</h4>
     <h2 class="header">{{ header }}</h2>
     <p class="description">
       {{ description }}
@@ -27,6 +28,6 @@
         {{ link.label }}
       </a>
     </div>
-    <p class="note">{{ note }}</p>
+    <p *ngIf="note" class="note">{{ note }}</p>
   </div>
 </div>
