@@ -31,10 +31,16 @@
         margin: 0;
       }
       .description {
-        color:#887d8c; // may come from data or variable
-        font-size: 16px;
+        color: var(--text-color);
+        font-size: 20px;
         line-height: 26px;
-        margin-top: 10px;
+        margin-top: 20px;
+      }
+
+      &__links-container {
+        display: flex;
+        gap: 10px;
+        margin-top: 25px;
       }
     }
   }
@@ -84,12 +90,8 @@
           line-height: 46px;
           font-weight: 800;
         }
-        .description {
-          font-size: 16px;
-          line-height: 26px;
-        }
         &__links-container {
-          margin-top: 20px;
+          gap: 20px;
         }
       }
     }
