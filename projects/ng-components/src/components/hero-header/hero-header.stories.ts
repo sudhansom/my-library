@@ -66,7 +66,6 @@ heroHeaderSitemule.args = {
     'Ny variant, farve, størrelse, indhold, opbygning eller måske vil du bare ændre lidt i dit eksisterende udvalg? Vi hjælper dig. Simple konstruktioner og ændringer fra 1 time.',
   links: headerLinks,
   image: 'https://media.istockphoto.com/photos/copenhagen-denmark-at-nyhavn-canal-picture-id587892190?k=20&m=587892190&s=612x612&w=0&h=0GMRGE6VkLb61ryGz--XwoBD6ns0kwNWf-Dz9Agx_ew=',
-  theme: '#00131B',
 };
 
 export const heroHeaderSitemuleWithVideo = Template.bind({});
