@@ -20,12 +20,22 @@ const links = [
     href: 'https://www.folkelarsen.dk/page1',
     backgroundColor: '#9925f1',
     color: 'white',
+    borderRadius: '25px',
+    size: 'lg' as 'lg',
+    textSize: 'lg' as 'lg',
+    mobileTabletSize: 'md' as 'md',
+    mobileTextSize: 'md' as 'md'
   },
   {
     label: 'Or get support',
     href: 'https://www.folkelarsen.dk/page1',
     backgroundColor: 'rgb(248, 248, 248)',
     color: '#9925f1',
+    borderRadius: '25px',
+    size: 'lg' as 'lg',
+    textSize: 'lg' as 'lg',
+    mobileTabletSize: 'md' as 'md',
+    mobileTextSize: 'md' as 'md'
   },
 ];
 const sitemuleLinks = [
@@ -34,12 +44,22 @@ const sitemuleLinks = [
     href: 'https://www.folkelarsen.dk/page1',
     backgroundColor: '#00A1FD',
     color: 'white',
+    borderRadius: '25px',
+    size: 'lg' as 'lg',
+    textSize: 'lg' as 'lg',
+    mobileTabletSize: 'md' as 'md',
+    mobileTextSize: 'md' as 'md'
   },
   {
     label: 'Inspiration',
     href: 'https://www.folkelarsen.dk/page1',
     backgroundColor: 'rgb(248, 248, 248)',
     color: '#00A1FD',
+    borderRadius: '25px',
+    size: 'lg' as 'lg',
+    textSize: 'lg' as 'lg',
+    mobileTabletSize: 'md' as 'md',
+    mobileTextSize: 'md' as 'md'
   },
 ];
 

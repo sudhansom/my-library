@@ -21,20 +21,17 @@
     </p>
     <div class="image-article__article__links-container" *ngIf="links?.length">
       <a
-        sitemule-button
-        *ngFor="let link of links"
-        [color]="link.color"
-        [ngStyle]="{
-          backgroundColor: link.backgroundColor,
-          color: link.color
-        }"
-        [href]="link.href"
-        [target]="link.target"
-        [stroked]="false"
-        size="md"
-        mobileTabletSize="md"
-        textSize="md"
-        mobileTextSize="md"
+      sitemule-button
+      *ngFor="let link of links"
+      [color]="link.color"
+      [ngStyle]="{'backgroundColor': link.backgroundColor, 'color': link.color}"
+      [href]="link.href"
+      [target]="link.target"
+      [size]="link.size"
+      [textSize]="link.textSize"
+      [mobileTabletSize]="link.mobileTabletSize"
+      [mobileTextSize]="link.mobileTextSize"
+      [borderRadius]="link.borderRadius"
       >
         {{ link.label }}
       </a>
