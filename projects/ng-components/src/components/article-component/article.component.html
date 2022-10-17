@@ -32,8 +32,10 @@
       [mobileTabletSize]="link.mobileTabletSize"
       [mobileTextSize]="link.mobileTextSize"
       [borderRadius]="link.borderRadius"
+      [style.--icon-color]="link.color"
       >
         {{ link.label }}
+        <img class="buttion-icon" *ngIf="link.icon && buttonIcon" [src]="buttonIcon" alt="download icon">
       </a>
     </div>
   </div>

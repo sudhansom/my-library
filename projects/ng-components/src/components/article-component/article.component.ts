@@ -14,6 +14,7 @@ interface ILink {
   mobileTabletSize: ButtonSize;
   mobileTextSize: ButtonSize;
   borderRadius: string;
+  icon?:boolean;
 }
 
 @Component({
@@ -33,4 +34,5 @@ export class ArticleComponent {
   @Input() backgroundColor: string = '';
   @Input() boxShadow: string = '';
   @Input() textColor: string = '';
+  @Input() buttonIcon: string = '';
 }

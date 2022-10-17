@@ -48,7 +48,8 @@ const sitemuleLinks = [
     size: 'lg' as 'lg',
     textSize: 'lg' as 'lg',
     mobileTabletSize: 'md' as 'md',
-    mobileTextSize: 'md' as 'md'
+    mobileTextSize: 'md' as 'md',
+    icon: true,
   },
   {
     label: 'Inspiration',
@@ -59,7 +60,7 @@ const sitemuleLinks = [
     size: 'lg' as 'lg',
     textSize: 'lg' as 'lg',
     mobileTabletSize: 'md' as 'md',
-    mobileTextSize: 'md' as 'md'
+    mobileTextSize: 'md' as 'md',
   },
 ];
 
@@ -126,4 +127,19 @@ articleForSitemuleLeft.args = {
   backgroundColor: 'rgb(248, 248, 248)',
   boxShadow:'rgba(149, 157, 165, 0.2) 0px 8px 24px',
   textColor: '#7D868C',
+};
+
+export const articleWithButtonIcon = Template.bind({});
+articleWithButtonIcon.storyName = 'article-with-button-icon';
+articleWithButtonIcon.args = {
+  imagePosition: 'left',
+  image: 'https://images.ctfassets.net/hrltx12pl8hq/a2hkMAaruSQ8haQZ4rBL9/8ff4a6f289b9ca3f4e6474f29793a74a/nature-image-for-website.jpg?fit=fill&w=480&h=320',
+  header: 'Design ny Hero',
+  description:'En teaser handler om call-to-action, en opfordring til handling med et forventet konverteringsforløb. Målet skal ikke ­ nødvendigvis være et køb, men kan være et signup eller aflevering af andet specifikt budskab branding mv.',
+  links: sitemuleLinks,
+  imageBorderRadius: '10px',
+  backgroundColor: 'rgb(248, 248, 248)',
+  boxShadow:'rgba(149, 157, 165, 0.2) 0px 8px 24px',
+  textColor: '#7D868C',
+  buttonIcon: 'https://cdn-icons-png.flaticon.com/512/724/724933.png',
 };
