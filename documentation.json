@@ -113,12 +113,12 @@
         },
         {
             "name": "ILink",
-            "id": "interface-ILink-f6a98a892d534c350d92493e5602f9c065919dcfa5d3747120f03dfb01a6934bae56b546ed901148514fd4b55af658119754647d3f27e6332eeab5a639d83f10",
+            "id": "interface-ILink-12a1e5efeb6c7ab71224018afbf4c5f6ac56ee30bc9ccba2b479611c25e4d82d7ee1f0b4c981c76e17262255347e190fe8be47bd463b6fa1147d7f45716132f3",
             "file": "projects/ng-components/src/components/article-component/article.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\ntype TargetType = '_blank' | '_self'  | '_parent' | '_top';\n\ninterface ILink{\n  topLink?: boolean\n  label: string\n  href: string\n  target?: TargetType\n  backgroundColor: string\n  color: string\n}\n\n@Component({\n  selector: 'sm-article',\n  templateUrl: './article.component.html',\n  styleUrls: ['./article.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class ArticleComponent {\n  @Input() imagePosition: 'left' | 'right' = 'left';\n  @Input() image: string = '';\n  @Input() icon: string = '';\n  @Input() header: string = '';\n  @Input() description: string = '';\n  @Input() links: ILink[] = [];\n  @Input() imageBorderRadius = '10px';\n  @Input() backgroundColor: string = '';\n  @Input() boxShadow: string = '';\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\ntype TargetType = '_blank' | '_self'  | '_parent' | '_top';\ntype ButtonType = 'sm' | 'md' | 'lg'\n\ninterface ILink{\n  topLink?: boolean\n  label: string\n  href: string\n  target?: TargetType\n  backgroundColor: string\n  color: string\n  borderRadius: string\n  size: ButtonType\n}\n\n@Component({\n  selector: 'sm-article',\n  templateUrl: './article.component.html',\n  styleUrls: ['./article.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class ArticleComponent {\n  @Input() imagePosition: 'left' | 'right' = 'left';\n  @Input() image: string = '';\n  @Input() icon: string = '';\n  @Input() header: string = '';\n  @Input() description: string = '';\n  @Input() links: ILink[] = [];\n  @Input() imageBorderRadius = '10px';\n  @Input() backgroundColor: string = '';\n  @Input() boxShadow: string = '';\n  @Input() textColor: string = '';\n}\n",
             "properties": [
                 {
                     "name": "backgroundColor",
@@ -127,7 +127,16 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 10
+                    "line": 11
+                },
+                {
+                    "name": "borderRadius",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
                 },
                 {
                     "name": "color",
@@ -136,7 +145,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 11
+                    "line": 12
                 },
                 {
                     "name": "href",
@@ -145,7 +154,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 8
+                    "line": 9
                 },
                 {
                     "name": "label",
@@ -154,7 +163,16 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 7
+                    "line": 8
+                },
+                {
+                    "name": "size",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ButtonType",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
                 },
                 {
                     "name": "target",
@@ -163,7 +181,7 @@
                     "type": "TargetType",
                     "optional": true,
                     "description": "",
-                    "line": 9
+                    "line": 10
                 },
                 {
                     "name": "topLink",
@@ -172,7 +190,7 @@
                     "type": "boolean",
                     "optional": true,
                     "description": "",
-                    "line": 6
+                    "line": 7
                 }
             ],
             "indexSignatures": [],
@@ -181,12 +199,12 @@
         },
         {
             "name": "ILink",
-            "id": "interface-ILink-2c846006899666ef4216e119ba864901a80c89177f9db28364ac5ff81997d56da06d225a76c3f4d619cfb180e5625f5409aa6070f927c84abb6f16589d032448-1",
+            "id": "interface-ILink-f79b6df7f65781d37a422d1b3f629d57ec51413bef36fbf1962e15e3bb4af548b236283effd0d97485373a739cfc67d94d4b7d52a21f35402c8f7a0dc2cab05d-1",
             "file": "projects/ng-components/src/components/hero-header/hero-header.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\ntype TargetType = '_blank' | '_self'  | '_parent' | '_top';\ntype ButtonSize = 'sm' | 'md' | 'lg';\n\ninterface ILink {\n  topLink?: boolean;\n  label: string;\n  href: string;\n  target?: TargetType;\n  backgroundColor: string;\n  color: string;\n  size: ButtonSize;\n  textSize: ButtonSize;\n  mobileTabletSize: ButtonSize;\n  mobileTextSize: ButtonSize;\n  borderRadius: string;\n}\n\n@Component({\n  selector: 'sm-hero-header',\n  templateUrl: './hero-header.component.html',\n  styleUrls: ['./hero-header.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class HeroHeaderComponent {\n  @Input() header: string = '';\n  @Input() description: string = '';\n  @Input() note: string = '';\n  @Input() links?: ILink[] = [];\n  @Input() image: string = '';\n  @Input() youtubeSrc: string = '';\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\ntype TargetType = '_blank' | '_self'  | '_parent' | '_top';\ntype ButtonSize = 'sm' | 'md' | 'lg';\n\ninterface ILink {\n  topLink?: boolean;\n  label: string;\n  href: string;\n  target?: TargetType;\n  backgroundColor: string;\n  color: string;\n  size: ButtonSize;\n  textSize: ButtonSize;\n  mobileTabletSize: ButtonSize;\n  mobileTextSize: ButtonSize;\n  borderRadius: string;\n}\n\n@Component({\n  selector: 'sm-hero-header',\n  templateUrl: './hero-header.component.html',\n  styleUrls: ['./hero-header.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class HeroHeaderComponent {\n  @Input() topHeader: string = '';\n  @Input() header: string = '';\n  @Input() description: string = '';\n  @Input() note: string = '';\n  @Input() links?: ILink[] = [];\n  @Input() image: string = '';\n  @Input() youtubeSrc: string = '';\n}\n",
             "properties": [
                 {
                     "name": "backgroundColor",
@@ -1152,7 +1170,7 @@
     "components": [
         {
             "name": "ArticleComponent",
-            "id": "component-ArticleComponent-f6a98a892d534c350d92493e5602f9c065919dcfa5d3747120f03dfb01a6934bae56b546ed901148514fd4b55af658119754647d3f27e6332eeab5a639d83f10",
+            "id": "component-ArticleComponent-12a1e5efeb6c7ab71224018afbf4c5f6ac56ee30bc9ccba2b479611c25e4d82d7ee1f0b4c981c76e17262255347e190fe8be47bd463b6fa1147d7f45716132f3",
             "file": "projects/ng-components/src/components/article-component/article.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -1175,7 +1193,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 28,
+                    "line": 31,
                     "type": "string",
                     "decorators": []
                 },
@@ -1184,7 +1202,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 29,
+                    "line": 32,
                     "type": "string",
                     "decorators": []
                 },
@@ -1193,7 +1211,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 25,
+                    "line": 28,
                     "type": "string",
                     "decorators": []
                 },
@@ -1202,7 +1220,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 24,
+                    "line": 27,
                     "type": "string",
                     "decorators": []
                 },
@@ -1211,7 +1229,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 23,
+                    "line": 26,
                     "type": "string",
                     "decorators": []
                 },
@@ -1220,7 +1238,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 22,
+                    "line": 25,
                     "type": "string",
                     "decorators": []
                 },
@@ -1229,7 +1247,7 @@
                     "defaultValue": "'10px'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 27,
+                    "line": 30,
                     "type": "string",
                     "decorators": []
                 },
@@ -1238,7 +1256,7 @@
                     "defaultValue": "'left'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 21,
+                    "line": 24,
                     "type": "\"left\" | \"right\"",
                     "decorators": []
                 },
@@ -1247,8 +1265,17 @@
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 26,
+                    "line": 29,
                     "type": "ILink[]",
+                    "decorators": []
+                },
+                {
+                    "name": "textColor",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 33,
+                    "type": "string",
                     "decorators": []
                 }
             ],
@@ -1262,16 +1289,16 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\ntype TargetType = '_blank' | '_self'  | '_parent' | '_top';\n\ninterface ILink{\n  topLink?: boolean\n  label: string\n  href: string\n  target?: TargetType\n  backgroundColor: string\n  color: string\n}\n\n@Component({\n  selector: 'sm-article',\n  templateUrl: './article.component.html',\n  styleUrls: ['./article.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class ArticleComponent {\n  @Input() imagePosition: 'left' | 'right' = 'left';\n  @Input() image: string = '';\n  @Input() icon: string = '';\n  @Input() header: string = '';\n  @Input() description: string = '';\n  @Input() links: ILink[] = [];\n  @Input() imageBorderRadius = '10px';\n  @Input() backgroundColor: string = '';\n  @Input() boxShadow: string = '';\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\ntype TargetType = '_blank' | '_self'  | '_parent' | '_top';\ntype ButtonType = 'sm' | 'md' | 'lg'\n\ninterface ILink{\n  topLink?: boolean\n  label: string\n  href: string\n  target?: TargetType\n  backgroundColor: string\n  color: string\n  borderRadius: string\n  size: ButtonType\n}\n\n@Component({\n  selector: 'sm-article',\n  templateUrl: './article.component.html',\n  styleUrls: ['./article.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class ArticleComponent {\n  @Input() imagePosition: 'left' | 'right' = 'left';\n  @Input() image: string = '';\n  @Input() icon: string = '';\n  @Input() header: string = '';\n  @Input() description: string = '';\n  @Input() links: ILink[] = [];\n  @Input() imageBorderRadius = '10px';\n  @Input() backgroundColor: string = '';\n  @Input() boxShadow: string = '';\n  @Input() textColor: string = '';\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@use '../../../../variables';\n\n:host {\n  .image-article {\n    padding: 12px var(--content-margin);\n    display: flex;\n    flex-direction: column;\n    row-gap: 12px;\n    background-color: var(--background-color);\n\n    &__image-container {\n      order: 0;\n\n      &__image {\n        display: block;\n        width: 100%;\n        border-radius: var(--image-border-radius-mobile);\n        box-shadow:  var(--box-shadow);\n      }\n    }\n    &__article {\n      .icon {\n        margin-bottom: 12px;\n        margin-right: -15px;\n        border-radius: 7px;\n      }\n      .header {\n        color:#092728; // may come from data or variable\n        font-size: 30px;\n        line-height: 33px;\n        margin: 0;\n      }\n      .description {\n        color:#887d8c; // may come from data or variable\n        font-size: 16px;\n        line-height: 26px;\n        margin-top: 10px;\n      }\n    }\n  }\n  @media (min-width: map-get(variables.$breakpoints, \"phone\")) {\n    display: grid;\n    grid-template-columns: [left] 1fr [center] minmax(\n        auto,\n        calc(var(--max-content-width) + var(--content-margin) * 2)\n      ) [right] 1fr;\n\n    .image-article {\n      &.left {\n        grid-column: left / span 2;\n        margin-right: var(--content-margin);\n      }\n      &.right {\n        grid-column: center / span 2;\n        margin-left: var(--content-margin);\n      }\n    }\n    .image-article {\n      padding: 0;\n      flex-direction: row;\n      align-items: center;\n      gap: 60px;\n\n      &__image-container {\n          order: var(--image-order);\n          width: 45%;\n          margin: 0;\n\n          &__image {\n            border-radius: var(--image-border-radius);\n          }\n      }\n\n      &__article {\n        padding: 12px 0;\n        flex: 1;\n\n        .icon {\n          margin-bottom: 36px;\n        }\n\n        .header {\n          font-size: 46px;\n          line-height: 46px;\n          font-weight: 800;\n        }\n        .description {\n          font-size: 16px;\n          line-height: 26px;\n        }\n        &__links-container {\n          margin-top: 20px;\n        }\n      }\n    }\n  }\n}\n",
+                    "data": "@use '../../../../variables';\n\n:host {\n  .image-article {\n    padding: 12px var(--content-margin);\n    display: flex;\n    flex-direction: column;\n    row-gap: 12px;\n    background-color: var(--background-color);\n\n    &__image-container {\n      order: 0;\n\n      &__image {\n        display: block;\n        width: 100%;\n        border-radius: var(--image-border-radius-mobile);\n        box-shadow:  var(--box-shadow);\n      }\n    }\n    &__article {\n      .icon {\n        margin-bottom: 12px;\n        margin-right: -15px;\n        border-radius: 7px;\n      }\n      .header {\n        color:#092728; // may come from data or variable\n        font-size: 30px;\n        line-height: 33px;\n        margin: 0;\n      }\n      .description {\n        color: var(--text-color);\n        font-size: 20px;\n        line-height: 26px;\n        margin-top: 20px;\n      }\n\n      &__links-container {\n        display: flex;\n        gap: 10px;\n        margin-top: 25px;\n      }\n    }\n  }\n  @media (min-width: map-get(variables.$breakpoints, \"phone\")) {\n    display: grid;\n    grid-template-columns: [left] 1fr [center] minmax(\n        auto,\n        calc(var(--max-content-width) + var(--content-margin) * 2)\n      ) [right] 1fr;\n\n    .image-article {\n      &.left {\n        grid-column: left / span 2;\n        margin-right: var(--content-margin);\n      }\n      &.right {\n        grid-column: center / span 2;\n        margin-left: var(--content-margin);\n      }\n    }\n    .image-article {\n      padding: 0;\n      flex-direction: row;\n      align-items: center;\n      gap: 60px;\n\n      &__image-container {\n          order: var(--image-order);\n          width: 45%;\n          margin: 0;\n\n          &__image {\n            border-radius: var(--image-border-radius);\n          }\n      }\n\n      &__article {\n        padding: 12px 0;\n        flex: 1;\n\n        .icon {\n          margin-bottom: 36px;\n        }\n\n        .header {\n          font-size: 46px;\n          line-height: 46px;\n          font-weight: 800;\n        }\n        &__links-container {\n          gap: 20px;\n        }\n      }\n    }\n  }\n}\n",
                     "styleUrl": "./article.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<div\n  class=\"image-article\"\n  [class.left]=\"imagePosition === 'left'\"\n  [class.right]=\"imagePosition === 'right'\"\n  [style.--image-order]=\"imagePosition === 'left'? 0 : 2\"\n  [style.--image-border-radius-mobile]=\"imageBorderRadius\"\n  [style.--image-border-radius]=\"imagePosition ==='left'? '0 ' + imageBorderRadius + ' ' + imageBorderRadius + ' 0' :  imageBorderRadius + ' 0 '  + '0 ' + imageBorderRadius \"\n  [style.--background-image]=\"'url(\\'' + image + '\\')'\"\n  [style.--background-color]=\"backgroundColor\"\n  [style.--box-shadow]=\"boxShadow\"\n>\n  <div class=\"image-article__image-container\">\n    <img class=\"image-article__image-container__image\" src=\"{{ image }}\" alt=\"\" />\n  </div>\n  <div class=\"image-article__article\">\n    <img class=\"icon\" src=\"{{ icon }}\" alt=\"logo\" />\n    <h3 class=\"header\">{{ header }}</h3>\n    <p class=\"description\">\n      {{ description }}\n    </p>\n\n    <div class=\"image-article__article__links-container\" *ngIf=\"links?.length\">\n      <a\n        sitemule-button\n        *ngFor=\"let link of links\"\n        [color]=\"link.color\"\n        [ngStyle]=\"{\n          backgroundColor: link.backgroundColor,\n          color: link.color\n        }\"\n        [href]=\"link.href\"\n        [target]=\"link.target\"\n        [stroked]=\"false\"\n        size=\"md\"\n        mobileTabletSize=\"md\"\n        textSize=\"md\"\n        mobileTextSize=\"md\"\n      >\n        {{ link.label }}\n      </a>\n    </div>\n  </div>\n</div>\n"
+            "templateData": "<div\n  class=\"image-article\"\n  [class.left]=\"imagePosition === 'left'\"\n  [class.right]=\"imagePosition === 'right'\"\n  [style.--image-order]=\"imagePosition === 'left'? 0 : 2\"\n  [style.--image-border-radius-mobile]=\"imageBorderRadius\"\n  [style.--image-border-radius]=\"imagePosition ==='left'? '0 ' + imageBorderRadius + ' ' + imageBorderRadius + ' 0' :  imageBorderRadius + ' 0 '  + '0 ' + imageBorderRadius \"\n  [style.--background-image]=\"'url(\\'' + image + '\\')'\"\n  [style.--background-color]=\"backgroundColor\"\n  [style.--box-shadow]=\"boxShadow\"\n  [style.--text-color]=\"textColor\"\n>\n  <div class=\"image-article__image-container\">\n    <img class=\"image-article__image-container__image\" src=\"{{ image }}\" alt=\"\" />\n  </div>\n  <div class=\"image-article__article\">\n    <img *ngIf=\"icon\" class=\"icon\" src=\"{{ icon }}\" alt=\"logo\" />\n    <h3 class=\"header\">{{ header }}</h3>\n    <p class=\"description\">\n      {{ description }}\n    </p>\n    <div class=\"image-article__article__links-container\" *ngIf=\"links?.length\">\n      <a\n      sitemule-button\n      *ngFor=\"let link of links\"\n      [style.--button-color]=\"link.color\"\n      [ngStyle]=\"{'backgroundColor': link.backgroundColor, 'color': link.color}\"\n      [href]=\"link.href\"\n      [target]=\"link.target\"\n      [size]=\"link.size\"\n      [textSize]=\"link.textSize\"\n      [mobileTabletSize]=\"link.mobileTabletSize\"\n      [mobileTextSize]=\"link.mobileTextSize\"\n      [borderRadius]=\"link.borderRadius\"\n      >\n        {{ link.label }}\n      </a>\n    </div>\n  </div>\n</div>\n"
         },
         {
             "name": "BannerLayout1Component",
@@ -1659,7 +1686,7 @@
         },
         {
             "name": "HeroHeaderComponent",
-            "id": "component-HeroHeaderComponent-2c846006899666ef4216e119ba864901a80c89177f9db28364ac5ff81997d56da06d225a76c3f4d619cfb180e5625f5409aa6070f927c84abb6f16589d032448",
+            "id": "component-HeroHeaderComponent-f79b6df7f65781d37a422d1b3f629d57ec51413bef36fbf1962e15e3bb4af548b236283effd0d97485373a739cfc67d94d4b7d52a21f35402c8f7a0dc2cab05d",
             "file": "projects/ng-components/src/components/hero-header/hero-header.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -1682,7 +1709,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 28,
+                    "line": 29,
                     "type": "string",
                     "decorators": []
                 },
@@ -1691,7 +1718,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 27,
+                    "line": 28,
                     "type": "string",
                     "decorators": []
                 },
@@ -1700,7 +1727,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 31,
+                    "line": 32,
                     "type": "string",
                     "decorators": []
                 },
@@ -1709,7 +1736,7 @@
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 30,
+                    "line": 31,
                     "type": "ILink[]",
                     "decorators": []
                 },
@@ -1718,7 +1745,16 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 29,
+                    "line": 30,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "topHeader",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 27,
                     "type": "string",
                     "decorators": []
                 },
@@ -1727,7 +1763,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 32,
+                    "line": 33,
                     "type": "string",
                     "decorators": []
                 }
@@ -1742,16 +1778,16 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\ntype TargetType = '_blank' | '_self'  | '_parent' | '_top';\ntype ButtonSize = 'sm' | 'md' | 'lg';\n\ninterface ILink {\n  topLink?: boolean;\n  label: string;\n  href: string;\n  target?: TargetType;\n  backgroundColor: string;\n  color: string;\n  size: ButtonSize;\n  textSize: ButtonSize;\n  mobileTabletSize: ButtonSize;\n  mobileTextSize: ButtonSize;\n  borderRadius: string;\n}\n\n@Component({\n  selector: 'sm-hero-header',\n  templateUrl: './hero-header.component.html',\n  styleUrls: ['./hero-header.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class HeroHeaderComponent {\n  @Input() header: string = '';\n  @Input() description: string = '';\n  @Input() note: string = '';\n  @Input() links?: ILink[] = [];\n  @Input() image: string = '';\n  @Input() youtubeSrc: string = '';\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\ntype TargetType = '_blank' | '_self'  | '_parent' | '_top';\ntype ButtonSize = 'sm' | 'md' | 'lg';\n\ninterface ILink {\n  topLink?: boolean;\n  label: string;\n  href: string;\n  target?: TargetType;\n  backgroundColor: string;\n  color: string;\n  size: ButtonSize;\n  textSize: ButtonSize;\n  mobileTabletSize: ButtonSize;\n  mobileTextSize: ButtonSize;\n  borderRadius: string;\n}\n\n@Component({\n  selector: 'sm-hero-header',\n  templateUrl: './hero-header.component.html',\n  styleUrls: ['./hero-header.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class HeroHeaderComponent {\n  @Input() topHeader: string = '';\n  @Input() header: string = '';\n  @Input() description: string = '';\n  @Input() note: string = '';\n  @Input() links?: ILink[] = [];\n  @Input() image: string = '';\n  @Input() youtubeSrc: string = '';\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@use '../../../../variables';\n\n:host {\n  .hero-header {\n    text-align: center;\n\n    img{\n      max-width: 100%;\n    }\n\n    .video-container {\n      position: relative;\n      overflow: hidden;\n\n      @media(max-width: map-get(variables.$breakpoints, \"phone\")){\n        aspect-ratio: calc(16 / 9);\n      }\n    }\n\n    &__content {\n      color: #25122D;\n      padding: 10px var(--content-margin);\n      .header {\n        font-size: 36px;\n        line-height: 36px;\n        margin: 0;\n      }\n      .description {\n        font-size: 16px;\n        line-height: 18px;\n        margin-top: 10px;\n        font-weight: 600;\n      }\n\n      .links {\n        display: flex;\n        justify-content: center;\n        gap: 10px;\n      }\n      .note {\n        font-size: 11px;\n        color: #8c8383;\n        margin-top: 8px;\n      }\n    }\n  }\n  @media(min-width: map-get(variables.$breakpoints, \"phone\")){\n    .hero-header {\n      height: calc(90vh - 84px);\n      background-image: linear-gradient(179.71deg, rgba(34, 9, 54, 0) 0%, rgba(34, 9, 54, 0.89) 100%), var(--background-image);\n      background-size: cover;\n      background-position: top center;\n      position: relative;\n      display: flex;\n      justify-content: center;\n      img {\n        display: none;\n      }\n\n      .video-container {\n        position: absolute;\n        top: 0;\n        right: 0;\n        bottom: 0;\n        left: 0;\n      }\n\n      &__content {\n        color: #fff;\n        position: absolute;\n        bottom: 50px;\n        padding: 40px;\n        .header {\n          font-size: 72px;\n          line-height: 72px;\n        }\n        .description {\n          font-size: 24px;\n          line-height: 30px;\n          font-weight: 500;\n        }\n        .note {\n          font-size: 14px;\n          margin-top: 14px;\n        }\n      }\n    }\n  }\n}\n",
+                    "data": "@use '../../../../variables';\n\n:host {\n  .hero-header {\n    text-align: center;\n\n    img{\n      max-width: 100%;\n    }\n\n    .video-container {\n      position: relative;\n      overflow: hidden;\n\n      @media(max-width: map-get(variables.$breakpoints, \"phone\")){\n        aspect-ratio: calc(16 / 9);\n      }\n    }\n\n    &__content {\n      color: #25122D;\n      padding: 10px var(--content-margin);\n\n      .top-header {\n        font-size: 16px;\n        letter-spacing: 1px;\n        line-height: 20px;\n        margin-top: 0;\n      }\n\n      .header {\n        font-size: 36px;\n        line-height: 36px;\n        margin: 0;\n      }\n\n      .description {\n        font-size: 16px;\n        line-height: 18px;\n        margin-top: 10px;\n        font-weight: 600;\n      }\n\n      .links {\n        display: flex;\n        justify-content: center;\n        gap: 10px;\n      }\n\n      .note {\n        font-size: 11px;\n        color: #8c8383;\n        margin-top: 8px;\n      }\n    }\n  }\n  @media(min-width: map-get(variables.$breakpoints, \"phone\")){\n    .hero-header {\n      height: calc(90vh - 84px);\n      background-image: linear-gradient(179.71deg, rgba(34, 9, 54, 0) 0%, rgba(34, 9, 54, 0.89) 100%), var(--background-image);\n      background-size: cover;\n      background-position: top center;\n      position: relative;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      img {\n        display: none;\n      }\n\n      .video-container {\n        position: absolute;\n        top: 0;\n        right: 0;\n        bottom: 0;\n        left: 0;\n      }\n\n      &__content {\n        color: #fff;\n        max-width: var(--max-content-width);\n        padding-left: 140px;\n        padding-right: 140px;\n        position: absolute;\n\n        .top-header {\n          font-size: 24px;\n          letter-spacing: 1px;\n          line-height: 36px;\n        }\n\n        .header {\n          font-size: 72px;\n          line-height: 72px;\n        }\n\n        .description {\n          font-size: 24px;\n          line-height: 30px;\n          font-weight: 500;\n        }\n\n        .note {\n          font-size: 14px;\n          margin-top: 14px;\n        }\n      }\n    }\n  }\n}\n",
                     "styleUrl": "./hero-header.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"hero-header\" [style.--background-image]=\"'url(' + image + ')'\">\n  <div *ngIf=\"image\">\n    <img src=\"{{ image }}\" />\n  </div>\n  <div *ngIf=\"youtubeSrc\" class=\"video-container\">\n    <iframe [smYoutubeSrc]=\"youtubeSrc\"></iframe>\n  </div>\n  <div class=\"hero-header__content\">\n    <h2 class=\"header\">{{ header }}</h2>\n    <p class=\"description\">\n      {{ description }}\n    </p>\n    <div *ngIf=\"links?.length\" class=\"links\">\n      <a\n        sitemule-button\n        *ngFor=\"let link of links\"\n        [style.--button-color]=\"link.color\"\n        [ngStyle]=\"{'backgroundColor': link.backgroundColor, 'color': link.color}\"\n        [href]=\"link.href\"\n        [target]=\"link.target\"\n        [size]=\"link.size\"\n        [textSize]=\"link.textSize\"\n        [mobileTabletSize]=\"link.mobileTabletSize\"\n        [mobileTextSize]=\"link.mobileTextSize\"\n        [borderRadius]=\"link.borderRadius\"\n      >\n        {{ link.label }}\n      </a>\n    </div>\n    <p class=\"note\">{{ note }}</p>\n  </div>\n</div>\n"
+            "templateData": "<div class=\"hero-header\" [style.--background-image]=\"'url(' + image + ')'\">\n  <div *ngIf=\"image\">\n    <img src=\"{{ image }}\" />\n  </div>\n  <div *ngIf=\"youtubeSrc\" class=\"video-container\">\n    <iframe [smYoutubeSrc]=\"youtubeSrc\"></iframe>\n  </div>\n  <div class=\"hero-header__content\">\n    <h4 *ngIf=\"topHeader\" class=\"top-header\">{{ topHeader }}</h4>\n    <h2 class=\"header\">{{ header }}</h2>\n    <p class=\"description\">\n      {{ description }}\n    </p>\n    <div *ngIf=\"links?.length\" class=\"links\">\n      <a\n        sitemule-button\n        *ngFor=\"let link of links\"\n        [style.--button-color]=\"link.color\"\n        [ngStyle]=\"{'backgroundColor': link.backgroundColor, 'color': link.color}\"\n        [href]=\"link.href\"\n        [target]=\"link.target\"\n        [size]=\"link.size\"\n        [textSize]=\"link.textSize\"\n        [mobileTabletSize]=\"link.mobileTabletSize\"\n        [mobileTextSize]=\"link.mobileTextSize\"\n        [borderRadius]=\"link.borderRadius\"\n      >\n        {{ link.label }}\n      </a>\n    </div>\n    <p *ngIf=\"note\" class=\"note\">{{ note }}</p>\n  </div>\n</div>\n"
         },
         {
             "name": "NavigationComponent",
@@ -2294,7 +2330,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ":host {\n  .teaser {\n    border-radius: 5px;\n    overflow: hidden;\n    height: 100%;\n    background-color: var(--background-color);\n    display: block;\n    text-decoration: none;\n    border: var(--border);\n    box-shadow: var(--box-shadow);\n\n    @media not all and (hover: none) {\n      &.has-hover-box-shadow {\n        position: relative;\n\n        &::after {\n          content: '';\n          position: absolute;\n          top: 0;\n          right: 0;\n          bottom: 0;\n          left: 0;\n          opacity: 0;\n          box-shadow: var(--hover-box-shadow);\n          transition: opacity .2s ease-in-out;\n        }\n\n        &:hover::after {\n          opacity: 1;\n        }\n      }\n    }\n\n    &__image-container {\n      overflow: hidden;\n      img {\n        object-fit: var(--background-image-size);\n        height: var(--image-height);\n        transform: scale(1);\n        transition-duration: 0.5s;\n        display: block;\n      }\n      &:hover img {\n        transform: scale(1.08);\n      }\n    }\n    &__text-container {\n      margin: 15px 20px 28px;\n    }\n  }\n  .text {\n    color: var(--text-color);\n    text-align: center;\n    &--h3 {\n      font-size: 21px;\n      line-height: 20px;\n      font-weight: var(--bold-font-weight);\n      margin: 0;\n    }\n    &--p {\n      font-size: 14px;\n      line-height: 19px;\n      margin: 5px 0 0;\n      display: -webkit-box;\n      -webkit-line-clamp: 3;\n      -webkit-box-orient: vertical;\n      overflow: hidden;\n    }\n  }\n}\n",
+                    "data": ":host {\n  .teaser {\n    border-radius: 5px;\n    overflow: hidden;\n    height: 100%;\n    background-color: var(--background-color);\n    display: block;\n    text-decoration: none;\n    border: var(--border);\n    box-shadow: var(--box-shadow);\n\n    @media not all and (hover: none) {\n      &.has-hover-box-shadow {\n        position: relative;\n\n        &::after {\n          content: '';\n          position: absolute;\n          top: 0;\n          right: 0;\n          bottom: 0;\n          left: 0;\n          opacity: 0;\n          box-shadow: var(--hover-box-shadow);\n          transition: opacity .2s ease-in-out;\n        }\n\n        &:hover::after {\n          opacity: 1;\n        }\n      }\n    }\n\n    &__image-container {\n      overflow: hidden;\n      img {\n        object-fit: var(--background-image-size);\n        height: var(--image-height);\n        transform: scale(1);\n        transition-duration: 0.5s;\n        display: block;\n      }\n      &:hover img {\n        transform: scale(1.08);\n      }\n    }\n    &__text-container {\n      margin: 15px 20px 28px;\n    }\n  }\n  .text {\n    color: var(--text-color);\n    text-align: center;\n    &--h3 {\n      font-size: 21px;\n      line-height: 20px;\n      font-weight: var(--bold-font-weight);\n      margin: 0;\n    }\n    &--p {\n      font-size: 14px;\n      line-height: 19px;\n      margin: 5px 0 0;\n    }\n  }\n}\n",
                     "styleUrl": "./teaser-layout-1.component.scss"
                 }
             ],
@@ -2461,7 +2497,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".teaser {\n  font-family: var(--font-family);\n  border-radius: 4px;\n  height: var(--teaser-height);\n  text-align: center;\n  background-color: var(--background-color);\n  background-position: var(--background-image-position);\n  background-size: var(--background-image-size);\n  position: relative;\n  overflow: hidden;\n  display: block;\n  text-decoration: none;\n\n  img {\n    object-fit: cover;\n    max-width: 100%;\n    display: block;\n  }\n\n  &__titles {\n    position: absolute;\n    bottom: 28px;\n    left: 40px;\n    right: 40px;\n\n    h3 {\n      color: #fff;\n      font-size: 24px;\n      line-height: 29px;\n      text-align: center;\n      display: -webkit-box;\n      -webkit-line-clamp: 2;\n      -webkit-box-orient: vertical;\n      overflow: hidden;\n    }\n    p {\n      color: #fff;\n      font-size: 16px;\n      line-height: 19px;\n      text-align: center;\n      margin: 0;\n      display: -webkit-box;\n      -webkit-line-clamp: 1;\n      -webkit-box-orient: vertical;\n      overflow: hidden;\n    }\n  }\n  &:hover {\n    &::before {\n      content: \"\";\n      background-image: linear-gradient(\n        180deg,\n        rgba(238, 238, 238, 0) 0%,\n        rgba(255, 255, 255, 0.89) 100%\n      );\n      position: absolute;\n      top: 0;\n      left: 0;\n      right: 0;\n      bottom: 0;\n    }\n\n    h3 {\n      color: var(--primary-color);\n    }\n    p {\n      color: var(--primary-color);\n    }\n  }\n}\n",
+                    "data": ".teaser {\n  font-family: var(--font-family);\n  border-radius: 4px;\n  height: var(--teaser-height);\n  text-align: center;\n  background-color: var(--background-color);\n  background-position: var(--background-image-position);\n  background-size: var(--background-image-size);\n  position: relative;\n  overflow: hidden;\n  display: block;\n  text-decoration: none;\n\n  img {\n    object-fit: cover;\n    max-width: 100%;\n    display: block;\n  }\n\n  &__titles {\n    position: absolute;\n    bottom: 28px;\n    left: 40px;\n    right: 40px;\n\n    h3 {\n      color: #fff;\n      font-size: 24px;\n      line-height: 29px;\n      text-align: center;\n    }\n    p {\n      color: #fff;\n      font-size: 16px;\n      line-height: 19px;\n      text-align: center;\n      margin: 0;\n    }\n  }\n  &:hover {\n    &::before {\n      content: \"\";\n      background-image: linear-gradient(\n        180deg,\n        rgba(238, 238, 238, 0) 0%,\n        rgba(255, 255, 255, 0.89) 100%\n      );\n      position: absolute;\n      top: 0;\n      left: 0;\n      right: 0;\n      bottom: 0;\n    }\n\n    h3 {\n      color: var(--primary-color);\n    }\n    p {\n      color: var(--primary-color);\n    }\n  }\n}\n",
                     "styleUrl": "./teaser-layout-2.component.scss"
                 }
             ],
@@ -2617,7 +2653,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ":host {\n  .teaser {\n    font-family: var(--font-family);\n    border-radius: 5px;\n    background-color: var(--background-color);\n    display: block;\n    text-decoration: none;\n    height: 100%;\n    border: var(--border);\n    box-shadow: var(--box-shadow);\n\n    @media not all and (hover: none) {\n      &.has-hover-box-shadow {\n        position: relative;\n\n        &::after {\n          content: '';\n          position: absolute;\n          top: 0;\n          right: 0;\n          bottom: 0;\n          left: 0;\n          opacity: 0;\n          box-shadow: var(--hover-box-shadow);\n          transition: opacity .2s ease-in-out;\n        }\n\n        &:hover::after {\n          opacity: 1;\n        }\n      }\n    }\n\n\n    &__image-container {\n      padding: 10px;\n      img {\n        width: 100%;\n        height: var(--teaser-height);\n        display: block;\n        object-fit: var(--background-image-size);\n        object-position: var(--background-image-position);\n      }\n    }\n\n    &__text-container {\n      color: var(--text-color);\n      text-align: center;\n      padding: 0 20px 20px;\n\n      &__header {\n        font-size: 18px;\n        line-height: 22px;\n        margin: 0;\n        font-weight: normal;\n      }\n\n      &__description {\n        font-size: 14px;\n        line-height: 19px;\n        margin: 5px 0 0;\n        display: -webkit-box;\n        -webkit-line-clamp: 2;\n        -webkit-box-orient: vertical;\n        overflow: hidden;\n      }\n    }\n  }\n}\n",
+                    "data": ":host {\n  .teaser {\n    font-family: var(--font-family);\n    border-radius: 5px;\n    background-color: var(--background-color);\n    display: block;\n    text-decoration: none;\n    height: 100%;\n    border: var(--border);\n    box-shadow: var(--box-shadow);\n\n    @media not all and (hover: none) {\n      &.has-hover-box-shadow {\n        position: relative;\n\n        &::after {\n          content: '';\n          position: absolute;\n          top: 0;\n          right: 0;\n          bottom: 0;\n          left: 0;\n          opacity: 0;\n          box-shadow: var(--hover-box-shadow);\n          transition: opacity .2s ease-in-out;\n        }\n\n        &:hover::after {\n          opacity: 1;\n        }\n      }\n    }\n\n\n    &__image-container {\n      padding: 10px;\n      img {\n        width: 100%;\n        height: var(--teaser-height);\n        display: block;\n        object-fit: var(--background-image-size);\n        object-position: var(--background-image-position);\n      }\n    }\n\n    &__text-container {\n      color: var(--text-color);\n      text-align: center;\n      padding: 0 20px 20px;\n\n      &__header {\n        font-size: 18px;\n        line-height: 22px;\n        margin: 0;\n        font-weight: normal;\n      }\n\n      &__description {\n        font-size: 14px;\n        line-height: 19px;\n        margin: 5px 0 0;\n      }\n    }\n  }\n}\n",
                     "styleUrl": "./teaser-layout-3.component.scss"
                 }
             ],
@@ -4220,6 +4256,26 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "articleForSitemuleLeft",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/article-component/article.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "articleForSitemuleRight",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/article-component/article.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "ButtonButton",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -4300,6 +4356,26 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "heroHeaderSitemule",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/hero-header/hero-header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "heroHeaderSitemuleWithVideo",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/hero-header/hero-header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "heroHeaderWithVideo",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -4367,7 +4443,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "[]",
-                "defaultValue": "[\n  {\n    label: 'Get Started',\n    href: 'https://www.folkelarsen.dk/page1',\n    backgroundColor: '#9925f1',\n    color: 'white',\n  },\n  {\n    label: 'Or get support',\n    href: 'https://www.folkelarsen.dk/page1',\n    backgroundColor: 'rgb(248, 248, 248)',\n    color: '#9925f1',\n  },\n]"
+                "defaultValue": "[\n  {\n    label: 'Get Started',\n    href: 'https://www.folkelarsen.dk/page1',\n    backgroundColor: '#9925f1',\n    color: 'white',\n    borderRadius: '25px',\n    size: 'lg' as 'lg',\n    textSize: 'lg' as 'lg',\n    mobileTabletSize: 'md' as 'md',\n    mobileTextSize: 'md' as 'md'\n  },\n  {\n    label: 'Or get support',\n    href: 'https://www.folkelarsen.dk/page1',\n    backgroundColor: 'rgb(248, 248, 248)',\n    color: '#9925f1',\n    borderRadius: '25px',\n    size: 'lg' as 'lg',\n    textSize: 'lg' as 'lg',\n    mobileTabletSize: 'md' as 'md',\n    mobileTextSize: 'md' as 'md'\n  },\n]"
             },
             {
                 "name": "prefixScaleImageUrl",
@@ -4387,6 +4463,16 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "literal type"
+            },
+            {
+                "name": "sitemuleLinks",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/article-component/article.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\n  {\n    label: 'Skitseark',\n    href: 'https://www.folkelarsen.dk/page1',\n    backgroundColor: '#00A1FD',\n    color: 'white',\n    borderRadius: '25px',\n    size: 'lg' as 'lg',\n    textSize: 'lg' as 'lg',\n    mobileTabletSize: 'md' as 'md',\n    mobileTextSize: 'md' as 'md'\n  },\n  {\n    label: 'Inspiration',\n    href: 'https://www.folkelarsen.dk/page1',\n    backgroundColor: 'rgb(248, 248, 248)',\n    color: '#00A1FD',\n    borderRadius: '25px',\n    size: 'lg' as 'lg',\n    textSize: 'lg' as 'lg',\n    mobileTabletSize: 'md' as 'md',\n    mobileTextSize: 'md' as 'md'\n  },\n]"
             },
             {
                 "name": "teaserstack",
@@ -4548,6 +4634,17 @@
                 "subtype": "typealias",
                 "rawtype": "\"sm\" | \"md\" | \"lg\"",
                 "file": "projects/ng-components/src/components/hero-header/hero-header.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 186
+            },
+            {
+                "name": "ButtonType",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"sm\" | \"md\" | \"lg\"",
+                "file": "projects/ng-components/src/components/article-component/article.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -4911,6 +5008,26 @@
                     "defaultValue": "Template.bind({})"
                 },
                 {
+                    "name": "articleForSitemuleLeft",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/article-component/article.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "articleForSitemuleRight",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/article-component/article.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
                     "name": "links",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -4918,7 +5035,17 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
-                    "defaultValue": "[\n  {\n    label: 'Get Started',\n    href: 'https://www.folkelarsen.dk/page1',\n    backgroundColor: '#9925f1',\n    color: 'white',\n  },\n  {\n    label: 'Or get support',\n    href: 'https://www.folkelarsen.dk/page1',\n    backgroundColor: 'rgb(248, 248, 248)',\n    color: '#9925f1',\n  },\n]"
+                    "defaultValue": "[\n  {\n    label: 'Get Started',\n    href: 'https://www.folkelarsen.dk/page1',\n    backgroundColor: '#9925f1',\n    color: 'white',\n    borderRadius: '25px',\n    size: 'lg' as 'lg',\n    textSize: 'lg' as 'lg',\n    mobileTabletSize: 'md' as 'md',\n    mobileTextSize: 'md' as 'md'\n  },\n  {\n    label: 'Or get support',\n    href: 'https://www.folkelarsen.dk/page1',\n    backgroundColor: 'rgb(248, 248, 248)',\n    color: '#9925f1',\n    borderRadius: '25px',\n    size: 'lg' as 'lg',\n    textSize: 'lg' as 'lg',\n    mobileTabletSize: 'md' as 'md',\n    mobileTextSize: 'md' as 'md'\n  },\n]"
+                },
+                {
+                    "name": "sitemuleLinks",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/article-component/article.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\n  {\n    label: 'Skitseark',\n    href: 'https://www.folkelarsen.dk/page1',\n    backgroundColor: '#00A1FD',\n    color: 'white',\n    borderRadius: '25px',\n    size: 'lg' as 'lg',\n    textSize: 'lg' as 'lg',\n    mobileTabletSize: 'md' as 'md',\n    mobileTextSize: 'md' as 'md'\n  },\n  {\n    label: 'Inspiration',\n    href: 'https://www.folkelarsen.dk/page1',\n    backgroundColor: 'rgb(248, 248, 248)',\n    color: '#00A1FD',\n    borderRadius: '25px',\n    size: 'lg' as 'lg',\n    textSize: 'lg' as 'lg',\n    mobileTabletSize: 'md' as 'md',\n    mobileTextSize: 'md' as 'md'\n  },\n]"
                 },
                 {
                     "name": "Template",
@@ -4999,6 +5126,26 @@
                 },
                 {
                     "name": "heroHeader",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/hero-header/hero-header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "heroHeaderSitemule",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/hero-header/hero-header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "heroHeaderSitemuleWithVideo",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "projects/ng-components/src/components/hero-header/hero-header.stories.ts",
@@ -5218,6 +5365,30 @@
                     "kind": 186
                 }
             ],
+            "projects/ng-components/src/components/article-component/article.component.ts": [
+                {
+                    "name": "ButtonType",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"sm\" | \"md\" | \"lg\"",
+                    "file": "projects/ng-components/src/components/article-component/article.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 186
+                },
+                {
+                    "name": "TargetType",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"_blank\" | \"_self\" | \"_parent\" | \"_top\"",
+                    "file": "projects/ng-components/src/components/article-component/article.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 186
+                }
+            ],
             "projects/ng-components/src/components/teaser-stack/teaser-stack.interface.ts": [
                 {
                     "name": "IBackgroundImagePosition",
@@ -5263,19 +5434,6 @@
                     "description": "",
                     "kind": 177
                 }
-            ],
-            "projects/ng-components/src/components/article-component/article.component.ts": [
-                {
-                    "name": "TargetType",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "\"_blank\" | \"_self\" | \"_parent\" | \"_top\"",
-                    "file": "projects/ng-components/src/components/article-component/article.component.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 186
-                }
             ]
         }
     },
@@ -5290,7 +5448,7 @@
                 "linktype": "component",
                 "name": "ArticleComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/10",
+                "coverageCount": "0/11",
                 "status": "low"
             },
             {
@@ -5299,7 +5457,7 @@
                 "linktype": "interface",
                 "name": "ILink",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {
@@ -5327,7 +5485,37 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "articleForSitemuleLeft",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/article-component/article.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "articleForSitemuleRight",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/article-component/article.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "links",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/article-component/article.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "sitemuleLinks",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5563,7 +5751,7 @@
                 "linktype": "component",
                 "name": "HeroHeaderComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/8",
                 "status": "low"
             },
             {
@@ -5591,6 +5779,26 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "heroHeader",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/hero-header/hero-header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "heroHeaderSitemule",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/hero-header/hero-header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "heroHeaderSitemuleWithVideo",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
