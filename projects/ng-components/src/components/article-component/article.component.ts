@@ -4,7 +4,6 @@ type TargetType = '_blank' | '_self'  | '_parent' | '_top';
 type ButtonSize = 'sm' | 'md' | 'lg';
 
 interface ILink {
-  topLink?: boolean;
   label: string;
   href: string;
   target?: TargetType;
