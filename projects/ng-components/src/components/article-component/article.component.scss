@@ -1,9 +1,6 @@
 @use '../../../../variables';
 
 :host {
-  .sub-header {
-    display: none;
-  }
   .image-article {
     padding: 12px var(--content-margin);
     display: flex;
