@@ -16,7 +16,7 @@
   <div class="image-article__article">
     <img *ngIf="icon" class="icon" src="{{ icon }}" alt="logo" />
     <h3 class="header">{{ header }}</h3>
-    <p class="description" [innerHtml]="description">
+    <p class="description" [innerHtml]="description | marked">
     </p>
     <div class="image-article__article__links-container" *ngIf="links?.length">
       <a

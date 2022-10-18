@@ -2,6 +2,7 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { ArticleComponent } from './article.component';
 import { ArticleModule } from './article.module';
 
+
 export default {
   title: 'Sitemule-Ui/Article',
   component: ArticleComponent,

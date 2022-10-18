@@ -1,6 +1,49 @@
 {
     "pipes": [
         {
+            "name": "MarkdownPipe",
+            "id": "pipe-MarkdownPipe-379a1e9092815f92a381bb4f3717043f12e780fe3e372d0ccfafe1e2bfa1d6451b04da8c165dade90a1f1511cbee85d2d68025f56ce3ae590a81ebbc003c59d7",
+            "file": "projects/ng-components/src/pipes/markdown/markdown.pipe.ts",
+            "type": "pipe",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "transform",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 8,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "ngname": "marked",
+            "sourceCode": "import { Pipe, PipeTransform } from \"@angular/core\";\nimport { marked } from \"marked\";\n\n@Pipe({\n  name: \"marked\"\n})\nexport class MarkdownPipe implements PipeTransform {\n  transform(value: any): any {\n    if (value && value.length > 0) {\n      return marked(value);\n    }\n    return value;\n  }\n}\n"
+        },
+        {
             "name": "ScaleImagePipe",
             "id": "pipe-ScaleImagePipe-3852b457f27df690c0b604cd7994206f3eeafa54d5194863fca7f5619ef1676c9dfcaf4f4fdaf836a9dcda10a02010b6bc7bc7bac1ee672a99e81eee84ee6f0f",
             "file": "projects/ng-components/src/pipes/scaleimage/scale-image.pipe.ts",
@@ -113,12 +156,12 @@
         },
         {
             "name": "ILink",
-            "id": "interface-ILink-10afdb8b97a2b717bb0fabac45d6703aff3aaf24c1c37d2f02065d2d56a636cb634d75b257bb558ac3377baa64dbfc3d0ccd42372886edabf18e0d6915a6c38e",
+            "id": "interface-ILink-e767f5b33596701584a84d9bfbc70640399825ed0fa41d1bb22f41604ae87bc5396c981410467b857e28eb2b57fc20c15c511277ae2408b2277caa735a13c59b",
             "file": "projects/ng-components/src/components/article-component/article.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\ntype TargetType = '_blank' | '_self'  | '_parent' | '_top';\ntype ButtonSize = 'sm' | 'md' | 'lg';\n\ninterface ILink {\n  label: string;\n  href: string;\n  target?: TargetType;\n  backgroundColor: string;\n  color: string;\n  size: ButtonSize;\n  textSize: ButtonSize;\n  mobileTabletSize: ButtonSize;\n  mobileTextSize: ButtonSize;\n  borderRadius: string;\n}\n\n@Component({\n  selector: 'sm-article',\n  templateUrl: './article.component.html',\n  styleUrls: ['./article.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class ArticleComponent {\n  @Input() imagePosition: 'left' | 'right' = 'left';\n  @Input() image: string = '';\n  @Input() icon: string = '';\n  @Input() header: string = '';\n  @Input() description: string = '';\n  @Input() links: ILink[] = [];\n  @Input() imageBorderRadius = '10px';\n  @Input() backgroundColor: string = '';\n  @Input() boxShadow: string = '';\n  @Input() textColor: string = '';\n  @Input() buttonIcon: string = '';\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\ntype TargetType = '_blank' | '_self'  | '_parent' | '_top';\ntype ButtonSize = 'sm' | 'md' | 'lg';\n\ninterface ILink {\n  label: string;\n  href: string;\n  target?: TargetType;\n  backgroundColor: string;\n  color: string;\n  size: ButtonSize;\n  textSize: ButtonSize;\n  mobileTabletSize: ButtonSize;\n  mobileTextSize: ButtonSize;\n  borderRadius: string;\n  icon?:boolean;\n}\n\n@Component({\n  selector: 'sm-article',\n  templateUrl: './article.component.html',\n  styleUrls: ['./article.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class ArticleComponent {\n  @Input() imagePosition: 'left' | 'right' = 'left';\n  @Input() image: string = '';\n  @Input() icon: string = '';\n  @Input() header: string = '';\n  @Input() description: string = '';\n  @Input() links: ILink[] = [];\n  @Input() imageBorderRadius = '10px';\n  @Input() backgroundColor: string = '';\n  @Input() boxShadow: string = '';\n  @Input() textColor: string = '';\n  @Input() buttonIcon: string = '';\n}\n",
             "properties": [
                 {
                     "name": "backgroundColor",
@@ -155,6 +198,15 @@
                     "optional": false,
                     "description": "",
                     "line": 8
+                },
+                {
+                    "name": "icon",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": true,
+                    "description": "",
+                    "line": 17
                 },
                 {
                     "name": "label",
@@ -1188,7 +1240,7 @@
     "components": [
         {
             "name": "ArticleComponent",
-            "id": "component-ArticleComponent-10afdb8b97a2b717bb0fabac45d6703aff3aaf24c1c37d2f02065d2d56a636cb634d75b257bb558ac3377baa64dbfc3d0ccd42372886edabf18e0d6915a6c38e",
+            "id": "component-ArticleComponent-e767f5b33596701584a84d9bfbc70640399825ed0fa41d1bb22f41604ae87bc5396c981410467b857e28eb2b57fc20c15c511277ae2408b2277caa735a13c59b",
             "file": "projects/ng-components/src/components/article-component/article.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -1211,7 +1263,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 33,
+                    "line": 34,
                     "type": "string",
                     "decorators": []
                 },
@@ -1220,7 +1272,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 34,
+                    "line": 35,
                     "type": "string",
                     "decorators": []
                 },
@@ -1229,7 +1281,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 36,
+                    "line": 37,
                     "type": "string",
                     "decorators": []
                 },
@@ -1238,7 +1290,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 30,
+                    "line": 31,
                     "type": "string",
                     "decorators": []
                 },
@@ -1247,7 +1299,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 29,
+                    "line": 30,
                     "type": "string",
                     "decorators": []
                 },
@@ -1256,7 +1308,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 28,
+                    "line": 29,
                     "type": "string",
                     "decorators": []
                 },
@@ -1265,7 +1317,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 27,
+                    "line": 28,
                     "type": "string",
                     "decorators": []
                 },
@@ -1274,7 +1326,7 @@
                     "defaultValue": "'10px'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 32,
+                    "line": 33,
                     "type": "string",
                     "decorators": []
                 },
@@ -1283,7 +1335,7 @@
                     "defaultValue": "'left'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 26,
+                    "line": 27,
                     "type": "\"left\" | \"right\"",
                     "decorators": []
                 },
@@ -1292,7 +1344,7 @@
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 31,
+                    "line": 32,
                     "type": "ILink[]",
                     "decorators": []
                 },
@@ -1301,7 +1353,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 35,
+                    "line": 36,
                     "type": "string",
                     "decorators": []
                 }
@@ -1316,16 +1368,16 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\ntype TargetType = '_blank' | '_self'  | '_parent' | '_top';\ntype ButtonSize = 'sm' | 'md' | 'lg';\n\ninterface ILink {\n  label: string;\n  href: string;\n  target?: TargetType;\n  backgroundColor: string;\n  color: string;\n  size: ButtonSize;\n  textSize: ButtonSize;\n  mobileTabletSize: ButtonSize;\n  mobileTextSize: ButtonSize;\n  borderRadius: string;\n}\n\n@Component({\n  selector: 'sm-article',\n  templateUrl: './article.component.html',\n  styleUrls: ['./article.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class ArticleComponent {\n  @Input() imagePosition: 'left' | 'right' = 'left';\n  @Input() image: string = '';\n  @Input() icon: string = '';\n  @Input() header: string = '';\n  @Input() description: string = '';\n  @Input() links: ILink[] = [];\n  @Input() imageBorderRadius = '10px';\n  @Input() backgroundColor: string = '';\n  @Input() boxShadow: string = '';\n  @Input() textColor: string = '';\n  @Input() buttonIcon: string = '';\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\ntype TargetType = '_blank' | '_self'  | '_parent' | '_top';\ntype ButtonSize = 'sm' | 'md' | 'lg';\n\ninterface ILink {\n  label: string;\n  href: string;\n  target?: TargetType;\n  backgroundColor: string;\n  color: string;\n  size: ButtonSize;\n  textSize: ButtonSize;\n  mobileTabletSize: ButtonSize;\n  mobileTextSize: ButtonSize;\n  borderRadius: string;\n  icon?:boolean;\n}\n\n@Component({\n  selector: 'sm-article',\n  templateUrl: './article.component.html',\n  styleUrls: ['./article.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class ArticleComponent {\n  @Input() imagePosition: 'left' | 'right' = 'left';\n  @Input() image: string = '';\n  @Input() icon: string = '';\n  @Input() header: string = '';\n  @Input() description: string = '';\n  @Input() links: ILink[] = [];\n  @Input() imageBorderRadius = '10px';\n  @Input() backgroundColor: string = '';\n  @Input() boxShadow: string = '';\n  @Input() textColor: string = '';\n  @Input() buttonIcon: string = '';\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@use '../../../../variables';\n\n:host {\n  .image-article {\n    padding: 12px var(--content-margin);\n    display: flex;\n    flex-direction: column;\n    row-gap: 12px;\n    background-color: var(--background-color);\n\n    &__image-container {\n      order: 0;\n\n      &__image {\n        display: block;\n        width: 100%;\n        border-radius: var(--image-border-radius-mobile);\n        box-shadow:  var(--box-shadow);\n      }\n    }\n    &__article {\n      .icon {\n        margin-bottom: 12px;\n        margin-right: -15px;\n        border-radius: 7px;\n      }\n      .header {\n        color:#092728; // may come from data or variable\n        font-size: 30px;\n        line-height: 33px;\n        margin: 0;\n      }\n      .description {\n        color: var(--text-color);\n        font-size: 20px;\n        line-height: 26px;\n        margin-top: 20px;\n      }\n\n      &__links-container {\n        display: flex;\n        gap: 10px;\n        margin-top: 25px;\n      }\n    }\n  }\n  @media (min-width: map-get(variables.$breakpoints, \"phone\")) {\n    display: grid;\n    grid-template-columns: [left] 1fr [center] minmax(\n        auto,\n        calc(var(--max-content-width) + var(--content-margin) * 2)\n      ) [right] 1fr;\n\n    .image-article {\n      &.left {\n        grid-column: left / span 2;\n        margin-right: var(--content-margin);\n      }\n      &.right {\n        grid-column: center / span 2;\n        margin-left: var(--content-margin);\n      }\n    }\n    .image-article {\n      padding: 0;\n      flex-direction: row;\n      align-items: center;\n      gap: 60px;\n\n      &__image-container {\n          order: var(--image-order);\n          width: 45%;\n          margin: 0;\n\n          &__image {\n            border-radius: var(--image-border-radius);\n          }\n      }\n\n      &__article {\n        padding: 12px 0;\n        flex: 1;\n\n        .icon {\n          margin-bottom: 36px;\n        }\n\n        .header {\n          font-size: 46px;\n          line-height: 46px;\n          font-weight: 800;\n        }\n        &__links-container {\n          gap: 20px;\n        }\n      }\n    }\n  }\n}\n",
+                    "data": "@use '../../../../variables';\n\n:host {\n  .image-article {\n    padding: 12px var(--content-margin);\n    display: flex;\n    flex-direction: column;\n    row-gap: 12px;\n    background-color: var(--background-color);\n\n    &__image-container {\n      order: 0;\n\n      &__image {\n        display: block;\n        width: 100%;\n        border-radius: var(--image-border-radius-mobile);\n        box-shadow:  var(--box-shadow);\n      }\n    }\n    &__article {\n      .icon {\n        margin-bottom: 12px;\n        margin-right: -15px;\n        border-radius: 7px;\n      }\n      .header {\n        color:#092728; // may come from data or variable\n        font-size: 30px;\n        line-height: 33px;\n        margin: 0;\n      }\n      .description {\n        color: var(--text-color);\n        font-size: 20px;\n        line-height: 26px;\n        margin-top: 20px;\n      }\n\n      &__links-container {\n        display: flex;\n        gap: 10px;\n        margin-top: 25px;\n\n        a {\n          display: flex;\n          justify-content: center;\n          align-items: center;\n        }\n\n        img {\n          display: inline-block;\n          width: 18px;\n          margin-left: 12px;\n          color: var(--icon-color);\n        }\n      }\n    }\n  }\n  @media (min-width: map-get(variables.$breakpoints, \"phone\")) {\n    display: grid;\n    grid-template-columns: [left] 1fr [center] minmax(\n        auto,\n        calc(var(--max-content-width) + var(--content-margin) * 2)\n      ) [right] 1fr;\n\n    .image-article {\n      &.left {\n        grid-column: left / span 2;\n        margin-right: var(--content-margin);\n      }\n      &.right {\n        grid-column: center / span 2;\n        margin-left: var(--content-margin);\n      }\n    }\n    .image-article {\n      padding: 0;\n      flex-direction: row;\n      align-items: center;\n      gap: 60px;\n\n      &__image-container {\n          order: var(--image-order);\n          width: 45%;\n          margin: 0;\n\n          &__image {\n            border-radius: var(--image-border-radius);\n          }\n      }\n\n      &__article {\n        padding: 12px 0;\n        flex: 1;\n\n        .icon {\n          margin-bottom: 36px;\n        }\n\n        .header {\n          font-size: 46px;\n          line-height: 46px;\n          font-weight: 800;\n        }\n        &__links-container {\n          gap: 20px;\n        }\n      }\n    }\n  }\n}\n",
                     "styleUrl": "./article.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<div\n  class=\"image-article\"\n  [class.left]=\"imagePosition === 'left'\"\n  [class.right]=\"imagePosition === 'right'\"\n  [style.--image-order]=\"imagePosition === 'left'? 0 : 2\"\n  [style.--image-border-radius-mobile]=\"imageBorderRadius\"\n  [style.--image-border-radius]=\"imagePosition ==='left'? '0 ' + imageBorderRadius + ' ' + imageBorderRadius + ' 0' :  imageBorderRadius + ' 0 '  + '0 ' + imageBorderRadius \"\n  [style.--background-image]=\"'url(\\'' + image + '\\')'\"\n  [style.--background-color]=\"backgroundColor\"\n  [style.--box-shadow]=\"boxShadow\"\n  [style.--text-color]=\"textColor\"\n>\n  <div class=\"image-article__image-container\">\n    <img class=\"image-article__image-container__image\" src=\"{{ image }}\" alt=\"\" />\n  </div>\n  <div class=\"image-article__article\">\n    <img *ngIf=\"icon\" class=\"icon\" src=\"{{ icon }}\" alt=\"logo\" />\n    <h3 class=\"header\">{{ header }}</h3>\n    <p class=\"description\">\n      {{ description }}\n    </p>\n    <div class=\"image-article__article__links-container\" *ngIf=\"links?.length\">\n      <a\n      sitemule-button\n      *ngFor=\"let link of links\"\n      [color]=\"link.color\"\n      [ngStyle]=\"{'backgroundColor': link.backgroundColor, 'color': link.color}\"\n      [href]=\"link.href\"\n      [target]=\"link.target\"\n      [size]=\"link.size\"\n      [textSize]=\"link.textSize\"\n      [mobileTabletSize]=\"link.mobileTabletSize\"\n      [mobileTextSize]=\"link.mobileTextSize\"\n      [borderRadius]=\"link.borderRadius\"\n      >\n        {{ link.label }}\n        <img *ngIf=\"buttonIcon\" src=\"\" alt=\"download icon\">\n      </a>\n    </div>\n  </div>\n</div>\n"
+            "templateData": "<div\n  class=\"image-article\"\n  [class.left]=\"imagePosition === 'left'\"\n  [class.right]=\"imagePosition === 'right'\"\n  [style.--image-order]=\"imagePosition === 'left'? 0 : 2\"\n  [style.--image-border-radius-mobile]=\"imageBorderRadius\"\n  [style.--image-border-radius]=\"imagePosition ==='left'? '0 ' + imageBorderRadius + ' ' + imageBorderRadius + ' 0' :  imageBorderRadius + ' 0 '  + '0 ' + imageBorderRadius \"\n  [style.--background-image]=\"'url(\\'' + image + '\\')'\"\n  [style.--background-color]=\"backgroundColor\"\n  [style.--box-shadow]=\"boxShadow\"\n  [style.--text-color]=\"textColor\"\n>\n  <div class=\"image-article__image-container\">\n    <img class=\"image-article__image-container__image\" src=\"{{ image }}\" alt=\"\" />\n  </div>\n  <div class=\"image-article__article\">\n    <img *ngIf=\"icon\" class=\"icon\" src=\"{{ icon }}\" alt=\"logo\" />\n    <h3 class=\"header\">{{ header }}</h3>\n    <p class=\"description\" [innerHtml]=\"description | marked\">\n    </p>\n    <div class=\"image-article__article__links-container\" *ngIf=\"links?.length\">\n      <a\n      sitemule-button\n      *ngFor=\"let link of links\"\n      [color]=\"link.color\"\n      [ngStyle]=\"{'backgroundColor': link.backgroundColor, 'color': link.color}\"\n      [href]=\"link.href\"\n      [target]=\"link.target\"\n      [size]=\"link.size\"\n      [textSize]=\"link.textSize\"\n      [mobileTabletSize]=\"link.mobileTabletSize\"\n      [mobileTextSize]=\"link.mobileTextSize\"\n      [borderRadius]=\"link.borderRadius\"\n      [style.--icon-color]=\"link.color\"\n      >\n        {{ link.label }}\n        <img class=\"buttion-icon\" *ngIf=\"link.icon && buttonIcon\" [src]=\"buttonIcon\" alt=\"download icon\">\n      </a>\n    </div>\n  </div>\n</div>\n"
         },
         {
             "name": "BannerLayout1Component",
@@ -3311,13 +3363,13 @@
     "modules": [
         {
             "name": "ArticleModule",
-            "id": "module-ArticleModule-d9da145f2c61fd2b50ba5fbd2f3218078df8fe069a937970c70cf1f9943ae2daefdd0fdb533091680edc49863af17a78370aacc3e66fa79a4524738a92ad73ec",
+            "id": "module-ArticleModule-c2a52dca186c6b51b7f3c440821948eb2d9491002a726143b807756091ff8549735655f0227641839e25fcb509582d0b93627f176f0b79923223a7bf7491fcfc",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/ng-components/src/components/article-component/article.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ButtonModule } from '../button/button.module';\n\nimport { ArticleComponent } from './article.component';\n\n@NgModule({\n  declarations: [ArticleComponent],\n  imports: [CommonModule, ButtonModule],\n  exports: [ArticleComponent],\n  providers: [],\n})\nexport class ArticleModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ButtonModule } from '../button/button.module';\n\nimport { ArticleComponent } from './article.component';\nimport { MarkdownPipeModule } from '../../pipes/markdown/markdown.module';\n\n@NgModule({\n  declarations: [ArticleComponent],\n  imports: [CommonModule, ButtonModule, MarkdownPipeModule],\n  exports: [ArticleComponent],\n  providers: [],\n})\nexport class ArticleModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -3537,6 +3589,50 @@
                     "elements": [
                         {
                             "name": "HeroHeaderComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "MarkdownPipeModule",
+            "id": "module-MarkdownPipeModule-73a6c03b6ad90561662739379e87010f8f77bfeb4a9fe88268aa517439c0a173dac81c9d1eae638b0fb8513b74b7bcb3f961de17f311d67b1347e51dfe9ab863",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/ng-components/src/pipes/markdown/markdown.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { MarkdownPipe } from './markdown.pipe';\n\n@NgModule({\n  declarations: [\n    MarkdownPipe\n  ],\n  imports: [],\n  exports: [MarkdownPipe],\n  providers: [],\n})\nexport class MarkdownPipeModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "MarkdownPipe"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "MarkdownPipe"
                         }
                     ]
                 },
@@ -4303,6 +4399,26 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "articleWithButtonIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/article-component/article.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "articleWithRawHtml",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/article-component/article.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "ButtonButton",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -4470,7 +4586,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "[]",
-                "defaultValue": "[\n  {\n    label: 'Get Started',\n    href: 'https://www.folkelarsen.dk/page1',\n    backgroundColor: '#9925f1',\n    color: 'white',\n    borderRadius: '25px',\n    size: 'lg' as 'lg',\n    textSize: 'lg' as 'lg',\n    mobileTabletSize: 'md' as 'md',\n    mobileTextSize: 'md' as 'md'\n  },\n  {\n    label: 'Or get support',\n    href: 'https://www.folkelarsen.dk/page1',\n    backgroundColor: 'rgb(248, 248, 248)',\n    color: '#9925f1',\n    borderRadius: '25px',\n    size: 'lg' as 'lg',\n    textSize: 'lg' as 'lg',\n    mobileTabletSize: 'md' as 'md',\n    mobileTextSize: 'md' as 'md'\n  },\n]"
+                "defaultValue": "[\n  {\n    label: 'Get Started',\n    href: 'https://www.folkelarsen.dk/page1',\n    backgroundColor: '#9925f1',\n    color: 'white',\n    borderRadius: '25px',\n    size: 'lg' as 'lg',\n    textSize: 'lg' as 'lg',\n    mobileTabletSize: 'md' as 'md',\n    mobileTextSize: 'md' as 'md',\n  },\n  {\n    label: 'Or get support',\n    href: 'https://www.folkelarsen.dk/page1',\n    backgroundColor: 'rgb(248, 248, 248)',\n    color: '#9925f1',\n    borderRadius: '25px',\n    size: 'lg' as 'lg',\n    textSize: 'lg' as 'lg',\n    mobileTabletSize: 'md' as 'md',\n    mobileTextSize: 'md' as 'md',\n  },\n]"
             },
             {
                 "name": "prefixScaleImageUrl",
@@ -4499,7 +4615,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "[]",
-                "defaultValue": "[\n  {\n    label: 'Skitseark',\n    href: 'https://www.folkelarsen.dk/page1',\n    backgroundColor: '#00A1FD',\n    color: 'white',\n    borderRadius: '25px',\n    size: 'lg' as 'lg',\n    textSize: 'lg' as 'lg',\n    mobileTabletSize: 'md' as 'md',\n    mobileTextSize: 'md' as 'md'\n  },\n  {\n    label: 'Inspiration',\n    href: 'https://www.folkelarsen.dk/page1',\n    backgroundColor: 'rgb(248, 248, 248)',\n    color: '#00A1FD',\n    borderRadius: '25px',\n    size: 'lg' as 'lg',\n    textSize: 'lg' as 'lg',\n    mobileTabletSize: 'md' as 'md',\n    mobileTextSize: 'md' as 'md'\n  },\n]"
+                "defaultValue": "[\n  {\n    label: 'Skitseark',\n    href: 'https://www.folkelarsen.dk/page1',\n    backgroundColor: '#00A1FD',\n    color: 'white',\n    borderRadius: '25px',\n    size: 'lg' as 'lg',\n    textSize: 'lg' as 'lg',\n    mobileTabletSize: 'md' as 'md',\n    mobileTextSize: 'md' as 'md',\n    icon: true,\n  },\n  {\n    label: 'Inspiration',\n    href: 'https://www.folkelarsen.dk/page1',\n    backgroundColor: 'rgb(248, 248, 248)',\n    color: '#00A1FD',\n    borderRadius: '25px',\n    size: 'lg' as 'lg',\n    textSize: 'lg' as 'lg',\n    mobileTabletSize: 'md' as 'md',\n    mobileTextSize: 'md' as 'md',\n  },\n]"
             },
             {
                 "name": "teaserstack",
@@ -5055,6 +5171,26 @@
                     "defaultValue": "Template.bind({})"
                 },
                 {
+                    "name": "articleWithButtonIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/article-component/article.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "articleWithRawHtml",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/article-component/article.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
                     "name": "links",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -5062,7 +5198,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
-                    "defaultValue": "[\n  {\n    label: 'Get Started',\n    href: 'https://www.folkelarsen.dk/page1',\n    backgroundColor: '#9925f1',\n    color: 'white',\n    borderRadius: '25px',\n    size: 'lg' as 'lg',\n    textSize: 'lg' as 'lg',\n    mobileTabletSize: 'md' as 'md',\n    mobileTextSize: 'md' as 'md'\n  },\n  {\n    label: 'Or get support',\n    href: 'https://www.folkelarsen.dk/page1',\n    backgroundColor: 'rgb(248, 248, 248)',\n    color: '#9925f1',\n    borderRadius: '25px',\n    size: 'lg' as 'lg',\n    textSize: 'lg' as 'lg',\n    mobileTabletSize: 'md' as 'md',\n    mobileTextSize: 'md' as 'md'\n  },\n]"
+                    "defaultValue": "[\n  {\n    label: 'Get Started',\n    href: 'https://www.folkelarsen.dk/page1',\n    backgroundColor: '#9925f1',\n    color: 'white',\n    borderRadius: '25px',\n    size: 'lg' as 'lg',\n    textSize: 'lg' as 'lg',\n    mobileTabletSize: 'md' as 'md',\n    mobileTextSize: 'md' as 'md',\n  },\n  {\n    label: 'Or get support',\n    href: 'https://www.folkelarsen.dk/page1',\n    backgroundColor: 'rgb(248, 248, 248)',\n    color: '#9925f1',\n    borderRadius: '25px',\n    size: 'lg' as 'lg',\n    textSize: 'lg' as 'lg',\n    mobileTabletSize: 'md' as 'md',\n    mobileTextSize: 'md' as 'md',\n  },\n]"
                 },
                 {
                     "name": "sitemuleLinks",
@@ -5072,7 +5208,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
-                    "defaultValue": "[\n  {\n    label: 'Skitseark',\n    href: 'https://www.folkelarsen.dk/page1',\n    backgroundColor: '#00A1FD',\n    color: 'white',\n    borderRadius: '25px',\n    size: 'lg' as 'lg',\n    textSize: 'lg' as 'lg',\n    mobileTabletSize: 'md' as 'md',\n    mobileTextSize: 'md' as 'md'\n  },\n  {\n    label: 'Inspiration',\n    href: 'https://www.folkelarsen.dk/page1',\n    backgroundColor: 'rgb(248, 248, 248)',\n    color: '#00A1FD',\n    borderRadius: '25px',\n    size: 'lg' as 'lg',\n    textSize: 'lg' as 'lg',\n    mobileTabletSize: 'md' as 'md',\n    mobileTextSize: 'md' as 'md'\n  },\n]"
+                    "defaultValue": "[\n  {\n    label: 'Skitseark',\n    href: 'https://www.folkelarsen.dk/page1',\n    backgroundColor: '#00A1FD',\n    color: 'white',\n    borderRadius: '25px',\n    size: 'lg' as 'lg',\n    textSize: 'lg' as 'lg',\n    mobileTabletSize: 'md' as 'md',\n    mobileTextSize: 'md' as 'md',\n    icon: true,\n  },\n  {\n    label: 'Inspiration',\n    href: 'https://www.folkelarsen.dk/page1',\n    backgroundColor: 'rgb(248, 248, 248)',\n    color: '#00A1FD',\n    borderRadius: '25px',\n    size: 'lg' as 'lg',\n    textSize: 'lg' as 'lg',\n    mobileTabletSize: 'md' as 'md',\n    mobileTextSize: 'md' as 'md',\n  },\n]"
                 },
                 {
                     "name": "Template",
@@ -5484,7 +5620,7 @@
                 "linktype": "interface",
                 "name": "ILink",
                 "coveragePercent": 0,
-                "coverageCount": "0/11",
+                "coverageCount": "0/12",
                 "status": "low"
             },
             {
@@ -5523,6 +5659,26 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "articleForSitemuleRight",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/article-component/article.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "articleWithButtonIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/article-component/article.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "articleWithRawHtml",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -6176,6 +6332,15 @@
                 "name": "YoutubeVideoSrcComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/pipes/markdown/markdown.pipe.ts",
+                "type": "pipe",
+                "linktype": "pipe",
+                "name": "MarkdownPipe",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
