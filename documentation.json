@@ -1,49 +1,6 @@
 {
     "pipes": [
         {
-            "name": "MarkdownPipe",
-            "id": "pipe-MarkdownPipe-379a1e9092815f92a381bb4f3717043f12e780fe3e372d0ccfafe1e2bfa1d6451b04da8c165dade90a1f1511cbee85d2d68025f56ce3ae590a81ebbc003c59d7",
-            "file": "projects/ng-components/src/pipes/markdown/markdown.pipe.ts",
-            "type": "pipe",
-            "deprecated": false,
-            "deprecationMessage": "",
-            "description": "",
-            "rawdescription": "\n",
-            "properties": [],
-            "methods": [
-                {
-                    "name": "transform",
-                    "args": [
-                        {
-                            "name": "value",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "any",
-                    "typeParameters": [],
-                    "line": 8,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "name": "value",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
-                }
-            ],
-            "ngname": "marked",
-            "sourceCode": "import { Pipe, PipeTransform } from \"@angular/core\";\nimport { marked } from \"marked\";\n\n@Pipe({\n  name: \"marked\"\n})\nexport class MarkdownPipe implements PipeTransform {\n  transform(value: any): any {\n    if (value && value.length > 0) {\n      return marked(value);\n    }\n    return value;\n  }\n}\n"
-        },
-        {
             "name": "ScaleImagePipe",
             "id": "pipe-ScaleImagePipe-3852b457f27df690c0b604cd7994206f3eeafa54d5194863fca7f5619ef1676c9dfcaf4f4fdaf836a9dcda10a02010b6bc7bc7bac1ee672a99e81eee84ee6f0f",
             "file": "projects/ng-components/src/pipes/scaleimage/scale-image.pipe.ts",
@@ -1377,7 +1334,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<div\n  class=\"image-article\"\n  [class.left]=\"imagePosition === 'left'\"\n  [class.right]=\"imagePosition === 'right'\"\n  [style.--image-order]=\"imagePosition === 'left'? 0 : 2\"\n  [style.--image-border-radius-mobile]=\"imageBorderRadius\"\n  [style.--image-border-radius]=\"imagePosition ==='left'? '0 ' + imageBorderRadius + ' ' + imageBorderRadius + ' 0' :  imageBorderRadius + ' 0 '  + '0 ' + imageBorderRadius \"\n  [style.--background-image]=\"'url(\\'' + image + '\\')'\"\n  [style.--background-color]=\"backgroundColor\"\n  [style.--box-shadow]=\"boxShadow\"\n  [style.--text-color]=\"textColor\"\n>\n  <div class=\"image-article__image-container\">\n    <img class=\"image-article__image-container__image\" src=\"{{ image }}\" alt=\"\" />\n  </div>\n  <div class=\"image-article__article\">\n    <img *ngIf=\"icon\" class=\"icon\" src=\"{{ icon }}\" alt=\"logo\" />\n    <h3 class=\"header\">{{ header }}</h3>\n    <p class=\"description\" [innerHtml]=\"description | marked\">\n    </p>\n    <div class=\"image-article__article__links-container\" *ngIf=\"links?.length\">\n      <a\n      sitemule-button\n      *ngFor=\"let link of links\"\n      [color]=\"link.color\"\n      [ngStyle]=\"{'backgroundColor': link.backgroundColor, 'color': link.color}\"\n      [href]=\"link.href\"\n      [target]=\"link.target\"\n      [size]=\"link.size\"\n      [textSize]=\"link.textSize\"\n      [mobileTabletSize]=\"link.mobileTabletSize\"\n      [mobileTextSize]=\"link.mobileTextSize\"\n      [borderRadius]=\"link.borderRadius\"\n      [style.--icon-color]=\"link.color\"\n      >\n        {{ link.label }}\n        <img class=\"buttion-icon\" *ngIf=\"link.icon && buttonIcon\" [src]=\"buttonIcon\" alt=\"download icon\">\n      </a>\n    </div>\n  </div>\n</div>\n"
+            "templateData": "<div\n  class=\"image-article\"\n  [class.left]=\"imagePosition === 'left'\"\n  [class.right]=\"imagePosition === 'right'\"\n  [style.--image-order]=\"imagePosition === 'left'? 0 : 2\"\n  [style.--image-border-radius-mobile]=\"imageBorderRadius\"\n  [style.--image-border-radius]=\"imagePosition ==='left'? '0 ' + imageBorderRadius + ' ' + imageBorderRadius + ' 0' :  imageBorderRadius + ' 0 '  + '0 ' + imageBorderRadius \"\n  [style.--background-image]=\"'url(\\'' + image + '\\')'\"\n  [style.--background-color]=\"backgroundColor\"\n  [style.--box-shadow]=\"boxShadow\"\n  [style.--text-color]=\"textColor\"\n>\n  <div class=\"image-article__image-container\">\n    <img class=\"image-article__image-container__image\" src=\"{{ image }}\" alt=\"\" />\n  </div>\n  <div class=\"image-article__article\">\n    <img *ngIf=\"icon\" class=\"icon\" src=\"{{ icon }}\" alt=\"logo\" />\n    <h3 class=\"header\">{{ header }}</h3>\n    <p class=\"description\" [innerHtml]=\"description\">\n    </p>\n    <div class=\"image-article__article__links-container\" *ngIf=\"links?.length\">\n      <a\n      sitemule-button\n      *ngFor=\"let link of links\"\n      [color]=\"link.color\"\n      [ngStyle]=\"{'backgroundColor': link.backgroundColor, 'color': link.color}\"\n      [href]=\"link.href\"\n      [target]=\"link.target\"\n      [size]=\"link.size\"\n      [textSize]=\"link.textSize\"\n      [mobileTabletSize]=\"link.mobileTabletSize\"\n      [mobileTextSize]=\"link.mobileTextSize\"\n      [borderRadius]=\"link.borderRadius\"\n      [style.--icon-color]=\"link.color\"\n      >\n        {{ link.label }}\n        <img class=\"buttion-icon\" *ngIf=\"link.icon && buttonIcon\" [src]=\"buttonIcon\" alt=\"download icon\">\n      </a>\n    </div>\n  </div>\n</div>\n"
         },
         {
             "name": "BannerLayout1Component",
@@ -3363,13 +3320,13 @@
     "modules": [
         {
             "name": "ArticleModule",
-            "id": "module-ArticleModule-c2a52dca186c6b51b7f3c440821948eb2d9491002a726143b807756091ff8549735655f0227641839e25fcb509582d0b93627f176f0b79923223a7bf7491fcfc",
+            "id": "module-ArticleModule-d9da145f2c61fd2b50ba5fbd2f3218078df8fe069a937970c70cf1f9943ae2daefdd0fdb533091680edc49863af17a78370aacc3e66fa79a4524738a92ad73ec",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/ng-components/src/components/article-component/article.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ButtonModule } from '../button/button.module';\n\nimport { ArticleComponent } from './article.component';\nimport { MarkdownPipeModule } from '../../pipes/markdown/markdown.module';\n\n@NgModule({\n  declarations: [ArticleComponent],\n  imports: [CommonModule, ButtonModule, MarkdownPipeModule],\n  exports: [ArticleComponent],\n  providers: [],\n})\nexport class ArticleModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ButtonModule } from '../button/button.module';\n\nimport { ArticleComponent } from './article.component';\n\n@NgModule({\n  declarations: [ArticleComponent],\n  imports: [CommonModule, ButtonModule],\n  exports: [ArticleComponent],\n  providers: [],\n})\nexport class ArticleModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -3589,50 +3546,6 @@
                     "elements": [
                         {
                             "name": "HeroHeaderComponent"
-                        }
-                    ]
-                },
-                {
-                    "type": "bootstrap",
-                    "elements": []
-                },
-                {
-                    "type": "classes",
-                    "elements": []
-                }
-            ]
-        },
-        {
-            "name": "MarkdownPipeModule",
-            "id": "module-MarkdownPipeModule-73a6c03b6ad90561662739379e87010f8f77bfeb4a9fe88268aa517439c0a173dac81c9d1eae638b0fb8513b74b7bcb3f961de17f311d67b1347e51dfe9ab863",
-            "description": "",
-            "deprecationMessage": "",
-            "deprecated": false,
-            "file": "projects/ng-components/src/pipes/markdown/markdown.module.ts",
-            "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { MarkdownPipe } from './markdown.pipe';\n\n@NgModule({\n  declarations: [\n    MarkdownPipe\n  ],\n  imports: [],\n  exports: [MarkdownPipe],\n  providers: [],\n})\nexport class MarkdownPipeModule { }\n",
-            "children": [
-                {
-                    "type": "providers",
-                    "elements": []
-                },
-                {
-                    "type": "declarations",
-                    "elements": [
-                        {
-                            "name": "MarkdownPipe"
-                        }
-                    ]
-                },
-                {
-                    "type": "imports",
-                    "elements": []
-                },
-                {
-                    "type": "exports",
-                    "elements": [
-                        {
-                            "name": "MarkdownPipe"
                         }
                     ]
                 },
@@ -6332,15 +6245,6 @@
                 "name": "YoutubeVideoSrcComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/8",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/ng-components/src/pipes/markdown/markdown.pipe.ts",
-                "type": "pipe",
-                "linktype": "pipe",
-                "name": "MarkdownPipe",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
                 "status": "low"
             },
             {
