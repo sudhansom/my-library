@@ -16,8 +16,7 @@
   <div class="image-article__article">
     <img *ngIf="icon" class="icon" src="{{ icon }}" alt="logo" />
     <h3 class="header">{{ header }}</h3>
-    <p class="description">
-      {{ description }}
+    <p class="description" [innerHtml]="description | marked">
     </p>
     <div class="image-article__article__links-container" *ngIf="links?.length">
       <a
@@ -32,8 +31,10 @@
       [mobileTabletSize]="link.mobileTabletSize"
       [mobileTextSize]="link.mobileTextSize"
       [borderRadius]="link.borderRadius"
+      [style.--icon-color]="link.color"
       >
         {{ link.label }}
+        <img class="buttion-icon" *ngIf="link.icon && buttonIcon" [src]="buttonIcon" alt="download icon">
       </a>
     </div>
   </div>
