@@ -33,6 +33,6 @@ export class ArticleComponent {
   @Input() imageBorderRadius = '10px';
   @Input() backgroundColor: string = '';
   @Input() boxShadow: string = '';
-  @Input() textColor: string = '';
+  @Input() textColor: string = '#7D868C';
   @Input() buttonIcon: string = '';
 }
