@@ -69,6 +69,62 @@ const Template: Story<ArticleComponent> = (args: ArticleComponent) => ({
   component: ArticleComponent,
   props: args,
 });
+const TemplateWithSpecialButton: Story<ArticleComponent> = (args: ArticleComponent) => ({
+  component: ArticleComponent,
+  props: args,
+  template: `<sm-article  header="${args.header}" imagePosition="${args.imagePosition}" image="${args.image}" description="${args.description}"  imageBorderRadius="${args.imageBorderRadius}" [links]="links" backgroundColor="${args.backgroundColor}" boxShadow="${args.boxShadow}" textColor="${args.textColor}" buttonIcon="${args.buttonIcon}">
+    <div sm-article-button  class="image-article__article__links-container" [ngStyle]="{'margin-top': '36px', 'display': 'flex', 'gap': '20px'}">
+      <a
+        sitemule-button
+        color="primary"
+        [ngStyle]="{'backgroundColor': '#00A1FD', 'padding': '16px 24px', 'borderRadius': '28px', 'color': '#fff', 'fontSize': '20px', 'fontWeight': '800', 'letterSpacing': '1px'}"
+        [stroked]=true
+      >
+        Content 1
+      </a>
+      <a
+        sitemule-button
+        [ngStyle]="{'backgroundColor': 'transparent', 'padding': '16px 24px', 'borderRadius': '28px', 'color': '#00A1FD', 'fontSize': '20px', 'fontWeight': '800', 'letterSpacing': '1px'}"
+        [stroked]=true
+      >
+        Content 2
+      </a>
+    </div>
+  </sm-article>`
+});
+
+export const articleWithSpecialButton = TemplateWithSpecialButton.bind({});
+articleWithSpecialButton.storyName = 'article-with-special-button';
+articleWithSpecialButton.args = {
+  imagePosition: 'left',
+  image:
+    'https://images.ctfassets.net/hrltx12pl8hq/a2hkMAaruSQ8haQZ4rBL9/8ff4a6f289b9ca3f4e6474f29793a74a/nature-image-for-website.jpg?fit=fill&w=480&h=320',
+  header: 'Design ny Teaser',
+  description:
+    'En teaser handler om call-to-action, en opfordring til handling med et forventet konverteringsforløb. Målet skal ikke ­ nødvendigvis være et køb, men kan være et signup eller aflevering af andet specifikt budskab branding mv. <br /> <br /> <b>Lav dit eget oplæg eller få hjælps</b><br />Download og print vores A4 skitseark og tegn løs. <br /><u>Kontakt os og få hjælp.</u>',
+  links: sitemuleLinks,
+  imageBorderRadius: '10px',
+  backgroundColor: 'rgb(248, 248, 248)',
+  boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px',
+  textColor: '#7D868C',
+  buttonIcon: 'https://cdn-icons-png.flaticon.com/512/724/724933.png',
+};
+
+export const articleWithSpecialButtonWithoutLinks = TemplateWithSpecialButton.bind({});
+articleWithSpecialButtonWithoutLinks.storyName = 'article-with-special-button-no-links';
+articleWithSpecialButtonWithoutLinks.args = {
+  imagePosition: 'left',
+  image:
+    'https://images.ctfassets.net/hrltx12pl8hq/a2hkMAaruSQ8haQZ4rBL9/8ff4a6f289b9ca3f4e6474f29793a74a/nature-image-for-website.jpg?fit=fill&w=480&h=320',
+  header: 'Design ny Teaser',
+  description:
+    'En teaser handler om call-to-action, en opfordring til handling med et forventet konverteringsforløb. Målet skal ikke ­ nødvendigvis være et køb, men kan være et signup eller aflevering af andet specifikt budskab branding mv. <br /> <br /> <b>Lav dit eget oplæg eller få hjælps</b><br />Download og print vores A4 skitseark og tegn løs. <br /><u>Kontakt os og få hjælp.</u>',
+  imageBorderRadius: '10px',
+  backgroundColor: 'rgb(248, 248, 248)',
+  boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px',
+  textColor: '#7D868C',
+  buttonIcon: 'https://cdn-icons-png.flaticon.com/512/724/724933.png',
+};
 
 export const articleComponentLeft = Template.bind({});
 articleComponentLeft.storyName = 'article-left';
@@ -169,3 +225,6 @@ articleWithRawHtml.args = {
   textColor: '#7D868C',
   buttonIcon: 'https://cdn-icons-png.flaticon.com/512/724/724933.png',
 };
+
+
+//  [ngStyle]="{'margin-top': '36px', 'display': 'flex', 'gap': '20px'

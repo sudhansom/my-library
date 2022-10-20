@@ -18,6 +18,7 @@
     <h3 class="header">{{ header }}</h3>
     <p class="description" [innerHtml]="description">
     </p>
+    <ng-content select="[sm-article-button]"></ng-content>
     <div class="image-article__article__links-container" *ngIf="links?.length">
       <a
       sitemule-button
