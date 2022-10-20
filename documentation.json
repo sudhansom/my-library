@@ -113,12 +113,12 @@
         },
         {
             "name": "ILink",
-            "id": "interface-ILink-e767f5b33596701584a84d9bfbc70640399825ed0fa41d1bb22f41604ae87bc5396c981410467b857e28eb2b57fc20c15c511277ae2408b2277caa735a13c59b",
+            "id": "interface-ILink-78b756e4adb05fd861a765baffb7fd64d738233183b33a49cfcc9c1a5d0df5f80827fcdbe13d170a288ceb02a3745302253cf9e14dd1ee3106a7066f3eb5c716",
             "file": "projects/ng-components/src/components/article-component/article.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\ntype TargetType = '_blank' | '_self'  | '_parent' | '_top';\ntype ButtonSize = 'sm' | 'md' | 'lg';\n\ninterface ILink {\n  label: string;\n  href: string;\n  target?: TargetType;\n  backgroundColor: string;\n  color: string;\n  size: ButtonSize;\n  textSize: ButtonSize;\n  mobileTabletSize: ButtonSize;\n  mobileTextSize: ButtonSize;\n  borderRadius: string;\n  icon?:boolean;\n}\n\n@Component({\n  selector: 'sm-article',\n  templateUrl: './article.component.html',\n  styleUrls: ['./article.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class ArticleComponent {\n  @Input() imagePosition: 'left' | 'right' = 'left';\n  @Input() image: string = '';\n  @Input() icon: string = '';\n  @Input() header: string = '';\n  @Input() description: string = '';\n  @Input() links: ILink[] = [];\n  @Input() imageBorderRadius = '10px';\n  @Input() backgroundColor: string = '';\n  @Input() boxShadow: string = '';\n  @Input() textColor: string = '';\n  @Input() buttonIcon: string = '';\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\ntype TargetType = '_blank' | '_self'  | '_parent' | '_top';\ntype ButtonSize = 'sm' | 'md' | 'lg';\n\ninterface ILink {\n  label: string;\n  href: string;\n  target?: TargetType;\n  backgroundColor: string;\n  color: string;\n  size: ButtonSize;\n  textSize: ButtonSize;\n  mobileTabletSize: ButtonSize;\n  mobileTextSize: ButtonSize;\n  borderRadius: string;\n  icon?:boolean;\n}\n\n@Component({\n  selector: 'sm-article',\n  templateUrl: './article.component.html',\n  styleUrls: ['./article.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class ArticleComponent {\n  @Input() imagePosition: 'left' | 'right' = 'left';\n  @Input() image: string = '';\n  @Input() icon: string = '';\n  @Input() header: string = '';\n  @Input() description: string = '';\n  @Input() links: ILink[] = [];\n  @Input() imageBorderRadius = '10px';\n  @Input() backgroundColor: string = '';\n  @Input() boxShadow: string = '';\n  @Input() textColor: string = '#7D868C';\n  @Input() buttonIcon: string = '';\n}\n",
             "properties": [
                 {
                     "name": "backgroundColor",
@@ -1197,7 +1197,7 @@
     "components": [
         {
             "name": "ArticleComponent",
-            "id": "component-ArticleComponent-e767f5b33596701584a84d9bfbc70640399825ed0fa41d1bb22f41604ae87bc5396c981410467b857e28eb2b57fc20c15c511277ae2408b2277caa735a13c59b",
+            "id": "component-ArticleComponent-78b756e4adb05fd861a765baffb7fd64d738233183b33a49cfcc9c1a5d0df5f80827fcdbe13d170a288ceb02a3745302253cf9e14dd1ee3106a7066f3eb5c716",
             "file": "projects/ng-components/src/components/article-component/article.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -1307,7 +1307,7 @@
                 },
                 {
                     "name": "textColor",
-                    "defaultValue": "''",
+                    "defaultValue": "'#7D868C'",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 36,
@@ -1325,16 +1325,16 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\ntype TargetType = '_blank' | '_self'  | '_parent' | '_top';\ntype ButtonSize = 'sm' | 'md' | 'lg';\n\ninterface ILink {\n  label: string;\n  href: string;\n  target?: TargetType;\n  backgroundColor: string;\n  color: string;\n  size: ButtonSize;\n  textSize: ButtonSize;\n  mobileTabletSize: ButtonSize;\n  mobileTextSize: ButtonSize;\n  borderRadius: string;\n  icon?:boolean;\n}\n\n@Component({\n  selector: 'sm-article',\n  templateUrl: './article.component.html',\n  styleUrls: ['./article.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class ArticleComponent {\n  @Input() imagePosition: 'left' | 'right' = 'left';\n  @Input() image: string = '';\n  @Input() icon: string = '';\n  @Input() header: string = '';\n  @Input() description: string = '';\n  @Input() links: ILink[] = [];\n  @Input() imageBorderRadius = '10px';\n  @Input() backgroundColor: string = '';\n  @Input() boxShadow: string = '';\n  @Input() textColor: string = '';\n  @Input() buttonIcon: string = '';\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\n\ntype TargetType = '_blank' | '_self'  | '_parent' | '_top';\ntype ButtonSize = 'sm' | 'md' | 'lg';\n\ninterface ILink {\n  label: string;\n  href: string;\n  target?: TargetType;\n  backgroundColor: string;\n  color: string;\n  size: ButtonSize;\n  textSize: ButtonSize;\n  mobileTabletSize: ButtonSize;\n  mobileTextSize: ButtonSize;\n  borderRadius: string;\n  icon?:boolean;\n}\n\n@Component({\n  selector: 'sm-article',\n  templateUrl: './article.component.html',\n  styleUrls: ['./article.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class ArticleComponent {\n  @Input() imagePosition: 'left' | 'right' = 'left';\n  @Input() image: string = '';\n  @Input() icon: string = '';\n  @Input() header: string = '';\n  @Input() description: string = '';\n  @Input() links: ILink[] = [];\n  @Input() imageBorderRadius = '10px';\n  @Input() backgroundColor: string = '';\n  @Input() boxShadow: string = '';\n  @Input() textColor: string = '#7D868C';\n  @Input() buttonIcon: string = '';\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@use '../../../../variables';\n\n:host {\n  .image-article {\n    padding: 12px var(--content-margin);\n    display: flex;\n    flex-direction: column;\n    row-gap: 12px;\n    background-color: var(--background-color);\n\n    &__image-container {\n      order: 0;\n\n      &__image {\n        display: block;\n        width: 100%;\n        border-radius: var(--image-border-radius-mobile);\n        box-shadow:  var(--box-shadow);\n      }\n    }\n    &__article {\n      .icon {\n        margin-bottom: 12px;\n        margin-right: -15px;\n        border-radius: 7px;\n      }\n      .header {\n        color:#092728; // may come from data or variable\n        font-size: 30px;\n        line-height: 33px;\n        margin: 0;\n      }\n      .description {\n        color: var(--text-color);\n        font-size: 20px;\n        line-height: 26px;\n        margin-top: 20px;\n      }\n\n      &__links-container {\n        display: flex;\n        gap: 10px;\n        margin-top: 25px;\n\n        a {\n          display: flex;\n          justify-content: center;\n          align-items: center;\n        }\n\n        img {\n          display: inline-block;\n          width: 18px;\n          margin-left: 12px;\n          color: var(--icon-color);\n        }\n      }\n    }\n  }\n  @media (min-width: map-get(variables.$breakpoints, \"phone\")) {\n    display: grid;\n    grid-template-columns: [left] 1fr [center] minmax(\n        auto,\n        calc(var(--max-content-width) + var(--content-margin) * 2)\n      ) [right] 1fr;\n\n    .image-article {\n      &.left {\n        grid-column: left / span 2;\n        margin-right: var(--content-margin);\n      }\n      &.right {\n        grid-column: center / span 2;\n        margin-left: var(--content-margin);\n      }\n    }\n    .image-article {\n      padding: 0;\n      flex-direction: row;\n      align-items: center;\n      gap: 60px;\n\n      &__image-container {\n          order: var(--image-order);\n          width: 45%;\n          margin: 0;\n\n          &__image {\n            border-radius: var(--image-border-radius);\n          }\n      }\n\n      &__article {\n        padding: 12px 0;\n        flex: 1;\n\n        .icon {\n          margin-bottom: 36px;\n        }\n\n        .header {\n          font-size: 46px;\n          line-height: 46px;\n          font-weight: 800;\n        }\n        &__links-container {\n          gap: 20px;\n        }\n      }\n    }\n  }\n}\n",
+                    "data": "@use '../../../../variables';\n\n:host {\n  .image-article {\n    padding: 12px var(--content-margin);\n    display: flex;\n    flex-direction: column;\n    row-gap: 12px;\n    background-color: var(--background-color);\n\n    &__image-container {\n      order: 0;\n\n      &__image {\n        display: block;\n        width: 100%;\n        border-radius: var(--image-border-radius-mobile);\n        box-shadow:  var(--box-shadow);\n      }\n    }\n    &__article {\n      .icon {\n        margin-bottom: 12px;\n        margin-right: -15px;\n        border-radius: 7px;\n      }\n      .header {\n        color:#092728; // may come from data or variable\n        font-size: 30px;\n        line-height: 33px;\n        margin: 0;\n      }\n      .description {\n        color: var(--text-color);\n        font-size: 20px;\n        line-height: 26px;\n        margin-top: 20px;\n      }\n\n      &__links-container {\n        display: flex;\n        gap: 10px;\n        margin-top: 36px;\n\n        a {\n          display: flex;\n          justify-content: center;\n          align-items: center;\n        }\n\n        img {\n          display: inline-block;\n          width: 18px;\n          margin-left: 12px;\n          fill: var(--icon-color);\n        }\n      }\n    }\n  }\n  @media (min-width: map-get(variables.$breakpoints, \"phone\")) {\n    display: grid;\n    grid-template-columns: [left] 1fr [center] minmax(\n        auto,\n        calc(var(--max-content-width) + var(--content-margin) * 2)\n      ) [right] 1fr;\n\n    .image-article {\n      &.left {\n        grid-column: left / span 2;\n        margin-right: var(--content-margin);\n      }\n      &.right {\n        grid-column: center / span 2;\n        margin-left: var(--content-margin);\n      }\n    }\n    .image-article {\n      padding: 0;\n      flex-direction: row;\n      align-items: center;\n      gap: 60px;\n\n      &__image-container {\n          order: var(--image-order);\n          width: 45%;\n          margin: 0;\n\n          &__image {\n            border-radius: var(--image-border-radius);\n          }\n      }\n\n      &__article {\n        padding: 12px 0;\n        flex: 1;\n\n        .icon {\n          margin-bottom: 36px;\n        }\n\n        .header {\n          font-size: 46px;\n          line-height: 46px;\n          font-weight: 800;\n        }\n        &__links-container {\n          gap: 20px;\n        }\n      }\n    }\n  }\n}\n",
                     "styleUrl": "./article.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<div\n  class=\"image-article\"\n  [class.left]=\"imagePosition === 'left'\"\n  [class.right]=\"imagePosition === 'right'\"\n  [style.--image-order]=\"imagePosition === 'left'? 0 : 2\"\n  [style.--image-border-radius-mobile]=\"imageBorderRadius\"\n  [style.--image-border-radius]=\"imagePosition ==='left'? '0 ' + imageBorderRadius + ' ' + imageBorderRadius + ' 0' :  imageBorderRadius + ' 0 '  + '0 ' + imageBorderRadius \"\n  [style.--background-image]=\"'url(\\'' + image + '\\')'\"\n  [style.--background-color]=\"backgroundColor\"\n  [style.--box-shadow]=\"boxShadow\"\n  [style.--text-color]=\"textColor\"\n>\n  <div class=\"image-article__image-container\">\n    <img class=\"image-article__image-container__image\" src=\"{{ image }}\" alt=\"\" />\n  </div>\n  <div class=\"image-article__article\">\n    <img *ngIf=\"icon\" class=\"icon\" src=\"{{ icon }}\" alt=\"logo\" />\n    <h3 class=\"header\">{{ header }}</h3>\n    <p class=\"description\" [innerHtml]=\"description\">\n    </p>\n    <div class=\"image-article__article__links-container\" *ngIf=\"links?.length\">\n      <a\n      sitemule-button\n      *ngFor=\"let link of links\"\n      [color]=\"link.color\"\n      [ngStyle]=\"{'backgroundColor': link.backgroundColor, 'color': link.color}\"\n      [href]=\"link.href\"\n      [target]=\"link.target\"\n      [size]=\"link.size\"\n      [textSize]=\"link.textSize\"\n      [mobileTabletSize]=\"link.mobileTabletSize\"\n      [mobileTextSize]=\"link.mobileTextSize\"\n      [borderRadius]=\"link.borderRadius\"\n      [style.--icon-color]=\"link.color\"\n      >\n        {{ link.label }}\n        <img class=\"buttion-icon\" *ngIf=\"link.icon && buttonIcon\" [src]=\"buttonIcon\" alt=\"download icon\">\n      </a>\n    </div>\n  </div>\n</div>\n"
+            "templateData": "<div\n  class=\"image-article\"\n  [class.left]=\"imagePosition === 'left'\"\n  [class.right]=\"imagePosition === 'right'\"\n  [style.--image-order]=\"imagePosition === 'left'? 0 : 2\"\n  [style.--image-border-radius-mobile]=\"imageBorderRadius\"\n  [style.--image-border-radius]=\"imagePosition ==='left'? '0 ' + imageBorderRadius + ' ' + imageBorderRadius + ' 0' :  imageBorderRadius + ' 0 '  + '0 ' + imageBorderRadius \"\n  [style.--background-image]=\"'url(\\'' + image + '\\')'\"\n  [style.--background-color]=\"backgroundColor\"\n  [style.--box-shadow]=\"boxShadow\"\n  [style.--text-color]=\"textColor\"\n>\n  <div class=\"image-article__image-container\">\n    <img class=\"image-article__image-container__image\" src=\"{{ image }}\" alt=\"\" />\n  </div>\n  <div class=\"image-article__article\">\n    <img *ngIf=\"icon\" class=\"icon\" src=\"{{ icon }}\" alt=\"logo\" />\n    <h3 class=\"header\">{{ header }}</h3>\n    <p class=\"description\" [innerHtml]=\"description\">\n    </p>\n    <ng-content select=\"[sm-article-button]\"></ng-content>\n    <div class=\"image-article__article__links-container\" *ngIf=\"links?.length\">\n      <a\n      sitemule-button\n      *ngFor=\"let link of links\"\n      color=\"primary\"\n      [ngStyle]=\"{'backgroundColor': link.backgroundColor, 'color': link.color}\"\n      [href]=\"link.href\"\n      [target]=\"link.target\"\n      [size]=\"link.size\"\n      [textSize]=\"link.textSize\"\n      [mobileTabletSize]=\"link.mobileTabletSize\"\n      [mobileTextSize]=\"link.mobileTextSize\"\n      [borderRadius]=\"link.borderRadius\"\n      [style.--icon-color]=\"link.color\"\n      >\n        {{ link.label }}\n        <img class=\"buttion-icon\" *ngIf=\"link.icon && buttonIcon\" [src]=\"buttonIcon\" alt=\"download icon\">\n      </a>\n    </div>\n  </div>\n</div>\n"
         },
         {
             "name": "BannerLayout1Component",
@@ -1713,7 +1713,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@use '../../../../variables';\n\n:host {\n  .contacts-container {\n    background-color: var(--background-color);\n    padding: 0 var(--content-margin);\n    &__contacts {\n      max-width: var(--max-content-width);\n      margin: auto;\n      display: grid;\n      grid-template-columns: 1fr;\n      gap: 20px;\n\n      &__section {\n        color: #25122d;\n        font-family: var(--font-family);\n        &__header {\n          font-size: 46px;\n          margin: 50px 0 20px;\n        }\n        &__description {\n          font-size: 20px;\n          line-height: 34px;\n          margin: 0;\n\n          a {\n            text-decoration: none;\n            color: initial;\n          }\n        }\n        &__address {\n          white-space: pre-wrap;\n          font-size: 20px;\n          line-height: 26px;\n        }\n      }\n    }\n  }\n\n  @media (min-width: map-get(variables.$breakpoints, 'phone')) {\n    .contacts-container {\n      &__contacts {\n        grid-template-columns: 1fr 1fr;\n      }\n    }\n  }\n}\n",
+                    "data": "@use '../../../../variables';\n\n:host {\n  .contacts-container {\n    background-color: var(--background-color);\n    padding: 0 var(--content-margin);\n    &__contacts {\n      max-width: var(--max-content-width);\n      margin: auto;\n      display: grid;\n      grid-template-columns: 1fr;\n      gap: 20px;\n\n      &__section {\n        color: #25122d;\n        font-family: var(--font-family);\n        &__header {\n          font-size: 46px;\n          margin: 0 0 20px;\n        }\n        &__description {\n          font-size: 20px;\n          line-height: 34px;\n          margin: 0;\n\n          a {\n            text-decoration: none;\n            color: initial;\n          }\n        }\n        &__address {\n          white-space: pre-wrap;\n          font-size: 20px;\n          line-height: 26px;\n        }\n      }\n    }\n  }\n\n  @media (min-width: map-get(variables.$breakpoints, 'phone')) {\n    .contacts-container {\n      &__contacts {\n        grid-template-columns: 1fr 1fr;\n      }\n    }\n  }\n}\n",
                     "styleUrl": "./contacts.component.scss"
                 }
             ],
@@ -4332,6 +4332,26 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "articleWithSpecialButton",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/article-component/article.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "TemplateWithSpecialButton.bind({})"
+            },
+            {
+                "name": "articleWithSpecialButtonWithoutLinks",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/article-component/article.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "TemplateWithSpecialButton.bind({})"
+            },
+            {
                 "name": "ButtonButton",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -4589,6 +4609,16 @@
                 "deprecationMessage": "",
                 "type": "Story<BannerLayout1Component>",
                 "defaultValue": "(args: BannerLayout1Component) => ({\n  component: BannerLayout1Component,\n  props: args,\n})"
+            },
+            {
+                "name": "TemplateWithSpecialButton",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng-components/src/components/article-component/article.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ArticleComponent>",
+                "defaultValue": "(args: ArticleComponent) => ({\n  component: ArticleComponent,\n  props: args,\n  template: `<sm-article imagePosition=\"${args.imagePosition}\" image=\"${args.image}\" description=\"${args.description}\"  imageBorderRadius=\"${args.imageBorderRadius}\" [links]=\"links\" backgroundColor=\"${args.backgroundColor}\" boxShadow=\"${args.boxShadow}\" textColor=\"${args.textColor}\" buttonIcon=\"${args.buttonIcon}\">\n    <div sm-article-button  class=\"image-article__article__links-container\" [ngStyle]=\"{'margin-top': '36px', 'display': 'flex', 'gap': '20px'}\">\n      <a\n        sitemule-button\n        color=\"primary\"\n        [ngStyle]=\"{'backgroundColor': '#00A1FD', 'padding': '16px 24px', 'borderRadius': '28px', 'color': '#fff', 'fontSize': '20px', 'fontWeight': '800', 'letterSpacing': '1px'}\"\n        [stroked]=true\n      >\n        Content 1\n      </a>\n      <a\n        sitemule-button\n        [ngStyle]=\"{'backgroundColor': 'transparent', 'padding': '16px 24px', 'borderRadius': '28px', 'color': '#00A1FD', 'fontSize': '20px', 'fontWeight': '800', 'letterSpacing': '1px'}\"\n        [stroked]=true\n      >\n        Content 2\n      </a>\n    </div>\n  </sm-article>`\n})"
             },
             {
                 "name": "type1",
@@ -5104,6 +5134,26 @@
                     "defaultValue": "Template.bind({})"
                 },
                 {
+                    "name": "articleWithSpecialButton",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/article-component/article.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "TemplateWithSpecialButton.bind({})"
+                },
+                {
+                    "name": "articleWithSpecialButtonWithoutLinks",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/article-component/article.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "TemplateWithSpecialButton.bind({})"
+                },
+                {
                     "name": "links",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -5132,6 +5182,16 @@
                     "deprecationMessage": "",
                     "type": "Story<ArticleComponent>",
                     "defaultValue": "(args: ArticleComponent) => ({\n  component: ArticleComponent,\n  props: args,\n})"
+                },
+                {
+                    "name": "TemplateWithSpecialButton",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng-components/src/components/article-component/article.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ArticleComponent>",
+                    "defaultValue": "(args: ArticleComponent) => ({\n  component: ArticleComponent,\n  props: args,\n  template: `<sm-article imagePosition=\"${args.imagePosition}\" image=\"${args.image}\" description=\"${args.description}\"  imageBorderRadius=\"${args.imageBorderRadius}\" [links]=\"links\" backgroundColor=\"${args.backgroundColor}\" boxShadow=\"${args.boxShadow}\" textColor=\"${args.textColor}\" buttonIcon=\"${args.buttonIcon}\">\n    <div sm-article-button  class=\"image-article__article__links-container\" [ngStyle]=\"{'margin-top': '36px', 'display': 'flex', 'gap': '20px'}\">\n      <a\n        sitemule-button\n        color=\"primary\"\n        [ngStyle]=\"{'backgroundColor': '#00A1FD', 'padding': '16px 24px', 'borderRadius': '28px', 'color': '#fff', 'fontSize': '20px', 'fontWeight': '800', 'letterSpacing': '1px'}\"\n        [stroked]=true\n      >\n        Content 1\n      </a>\n      <a\n        sitemule-button\n        [ngStyle]=\"{'backgroundColor': 'transparent', 'padding': '16px 24px', 'borderRadius': '28px', 'color': '#00A1FD', 'fontSize': '20px', 'fontWeight': '800', 'letterSpacing': '1px'}\"\n        [stroked]=true\n      >\n        Content 2\n      </a>\n    </div>\n  </sm-article>`\n})"
                 }
             ],
             "projects/ng-components/src/directives/scaleimage/scale-image.directive.ts": [
@@ -5601,6 +5661,26 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "articleWithSpecialButton",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/article-component/article.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "articleWithSpecialButtonWithoutLinks",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/article-component/article.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "links",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -5622,6 +5702,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-components/src/components/article-component/article.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TemplateWithSpecialButton",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
