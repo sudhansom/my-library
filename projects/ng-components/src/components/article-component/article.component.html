@@ -23,7 +23,7 @@
       <a
       sitemule-button
       *ngFor="let link of links"
-      color="link.color"
+      [color]="link.color"
       [ngStyle]="{'backgroundColor': link.backgroundColor, 'color': link.color}"
       [href]="link.href"
       [target]="link.target"
